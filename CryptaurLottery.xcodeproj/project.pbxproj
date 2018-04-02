@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
+		CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */; };
+		CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */; };
 		CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD5320722892004BA072 /* AppDelegate.swift */; };
-		CEF6AD5620722892004BA072 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD5520722892004BA072 /* ViewController.swift */; };
+		CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD5520722892004BA072 /* BaseViewController.swift */; };
 		CEF6AD5920722893004BA072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF6AD5720722893004BA072 /* Main.storyboard */; };
 		CEF6AD5B20722893004BA072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF6AD5A20722893004BA072 /* Assets.xcassets */; };
 		CEF6AD5E20722893004BA072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF6AD5C20722893004BA072 /* LaunchScreen.storyboard */; };
 		CEF6AD6920722897004BA072 /* CryptaurLotteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD6820722897004BA072 /* CryptaurLotteryTests.swift */; };
+		CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD872072413E004BA072 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +36,11 @@
 		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
+		CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FontBook.swift"; sourceTree = "<group>"; };
 		CEF6AD5020722892004BA072 /* CryptaurLottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptaurLottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF6AD5320722892004BA072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEF6AD5520722892004BA072 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEF6AD5520722892004BA072 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CEF6AD5820722893004BA072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEF6AD5A20722893004BA072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF6AD5D20722893004BA072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		CEF6AD7E20723B86004BA072 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CEF6AD7F20723C83004BA072 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
 		CEF6AD8020723C83004BA072 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CEF6AD872072413E004BA072 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		F885CFA2FD24C5ABA0F7695F /* Pods-CryptaurLottery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +95,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE3D2DFA20725C4000C28251 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */,
+				CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CEF6AD4720722891004BA072 = {
 			isa = PBXGroup;
 			children = (
@@ -112,9 +127,10 @@
 		CEF6AD5220722892004BA072 /* CryptaurLottery */ = {
 			isa = PBXGroup;
 			children = (
+				CE3D2DFA20725C4000C28251 /* Extensions */,
+				CEF6AD86207240B3004BA072 /* Flows */,
+				CEF6AD85207240A5004BA072 /* BaseClasses */,
 				CEF6AD5320722892004BA072 /* AppDelegate.swift */,
-				CEF6AD5520722892004BA072 /* ViewController.swift */,
-				CEF6AD5720722893004BA072 /* Main.storyboard */,
 				CEF6AD5A20722893004BA072 /* Assets.xcassets */,
 				CEF6AD5C20722893004BA072 /* LaunchScreen.storyboard */,
 				CEF6AD5F20722894004BA072 /* Info.plist */,
@@ -129,6 +145,31 @@
 				CEF6AD6A20722897004BA072 /* Info.plist */,
 			);
 			path = CryptaurLotteryTests;
+			sourceTree = "<group>";
+		};
+		CEF6AD85207240A5004BA072 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CEF6AD5520722892004BA072 /* BaseViewController.swift */,
+				CEF6AD872072413E004BA072 /* BaseViewModel.swift */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		CEF6AD86207240B3004BA072 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				CEF6AD8920724A53004BA072 /* Main */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		CEF6AD8920724A53004BA072 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CEF6AD5720722893004BA072 /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		F6E5AFEA56550247D38486C6 /* Frameworks */ = {
@@ -316,9 +357,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -350,8 +402,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF6AD5620722892004BA072 /* ViewController.swift in Sources */,
+				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
+				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
+				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
+				CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

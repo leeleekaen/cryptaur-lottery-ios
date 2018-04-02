@@ -1,3 +1,25 @@
-PODFILE CHECKSUM: 4f4eecba10c6df3efb0caa4c304bdd518b42ef09
+PODS:
+  - Alamofire (4.7.0)
+  - KeychainSwift (10.0.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - SwiftyUserDefaults (3.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - KeychainSwift
+  - RxCocoa
+  - RxSwift
+  - SwiftyUserDefaults
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+
+PODFILE CHECKSUM: 3ee0fdfaba8a1bfab2b2383d7006e5f6e9b0697e
 
 COCOAPODS: 1.4.0
