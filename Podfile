@@ -8,6 +8,7 @@ target 'CryptaurLottery' do
   pod 'RxCocoa'
   pod 'Alamofire'
   pod 'SwiftyUserDefaults'
+  pod 'IGListKit'
   
   target 'CryptaurLotteryTests' do
     inherit! :search_paths

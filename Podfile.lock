@@ -1,5 +1,10 @@
 PODS:
   - Alamofire (4.7.0)
+  - IGListKit (3.2.0):
+    - IGListKit/Default (= 3.2.0)
+  - IGListKit/Default (3.2.0):
+    - IGListKit/Diffing
+  - IGListKit/Diffing (3.2.0)
   - KeychainSwift (10.0.0)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
@@ -8,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - IGListKit
   - KeychainSwift
   - RxCocoa
   - RxSwift
@@ -15,11 +21,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  IGListKit: ffe6f98a728ab0250aceea22e7957aa5477c5048
   KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 3ee0fdfaba8a1bfab2b2383d7006e5f6e9b0697e
+PODFILE CHECKSUM: 0e8b33f22c44f6359bbe0cc634b2376ef75575a5
 
 COCOAPODS: 1.4.0

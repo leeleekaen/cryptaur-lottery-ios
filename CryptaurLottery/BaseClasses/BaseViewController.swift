@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import RxSwift
 
 class BaseViewController: UIViewController {
+    final let disposeBag = DisposeBag()
 
 }

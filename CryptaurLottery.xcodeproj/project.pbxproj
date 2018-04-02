@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
+		CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDC2072940E00A12F72 /* ServiceError.swift */; };
+		CE254CDF2072956000A12F72 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDE2072956000A12F72 /* BaseService.swift */; };
+		CE254CE32072965400A12F72 /* ApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE22072965400A12F72 /* ApiEndpoints.swift */; };
+		CE254CE5207299E400A12F72 /* HttpEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE4207299E400A12F72 /* HttpEndpoint.swift */; };
+		CE254CE72072A69700A12F72 /* HttpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE62072A69700A12F72 /* HttpOperation.swift */; };
 		CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */; };
 		CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */; };
 		CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD5320722892004BA072 /* AppDelegate.swift */; };
@@ -36,6 +41,11 @@
 		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE254CDC2072940E00A12F72 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		CE254CDE2072956000A12F72 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		CE254CE22072965400A12F72 /* ApiEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoints.swift; sourceTree = "<group>"; };
+		CE254CE4207299E400A12F72 /* HttpEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpEndpoint.swift; sourceTree = "<group>"; };
+		CE254CE62072A69700A12F72 /* HttpOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpOperation.swift; sourceTree = "<group>"; };
 		CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FontBook.swift"; sourceTree = "<group>"; };
 		CEF6AD5020722892004BA072 /* CryptaurLottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptaurLottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +105,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE254CE0207295FD00A12F72 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE254CDC2072940E00A12F72 /* ServiceError.swift */,
+				CE254CE4207299E400A12F72 /* HttpEndpoint.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE254CE12072963500A12F72 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CE254CE22072965400A12F72 /* ApiEndpoints.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		CE3D2DFA20725C4000C28251 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +154,8 @@
 		CEF6AD5220722892004BA072 /* CryptaurLottery */ = {
 			isa = PBXGroup;
 			children = (
+				CE254CE12072963500A12F72 /* Settings */,
+				CE254CE0207295FD00A12F72 /* Models */,
 				CE3D2DFA20725C4000C28251 /* Extensions */,
 				CEF6AD86207240B3004BA072 /* Flows */,
 				CEF6AD85207240A5004BA072 /* BaseClasses */,
@@ -152,6 +181,8 @@
 			children = (
 				CEF6AD5520722892004BA072 /* BaseViewController.swift */,
 				CEF6AD872072413E004BA072 /* BaseViewModel.swift */,
+				CE254CDE2072956000A12F72 /* BaseService.swift */,
+				CE254CE62072A69700A12F72 /* HttpOperation.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -359,6 +390,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -367,6 +399,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -403,10 +436,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
+				CE254CE72072A69700A12F72 /* HttpOperation.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
+				CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */,
+				CE254CDF2072956000A12F72 /* BaseService.swift in Sources */,
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
 				CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */,
+				CE254CE32072965400A12F72 /* ApiEndpoints.swift in Sources */,
+				CE254CE5207299E400A12F72 /* HttpEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
