@@ -11,11 +11,14 @@
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
 		CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDC2072940E00A12F72 /* ServiceError.swift */; };
 		CE254CDF2072956000A12F72 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDE2072956000A12F72 /* BaseService.swift */; };
-		CE254CE32072965400A12F72 /* ApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE22072965400A12F72 /* ApiEndpoints.swift */; };
-		CE254CE5207299E400A12F72 /* HttpEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE4207299E400A12F72 /* HttpEndpoint.swift */; };
-		CE254CE72072A69700A12F72 /* HttpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE62072A69700A12F72 /* HttpOperation.swift */; };
+		CE254CE5207299E400A12F72 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE4207299E400A12F72 /* APIEndpoint.swift */; };
+		CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE62072A69700A12F72 /* APIOperation.swift */; };
 		CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */; };
 		CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */; };
+		CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */; };
+		CEDEFF7C20739AE900297A99 /* LoginOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7B20739AE900297A99 /* LoginOperation.swift */; };
+		CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */; };
+		CEDEFF8220739C2500297A99 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */; };
 		CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD5320722892004BA072 /* AppDelegate.swift */; };
 		CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD5520722892004BA072 /* BaseViewController.swift */; };
 		CEF6AD5920722893004BA072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF6AD5720722893004BA072 /* Main.storyboard */; };
@@ -43,11 +46,14 @@
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE254CDC2072940E00A12F72 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		CE254CDE2072956000A12F72 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
-		CE254CE22072965400A12F72 /* ApiEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoints.swift; sourceTree = "<group>"; };
-		CE254CE4207299E400A12F72 /* HttpEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpEndpoint.swift; sourceTree = "<group>"; };
-		CE254CE62072A69700A12F72 /* HttpOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpOperation.swift; sourceTree = "<group>"; };
+		CE254CE4207299E400A12F72 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		CE254CE62072A69700A12F72 /* APIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIOperation.swift; sourceTree = "<group>"; };
 		CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FontBook.swift"; sourceTree = "<group>"; };
+		CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordService.swift; sourceTree = "<group>"; };
+		CEDEFF7B20739AE900297A99 /* LoginOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOperation.swift; sourceTree = "<group>"; };
+		CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordRequestModel.swift; sourceTree = "<group>"; };
+		CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		CEF6AD5020722892004BA072 /* CryptaurLottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptaurLottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF6AD5320722892004BA072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF6AD5520722892004BA072 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -109,17 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				CE254CDC2072940E00A12F72 /* ServiceError.swift */,
-				CE254CE4207299E400A12F72 /* HttpEndpoint.swift */,
+				CE254CE4207299E400A12F72 /* APIEndpoint.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		CE254CE12072963500A12F72 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				CE254CE22072965400A12F72 /* ApiEndpoints.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		CE3D2DFA20725C4000C28251 /* Extensions */ = {
@@ -129,6 +127,33 @@
 				CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEDEFF7420738F5C00297A99 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CEDEFF7620739A8600297A99 /* Services */,
+				CEDEFF7520739A7D00297A99 /* Models */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CEDEFF7520739A7D00297A99 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */,
+				CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEDEFF7620739A8600297A99 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */,
+				CEDEFF7B20739AE900297A99 /* LoginOperation.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CEF6AD4720722891004BA072 = {
@@ -154,7 +179,6 @@
 		CEF6AD5220722892004BA072 /* CryptaurLottery */ = {
 			isa = PBXGroup;
 			children = (
-				CE254CE12072963500A12F72 /* Settings */,
 				CE254CE0207295FD00A12F72 /* Models */,
 				CE3D2DFA20725C4000C28251 /* Extensions */,
 				CEF6AD86207240B3004BA072 /* Flows */,
@@ -182,7 +206,7 @@
 				CEF6AD5520722892004BA072 /* BaseViewController.swift */,
 				CEF6AD872072413E004BA072 /* BaseViewModel.swift */,
 				CE254CDE2072956000A12F72 /* BaseService.swift */,
-				CE254CE62072A69700A12F72 /* HttpOperation.swift */,
+				CE254CE62072A69700A12F72 /* APIOperation.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -190,6 +214,7 @@
 		CEF6AD86207240B3004BA072 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CEDEFF7420738F5C00297A99 /* Login */,
 				CEF6AD8920724A53004BA072 /* Main */,
 			);
 			path = Flows;
@@ -198,9 +223,25 @@
 		CEF6AD8920724A53004BA072 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CEF8F9AB2073CDB50047A952 /* Models */,
+				CEF8F9AA2073CD1F0047A952 /* Services */,
 				CEF6AD5720722893004BA072 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		CEF8F9AA2073CD1F0047A952 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CEF8F9AB2073CDB50047A952 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F6E5AFEA56550247D38486C6 /* Frameworks */ = {
@@ -269,6 +310,11 @@
 					CEF6AD4F20722892004BA072 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					CEF6AD6320722897004BA072 = {
 						CreatedOnToolsVersion = 9.2;
@@ -435,16 +481,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDEFF8220739C2500297A99 /* LoginResponseModel.swift in Sources */,
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
-				CE254CE72072A69700A12F72 /* HttpOperation.swift in Sources */,
+				CEDEFF7C20739AE900297A99 /* LoginOperation.swift in Sources */,
+				CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
 				CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */,
 				CE254CDF2072956000A12F72 /* BaseService.swift in Sources */,
+				CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */,
+				CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */,
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
 				CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */,
-				CE254CE32072965400A12F72 /* ApiEndpoints.swift in Sources */,
-				CE254CE5207299E400A12F72 /* HttpEndpoint.swift in Sources */,
+				CE254CE5207299E400A12F72 /* APIEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

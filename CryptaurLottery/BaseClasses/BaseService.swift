@@ -8,23 +8,22 @@
 
 import Foundation
 
-typealias ServiceFailure = (ServiceError) -> ()
+typealias ServiceFailure = (Error) -> ()
 
 class BaseService<Input, Output> {
     typealias ServiceSuccess = (Output) -> ()
     
     final let operationQueue = OperationQueue()
     
-    func createOperation(input: Input, success: ServiceSuccess, failure: ServiceFailure) -> Operation? {
-        fatalError("Must implement `createOperation(input:success:failure:)`")
-    }
-    
-    final func perform(input: Input, success: ServiceSuccess, failure: ServiceFailure) {
+    final func perform(input: Input, success: @escaping ServiceSuccess, failure: @escaping ServiceFailure) {
         guard let operation = createOperation(input: input, success: success, failure: failure) else {
-            failure(ServiceError.InvalidOperation)
+            failure(ServiceError.invalidOperation)
             return
         }
         operationQueue.addOperation(operation)
     }
+    
+    func createOperation(input: Input, success: @escaping ServiceSuccess, failure: @escaping ServiceFailure) -> Operation? {
+        return nil
+    }
 }
-

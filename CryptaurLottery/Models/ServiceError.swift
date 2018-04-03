@@ -7,6 +7,18 @@
 //
 
 enum ServiceError: Error {
-    case InvalidOperation
-    case Api(code: String, message: String?)
+    case invalidOperation
+    case unknown(Error)
+    case noData
+    case deserializationFailure
+    
+    case api(code: String, message: String?)
+    
+    init?(json: [String: String]?) {
+        guard let json = json,
+        let code = json["code"] else {
+            return nil
+        }
+        self = .api(code: code, message: json["message"])
+    }
 }
