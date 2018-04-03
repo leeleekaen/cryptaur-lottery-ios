@@ -7,22 +7,31 @@
 //
 
 import UIKit
+import UInt256
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        // debug
-        //        let service = LoginPasswordService()
-        //        let request = LoginPasswordRequestModel(login: "login@mail.ru", password: "mypass", pin: "1234", key: "0xdeadbeef")
-        //        service.perform(input: request, success: { (model) in
-        //            print(model)
-        //        }) { (error) in
-        //            print(error)
-        //        }
+    
+        developmentTest()
         
         return true
     }
+    
+    func developmentTest() {
+        
+        let foo = UInt256("0xCAFEBABE")
+        print(foo ?? UInt256(0))
+        
+        let service = LoginPasswordService()
+        let request = LoginPasswordRequestModel(login: "login@mail.ru", password: "mypass", pin: "1234", key: "0xdeadbeef")
+        service.perform(input: request, success: { (model) in
+            print(model)
+        }) { (error) in
+            print(error)
+        }
+    }
+    
 }

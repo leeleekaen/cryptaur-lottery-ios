@@ -9,7 +9,8 @@ target 'CryptaurLottery' do
   pod 'Alamofire'
   pod 'SwiftyUserDefaults'
   pod 'IGListKit'
-  
+  pod 'UInt256', :git => 'https://github.com/hyu2018/UInt256.git'
+
   target 'CryptaurLotteryTests' do
     inherit! :search_paths
   end

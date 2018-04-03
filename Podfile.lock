@@ -10,6 +10,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SwiftyUserDefaults (3.0.1)
+  - UInt256 (0.1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -18,6 +19,16 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SwiftyUserDefaults
+  - UInt256 (from `https://github.com/hyu2018/UInt256.git`)
+
+EXTERNAL SOURCES:
+  UInt256:
+    :git: https://github.com/hyu2018/UInt256.git
+
+CHECKOUT OPTIONS:
+  UInt256:
+    :commit: 5dacc0a68e04db0641e437976581c4d650d01d5e
+    :git: https://github.com/hyu2018/UInt256.git
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
@@ -26,7 +37,8 @@ SPEC CHECKSUMS:
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+  UInt256: fd430c044d00d966fa05ae8e89451a4766075772
 
-PODFILE CHECKSUM: 0e8b33f22c44f6359bbe0cc634b2376ef75575a5
+PODFILE CHECKSUM: 800d44e88552a0269408c22c5496dba1086a0f11
 
 COCOAPODS: 1.4.0

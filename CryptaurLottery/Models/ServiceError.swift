@@ -1,5 +1,5 @@
 //
-//  ErrorDeclarations.swift
+//  ServiceError.swift
 //  CryptaurLottery
 //
 //  Created by Alexander Polyakov on 02.04.2018.
@@ -9,7 +9,7 @@
 enum ServiceError: Error {
     case invalidOperation
     case unknown(Error)
-    case noData
+    case invalidResponseFormat
     case deserializationFailure
     
     case api(code: String, message: String?)

@@ -7,17 +7,16 @@
 //
 
 import Foundation
+import UInt256
 
 struct LoginResponseModel {
     let session: String
-    let playerAddress: String
+    let playerAddress: UInt256
     
-    init?(json: [String: String]?) {
-        guard let json = json else {
-            return nil
-        }
+    init?(json: JSONDictionary) {
         guard let session = json["session"],
-            let playerAddress = json["playerAddress"] else {
+            let playerAddressString = json["playerAddress"],
+            let playerAddress = UInt256(playerAddressString) else {
                 return nil
         }
         self.session = session

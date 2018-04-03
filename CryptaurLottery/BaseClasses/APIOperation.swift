@@ -9,17 +9,21 @@
 import Foundation
 import Alamofire
 
+typealias JSONDictionary = [String: String]
+typealias APIOperationSuccess = (JSONDictionary) -> ()
+
 class APIOperation: Operation {
-    typealias JSONDictionary = [String: String]
     let endpoint: APIEndpoint
     let headers: HTTPHeaders?
     let parameters: Parameters?
     let failure: ServiceFailure
+    let success: APIOperationSuccess
     
-    init(endpoint: APIEndpoint, parameters: Parameters?, headers: HTTPHeaders?, failure: @escaping ServiceFailure) {
+    init(endpoint: APIEndpoint, parameters: Parameters?, headers: HTTPHeaders?, success: @escaping APIOperationSuccess, failure: @escaping ServiceFailure) {
         self.endpoint = endpoint
         self.parameters = parameters
         self.headers = headers
+        self.success = success
         self.failure = failure
         super.init()
     }
@@ -28,13 +32,27 @@ class APIOperation: Operation {
         return Alamofire.request(endpoint, method: endpoint.method.asAlamofireMethod(), parameters: parameters, encoding: URLEncoding.default, headers: headers)
     }
     
-    final class func processErrors(handler: ServiceFailure, response: DataResponse<Any>) -> Bool {
+    final override func main() {
+        let success = self.success
+        let failure = self.failure
+
+        createRequest().response(queue: DispatchQueue.global(qos: .utility), responseSerializer: DataRequest.jsonResponseSerializer(), completionHandler: { (response: DataResponse<Any>) in
+            guard !APIOperation.processErrors(handler: failure, response: response) else {
+                return
+            }
+            // force cast because conditional cast already checked in `processErrors()`
+            let responseValue = response.value as! JSONDictionary
+            success(responseValue)
+        })
+    }
+    
+    private class func processErrors(handler: ServiceFailure, response: DataResponse<Any>) -> Bool {
         if let error = response.error {
             handler(ServiceError.unknown(error))
             return true
         }
         guard let json = response.value as? JSONDictionary else {
-            handler(ServiceError.noData)
+            handler(ServiceError.invalidResponseFormat)
             return true
         }
         if let error = ServiceError(json: json) {

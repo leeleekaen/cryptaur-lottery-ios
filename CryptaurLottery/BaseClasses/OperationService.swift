@@ -1,5 +1,5 @@
 //
-//  BaseService.swift
+//  OperationService.swift
 //  CryptaurLottery
 //
 //  Created by Alexander Polyakov on 02.04.2018.
@@ -10,7 +10,7 @@ import Foundation
 
 typealias ServiceFailure = (Error) -> ()
 
-class BaseService<Input, Output> {
+class OperationService<Input, Output> {
     typealias ServiceSuccess = (Output) -> ()
     
     final let operationQueue = OperationQueue()
