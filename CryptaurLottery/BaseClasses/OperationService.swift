@@ -10,7 +10,7 @@ import Foundation
 
 typealias ServiceFailure = (Error) -> ()
 
-class OperationService<Input, Output> {
+class OperationService<Input, Output: JSONDeserializable> {
     typealias ServiceSuccess = (Output) -> ()
     
     final let operationQueue = OperationQueue()

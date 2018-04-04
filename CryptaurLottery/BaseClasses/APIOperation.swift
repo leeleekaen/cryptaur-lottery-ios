@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 
-typealias JSONDictionary = [String: String]
 typealias APIOperationSuccess = (JSONDictionary) -> ()
 
 class APIOperation: Operation {
@@ -35,15 +34,15 @@ class APIOperation: Operation {
     final override func main() {
         let success = self.success
         let failure = self.failure
-
-        createRequest().response(queue: DispatchQueue.global(qos: .utility), responseSerializer: DataRequest.jsonResponseSerializer(), completionHandler: { (response: DataResponse<Any>) in
+        let request = createRequest()
+        request.responseJSON(queue: DispatchQueue.global(qos: .utility), options: .allowFragments) { (response: DataResponse<Any>) in
             guard !APIOperation.processErrors(handler: failure, response: response) else {
                 return
             }
             // force cast because conditional cast already checked in `processErrors()`
             let responseValue = response.value as! JSONDictionary
             success(responseValue)
-        })
+        }
     }
     
     private class func processErrors(handler: ServiceFailure, response: DataResponse<Any>) -> Bool {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
+		CE1068192074D357004CD0B4 /* UInt256Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1068182074D357004CD0B4 /* UInt256Extension.swift */; };
 		CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDC2072940E00A12F72 /* ServiceError.swift */; };
 		CE254CDF2072956000A12F72 /* OperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDE2072956000A12F72 /* OperationService.swift */; };
 		CE254CE5207299E400A12F72 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE4207299E400A12F72 /* APIEndpoint.swift */; };
@@ -16,6 +17,7 @@
 		CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */; };
 		CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */; };
 		CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */; };
+		CE647F3B2075157400B334E3 /* JSONDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F3A2075157400B334E3 /* JSONDeserializable.swift */; };
 		CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */; };
 		CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */; };
 		CEDEFF8220739C2500297A99 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */; };
@@ -44,6 +46,7 @@
 		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1068182074D357004CD0B4 /* UInt256Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt256Extension.swift; sourceTree = "<group>"; };
 		CE254CDC2072940E00A12F72 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		CE254CDE2072956000A12F72 /* OperationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationService.swift; sourceTree = "<group>"; };
 		CE254CE4207299E400A12F72 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FontBook.swift"; sourceTree = "<group>"; };
 		CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceResponseModel.swift; sourceTree = "<group>"; };
+		CE647F3A2075157400B334E3 /* JSONDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
 		CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordService.swift; sourceTree = "<group>"; };
 		CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordRequestModel.swift; sourceTree = "<group>"; };
 		CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
@@ -125,8 +129,17 @@
 			children = (
 				CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */,
 				CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */,
+				CE1068182074D357004CD0B4 /* UInt256Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE647F392075155400B334E3 /* CommonComponents */ = {
+			isa = PBXGroup;
+			children = (
+				CE647F3A2075157400B334E3 /* JSONDeserializable.swift */,
+			);
+			path = CommonComponents;
 			sourceTree = "<group>";
 		};
 		CEDEFF7420738F5C00297A99 /* Login */ = {
@@ -178,6 +191,7 @@
 		CEF6AD5220722892004BA072 /* CryptaurLottery */ = {
 			isa = PBXGroup;
 			children = (
+				CE647F392075155400B334E3 /* CommonComponents */,
 				CEF6AD85207240A5004BA072 /* BaseClasses */,
 				CE254CE0207295FD00A12F72 /* Models */,
 				CE3D2DFA20725C4000C28251 /* Extensions */,
@@ -489,8 +503,10 @@
 				CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
+				CE1068192074D357004CD0B4 /* UInt256Extension.swift in Sources */,
 				CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */,
 				CE254CDF2072956000A12F72 /* OperationService.swift in Sources */,
+				CE647F3B2075157400B334E3 /* JSONDeserializable.swift in Sources */,
 				CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */,
 				CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */,
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,

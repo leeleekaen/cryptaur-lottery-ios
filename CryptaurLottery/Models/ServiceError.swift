@@ -14,11 +14,10 @@ enum ServiceError: Error {
     
     case api(code: String, message: String?)
     
-    init?(json: [String: String]?) {
-        guard let json = json,
-        let code = json["code"] else {
+    init?(json: JSONDictionary) {
+        guard let code = json["code"] as? String else {
             return nil
         }
-        self = .api(code: code, message: json["message"])
+        self = .api(code: code, message: json["message"] as? String)
     }
 }

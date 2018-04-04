@@ -9,14 +9,14 @@
 import Foundation
 import UInt256
 
-struct LoginResponseModel {
+struct LoginResponseModel: JSONDeserializable {
     let session: String
     let playerAddress: UInt256
     
     init?(json: JSONDictionary) {
-        guard let session = json["session"],
-            let playerAddressString = json["playerAddress"],
-            let playerAddress = UInt256(playerAddressString) else {
+        guard let session = json["session"] as? String,
+            let playerAddressString = json["playerAddress"] as? String,
+            let playerAddress = UInt256(hexString: playerAddressString) else {
                 return nil
         }
         self.session = session

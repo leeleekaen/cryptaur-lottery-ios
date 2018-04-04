@@ -21,10 +21,15 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func developmentTest() {
-        
-        let foo = UInt256("0xCAFEBABE")
-        print(foo ?? UInt256(0))
-        
+//
+//        var foo = UInt256(hexString: "CAFEBABECAFEBABE0000")
+//        foo = UInt256(hexString: "F0000000000000000")
+//        print(foo)
+//        foo = UInt256(hexString: "DEAD")
+//        print(foo)
+//        foo = UInt256(hexString: "CAFEBABECAFEBABECAFEBABE")
+//        print(foo)
+//
         let service = LoginPasswordService()
         let request = LoginPasswordRequestModel(login: "login@mail.ru", password: "mypass", pin: "1234", key: "0xdeadbeef")
         service.perform(input: request, success: { (model) in
