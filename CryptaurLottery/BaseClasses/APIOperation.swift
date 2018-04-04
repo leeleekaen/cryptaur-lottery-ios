@@ -27,8 +27,12 @@ class APIOperation: Operation {
         super.init()
     }
     
-    func createRequest() -> Alamofire.DataRequest {
-        return Alamofire.request(endpoint, method: endpoint.method.asAlamofireMethod(), parameters: parameters, encoding: URLEncoding.default, headers: headers)
+    func URL(with endpoint: APIEndpoint) -> URLConvertible {
+        return endpoint
+    }
+    
+    final func createRequest() -> Alamofire.DataRequest {
+        return Alamofire.request(URL(with: endpoint), method: endpoint.method.asAlamofireMethod(), parameters: parameters, encoding: URLEncoding.default, headers: headers)
     }
     
     final override func main() {

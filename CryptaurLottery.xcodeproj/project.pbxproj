@@ -18,6 +18,9 @@
 		CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */; };
 		CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */; };
 		CE647F3B2075157400B334E3 /* JSONDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F3A2075157400B334E3 /* JSONDeserializable.swift */; };
+		CE647F3D2075178800B334E3 /* GetTicketPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F3C2075178800B334E3 /* GetTicketPriceService.swift */; };
+		CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F3E2075182500B334E3 /* GetTicketPriceRequestModel.swift */; };
+		CE647F4120751C5C00B334E3 /* LotteryID.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F4020751C5C00B334E3 /* LotteryID.swift */; };
 		CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */; };
 		CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */; };
 		CEDEFF8220739C2500297A99 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */; };
@@ -55,6 +58,9 @@
 		CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FontBook.swift"; sourceTree = "<group>"; };
 		CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceResponseModel.swift; sourceTree = "<group>"; };
 		CE647F3A2075157400B334E3 /* JSONDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
+		CE647F3C2075178800B334E3 /* GetTicketPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceService.swift; sourceTree = "<group>"; };
+		CE647F3E2075182500B334E3 /* GetTicketPriceRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceRequestModel.swift; sourceTree = "<group>"; };
+		CE647F4020751C5C00B334E3 /* LotteryID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryID.swift; sourceTree = "<group>"; };
 		CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordService.swift; sourceTree = "<group>"; };
 		CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordRequestModel.swift; sourceTree = "<group>"; };
 		CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 			children = (
 				CE254CDC2072940E00A12F72 /* ServiceError.swift */,
 				CE254CE4207299E400A12F72 /* APIEndpoint.swift */,
+				CE647F4020751C5C00B334E3 /* LotteryID.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +253,7 @@
 		CEF8F9AA2073CD1F0047A952 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE647F3C2075178800B334E3 /* GetTicketPriceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -254,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */,
+				CE647F3E2075182500B334E3 /* GetTicketPriceRequestModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -500,6 +509,7 @@
 			files = (
 				CEDEFF8220739C2500297A99 /* LoginResponseModel.swift in Sources */,
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
+				CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */,
 				CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
@@ -512,6 +522,8 @@
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
 				CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */,
 				CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */,
+				CE647F3D2075178800B334E3 /* GetTicketPriceService.swift in Sources */,
+				CE647F4120751C5C00B334E3 /* LotteryID.swift in Sources */,
 				CE254CE5207299E400A12F72 /* APIEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
