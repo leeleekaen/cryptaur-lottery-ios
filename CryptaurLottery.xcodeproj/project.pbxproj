@@ -14,6 +14,13 @@
 		CE254CDF2072956000A12F72 /* OperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDE2072956000A12F72 /* OperationService.swift */; };
 		CE254CE5207299E400A12F72 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE4207299E400A12F72 /* APIEndpoint.swift */; };
 		CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE62072A69700A12F72 /* APIOperation.swift */; };
+		CE3084D320767887008C140C /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3084D12076787C008C140C /* OpenSans-Regular.ttf */; };
+		CE3084D42076788B008C140C /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3084D22076787C008C140C /* OpenSans-SemiBold.ttf */; };
+		CE3084D7207679A3008C140C /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE3084D52076799F008C140C /* SF-Pro-Text-Regular.otf */; };
+		CE3084D8207679A5008C140C /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE3084D6207679A1008C140C /* SF-Pro-Text-Semibold.otf */; };
+		CE3084DB20767F71008C140C /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3084DA20767F71008C140C /* BalanceViewModel.swift */; };
+		CE3A094C2076688500875A2C /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A094B2076688500875A2C /* BalanceView.swift */; };
+		CE3A094E207668A400875A2C /* BalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3A094D207668A400875A2C /* BalanceView.xib */; };
 		CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */; };
 		CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */; };
 		CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */; };
@@ -21,6 +28,10 @@
 		CE647F3D2075178800B334E3 /* GetTicketPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F3C2075178800B334E3 /* GetTicketPriceService.swift */; };
 		CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F3E2075182500B334E3 /* GetTicketPriceRequestModel.swift */; };
 		CE647F4120751C5C00B334E3 /* LotteryID.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F4020751C5C00B334E3 /* LotteryID.swift */; };
+		CEA6951C2076B1FB002B692D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6951B2076B1FB002B692D /* BaseNavigationController.swift */; };
+		CEDAC84820755ED100E3EA36 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDAC84720755ED100E3EA36 /* Login.storyboard */; };
+		CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDAC8492076421600E3EA36 /* LotteryListViewController.swift */; };
+		CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDAC84C20764D3F00E3EA36 /* GradientBackgroundView.swift */; };
 		CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */; };
 		CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */; };
 		CEDEFF8220739C2500297A99 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */; };
@@ -54,6 +65,13 @@
 		CE254CDE2072956000A12F72 /* OperationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationService.swift; sourceTree = "<group>"; };
 		CE254CE4207299E400A12F72 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		CE254CE62072A69700A12F72 /* APIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIOperation.swift; sourceTree = "<group>"; };
+		CE3084D12076787C008C140C /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		CE3084D22076787C008C140C /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		CE3084D52076799F008C140C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		CE3084D6207679A1008C140C /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		CE3084DA20767F71008C140C /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
+		CE3A094B2076688500875A2C /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		CE3A094D207668A400875A2C /* BalanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceView.xib; sourceTree = "<group>"; };
 		CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FontBook.swift"; sourceTree = "<group>"; };
 		CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceResponseModel.swift; sourceTree = "<group>"; };
@@ -61,6 +79,10 @@
 		CE647F3C2075178800B334E3 /* GetTicketPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceService.swift; sourceTree = "<group>"; };
 		CE647F3E2075182500B334E3 /* GetTicketPriceRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceRequestModel.swift; sourceTree = "<group>"; };
 		CE647F4020751C5C00B334E3 /* LotteryID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryID.swift; sourceTree = "<group>"; };
+		CEA6951B2076B1FB002B692D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		CEDAC84720755ED100E3EA36 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CEDAC8492076421600E3EA36 /* LotteryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryListViewController.swift; sourceTree = "<group>"; };
+		CEDAC84C20764D3F00E3EA36 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordService.swift; sourceTree = "<group>"; };
 		CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordRequestModel.swift; sourceTree = "<group>"; };
 		CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
@@ -124,11 +146,33 @@
 		CE254CE0207295FD00A12F72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE647F3A2075157400B334E3 /* JSONDeserializable.swift */,
 				CE254CDC2072940E00A12F72 /* ServiceError.swift */,
 				CE254CE4207299E400A12F72 /* APIEndpoint.swift */,
 				CE647F4020751C5C00B334E3 /* LotteryID.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CE3084D020767851008C140C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE3084D52076799F008C140C /* SF-Pro-Text-Regular.otf */,
+				CE3084D6207679A1008C140C /* SF-Pro-Text-Semibold.otf */,
+				CE3084D12076787C008C140C /* OpenSans-Regular.ttf */,
+				CE3084D22076787C008C140C /* OpenSans-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE3084D920767F2E008C140C /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				CE3084DA20767F71008C140C /* BalanceViewModel.swift */,
+				CE3A094B2076688500875A2C /* BalanceView.swift */,
+				CE3A094D207668A400875A2C /* BalanceView.xib */,
+			);
+			path = Balance;
 			sourceTree = "<group>";
 		};
 		CE3D2DFA20725C4000C28251 /* Extensions */ = {
@@ -144,9 +188,26 @@
 		CE647F392075155400B334E3 /* CommonComponents */ = {
 			isa = PBXGroup;
 			children = (
-				CE647F3A2075157400B334E3 /* JSONDeserializable.swift */,
+				CEDAC84B20764D1400E3EA36 /* GradientBackground */,
+				CE3084D920767F2E008C140C /* Balance */,
 			);
 			path = CommonComponents;
+			sourceTree = "<group>";
+		};
+		CEDAC84B20764D1400E3EA36 /* GradientBackground */ = {
+			isa = PBXGroup;
+			children = (
+				CEDAC84C20764D3F00E3EA36 /* GradientBackgroundView.swift */,
+			);
+			path = GradientBackground;
+			sourceTree = "<group>";
+		};
+		CEDAC84E20764FF500E3EA36 /* LotteryListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CEDAC8492076421600E3EA36 /* LotteryListViewController.swift */,
+			);
+			path = LotteryListScreen;
 			sourceTree = "<group>";
 		};
 		CEDEFF7420738F5C00297A99 /* Login */ = {
@@ -154,6 +215,7 @@
 			children = (
 				CEDEFF7620739A8600297A99 /* Services */,
 				CEDEFF7520739A7D00297A99 /* Models */,
+				CEDAC84720755ED100E3EA36 /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -198,6 +260,7 @@
 		CEF6AD5220722892004BA072 /* CryptaurLottery */ = {
 			isa = PBXGroup;
 			children = (
+				CE3084D020767851008C140C /* Fonts */,
 				CE647F392075155400B334E3 /* CommonComponents */,
 				CEF6AD85207240A5004BA072 /* BaseClasses */,
 				CE254CE0207295FD00A12F72 /* Models */,
@@ -227,6 +290,7 @@
 				CEF6AD872072413E004BA072 /* BaseViewModel.swift */,
 				CE254CDE2072956000A12F72 /* OperationService.swift */,
 				CE254CE62072A69700A12F72 /* APIOperation.swift */,
+				CEA6951B2076B1FB002B692D /* BaseNavigationController.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -243,6 +307,7 @@
 		CEF6AD8920724A53004BA072 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CEDAC84E20764FF500E3EA36 /* LotteryListScreen */,
 				CEF8F9AB2073CDB50047A952 /* Models */,
 				CEF8F9AA2073CD1F0047A952 /* Services */,
 				CEF6AD5720722893004BA072 /* Main.storyboard */,
@@ -289,6 +354,7 @@
 				CEF6AD4E20722892004BA072 /* Resources */,
 				F341519D4FD736ACA1A0798E /* [CP] Embed Pods Frameworks */,
 				3463AEFB6925DD83E73C0BA5 /* [CP] Copy Pods Resources */,
+				CE0FFFA220753DA800FDF56A /* [Fabric] Run */,
 			);
 			buildRules = (
 			);
@@ -373,8 +439,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDAC84820755ED100E3EA36 /* Login.storyboard in Resources */,
 				CEF6AD5E20722893004BA072 /* LaunchScreen.storyboard in Resources */,
+				CE3084D42076788B008C140C /* OpenSans-SemiBold.ttf in Resources */,
 				CEF6AD5B20722893004BA072 /* Assets.xcassets in Resources */,
+				CE3A094E207668A400875A2C /* BalanceView.xib in Resources */,
+				CE3084D320767887008C140C /* OpenSans-Regular.ttf in Resources */,
+				CE3084D8207679A5008C140C /* SF-Pro-Text-Semibold.otf in Resources */,
+				CE3084D7207679A3008C140C /* SF-Pro-Text-Regular.otf in Resources */,
 				CEF6AD5920722893004BA072 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +524,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CE0FFFA220753DA800FDF56A /* [Fabric] Run */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[Fabric] Run";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 619b8a670a2a9e25eee8316ef7889e0112f6fa37 6fa8b94b35d41e4b2fe1ad5656af1cb16f83d65266ca985594b6cfc018f26c7a";
+		};
 		F341519D4FD736ACA1A0798E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,20 +548,24 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PMNibLinkableView/PMNibLinkableView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/UInt256/UInt256.framework",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PMNibLinkableView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UInt256.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -507,10 +597,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA6951C2076B1FB002B692D /* BaseNavigationController.swift in Sources */,
 				CEDEFF8220739C2500297A99 /* LoginResponseModel.swift in Sources */,
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
 				CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */,
 				CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */,
+				CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */,
+				CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */,
+				CE3A094C2076688500875A2C /* BalanceView.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
 				CE1068192074D357004CD0B4 /* UInt256Extension.swift in Sources */,
@@ -521,6 +615,7 @@
 				CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */,
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
 				CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */,
+				CE3084DB20767F71008C140C /* BalanceViewModel.swift in Sources */,
 				CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */,
 				CE647F3D2075178800B334E3 /* GetTicketPriceService.swift in Sources */,
 				CE647F4120751C5C00B334E3 /* LotteryID.swift in Sources */,
@@ -610,7 +705,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

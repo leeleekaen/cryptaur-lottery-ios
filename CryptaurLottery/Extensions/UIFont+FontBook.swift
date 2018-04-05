@@ -10,60 +10,60 @@ import UIKit.UIFont
 
 extension UIFont {
     
-    class var openSansRegular53: UIFont {
-        return UIFont(name: "OpenSans-Regular", size: 5.33)!
+    class var openSansRegular16: UIFont {
+        return UIFont(name: "OpenSans-Regular", size: 16.0)!
     }
     
-    class var openSansSemibold47: UIFont {
-        return UIFont(name: "OpenSans-Semibold", size: 4.67)!
+    class var openSansSemibold14: UIFont {
+        return UIFont(name: "OpenSans-Semibold", size: 14.0)!
     }
     
-    class var openSansRegular6: UIFont {
-        return UIFont(name: "OpenSans-Regular", size: 6.0)!
+    class var openSansRegular18: UIFont {
+        return UIFont(name: "OpenSans-Regular", size: 18.0)!
     }
     
-    class var sfProTextSemibold57: UIFont {
-        return UIFont.systemFont(ofSize: 5.67, weight: .semibold)
+    class var sfProTextSemibold17: UIFont {
+        return UIFont.systemFont(ofSize: 17.0, weight: .semibold)
     }
     
-    class var openSansRegular57: UIFont {
-        return UIFont(name: "OpenSans-Regular", size: 5.67)!
+    class var openSansRegular17: UIFont {
+        return UIFont(name: "OpenSans-Regular", size: 17.0)!
     }
     
-    class var openSansSemibold37: UIFont {
-        return UIFont(name: "OpenSans-Semibold", size: 3.67)!
+    class var openSansSemibold11: UIFont {
+        return UIFont(name: "OpenSans-Semibold", size: 11.0)!
     }
     
-    class var openSansSemibold33: UIFont {
-        return UIFont(name: "OpenSans-Semibold", size: 3.33)!
+    class var openSansSemibold10: UIFont {
+        return UIFont(name: "OpenSans-Semibold", size: 10.0)!
     }
     
-    class var openSansSemibold4: UIFont {
-        return UIFont(name: "OpenSans-Semibold", size: 4.0)!
+    class var openSansSemibold12: UIFont {
+        return UIFont(name: "OpenSans-Semibold", size: 12.0)!
     }
     
-    class var sfProTextRegular8: UIFont {
-        return UIFont.systemFont(ofSize: 8.0, weight: .regular)
+    class var sfProTextRegular24: UIFont {
+        return UIFont.systemFont(ofSize: 24.0, weight: .regular)
     }
     
-    class var openSansRegular47: UIFont {
-        return UIFont(name: "OpenSans-Regular", size: 4.67)!
+    class var openSansRegular14: UIFont {
+        return UIFont(name: "OpenSans-Regular", size: 14.0)!
     }
     
-    class var openSansRegular93: UIFont {
-        return UIFont(name: "OpenSans-Regular", size: 9.33)!
+    class var openSansRegular28: UIFont {
+        return UIFont(name: "OpenSans-Regular", size: 28.0)!
     }
     
-    class var openSansRegular4: UIFont {
-        return UIFont(name: "OpenSans-Regular", size: 4.0)!
+    class var openSansRegular12: UIFont {
+        return UIFont(name: "OpenSans-Regular", size: 12.0)!
     }
     
-    class var openSansSemibold8: UIFont {
-        return UIFont(name: "OpenSans-Semibold", size: 8.0)!
+    class var openSansSemibold24: UIFont {
+        return UIFont(name: "OpenSans-Semibold", size: 24.0)!
     }
     
-    class var openSansSemibold107: UIFont {
-        return UIFont(name: "OpenSans-Semibold", size: 10.67)!
+    class var openSansSemibold32: UIFont {
+        return UIFont(name: "OpenSans-Semibold", size: 32.0)!
     }
     
 }
