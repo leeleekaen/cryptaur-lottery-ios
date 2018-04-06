@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
-		CE1068192074D357004CD0B4 /* UInt256Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1068182074D357004CD0B4 /* UInt256Extension.swift */; };
+		CE0C41A82077FF1F00190A82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41AA2077FF1F00190A82 /* Localizable.strings */; };
+		CE0C41B4207816BD00190A82 /* LotteryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C41B3207816BD00190A82 /* LotteryCardCell.swift */; };
+		CE0C41B6207816E600190A82 /* LotteryCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41B5207816E600190A82 /* LotteryCardCell.xib */; };
+		CE0C41B82078244B00190A82 /* Diffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C41B72078244B00190A82 /* Diffable.swift */; };
+		CE1068192074D357004CD0B4 /* UInt256+FromHexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1068182074D357004CD0B4 /* UInt256+FromHexString.swift */; };
 		CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDC2072940E00A12F72 /* ServiceError.swift */; };
 		CE254CDF2072956000A12F72 /* OperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CDE2072956000A12F72 /* OperationService.swift */; };
 		CE254CE5207299E400A12F72 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254CE4207299E400A12F72 /* APIEndpoint.swift */; };
@@ -24,12 +28,19 @@
 		CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */; };
 		CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */; };
 		CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */; };
+		CE60B0B92077B24B00EEC363 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60B0B82077B24B00EEC363 /* BadgeViewModel.swift */; };
+		CE60B0BB2077B29800EEC363 /* UIBarButtonItem+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60B0BA2077B29800EEC363 /* UIBarButtonItem+Menu.swift */; };
+		CE60B0BD2077B36B00EEC363 /* UIBarButtonItem+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60B0BC2077B36B00EEC363 /* UIBarButtonItem+Badge.swift */; };
+		CE60B0BF2077C33E00EEC363 /* BadgeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE60B0BE2077C33D00EEC363 /* BadgeView.xib */; };
+		CE60B0C12077C5AA00EEC363 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60B0C02077C5AA00EEC363 /* BadgeView.swift */; };
+		CE60B0C72077C7FC00EEC363 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60B0C62077C7FC00EEC363 /* NSObject+ClassName.swift */; };
+		CE60B0C92077C84600EEC363 /* UIViewController+FromStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60B0C82077C84600EEC363 /* UIViewController+FromStoryboard.swift */; };
+		CE60B0CB2077C8A000EEC363 /* UIView+FromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60B0CA2077C8A000EEC363 /* UIView+FromNib.swift */; };
 		CE647F3B2075157400B334E3 /* JSONDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F3A2075157400B334E3 /* JSONDeserializable.swift */; };
 		CE647F3D2075178800B334E3 /* GetTicketPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F3C2075178800B334E3 /* GetTicketPriceService.swift */; };
 		CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F3E2075182500B334E3 /* GetTicketPriceRequestModel.swift */; };
 		CE647F4120751C5C00B334E3 /* LotteryID.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F4020751C5C00B334E3 /* LotteryID.swift */; };
 		CEA6951C2076B1FB002B692D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6951B2076B1FB002B692D /* BaseNavigationController.swift */; };
-		CEDAC84820755ED100E3EA36 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDAC84720755ED100E3EA36 /* Login.storyboard */; };
 		CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDAC8492076421600E3EA36 /* LotteryListViewController.swift */; };
 		CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDAC84C20764D3F00E3EA36 /* GradientBackgroundView.swift */; };
 		CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */; };
@@ -39,7 +50,6 @@
 		CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD5520722892004BA072 /* BaseViewController.swift */; };
 		CEF6AD5920722893004BA072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF6AD5720722893004BA072 /* Main.storyboard */; };
 		CEF6AD5B20722893004BA072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF6AD5A20722893004BA072 /* Assets.xcassets */; };
-		CEF6AD5E20722893004BA072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF6AD5C20722893004BA072 /* LaunchScreen.storyboard */; };
 		CEF6AD6920722897004BA072 /* CryptaurLotteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD6820722897004BA072 /* CryptaurLotteryTests.swift */; };
 		CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD872072413E004BA072 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -60,7 +70,16 @@
 		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE1068182074D357004CD0B4 /* UInt256Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt256Extension.swift; sourceTree = "<group>"; };
+		CE0C41A92077FF1F00190A82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE0C41AB2077FF2100190A82 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE0C41AC2077FF2300190A82 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE0C41AD2077FF2500190A82 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE0C41AE2077FF2600190A82 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CE0C41AF2077FF2700190A82 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE0C41B3207816BD00190A82 /* LotteryCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryCardCell.swift; sourceTree = "<group>"; };
+		CE0C41B5207816E600190A82 /* LotteryCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LotteryCardCell.xib; sourceTree = "<group>"; };
+		CE0C41B72078244B00190A82 /* Diffable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffable.swift; sourceTree = "<group>"; };
+		CE1068182074D357004CD0B4 /* UInt256+FromHexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt256+FromHexString.swift"; sourceTree = "<group>"; };
 		CE254CDC2072940E00A12F72 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		CE254CDE2072956000A12F72 /* OperationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationService.swift; sourceTree = "<group>"; };
 		CE254CE4207299E400A12F72 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
@@ -75,12 +94,19 @@
 		CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FontBook.swift"; sourceTree = "<group>"; };
 		CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceResponseModel.swift; sourceTree = "<group>"; };
+		CE60B0B82077B24B00EEC363 /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
+		CE60B0BA2077B29800EEC363 /* UIBarButtonItem+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Menu.swift"; sourceTree = "<group>"; };
+		CE60B0BC2077B36B00EEC363 /* UIBarButtonItem+Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Badge.swift"; sourceTree = "<group>"; };
+		CE60B0BE2077C33D00EEC363 /* BadgeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeView.xib; sourceTree = "<group>"; };
+		CE60B0C02077C5AA00EEC363 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		CE60B0C62077C7FC00EEC363 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		CE60B0C82077C84600EEC363 /* UIViewController+FromStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+FromStoryboard.swift"; sourceTree = "<group>"; };
+		CE60B0CA2077C8A000EEC363 /* UIView+FromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FromNib.swift"; sourceTree = "<group>"; };
 		CE647F3A2075157400B334E3 /* JSONDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
 		CE647F3C2075178800B334E3 /* GetTicketPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceService.swift; sourceTree = "<group>"; };
 		CE647F3E2075182500B334E3 /* GetTicketPriceRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceRequestModel.swift; sourceTree = "<group>"; };
 		CE647F4020751C5C00B334E3 /* LotteryID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryID.swift; sourceTree = "<group>"; };
 		CEA6951B2076B1FB002B692D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
-		CEDAC84720755ED100E3EA36 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CEDAC8492076421600E3EA36 /* LotteryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryListViewController.swift; sourceTree = "<group>"; };
 		CEDAC84C20764D3F00E3EA36 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
 		CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordService.swift; sourceTree = "<group>"; };
@@ -91,23 +117,10 @@
 		CEF6AD5520722892004BA072 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CEF6AD5820722893004BA072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEF6AD5A20722893004BA072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEF6AD5D20722893004BA072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF6AD5F20722894004BA072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF6AD6420722897004BA072 /* CryptaurLotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptaurLotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF6AD6820722897004BA072 /* CryptaurLotteryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptaurLotteryTests.swift; sourceTree = "<group>"; };
 		CEF6AD6A20722897004BA072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEF6AD742072390E004BA072 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		CEF6AD7520723B24004BA072 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		CEF6AD7620723B24004BA072 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		CEF6AD7820723B37004BA072 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		CEF6AD7920723B54004BA072 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		CEF6AD7A20723B55004BA072 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		CEF6AD7B20723B75004BA072 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		CEF6AD7C20723B76004BA072 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		CEF6AD7D20723B86004BA072 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
-		CEF6AD7E20723B86004BA072 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		CEF6AD7F20723C83004BA072 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
-		CEF6AD8020723C83004BA072 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CEF6AD872072413E004BA072 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		F885CFA2FD24C5ABA0F7695F /* Pods-CryptaurLottery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +156,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE0C41B22078161B00190A82 /* LotteryCard */ = {
+			isa = PBXGroup;
+			children = (
+				CE0C41B3207816BD00190A82 /* LotteryCardCell.swift */,
+				CE0C41B5207816E600190A82 /* LotteryCardCell.xib */,
+			);
+			path = LotteryCard;
+			sourceTree = "<group>";
+		};
 		CE254CE0207295FD00A12F72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +172,7 @@
 				CE254CDC2072940E00A12F72 /* ServiceError.swift */,
 				CE254CE4207299E400A12F72 /* APIEndpoint.swift */,
 				CE647F4020751C5C00B334E3 /* LotteryID.swift */,
+				CE0C41B72078244B00190A82 /* Diffable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,15 +203,32 @@
 			children = (
 				CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */,
 				CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */,
-				CE1068182074D357004CD0B4 /* UInt256Extension.swift */,
+				CE1068182074D357004CD0B4 /* UInt256+FromHexString.swift */,
+				CE60B0BC2077B36B00EEC363 /* UIBarButtonItem+Badge.swift */,
+				CE60B0BA2077B29800EEC363 /* UIBarButtonItem+Menu.swift */,
+				CE60B0C62077C7FC00EEC363 /* NSObject+ClassName.swift */,
+				CE60B0C82077C84600EEC363 /* UIViewController+FromStoryboard.swift */,
+				CE60B0CA2077C8A000EEC363 /* UIView+FromNib.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE60B0B72077B22B00EEC363 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				CE60B0B82077B24B00EEC363 /* BadgeViewModel.swift */,
+				CE60B0C02077C5AA00EEC363 /* BadgeView.swift */,
+				CE60B0BE2077C33D00EEC363 /* BadgeView.xib */,
+			);
+			path = Badge;
 			sourceTree = "<group>";
 		};
 		CE647F392075155400B334E3 /* CommonComponents */ = {
 			isa = PBXGroup;
 			children = (
+				CE0C41B22078161B00190A82 /* LotteryCard */,
 				CEDAC84B20764D1400E3EA36 /* GradientBackground */,
+				CE60B0B72077B22B00EEC363 /* Badge */,
 				CE3084D920767F2E008C140C /* Balance */,
 			);
 			path = CommonComponents;
@@ -215,7 +255,6 @@
 			children = (
 				CEDEFF7620739A8600297A99 /* Services */,
 				CEDEFF7520739A7D00297A99 /* Models */,
-				CEDAC84720755ED100E3EA36 /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -268,8 +307,8 @@
 				CEF6AD86207240B3004BA072 /* Flows */,
 				CEF6AD5320722892004BA072 /* AppDelegate.swift */,
 				CEF6AD5A20722893004BA072 /* Assets.xcassets */,
-				CEF6AD5C20722893004BA072 /* LaunchScreen.storyboard */,
 				CEF6AD5F20722894004BA072 /* Info.plist */,
+				CE0C41AA2077FF1F00190A82 /* Localizable.strings */,
 			);
 			path = CryptaurLottery;
 			sourceTree = "<group>";
@@ -422,6 +461,9 @@
 				Base,
 				ru,
 				de,
+				fr,
+				"es-419",
+				vi,
 			);
 			mainGroup = CEF6AD4720722891004BA072;
 			productRefGroup = CEF6AD5120722892004BA072 /* Products */;
@@ -439,8 +481,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEDAC84820755ED100E3EA36 /* Login.storyboard in Resources */,
-				CEF6AD5E20722893004BA072 /* LaunchScreen.storyboard in Resources */,
+				CE60B0BF2077C33E00EEC363 /* BadgeView.xib in Resources */,
+				CE0C41A82077FF1F00190A82 /* Localizable.strings in Resources */,
+				CE0C41B6207816E600190A82 /* LotteryCardCell.xib in Resources */,
 				CE3084D42076788B008C140C /* OpenSans-SemiBold.ttf in Resources */,
 				CEF6AD5B20722893004BA072 /* Assets.xcassets in Resources */,
 				CE3A094E207668A400875A2C /* BalanceView.xib in Resources */,
@@ -599,24 +642,33 @@
 			files = (
 				CEA6951C2076B1FB002B692D /* BaseNavigationController.swift in Sources */,
 				CEDEFF8220739C2500297A99 /* LoginResponseModel.swift in Sources */,
+				CE60B0C92077C84600EEC363 /* UIViewController+FromStoryboard.swift in Sources */,
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
 				CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */,
 				CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */,
 				CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */,
+				CE60B0C72077C7FC00EEC363 /* NSObject+ClassName.swift in Sources */,
 				CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */,
 				CE3A094C2076688500875A2C /* BalanceView.swift in Sources */,
+				CE60B0BB2077B29800EEC363 /* UIBarButtonItem+Menu.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
-				CE1068192074D357004CD0B4 /* UInt256Extension.swift in Sources */,
+				CE1068192074D357004CD0B4 /* UInt256+FromHexString.swift in Sources */,
 				CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */,
 				CE254CDF2072956000A12F72 /* OperationService.swift in Sources */,
 				CE647F3B2075157400B334E3 /* JSONDeserializable.swift in Sources */,
+				CE60B0C12077C5AA00EEC363 /* BadgeView.swift in Sources */,
+				CE60B0B92077B24B00EEC363 /* BadgeViewModel.swift in Sources */,
 				CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */,
+				CE60B0CB2077C8A000EEC363 /* UIView+FromNib.swift in Sources */,
 				CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */,
+				CE0C41B82078244B00190A82 /* Diffable.swift in Sources */,
+				CE60B0BD2077B36B00EEC363 /* UIBarButtonItem+Badge.swift in Sources */,
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
 				CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */,
 				CE3084DB20767F71008C140C /* BalanceViewModel.swift in Sources */,
 				CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */,
+				CE0C41B4207816BD00190A82 /* LotteryCardCell.swift in Sources */,
 				CE647F3D2075178800B334E3 /* GetTicketPriceService.swift in Sources */,
 				CE647F4120751C5C00B334E3 /* LotteryID.swift in Sources */,
 				CE254CE5207299E400A12F72 /* APIEndpoint.swift in Sources */,
@@ -642,32 +694,25 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		CE0C41AA2077FF1F00190A82 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE0C41A92077FF1F00190A82 /* en */,
+				CE0C41AB2077FF2100190A82 /* ru */,
+				CE0C41AC2077FF2300190A82 /* de */,
+				CE0C41AD2077FF2500190A82 /* fr */,
+				CE0C41AE2077FF2600190A82 /* es-419 */,
+				CE0C41AF2077FF2700190A82 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		CEF6AD5720722893004BA072 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CEF6AD5820722893004BA072 /* Base */,
-				CEF6AD742072390E004BA072 /* en */,
-				CEF6AD7620723B24004BA072 /* ru */,
-				CEF6AD7A20723B55004BA072 /* de */,
-				CEF6AD7B20723B75004BA072 /* fr */,
-				CEF6AD7D20723B86004BA072 /* vi */,
-				CEF6AD7F20723C83004BA072 /* es-419 */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CEF6AD5C20722893004BA072 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEF6AD5D20722893004BA072 /* Base */,
-				CEF6AD7520723B24004BA072 /* ru */,
-				CEF6AD7820723B37004BA072 /* en */,
-				CEF6AD7920723B54004BA072 /* de */,
-				CEF6AD7C20723B76004BA072 /* fr */,
-				CEF6AD7E20723B86004BA072 /* vi */,
-				CEF6AD8020723C83004BA072 /* es-419 */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -787,6 +832,7 @@
 			baseConfigurationReference = 4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CryptaurLottery/Info.plist;
@@ -805,6 +851,7 @@
 			baseConfigurationReference = F885CFA2FD24C5ABA0F7695F /* Pods-CryptaurLottery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CryptaurLottery/Info.plist;

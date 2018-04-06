@@ -10,4 +10,12 @@ enum LotteryID: Int {
     case lottery4x20 = 1
     case lottery5x36
     case lottery6x42
+    
+    static let count = 3
+}
+
+extension LotteryID: Diffable {
+    var diffIdentifier: String {
+        return "\(self)"
+    }
 }

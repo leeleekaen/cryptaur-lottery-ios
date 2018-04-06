@@ -11,11 +11,11 @@ import RxCocoa
 import RxSwift
 
 final class BalanceView: UIView {
-    @IBOutlet weak var balanceTextButton: UIButton!
+    private var viewModel: BalanceViewModelProtocol!
 
-    private var viewModel: BalanceViewModel!
-    
-    func bind(viewModel: BalanceViewModel, disposeBag: DisposeBag) {
+    @IBOutlet private weak var balanceTextButton: UIButton!
+
+    func bind(viewModel: BalanceViewModelProtocol, disposeBag: DisposeBag) {
         self.viewModel = viewModel
         viewModel.balance.drive(onNext: { [weak self] in
             self?.balanceTextButton.setTitle($0, for: .normal)

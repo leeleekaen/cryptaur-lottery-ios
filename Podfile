@@ -12,7 +12,6 @@ target 'CryptaurLottery' do
   pod 'UInt256', :git => 'https://github.com/hyu2018/UInt256.git'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'iCarousel'
   pod 'PMNibLinkableView'
   
   target 'CryptaurLotteryTests' do

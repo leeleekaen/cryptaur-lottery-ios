@@ -12,6 +12,7 @@ class BaseNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationBar.tintColor = .white
         navigationBar.makeTransparent()
     }
 }

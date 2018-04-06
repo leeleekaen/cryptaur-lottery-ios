@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rCW-ao-a5x" customClass="LotteryCardCell" customModule="CryptaurLottery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="311" height="443"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="311" height="443"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDm-2C-rCA">
+                        <rect key="frame" x="12" y="73" width="287" height="362"/>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hS-54-wEH">
+                        <rect key="frame" x="20" y="65" width="271" height="362"/>
+                        <color key="backgroundColor" white="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09u-yJ-7jR">
+                        <rect key="frame" x="4" y="81" width="303" height="362"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balls-5x36" translatesAutoresizingMaskIntoConstraints="NO" id="bbP-L5-6aD">
+                        <rect key="frame" x="70" y="18" width="170" height="135"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="170" id="0Sb-8Z-CFw"/>
+                            <constraint firstAttribute="height" constant="135" id="HAA-ES-qhn"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="09u-yJ-7jR" secondAttribute="trailing" constant="4" id="5jO-JG-jrs"/>
+                <constraint firstItem="09u-yJ-7jR" firstAttribute="height" secondItem="HDm-2C-rCA" secondAttribute="height" id="6Fl-zD-LB5"/>
+                <constraint firstAttribute="trailing" secondItem="HDm-2C-rCA" secondAttribute="trailing" constant="12" id="Hk1-q2-6Ns"/>
+                <constraint firstItem="09u-yJ-7jR" firstAttribute="leading" secondItem="rCW-ao-a5x" secondAttribute="leading" constant="4" id="IFG-uI-fCU"/>
+                <constraint firstItem="bbP-L5-6aD" firstAttribute="centerX" secondItem="rCW-ao-a5x" secondAttribute="centerX" id="IPy-4N-BVw"/>
+                <constraint firstAttribute="bottom" secondItem="8hS-54-wEH" secondAttribute="bottom" constant="16" id="Mhu-ZH-wfR"/>
+                <constraint firstItem="8hS-54-wEH" firstAttribute="leading" secondItem="rCW-ao-a5x" secondAttribute="leading" constant="20" id="Pad-4m-ihc"/>
+                <constraint firstItem="09u-yJ-7jR" firstAttribute="top" secondItem="rCW-ao-a5x" secondAttribute="top" constant="81" id="aCS-Yr-soS"/>
+                <constraint firstItem="8hS-54-wEH" firstAttribute="height" secondItem="09u-yJ-7jR" secondAttribute="height" id="ahq-T4-GEZ"/>
+                <constraint firstAttribute="bottom" secondItem="HDm-2C-rCA" secondAttribute="bottom" constant="8" id="cB7-FO-Ofa"/>
+                <constraint firstAttribute="bottom" secondItem="09u-yJ-7jR" secondAttribute="bottom" id="gQk-zJ-XD0"/>
+                <constraint firstAttribute="trailing" secondItem="8hS-54-wEH" secondAttribute="trailing" constant="20" id="iMS-tt-kPt"/>
+                <constraint firstItem="bbP-L5-6aD" firstAttribute="top" secondItem="rCW-ao-a5x" secondAttribute="top" constant="18" id="iMe-bU-q7e"/>
+                <constraint firstItem="HDm-2C-rCA" firstAttribute="leading" secondItem="rCW-ao-a5x" secondAttribute="leading" constant="12" id="u5H-0q-P2T"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="M5W-12-2Fq"/>
+            <point key="canvasLocation" x="219" y="57"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="balls-5x36" width="170" height="135"/>
+    </resources>
+</document>
