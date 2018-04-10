@@ -23,6 +23,9 @@ class GradientBackgroundView: UIView {
         }
         set {
             gradientLayer.colors = newValue
+            if newValue != nil {
+                backgroundColor = nil
+            }
         }
     }
 }
