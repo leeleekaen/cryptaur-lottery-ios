@@ -29,6 +29,7 @@
 		CE3A094E207668A400875A2C /* BalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3A094D207668A400875A2C /* BalanceView.xib */; };
 		CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */; };
 		CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */; };
+		CE4AE98B2081D5C9000763F4 /* MyTicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4AE98A2081D5C8000763F4 /* MyTicketsViewController.swift */; };
 		CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */; };
 		CE60B0B92077B24B00EEC363 /* BadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60B0B82077B24B00EEC363 /* BadgeViewModel.swift */; };
 		CE60B0BB2077B29800EEC363 /* UIBarButtonItem+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60B0BA2077B29800EEC363 /* UIBarButtonItem+Menu.swift */; };
@@ -97,6 +98,7 @@
 		CE3A094D207668A400875A2C /* BalanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceView.xib; sourceTree = "<group>"; };
 		CE3D2DFB2072645900C28251 /* UIColor+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
 		CE3D2DFD207264BB00C28251 /* UIFont+FontBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+FontBook.swift"; sourceTree = "<group>"; };
+		CE4AE98A2081D5C8000763F4 /* MyTicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTicketsViewController.swift; sourceTree = "<group>"; };
 		CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTicketPriceResponseModel.swift; sourceTree = "<group>"; };
 		CE60B0B82077B24B00EEC363 /* BadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeViewModel.swift; sourceTree = "<group>"; };
 		CE60B0BA2077B29800EEC363 /* UIBarButtonItem+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Menu.swift"; sourceTree = "<group>"; };
@@ -224,6 +226,14 @@
 				CE60B0CA2077C8A000EEC363 /* UIView+FromNib.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE4AE9892081D57C000763F4 /* MyTickets */ = {
+			isa = PBXGroup;
+			children = (
+				CE4AE98A2081D5C8000763F4 /* MyTicketsViewController.swift */,
+			);
+			path = MyTickets;
 			sourceTree = "<group>";
 		};
 		CE60B0B72077B22B00EEC363 /* Badge */ = {
@@ -360,6 +370,7 @@
 		CEF6AD8920724A53004BA072 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CE4AE9892081D57C000763F4 /* MyTickets */,
 				CEDAC84E20764FF500E3EA36 /* LotteryListScreen */,
 				CEF8F9AB2073CDB50047A952 /* Models */,
 				CEF8F9AA2073CD1F0047A952 /* Services */,
@@ -677,6 +688,7 @@
 				9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */,
 				CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */,
 				CE0C41B82078244B00190A82 /* Diffable.swift in Sources */,
+				CE4AE98B2081D5C9000763F4 /* MyTicketsViewController.swift in Sources */,
 				CE60B0BD2077B36B00EEC363 /* UIBarButtonItem+Badge.swift in Sources */,
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
 				CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */,

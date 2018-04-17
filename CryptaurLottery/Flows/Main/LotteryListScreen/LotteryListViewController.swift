@@ -11,7 +11,7 @@ import IGListKit
 
 class LotteryListViewController: BaseViewController {
     @IBOutlet weak var gradientBackgroundView: GradientBackgroundView!
-
+    
     @IBOutlet weak var prizePoolAmountLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,17 +22,23 @@ class LotteryListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        title = " "
         gradientBackgroundView.gradientColors = [UIColor.lightblue, UIColor.lighterPurple].map {$0.cgColor}
         gradientBackgroundView.backgroundColor = .clear
 
         configureNavigationItem(showBalance: true)
 
-//        collectionView.collectionViewLayout = ListCollectionViewLayout(stickyHeaders: false, scrollDirection: .horizontal, topContentInset: 0, stretchToEdge: true)
         collectionView.contentInset = .zero
         
         adapter.collectionView = collectionView
         adapter.dataSource = self
+    }
+}
+
+extension BarButtonItemTargetActions where Self: LotteryListViewController {
+    func didTapMenuBarButtonItem() {
+        performSegue(withIdentifier: "ShowMyTickets", sender: nil)
     }
 }
 
@@ -46,7 +52,6 @@ extension LotteryListViewController: ListAdapterDataSource {
             // TODO
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
-            let size0 = collectionContext!.containerSize
             return CGSize(width: size.width - 56, height: size.height)
         }
         sectionController.inset = .zero
@@ -60,5 +65,4 @@ extension LotteryListViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         return lotteries.diffable()
     }
-    
 }
