@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
+		9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF8298208642310046A3F8 /* LoginViewController.swift */; };
+		9AFF829B208654B90046A3F8 /* LoginStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFF829A208654B90046A3F8 /* LoginStory.storyboard */; };
 		CE0C41A82077FF1F00190A82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41AA2077FF1F00190A82 /* Localizable.strings */; };
 		CE0C41B4207816BD00190A82 /* LotteryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C41B3207816BD00190A82 /* LotteryCardCell.swift */; };
 		CE0C41B6207816E600190A82 /* LotteryCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41B5207816E600190A82 /* LotteryCardCell.xib */; };
@@ -70,6 +72,8 @@
 		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AFF8298208642310046A3F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9AFF829A208654B90046A3F8 /* LoginStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStory.storyboard; sourceTree = "<group>"; };
 		CE0C41A92077FF1F00190A82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0C41AB2077FF2100190A82 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0C41AC2077FF2300190A82 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -154,6 +158,15 @@
 				11974E14894A7117C763BF3E /* Pods-CryptaurLotteryTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9AFF8297208642060046A3F8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9AFF8298208642310046A3F8 /* LoginViewController.swift */,
+				9AFF829A208654B90046A3F8 /* LoginStory.storyboard */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		CE0C41B22078161B00190A82 /* LotteryCard */ = {
@@ -253,6 +266,7 @@
 		CEDEFF7420738F5C00297A99 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9AFF8297208642060046A3F8 /* Screens */,
 				CEDEFF7620739A8600297A99 /* Services */,
 				CEDEFF7520739A7D00297A99 /* Models */,
 			);
@@ -485,6 +499,7 @@
 				CE0C41A82077FF1F00190A82 /* Localizable.strings in Resources */,
 				CE0C41B6207816E600190A82 /* LotteryCardCell.xib in Resources */,
 				CE3084D42076788B008C140C /* OpenSans-SemiBold.ttf in Resources */,
+				9AFF829B208654B90046A3F8 /* LoginStory.storyboard in Resources */,
 				CEF6AD5B20722893004BA072 /* Assets.xcassets in Resources */,
 				CE3A094E207668A400875A2C /* BalanceView.xib in Resources */,
 				CE3084D320767887008C140C /* OpenSans-Regular.ttf in Resources */,
@@ -596,7 +611,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/UInt256/UInt256.framework",
-				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -608,7 +622,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UInt256.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -661,6 +674,7 @@
 				CE60B0B92077B24B00EEC363 /* BadgeViewModel.swift in Sources */,
 				CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */,
 				CE60B0CB2077C8A000EEC363 /* UIView+FromNib.swift in Sources */,
+				9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */,
 				CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */,
 				CE0C41B82078244B00190A82 /* Diffable.swift in Sources */,
 				CE60B0BD2077B36B00EEC363 /* UIBarButtonItem+Badge.swift in Sources */,
@@ -835,6 +849,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y3R3Z3JF3Q;
 				INFOPLIST_FILE = CryptaurLottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -854,6 +869,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y3R3Z3JF3Q;
 				INFOPLIST_FILE = CryptaurLottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
