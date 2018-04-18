@@ -10,6 +10,9 @@
 		0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
 		9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0742F520872FA700283DA5 /* PinCodeViewController.swift */; };
+		9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */; };
+		9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */; };
+		9A9E83A72087882300D7E9BD /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */; };
 		9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF8298208642310046A3F8 /* LoginViewController.swift */; };
 		9AFF829B208654B90046A3F8 /* LoginStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFF829A208654B90046A3F8 /* LoginStory.storyboard */; };
 		CE0C41A82077FF1F00190A82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41AA2077FF1F00190A82 /* Localizable.strings */; };
@@ -75,6 +78,9 @@
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0742F520872FA700283DA5 /* PinCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
+		9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyTicketStory.storyboard; sourceTree = "<group>"; };
+		9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketContainerViewController.swift; sourceTree = "<group>"; };
+		9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
 		9AFF8298208642310046A3F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9AFF829A208654B90046A3F8 /* LoginStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStory.storyboard; sourceTree = "<group>"; };
 		CE0C41A92077FF1F00190A82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -162,6 +168,16 @@
 				11974E14894A7117C763BF3E /* Pods-CryptaurLotteryTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9A9E83A120877FC300D7E9BD /* BuyTicket */ = {
+			isa = PBXGroup;
+			children = (
+				9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */,
+				9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */,
+				9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */,
+			);
+			path = BuyTicket;
 			sourceTree = "<group>";
 		};
 		9AFF8297208642060046A3F8 /* Screens */ = {
@@ -364,6 +380,7 @@
 		CEF6AD86207240B3004BA072 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				9A9E83A120877FC300D7E9BD /* BuyTicket */,
 				CEDEFF7420738F5C00297A99 /* Login */,
 				CEF6AD8920724A53004BA072 /* Main */,
 			);
@@ -518,6 +535,7 @@
 				CE3A094E207668A400875A2C /* BalanceView.xib in Resources */,
 				CE3084D320767887008C140C /* OpenSans-Regular.ttf in Resources */,
 				CE3084D8207679A5008C140C /* SF-Pro-Text-Semibold.otf in Resources */,
+				9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */,
 				CE3084D7207679A3008C140C /* SF-Pro-Text-Regular.otf in Resources */,
 				CEF6AD5920722893004BA072 /* Main.storyboard in Resources */,
 			);
@@ -678,6 +696,7 @@
 				CE60B0C72077C7FC00EEC363 /* NSObject+ClassName.swift in Sources */,
 				CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */,
 				CE3A094C2076688500875A2C /* BalanceView.swift in Sources */,
+				9A9E83A72087882300D7E9BD /* BuyTicketViewController.swift in Sources */,
 				CE60B0BB2077B29800EEC363 /* UIBarButtonItem+Menu.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
@@ -685,6 +704,7 @@
 				CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */,
 				CE254CDF2072956000A12F72 /* OperationService.swift in Sources */,
 				CE647F3B2075157400B334E3 /* JSONDeserializable.swift in Sources */,
+				9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */,
 				CE60B0C12077C5AA00EEC363 /* BadgeView.swift in Sources */,
 				CE60B0B92077B24B00EEC363 /* BadgeViewModel.swift in Sources */,
 				CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */,
