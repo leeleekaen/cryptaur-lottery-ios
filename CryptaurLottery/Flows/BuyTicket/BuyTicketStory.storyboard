@@ -26,12 +26,22 @@
                                     <segment title="Rules"/>
                                 </segments>
                             </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILC-uq-gBq">
+                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
+                                <connections>
+                                    <segue destination="JMv-ca-pJJ" kind="embed" id="c2a-fb-y7E"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Sc8-ur-dxP" firstAttribute="top" secondItem="oYw-iX-RHC" secondAttribute="top" id="3nl-PD-tlB"/>
                             <constraint firstItem="Sc8-ur-dxP" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" constant="10" id="Qc9-rI-FJU"/>
+                            <constraint firstItem="oYw-iX-RHC" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="SyM-FZ-f0q"/>
                             <constraint firstItem="oYw-iX-RHC" firstAttribute="trailing" secondItem="Sc8-ur-dxP" secondAttribute="trailing" constant="10" id="YpE-Zq-qgI"/>
+                            <constraint firstItem="ILC-uq-gBq" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" id="qSo-mg-i70"/>
+                            <constraint firstItem="ILC-uq-gBq" firstAttribute="top" secondItem="Sc8-ur-dxP" secondAttribute="bottom" constant="10" id="slk-kp-b2g"/>
+                            <constraint firstItem="oYw-iX-RHC" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="wMP-rJ-Gav"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oYw-iX-RHC"/>
                     </view>
@@ -61,6 +71,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TD2-7r-S4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="304.80000000000001" y="-34.632683658170919"/>
+        </scene>
+        <!--Buy Ticket View Controller-->
+        <scene sceneID="msw-va-Wyg">
+            <objects>
+                <viewController id="JMv-ca-pJJ" customClass="BuyTicketViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WC9-mv-SuB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WW3-y8-WwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="-184"/>
         </scene>
     </scenes>
 </document>
