@@ -52,7 +52,7 @@ extension APIEndpoint {
         return APIEndpoint(.get, "api/refresh")
     }
     static var connect: APIEndpoint {
-        return APIEndpoint(.post, "connect/token", "http://192.168.4.199:5000")
+        return APIEndpoint(.post, "connect/token", "http://54.245.214.56:24872")
     }
     
 }

@@ -12,12 +12,21 @@ enum ServiceError: Error {
     case invalidResponseFormat
     case deserializationFailure
     
-    case api(code: String, message: String?)
+    case api(code: String?, message: String?)
     
     init?(json: JSONDictionary) {
-        guard let code = json["code"] as? String else {
-            return nil
+        let error = json["error"] as? String
+        let errorDescription = json["error_description"] as? String
+        if let code = error, let message = errorDescription  {
+            self = .api(code: code, message: message)
+            return
         }
-        self = .api(code: code, message: json["message"] as? String)
+
+//        if let code = json["code"] as? String {
+//            self = .api(code: code, message: json["message"] as? String)
+//            return
+//        }
+        
+        return nil
     }
 }

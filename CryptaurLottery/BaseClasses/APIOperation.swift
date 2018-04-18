@@ -31,8 +31,8 @@ class APIOperation: Operation {
         return endpoint
     }
     
-    final func createRequest() -> Alamofire.DataRequest {
-        return Alamofire.request(URL(with: endpoint), method: endpoint.method.asAlamofireMethod(), parameters: parameters, encoding: URLEncoding.default, headers: headers)
+    func createRequest() -> Alamofire.DataRequest {
+        return Alamofire.request(URL(with: endpoint), method: endpoint.method.asAlamofireMethod(), parameters: parameters, encoding: JSONEncoding.default, headers: headers)
     }
     
     final override func main() {
@@ -84,7 +84,7 @@ extension APIEndpoint: URLConvertible {
     }
 }
 
-fileprivate extension APIEndpoint.Method {
+extension APIEndpoint.Method {
     func asAlamofireMethod() -> Alamofire.HTTPMethod {
         switch self {
         case .get:

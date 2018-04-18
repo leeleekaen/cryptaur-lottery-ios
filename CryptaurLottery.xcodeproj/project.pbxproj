@@ -342,9 +342,9 @@
 		CEF6AD5220722892004BA072 /* CryptaurLottery */ = {
 			isa = PBXGroup;
 			children = (
+				CEF6AD85207240A5004BA072 /* BaseClasses */,
 				CE3084D020767851008C140C /* Fonts */,
 				CE647F392075155400B334E3 /* CommonComponents */,
-				CEF6AD85207240A5004BA072 /* BaseClasses */,
 				CE254CE0207295FD00A12F72 /* Models */,
 				CE3D2DFA20725C4000C28251 /* Extensions */,
 				CEF6AD86207240B3004BA072 /* Flows */,
