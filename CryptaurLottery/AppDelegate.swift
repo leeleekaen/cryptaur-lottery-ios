@@ -23,13 +23,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func developmentTest() {
-//        let service = ConnectTokenService()
-//        let request = ConnectTokenRequestModel(username: "a.rytikov@nordavind.ru", password: "qwe123", pin: nil)
-//        service.perform(input: request, success: { (response) in
-//            print(response)
-//        }) { (error) in
-//            print(error)
-//        }
-//    }
+    }
 }
 
