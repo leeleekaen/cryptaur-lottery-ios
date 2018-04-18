@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
+		9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0742F520872FA700283DA5 /* PinCodeViewController.swift */; };
 		9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF8298208642310046A3F8 /* LoginViewController.swift */; };
 		9AFF829B208654B90046A3F8 /* LoginStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFF829A208654B90046A3F8 /* LoginStory.storyboard */; };
 		CE0C41A82077FF1F00190A82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41AA2077FF1F00190A82 /* Localizable.strings */; };
@@ -72,6 +73,7 @@
 		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0742F520872FA700283DA5 /* PinCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
 		9AFF8298208642310046A3F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9AFF829A208654B90046A3F8 /* LoginStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStory.storyboard; sourceTree = "<group>"; };
 		CE0C41A92077FF1F00190A82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				9AFF8298208642310046A3F8 /* LoginViewController.swift */,
+				9A0742F520872FA700283DA5 /* PinCodeViewController.swift */,
 				9AFF829A208654B90046A3F8 /* LoginStory.storyboard */,
 			);
 			path = Screens;
@@ -660,6 +663,7 @@
 				CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */,
 				CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */,
 				CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */,
+				9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */,
 				CE60B0C72077C7FC00EEC363 /* NSObject+ClassName.swift in Sources */,
 				CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */,
 				CE3A094C2076688500875A2C /* BalanceView.swift in Sources */,
