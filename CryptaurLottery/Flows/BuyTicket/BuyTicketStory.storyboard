@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="giO-rB-FoF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,13 +17,50 @@
                     <view key="view" contentMode="scaleToFill" id="KB7-RW-baQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sc8-ur-dxP">
+                                <rect key="frame" x="10" y="64" width="355" height="29"/>
+                                <segments>
+                                    <segment title="Ticket"/>
+                                    <segment title="Draw Archive"/>
+                                    <segment title="Rules"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sc8-ur-dxP" firstAttribute="top" secondItem="oYw-iX-RHC" secondAttribute="top" id="3nl-PD-tlB"/>
+                            <constraint firstItem="Sc8-ur-dxP" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" constant="10" id="Qc9-rI-FJU"/>
+                            <constraint firstItem="oYw-iX-RHC" firstAttribute="trailing" secondItem="Sc8-ur-dxP" secondAttribute="trailing" constant="10" id="YpE-Zq-qgI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oYw-iX-RHC"/>
                     </view>
+                    <navigationItem key="navigationItem" id="IAX-gb-zDW"/>
+                    <connections>
+                        <outlet property="changeSubview" destination="Sc8-ur-dxP" id="NCa-sE-yQ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eug-OZ-XQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="-34"/>
+            <point key="canvasLocation" x="1065" y="-35"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cds-ce-T6M">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="giO-rB-FoF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pox-78-FGp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bMy-4R-sXO" kind="relationship" relationship="rootViewController" id="DAf-91-IPA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TD2-7r-S4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="-34.632683658170919"/>
         </scene>
     </scenes>
 </document>
