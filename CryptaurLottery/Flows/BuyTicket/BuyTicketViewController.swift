@@ -2,13 +2,18 @@ import UIKit
 
 class BuyTicketViewController: UIViewController {
 
+    // MARK: - IBoutlets
+    @IBOutlet var numbers: [UIButton]!
+    
     // MARK: - IBAction
     @IBAction func clear(_ sender: UIButton) {
-        print("Clear button pressed")
+        numbers.forEach {
+            $0.setBackgroundImage(nil, for: .normal)
+            $0.setTitleColor(.twilight, for: .normal)
+        }
     }
     
     @IBAction func numpadAction(_ sender: UIButton) {
-        print("\(sender.titleLabel?.text ?? "") is tapped")
         if sender.currentBackgroundImage == nil {
             sender.setBackgroundImage(#imageLiteral(resourceName: "number-button-background"), for: .normal)
             sender.setTitleColor(.white, for: .normal)
