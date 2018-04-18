@@ -737,16 +737,34 @@
                                     <constraint firstAttribute="width" secondItem="MqO-so-j9l" secondAttribute="height" multiplier="1:1" id="XqO-dG-DAk"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjz-fA-Vff">
+                                <rect key="frame" x="46" y="485" width="283" height="50"/>
+                                <state key="normal" title="Buy for 200 000.000 CPT" backgroundImage="buy-ticket-button-background"/>
+                                <connections>
+                                    <action selector="buyAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="dxl-AA-50k"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available 100,000.00000000 CPT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXd-iA-wzU">
+                                <rect key="frame" x="95.5" y="454.5" width="183.5" height="16.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="12"/>
+                                <color key="textColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0FR-z2-ldK" firstAttribute="leading" secondItem="WC9-mv-SuB" secondAttribute="leadingMargin" constant="20" id="24J-0T-okV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kjz-fA-Vff" secondAttribute="trailing" constant="30" id="3gu-4L-fHs"/>
                             <constraint firstItem="MqO-so-j9l" firstAttribute="top" secondItem="0FR-z2-ldK" secondAttribute="bottom" constant="10" id="54Z-hO-fOk"/>
                             <constraint firstItem="MqO-so-j9l" firstAttribute="leading" secondItem="WC9-mv-SuB" secondAttribute="leadingMargin" constant="10" id="6Oo-vN-UWo"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Kjz-fA-Vff" secondAttribute="bottom" constant="30" id="EXR-gt-IUv"/>
                             <constraint firstItem="aH2-Sm-1er" firstAttribute="centerY" secondItem="0FR-z2-ldK" secondAttribute="centerY" id="IUx-9P-u3F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aH2-Sm-1er" secondAttribute="trailing" constant="20" id="Ntu-cF-iQG"/>
                             <constraint firstItem="MqO-so-j9l" firstAttribute="centerX" secondItem="WC9-mv-SuB" secondAttribute="centerX" id="Vo9-bH-8kG"/>
                             <constraint firstItem="0FR-z2-ldK" firstAttribute="top" secondItem="WC9-mv-SuB" secondAttribute="topMargin" constant="10" id="kkc-dN-oc0"/>
+                            <constraint firstItem="Kjz-fA-Vff" firstAttribute="leading" secondItem="WC9-mv-SuB" secondAttribute="leadingMargin" constant="30" id="tVJ-W8-QaQ"/>
+                            <constraint firstItem="WXd-iA-wzU" firstAttribute="centerX" secondItem="WC9-mv-SuB" secondAttribute="centerX" id="vHx-To-fvF"/>
+                            <constraint firstItem="Kjz-fA-Vff" firstAttribute="top" secondItem="WXd-iA-wzU" secondAttribute="bottom" constant="14" id="zwH-kT-fEh"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -755,4 +773,7 @@
             <point key="canvasLocation" x="1897" y="-184"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="buy-ticket-button-background" width="50" height="50"/>
+    </resources>
 </document>

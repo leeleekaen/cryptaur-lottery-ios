@@ -12,6 +12,10 @@ class BuyTicketViewController: UIViewController {
         print("\(sender.titleLabel?.text ?? "") is tapped")
     }
     
+    @IBAction func buyAction(_ sender: UIButton) {
+        print("Buy tapped")
+    }
+    
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
