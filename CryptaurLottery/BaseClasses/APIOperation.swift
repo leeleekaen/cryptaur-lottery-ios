@@ -76,7 +76,8 @@ extension APIEndpoint: URLConvertible {
     }
     
     func asURL() throws -> URL {
-        guard let url = URL(string: path, relativeTo: BaseURLStorage.baseUrl) else {
+        let baseURL = self.baseURL ?? BaseURLStorage.baseUrl
+        guard let url = URL(string: path, relativeTo: baseURL) else {
             throw AFError.invalidURL(url: self)
         }
         return url

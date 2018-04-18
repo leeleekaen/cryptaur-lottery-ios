@@ -50,7 +50,7 @@ extension UInt256 {
         ]
         let strings = subStrings.map { String($0) }
         
-        let components = strings.flatMap { UInt64($0, radix: 16) }
+        let components = strings.compactMap { UInt64($0, radix: 16) }
         
         guard components.count == 4 else {
             return nil

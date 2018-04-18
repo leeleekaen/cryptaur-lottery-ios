@@ -50,9 +50,9 @@
 		CEA6951C2076B1FB002B692D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6951B2076B1FB002B692D /* BaseNavigationController.swift */; };
 		CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDAC8492076421600E3EA36 /* LotteryListViewController.swift */; };
 		CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDAC84C20764D3F00E3EA36 /* GradientBackgroundView.swift */; };
-		CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */; };
-		CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */; };
-		CEDEFF8220739C2500297A99 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */; };
+		CEDEFF7820739AB400297A99 /* ConnectTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7720739AB400297A99 /* ConnectTokenService.swift */; };
+		CEDEFF7E20739B8400297A99 /* ConnectTokenRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF7D20739B8400297A99 /* ConnectTokenRequestModel.swift */; };
+		CEDEFF8220739C2500297A99 /* ConnectTokenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEFF8120739C2500297A99 /* ConnectTokenResponseModel.swift */; };
 		CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD5320722892004BA072 /* AppDelegate.swift */; };
 		CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6AD5520722892004BA072 /* BaseViewController.swift */; };
 		CEF6AD5920722893004BA072 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF6AD5720722893004BA072 /* Main.storyboard */; };
@@ -123,9 +123,9 @@
 		CEA6951B2076B1FB002B692D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		CEDAC8492076421600E3EA36 /* LotteryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryListViewController.swift; sourceTree = "<group>"; };
 		CEDAC84C20764D3F00E3EA36 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
-		CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordService.swift; sourceTree = "<group>"; };
-		CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordRequestModel.swift; sourceTree = "<group>"; };
-		CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
+		CEDEFF7720739AB400297A99 /* ConnectTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectTokenService.swift; sourceTree = "<group>"; };
+		CEDEFF7D20739B8400297A99 /* ConnectTokenRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectTokenRequestModel.swift; sourceTree = "<group>"; };
+		CEDEFF8120739C2500297A99 /* ConnectTokenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectTokenResponseModel.swift; sourceTree = "<group>"; };
 		CEF6AD5020722892004BA072 /* CryptaurLottery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptaurLottery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF6AD5320722892004BA072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF6AD5520722892004BA072 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -305,8 +305,8 @@
 		CEDEFF7520739A7D00297A99 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CEDEFF7D20739B8400297A99 /* LoginPasswordRequestModel.swift */,
-				CEDEFF8120739C2500297A99 /* LoginResponseModel.swift */,
+				CEDEFF7D20739B8400297A99 /* ConnectTokenRequestModel.swift */,
+				CEDEFF8120739C2500297A99 /* ConnectTokenResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 		CEDEFF7620739A8600297A99 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CEDEFF7720739AB400297A99 /* LoginPasswordService.swift */,
+				CEDEFF7720739AB400297A99 /* ConnectTokenService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -686,7 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA6951C2076B1FB002B692D /* BaseNavigationController.swift in Sources */,
-				CEDEFF8220739C2500297A99 /* LoginResponseModel.swift in Sources */,
+				CEDEFF8220739C2500297A99 /* ConnectTokenResponseModel.swift in Sources */,
 				CE60B0C92077C84600EEC363 /* UIViewController+FromStoryboard.swift in Sources */,
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
 				CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */,
@@ -707,10 +707,10 @@
 				9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */,
 				CE60B0C12077C5AA00EEC363 /* BadgeView.swift in Sources */,
 				CE60B0B92077B24B00EEC363 /* BadgeViewModel.swift in Sources */,
-				CEDEFF7E20739B8400297A99 /* LoginPasswordRequestModel.swift in Sources */,
+				CEDEFF7E20739B8400297A99 /* ConnectTokenRequestModel.swift in Sources */,
 				CE60B0CB2077C8A000EEC363 /* UIView+FromNib.swift in Sources */,
 				9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */,
-				CEDEFF7820739AB400297A99 /* LoginPasswordService.swift in Sources */,
+				CEDEFF7820739AB400297A99 /* ConnectTokenService.swift in Sources */,
 				CE0C41B82078244B00190A82 /* Diffable.swift in Sources */,
 				CE4AE98B2081D5C9000763F4 /* MyTicketsViewController.swift in Sources */,
 				CE60B0BD2077B36B00EEC363 /* UIBarButtonItem+Badge.swift in Sources */,

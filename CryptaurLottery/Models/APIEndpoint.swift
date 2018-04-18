@@ -6,6 +6,8 @@
 //  Copyright © 2018 Nordavind. All rights reserved.
 //
 
+import Foundation
+
 struct APIEndpoint {
     enum Method: String {
         case get = "GET"
@@ -14,10 +16,19 @@ struct APIEndpoint {
     
     let method: Method
     let path: String
+    let baseURLString: String?
     
-    fileprivate init(_ method: Method, _ path: String) {
+    var baseURL: URL? {
+        guard let baseURLString = baseURLString else {
+            return nil
+        }
+        return URL(string: baseURLString)
+    }
+    
+    fileprivate init(_ method: Method, _ path: String, _ baseURLString: String? = nil) {
         self.method = method
         self.path = path
+        self.baseURLString = baseURLString
     }
 }
 
@@ -37,10 +48,11 @@ extension APIEndpoint {
     static var getPlayerTickets: APIEndpoint {
         return APIEndpoint(.get, "api/getPlayerTickets")
     }
-    static var login: APIEndpoint {
-        return APIEndpoint(.post, "api/login")
-    }
     static var refresh: APIEndpoint {
         return APIEndpoint(.get, "api/refresh")
     }
+    static var connect: APIEndpoint {
+        return APIEndpoint(.post, "connect/token", "http://192.168.4.199:5000")
+    }
+    
 }
