@@ -6,9 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Buy Ticket Container View Controller-->
         <scene sceneID="Oe4-Wx-hWk">
@@ -79,7 +85,31 @@
                     <view key="view" contentMode="scaleToFill" id="WC9-mv-SuB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT 6 NUMBERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-z2-ldK">
+                                <rect key="frame" x="36" y="30" width="103" height="15"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
+                                <color key="textColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aH2-Sm-1er">
+                                <rect key="frame" x="305" y="24" width="34" height="27"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
+                                <state key="normal" title="CLEAR">
+                                    <color key="titleColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clear:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="OYY-Ql-nQu"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0FR-z2-ldK" firstAttribute="leading" secondItem="WC9-mv-SuB" secondAttribute="leadingMargin" constant="20" id="24J-0T-okV"/>
+                            <constraint firstItem="aH2-Sm-1er" firstAttribute="centerY" secondItem="0FR-z2-ldK" secondAttribute="centerY" id="IUx-9P-u3F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aH2-Sm-1er" secondAttribute="trailing" constant="20" id="Ntu-cF-iQG"/>
+                            <constraint firstItem="0FR-z2-ldK" firstAttribute="top" secondItem="WC9-mv-SuB" secondAttribute="topMargin" constant="10" id="kkc-dN-oc0"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WW3-y8-WwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
