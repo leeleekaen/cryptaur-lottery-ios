@@ -127,6 +127,7 @@ address to login</string>
                     <connections>
                         <outlet property="loginTextField" destination="yNj-Kb-Phj" id="TEk-ZJ-iWK"/>
                         <outlet property="passwordTextField" destination="7aY-df-rxw" id="mgD-hZ-HF7"/>
+                        <outlet property="submitButton" destination="WDZ-kI-tMq" id="XBU-Rq-GVT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YP8-Z9-1S4" userLabel="First Responder" sceneMemberID="firstResponder"/>

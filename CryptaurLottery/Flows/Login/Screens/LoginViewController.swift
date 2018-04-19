@@ -1,14 +1,26 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
-class LoginViewController: BaseViewController {
-
+final class LoginViewController: BaseViewController {
+    private let viewModel: LoginViewModel! = LoginViewModel()
+    
     // MARK: - IBOutlets
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var submitButton: UIButton!
+    
+    private var login: Driver<String?> {
+        return loginTextField.rx.value.asDriver(onErrorJustReturn: nil)
+    }
+    private var password: Driver<String?> {
+        return passwordTextField.rx.value.asDriver(onErrorJustReturn: nil)
+    }
 
     // MARK: - IBAction
     @IBAction func loginButtonAction(_ sender: UIButton) {
-        print("Login button tapped")
+        viewModel.submit()
     }
 
     @IBAction func forgotPasswordAction(_ sender: UIButton) {
@@ -16,6 +28,7 @@ class LoginViewController: BaseViewController {
     }
 
     @IBAction func endInputText(_ sender: UITextField) {
+        
     }
 
     // MARK: - ViewController lifecycle
@@ -23,6 +36,22 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
 
         configureSubviews()
+    }
+    
+    override func bind() {
+        bind(viewModel)
+
+        login.drive(onNext: { [weak viewModel = self.viewModel] in
+            viewModel?.usernameRelay.accept($0)
+        }).disposed(by: disposeBag)
+        
+        password.drive(onNext: { [weak viewModel = self.viewModel] in
+            viewModel?.passwordRelay.accept($0)
+        }).disposed(by: disposeBag)
+        
+        viewModel.canSubmit.drive(onNext: { [weak self] in
+            self?.submitButton.isEnabled = $0
+        }).disposed(by: disposeBag)
     }
 }
 

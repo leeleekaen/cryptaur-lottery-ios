@@ -8,15 +8,32 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 protocol BarButtonItemTargetActions {
     func didTapMenuBarButtonItem()
 }
 
-class BaseViewController: UIViewController, BarButtonItemTargetActions {
-    
+class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceErrorAlertPresenter {
     final let disposeBag = DisposeBag()
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bind()
+    }
+    
+    func bind() {
+    }
+    
+    final func bind(_ viewModel: BaseViewModel) {
+        viewModel.error.drive(onNext: { [weak self] error in
+            guard let error = error as? ServiceError else {
+                return
+            }
+            self?.present(error: error)
+        }).disposed(by: disposeBag)
+    }
+    
     final func configureNavigationItem(showBalance: Bool) {
         if showBalance {
             navigationItem.titleView = createBalanceView()
