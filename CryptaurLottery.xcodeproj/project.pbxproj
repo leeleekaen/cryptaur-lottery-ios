@@ -12,6 +12,8 @@
 		22C18CE320882DF200DBBCD8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C18CE220882DF200DBBCD8 /* MenuViewController.swift */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
 		9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0742F520872FA700283DA5 /* PinCodeViewController.swift */; };
+		9A0D138B20889EA300B5A630 /* MyTicketsCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A0D138920889EA200B5A630 /* MyTicketsCardCell.xib */; };
+		9A0D138C20889EA300B5A630 /* MyTicketsCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D138A20889EA300B5A630 /* MyTicketsCardCell.swift */; };
 		9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */; };
 		9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */; };
 		9A9E83A72087882300D7E9BD /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */; };
@@ -82,6 +84,8 @@
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0742F520872FA700283DA5 /* PinCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
+		9A0D138920889EA200B5A630 /* MyTicketsCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTicketsCardCell.xib; sourceTree = "<group>"; };
+		9A0D138A20889EA300B5A630 /* MyTicketsCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTicketsCardCell.swift; sourceTree = "<group>"; };
 		9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyTicketStory.storyboard; sourceTree = "<group>"; };
 		9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketContainerViewController.swift; sourceTree = "<group>"; };
 		9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 		CE4AE9892081D57C000763F4 /* MyTickets */ = {
 			isa = PBXGroup;
 			children = (
+				9A0D138A20889EA300B5A630 /* MyTicketsCardCell.swift */,
+				9A0D138920889EA200B5A630 /* MyTicketsCardCell.xib */,
 				CE4AE98A2081D5C8000763F4 /* MyTicketsViewController.swift */,
 			);
 			path = MyTickets;
@@ -555,6 +561,7 @@
 				9AFF829B208654B90046A3F8 /* LoginStory.storyboard in Resources */,
 				CEF6AD5B20722893004BA072 /* Assets.xcassets in Resources */,
 				CE3A094E207668A400875A2C /* BalanceView.xib in Resources */,
+				9A0D138B20889EA300B5A630 /* MyTicketsCardCell.xib in Resources */,
 				CE3084D320767887008C140C /* OpenSans-Regular.ttf in Resources */,
 				CE3084D8207679A5008C140C /* SF-Pro-Text-Semibold.otf in Resources */,
 				9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */,
@@ -739,6 +746,7 @@
 				CE60B0BD2077B36B00EEC363 /* UIBarButtonItem+Badge.swift in Sources */,
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
 				CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */,
+				9A0D138C20889EA300B5A630 /* MyTicketsCardCell.swift in Sources */,
 				CE3084DB20767F71008C140C /* BalanceViewModel.swift in Sources */,
 				CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */,
 				22C18CE320882DF200DBBCD8 /* MenuViewController.swift in Sources */,

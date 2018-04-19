@@ -38,6 +38,7 @@ class LotteryListViewController: BaseViewController {
 
 extension BarButtonItemTargetActions where Self: LotteryListViewController {
     func didTapMenuBarButtonItem() {
+        
         performSegue(withIdentifier: "ShowMyTickets", sender: nil)
     }
 }
