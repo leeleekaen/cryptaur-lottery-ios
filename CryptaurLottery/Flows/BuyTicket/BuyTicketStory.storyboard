@@ -34,21 +34,34 @@
                                     <segment title="Draw Archive"/>
                                     <segment title="Rules"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeSubviewAction:" destination="bMy-4R-sXO" eventType="valueChanged" id="tDS-rN-rz6"/>
+                                </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILC-uq-gBq">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILC-uq-gBq" userLabel="Buy Ticket">
                                 <rect key="frame" x="0.0" y="102" width="375" height="565"/>
                                 <connections>
                                     <segue destination="JMv-ca-pJJ" kind="embed" id="c2a-fb-y7E"/>
+                                </connections>
+                            </containerView>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eq6-BS-K3B" userLabel="Draw Archive">
+                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
+                                <connections>
+                                    <segue destination="Gub-98-f5t" kind="embed" id="kq7-Yn-Q7Q"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Sc8-ur-dxP" firstAttribute="top" secondItem="oYw-iX-RHC" secondAttribute="top" id="3nl-PD-tlB"/>
+                            <constraint firstItem="eq6-BS-K3B" firstAttribute="top" secondItem="ILC-uq-gBq" secondAttribute="top" id="J0h-EH-5BN"/>
                             <constraint firstItem="Sc8-ur-dxP" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" constant="10" id="Qc9-rI-FJU"/>
                             <constraint firstItem="oYw-iX-RHC" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="SyM-FZ-f0q"/>
                             <constraint firstItem="oYw-iX-RHC" firstAttribute="trailing" secondItem="Sc8-ur-dxP" secondAttribute="trailing" constant="10" id="YpE-Zq-qgI"/>
+                            <constraint firstItem="eq6-BS-K3B" firstAttribute="leading" secondItem="ILC-uq-gBq" secondAttribute="leading" id="gsg-KT-X8K"/>
+                            <constraint firstItem="eq6-BS-K3B" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="hLj-0A-QJO"/>
                             <constraint firstItem="ILC-uq-gBq" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" id="qSo-mg-i70"/>
+                            <constraint firstItem="eq6-BS-K3B" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="rYF-6j-afz"/>
                             <constraint firstItem="ILC-uq-gBq" firstAttribute="top" secondItem="Sc8-ur-dxP" secondAttribute="bottom" constant="10" id="slk-kp-b2g"/>
                             <constraint firstItem="oYw-iX-RHC" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="wMP-rJ-Gav"/>
                         </constraints>
@@ -56,7 +69,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="IAX-gb-zDW"/>
                     <connections>
+                        <outlet property="buyTicketSubview" destination="ILC-uq-gBq" id="JN5-g3-S7X"/>
                         <outlet property="changeSubview" destination="Sc8-ur-dxP" id="NCa-sE-yQ8"/>
+                        <outlet property="drawArchiveSubview" destination="eq6-BS-K3B" id="SMl-86-AmI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eug-OZ-XQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -761,6 +776,7 @@
                             <constraint firstItem="WXd-iA-wzU" firstAttribute="centerX" secondItem="WC9-mv-SuB" secondAttribute="centerX" id="vHx-To-fvF"/>
                             <constraint firstItem="Kjz-fA-Vff" firstAttribute="top" secondItem="WXd-iA-wzU" secondAttribute="bottom" constant="14" id="zwH-kT-fEh"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="PP5-TV-cqH"/>
                     </view>
                     <connections>
                         <outletCollection property="numbers" destination="gCJ-Bq-xFi" collectionClass="NSMutableArray" id="3Ya-7v-X5I"/>
@@ -810,6 +826,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WW3-y8-WwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1897" y="-184"/>
+        </scene>
+        <!--Draw Archive View Controller-->
+        <scene sceneID="GpO-N7-RtH">
+            <objects>
+                <viewController id="Gub-98-f5t" customClass="DrawArchiveViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dqD-fX-Y5s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oko-XQ-2kB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="545"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3py-EX-Vyh">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oko-XQ-2kB" firstAttribute="leading" secondItem="dqD-fX-Y5s" secondAttribute="leading" id="1Jc-df-8DS"/>
+                            <constraint firstAttribute="trailing" secondItem="oko-XQ-2kB" secondAttribute="trailing" id="7Nv-vm-BJS"/>
+                            <constraint firstItem="oko-XQ-2kB" firstAttribute="top" secondItem="dqD-fX-Y5s" secondAttribute="topMargin" id="k4U-TV-PzB"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="oko-XQ-2kB" secondAttribute="bottom" id="sel-qH-2PL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="oko-XQ-2kB" id="bVl-nQ-UFp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gw9-p6-W7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="430"/>
         </scene>
     </scenes>
     <resources>

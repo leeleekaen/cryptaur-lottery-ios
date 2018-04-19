@@ -1,11 +1,35 @@
 import UIKit
 
-class BuyTicketContainerViewController: UIViewController {
+class BuyTicketContainerViewController: BaseViewController {
 
     // MARK: - IBoutlet
+    @IBOutlet weak var buyTicketSubview: UIView!
+    @IBOutlet weak var drawArchiveSubview: UIView!
+    
     @IBOutlet weak var changeSubview: UISegmentedControl! {
         didSet {
             changeSubview.tintColor = UIColor.heather
+        }
+    }
+    
+    // MARK: - IBAction
+    @IBAction func changeSubviewAction(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            print("Buy ticket")
+            buyTicketSubview.isHidden = false
+            drawArchiveSubview.isHidden = true
+            view.backgroundColor = UIColor.paleLavender
+        case 1:
+            print("Draw archive")
+            buyTicketSubview.isHidden = true
+            drawArchiveSubview.isHidden = false
+            view.backgroundColor = UIColor.darkTwo
+        case 2:
+            print("Rules")
+        default:
+            fatalError("Unknown segment")
         }
     }
     

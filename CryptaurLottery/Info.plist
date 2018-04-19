@@ -47,7 +47,7 @@
 		<string>OpenSans-SemiBold.ttf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
-	<string>LoginStory</string>
+	<string>BuyTicketStory</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
