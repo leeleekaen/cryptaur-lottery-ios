@@ -1,6 +1,11 @@
 import UIKit
 
-class PinCodeViewController: UIViewController {
+class PinCodeViewController: BaseViewController, FlowController {
+    
+    private var flowCompletion: (() -> ())?
+    func setFlowCompletion(_ completion: @escaping () -> ()) {
+        flowCompletion = completion
+    }
     
     // MARK: - IBOutlet
     @IBOutlet weak var pinCodePageControl: UIPageControl! {

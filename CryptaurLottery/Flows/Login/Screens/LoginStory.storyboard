@@ -21,7 +21,7 @@
         <!--Login View Controller-->
         <scene sceneID="6s2-MN-is1">
             <objects>
-                <viewController id="RyS-3X-VOo" customClass="LoginViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="RyS-3X-VOo" customClass="LoginViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ed5-be-teO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,7 +137,7 @@ address to login</string>
         <!--Pin Code View Controller-->
         <scene sceneID="pXM-br-8LA">
             <objects>
-                <viewController id="IlL-Hb-QRS" customClass="PinCodeViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PinCodeViewController" id="IlL-Hb-QRS" customClass="PinCodeViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhU-7E-vRG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

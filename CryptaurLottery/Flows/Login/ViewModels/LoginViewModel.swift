@@ -13,6 +13,7 @@ import RxCocoa
 final class LoginViewModel: BaseViewModel {
     let usernameRelay = BehaviorRelay<String?>(value: nil)
     let passwordRelay = BehaviorRelay<String?>(value: nil)
+    var loginCompletion: (() -> ())?
     
     private let canSubmitSubject = BehaviorSubject<Bool>(value: false)
     var canSubmit: Driver<Bool> {
@@ -42,8 +43,9 @@ final class LoginViewModel: BaseViewModel {
             return
         }
         connectTokenService.perform(input: ConnectTokenRequestModel(username: username, password: password, pin: "1234"), success: { [weak self] (response) in
-            // TODO remove next line, perform some navigation
-            self?.errorSubject.onNext(ServiceError.api(code: "", message: "Connect token OK"))
+            DispatchQueue.main.async {
+                self?.loginCompletion?()
+            }
         }, failure: defaultServiceFailure)
     }
 }

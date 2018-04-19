@@ -14,8 +14,15 @@ import Crashlytics
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
+    lazy var applicationCoordinator: ApplicationCoordinator = ApplicationCoordinator(window: window!)
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        applicationCoordinator.start()
         
         developmentTest()
         
@@ -23,11 +30,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func developmentTest() {
-        GetCurrentLotteriesService().perform(input: (), success: { (response) in
-            print(response)
-        }) { (error) in
-            print(error)
-        }
+//        GetCurrentLotteriesService().perform(input: (), success: { (response) in
+//            print(response)
+//        }) { (error) in
+//            print(error)
+//        }
     }
 }
 

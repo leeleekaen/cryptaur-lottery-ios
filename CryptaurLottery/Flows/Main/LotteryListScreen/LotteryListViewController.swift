@@ -9,7 +9,9 @@
 import UIKit
 import IGListKit
 
-class LotteryListViewController: BaseViewController {
+final class LotteryListViewController: BaseViewController {
+    private let viewModel: LotteryListViewModel! = LotteryListViewModel()
+    
     @IBOutlet weak var gradientBackgroundView: GradientBackgroundView!
     
     @IBOutlet weak var prizePoolAmountLabel: UILabel!
@@ -17,8 +19,6 @@ class LotteryListViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-    
-    let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +62,8 @@ extension LotteryListViewController: ListAdapterDataSource {
     }
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
         return lotteries.diffable()
+//        return viewModel.draws?.diffable() ?? [ListDiffable]()
     }
 }

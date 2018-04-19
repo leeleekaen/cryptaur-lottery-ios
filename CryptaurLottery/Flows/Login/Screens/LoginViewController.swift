@@ -2,8 +2,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class LoginViewController: BaseViewController {
+protocol FlowController {
+    func setFlowCompletion(_ completion: @escaping () -> ())
+}
+
+final class LoginViewController: BaseViewController, FlowController {
     private let viewModel: LoginViewModel! = LoginViewModel()
+    
+    func setFlowCompletion(_ completion: @escaping () -> ()) {
+        viewModel.loginCompletion = completion
+    }
     
     // MARK: - IBOutlets
     @IBOutlet weak var loginTextField: UITextField!
