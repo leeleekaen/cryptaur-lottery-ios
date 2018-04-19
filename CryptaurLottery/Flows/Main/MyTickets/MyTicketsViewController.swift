@@ -12,6 +12,15 @@ class MyTicketsViewController: BaseViewController {
     
     // MARK: - IBACtion
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            state = .active
+        case 1:
+            state = .played
+        default:
+            fatalError("Unknown state")
+        }
     }
     
     @IBAction func didTapGetTheWinButton(_ sender: UIButton) {
@@ -21,6 +30,12 @@ class MyTicketsViewController: BaseViewController {
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
 
+    var state: State = .active {
+        didSet {
+            print(state)
+            adapter.reloadData()
+        }
+    }
     
     // MARK: - Viewcontroller lidecycle
     override func viewDidLoad() {
@@ -43,12 +58,12 @@ extension MyTicketsViewController: ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter,
                      sectionControllerFor object: Any) -> ListSectionController {
         
-        let sectionController = ListSingleSectionController(nibName: MyTicketsCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
-            //            guard let cell = cell as? LotteryCardCell,
-            //                let item = item as? DiffableBox<LotteryID> else {
-            //                    return
-            //            }
-            // TODO
+        let sectionController = ListSingleSectionController(nibName: MyTicketsCardCell.nameOfClass, bundle: nil, configureBlock: { [unowned self] (item, cell) in
+            
+            guard let cell = cell as? MyTicketsCardCell else { return }
+            
+            cell.configure(for: self.state)
+            
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
             return CGSize(width: size.width - 20, height: 160)
@@ -65,3 +80,12 @@ extension MyTicketsViewController: ListAdapterDataSource {
         return lotteries.diffable()
     }
 }
+
+// MARK: - Embedded type
+extension MyTicketsViewController {
+    
+    enum State {
+        case active, played
+    }
+}
+
