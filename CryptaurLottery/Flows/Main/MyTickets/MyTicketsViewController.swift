@@ -31,10 +31,7 @@ class MyTicketsViewController: BaseViewController {
     let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
 
     var state: State = .active {
-        didSet {
-            print(state)
-            adapter.reloadData()
-        }
+        didSet { adapter.reloadData() }
     }
     
     // MARK: - Viewcontroller lidecycle
@@ -66,7 +63,7 @@ extension MyTicketsViewController: ListAdapterDataSource {
             
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
-            return CGSize(width: size.width - 20, height: 160)
+            return CGSize(width: size.width, height: 140)
         }
         sectionController.inset = .zero
         return sectionController
