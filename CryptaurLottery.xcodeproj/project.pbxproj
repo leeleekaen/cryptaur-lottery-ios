@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */; };
+		22C18CE12088127300DBBCD8 /* MenuStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C18CE02088127300DBBCD8 /* MenuStory.storyboard */; };
+		22C18CE320882DF200DBBCD8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C18CE220882DF200DBBCD8 /* MenuViewController.swift */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
 		9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0742F520872FA700283DA5 /* PinCodeViewController.swift */; };
 		9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */; };
@@ -74,6 +76,8 @@
 /* Begin PBXFileReference section */
 		10E0CED1536ED0E395E5D09D /* Pods-CryptaurLotteryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLotteryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		11974E14894A7117C763BF3E /* Pods-CryptaurLotteryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLotteryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests.release.xcconfig"; sourceTree = "<group>"; };
+		22C18CE02088127300DBBCD8 /* MenuStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuStory.storyboard; sourceTree = "<group>"; };
+		22C18CE220882DF200DBBCD8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +163,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22C18CDA2088026700DBBCD8 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				22C18CDB208802FD00DBBCD8 /* Screens */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		22C18CDB208802FD00DBBCD8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				22C18CE02088127300DBBCD8 /* MenuStory.storyboard */,
+				22C18CE220882DF200DBBCD8 /* MenuViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		8552E93E983754969E3C8C19 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +401,7 @@
 		CEF6AD86207240B3004BA072 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				22C18CDA2088026700DBBCD8 /* Menu */,
 				9A9E83A120877FC300D7E9BD /* BuyTicket */,
 				CEDEFF7420738F5C00297A99 /* Login */,
 				CEF6AD8920724A53004BA072 /* Main */,
@@ -538,6 +560,7 @@
 				9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */,
 				CE3084D7207679A3008C140C /* SF-Pro-Text-Regular.otf in Resources */,
 				CEF6AD5920722893004BA072 /* Main.storyboard in Resources */,
+				22C18CE12088127300DBBCD8 /* MenuStory.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +741,7 @@
 				CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */,
 				CE3084DB20767F71008C140C /* BalanceViewModel.swift in Sources */,
 				CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */,
+				22C18CE320882DF200DBBCD8 /* MenuViewController.swift in Sources */,
 				CE0C41B4207816BD00190A82 /* LotteryCardCell.swift in Sources */,
 				CE647F3D2075178800B334E3 /* GetTicketPriceService.swift in Sources */,
 				CE647F4120751C5C00B334E3 /* LotteryID.swift in Sources */,
