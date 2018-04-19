@@ -60,6 +60,10 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSi-aG-Fr6">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="hae-BD-RUi"/>
+                                            <constraint firstAttribute="width" constant="40" id="sZ1-0r-pB0"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
                                         <state key="normal" title="1" backgroundImage="number-button-background">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,36 +71,56 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkq-58-RR1">
                                         <rect key="frame" x="48.5" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7iD-tf-sU8"/>
+                                            <constraint firstAttribute="width" constant="40" id="GTa-Ds-3sL"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                        <state key="normal" title="1" backgroundImage="number-button-background">
+                                        <state key="normal" title="6" backgroundImage="number-button-background">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-fc-wyZ">
                                         <rect key="frame" x="97" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="AuH-Y1-K6L"/>
+                                            <constraint firstAttribute="width" constant="40" id="jly-oa-MF7"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                        <state key="normal" title="1" backgroundImage="number-button-background">
+                                        <state key="normal" title="14" backgroundImage="number-button-background">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1f-GN-gM5">
                                         <rect key="frame" x="146" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="pgM-nc-otP"/>
+                                            <constraint firstAttribute="height" constant="40" id="um3-cw-VkP"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                        <state key="normal" title="1" backgroundImage="number-button-background">
+                                        <state key="normal" title="16" backgroundImage="number-button-background">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCa-Jr-ddG">
                                         <rect key="frame" x="194.5" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="1pM-H5-CeI"/>
+                                            <constraint firstAttribute="height" constant="40" id="gno-GW-DnZ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                        <state key="normal" title="1" backgroundImage="number-button-background">
+                                        <state key="normal" title="22" backgroundImage="number-button-background">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvX-vy-0eH">
                                         <rect key="frame" x="243" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Yxa-gk-NHt"/>
+                                            <constraint firstAttribute="width" constant="40" id="gI8-u8-Gzv"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                        <state key="normal" title="1" backgroundImage="number-button-background">
+                                        <state key="normal" title="28" backgroundImage="number-button-background">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
@@ -126,6 +150,14 @@
                 <constraint firstAttribute="bottom" secondItem="09u-yJ-7jR" secondAttribute="bottom" id="gQk-zJ-XD0"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="M5W-12-2Fq"/>
+            <connections>
+                <outletCollection property="numbers" destination="NSi-aG-Fr6" collectionClass="NSMutableArray" id="S2n-yU-wNc"/>
+                <outletCollection property="numbers" destination="Mkq-58-RR1" collectionClass="NSMutableArray" id="TGa-X0-pv7"/>
+                <outletCollection property="numbers" destination="LiP-fc-wyZ" collectionClass="NSMutableArray" id="Ymc-hg-EJ0"/>
+                <outletCollection property="numbers" destination="a1f-GN-gM5" collectionClass="NSMutableArray" id="rUj-ma-G7c"/>
+                <outletCollection property="numbers" destination="qCa-Jr-ddG" collectionClass="NSMutableArray" id="lP4-bk-vDv"/>
+                <outletCollection property="numbers" destination="cvX-vy-0eH" collectionClass="NSMutableArray" id="Zif-dK-RSl"/>
+            </connections>
             <point key="canvasLocation" x="218.5" y="56.5"/>
         </collectionViewCell>
     </objects>
