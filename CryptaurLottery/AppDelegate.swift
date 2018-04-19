@@ -23,6 +23,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func developmentTest() {
+        GetCurrentLotteriesService().perform(input: (), success: { (response) in
+            print(response)
+        }) { (error) in
+            print(error)
+        }
     }
 }
 

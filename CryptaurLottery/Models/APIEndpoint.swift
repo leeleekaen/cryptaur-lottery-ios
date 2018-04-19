@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 struct APIEndpoint {
     enum Method: String {
@@ -32,6 +33,24 @@ struct APIEndpoint {
     }
 }
 
+extension APIEndpoint: URLConvertible {
+    private struct BaseURLStorage {
+        #if DEBUG
+        static let baseUrl = URL(string: "https://lottery-3.cryptaur.com")
+        #else
+        static let baseUrl = URL(string: "https://lottery.cryptaur.com")
+        #endif
+    }
+    
+    func asURL() throws -> URL {
+        let baseURL = self.baseURL ?? BaseURLStorage.baseUrl
+        guard let url = URL(string: path, relativeTo: baseURL) else {
+            throw AFError.invalidURL(url: self)
+        }
+        return url
+    }
+}
+
 extension APIEndpoint {
     static var getTicketPrice: APIEndpoint {
         return APIEndpoint(.get, "api/getTicketPrice")
@@ -52,7 +71,9 @@ extension APIEndpoint {
         return APIEndpoint(.get, "api/refresh")
     }
     static var connect: APIEndpoint {
-        return APIEndpoint(.post, "connect/token", "http://54.245.214.56:24872")
+        return APIEndpoint(.post, "connect/token", "https://lottery-1.cryptaur.com")
     }
-    
+    static var getCurrentLotteries: APIEndpoint {
+        return APIEndpoint(.get, "api/getCurrentLotteries")
+    }
 }

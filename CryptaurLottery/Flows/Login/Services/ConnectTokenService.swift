@@ -20,24 +20,6 @@ final class ConnectTokenService: OperationService<ConnectTokenRequestModel, Conn
         }, failure: failure)
     }
 }
-/*
- Авторизация логин-пароль-пин
- { "grant_type", "password" },
- { "username", "<userName>" },
- { "password", "<password>" },//опционально (если по пину то пароль не нужен).
- { "deviceId", "<id>" },
- { "pin", "<pin>" },
- { "scope", "<scope>" }
- 
- Авторизация логин-пин
- { "grant_type", "password" },
- { "username", "<userName>" },
- { "password", "<empty>" },
- { "deviceId", "<id>" },
- { "pin", "<pin>" },
- { "scope", "<scope>" }
-
- */
 
 fileprivate final class ConnectTokenOperation: APIOperation {
     override func createRequest() -> DataRequest {

@@ -66,24 +66,6 @@ class APIOperation: Operation {
     }
 }
 
-extension APIEndpoint: URLConvertible {
-    private struct BaseURLStorage {
-        #if DEBUG
-        static let baseUrl = URL(string: "http://lottery.nordavind.ru")
-        #else
-        static let baseUrl = URL(string: "https://lottery.cryptaur.com")
-        #endif
-    }
-    
-    func asURL() throws -> URL {
-        let baseURL = self.baseURL ?? BaseURLStorage.baseUrl
-        guard let url = URL(string: path, relativeTo: baseURL) else {
-            throw AFError.invalidURL(url: self)
-        }
-        return url
-    }
-}
-
 extension APIEndpoint.Method {
     func asAlamofireMethod() -> Alamofire.HTTPMethod {
         switch self {

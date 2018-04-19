@@ -56,6 +56,8 @@
 		CE647F4120751C5C00B334E3 /* LotteryID.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE647F4020751C5C00B334E3 /* LotteryID.swift */; };
 		CE7C8B802087E1860006C5C2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C8B7F2087E1860006C5C2 /* LoginViewModel.swift */; };
 		CE9C06B020889DBE00535869 /* ServiceErrorAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C06AF20889DBE00535869 /* ServiceErrorAlertPresenter.swift */; };
+		CE9C06B22088DDEC00535869 /* GetCurrentLotteriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C06B12088DDEC00535869 /* GetCurrentLotteriesService.swift */; };
+		CE9C06B42088DE2A00535869 /* GetCurrentLotteriesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C06B32088DE2A00535869 /* GetCurrentLotteriesResponseModel.swift */; };
 		CEA6951C2076B1FB002B692D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6951B2076B1FB002B692D /* BaseNavigationController.swift */; };
 		CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDAC8492076421600E3EA36 /* LotteryListViewController.swift */; };
 		CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDAC84C20764D3F00E3EA36 /* GradientBackgroundView.swift */; };
@@ -138,6 +140,8 @@
 		CE647F4020751C5C00B334E3 /* LotteryID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryID.swift; sourceTree = "<group>"; };
 		CE7C8B7F2087E1860006C5C2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CE9C06AF20889DBE00535869 /* ServiceErrorAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceErrorAlertPresenter.swift; sourceTree = "<group>"; };
+		CE9C06B12088DDEC00535869 /* GetCurrentLotteriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLotteriesService.swift; sourceTree = "<group>"; };
+		CE9C06B32088DE2A00535869 /* GetCurrentLotteriesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLotteriesResponseModel.swift; sourceTree = "<group>"; };
 		CEA6951B2076B1FB002B692D /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		CEDAC8492076421600E3EA36 /* LotteryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryListViewController.swift; sourceTree = "<group>"; };
 		CEDAC84C20764D3F00E3EA36 /* GradientBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundView.swift; sourceTree = "<group>"; };
@@ -454,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				CE647F3C2075178800B334E3 /* GetTicketPriceService.swift */,
+				CE9C06B12088DDEC00535869 /* GetCurrentLotteriesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 			children = (
 				CE57D6E62073E47F00BA1161 /* GetTicketPriceResponseModel.swift */,
 				CE647F3E2075182500B334E3 /* GetTicketPriceRequestModel.swift */,
+				CE9C06B32088DE2A00535869 /* GetCurrentLotteriesResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -743,6 +749,7 @@
 				CEDEFF8220739C2500297A99 /* ConnectTokenResponseModel.swift in Sources */,
 				CE60B0C92077C84600EEC363 /* UIViewController+FromStoryboard.swift in Sources */,
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
+				CE9C06B42088DE2A00535869 /* GetCurrentLotteriesResponseModel.swift in Sources */,
 				CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */,
 				CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */,
 				CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */,
@@ -769,6 +776,7 @@
 				CEDEFF7820739AB400297A99 /* ConnectTokenService.swift in Sources */,
 				CE9C06B020889DBE00535869 /* ServiceErrorAlertPresenter.swift in Sources */,
 				CE0C41B82078244B00190A82 /* Diffable.swift in Sources */,
+				CE9C06B22088DDEC00535869 /* GetCurrentLotteriesService.swift in Sources */,
 				CE4AE98B2081D5C9000763F4 /* MyTicketsViewController.swift in Sources */,
 				CE60B0BD2077B36B00EEC363 /* UIBarButtonItem+Badge.swift in Sources */,
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
