@@ -34,11 +34,8 @@ class LotteryListViewController: BaseViewController {
         adapter.collectionView = collectionView
         adapter.dataSource = self
     }
-}
-
-extension BarButtonItemTargetActions where Self: LotteryListViewController {
-    func didTapMenuBarButtonItem() {
-        
+    
+    override func didTapMenuBarButtonItem() {
         performSegue(withIdentifier: "ShowMyTickets", sender: nil)
     }
 }
@@ -46,11 +43,11 @@ extension BarButtonItemTargetActions where Self: LotteryListViewController {
 extension LotteryListViewController: ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         let sectionController = ListSingleSectionController(nibName: LotteryCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
-            guard let cell = cell as? LotteryCardCell,
-                let item = item as? DiffableBox<LotteryID> else {
-                    return
-            }
-            print(111)
+//            guard let cell = cell as? LotteryCardCell,
+//                let item = item as? DiffableBox<LotteryID> else {
+//                    return
+//            }
+//            print(111)
             // TODO
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize

@@ -14,6 +14,7 @@ protocol BarButtonItemTargetActions {
 }
 
 class BaseViewController: UIViewController, BarButtonItemTargetActions {
+    
     final let disposeBag = DisposeBag()
 
     final func configureNavigationItem(showBalance: Bool) {
@@ -40,10 +41,8 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions {
     private func createBadgeBarButtonItem() -> UIBarButtonItem {
         return .badge(viewModel: MockBalanceViewModel(), disposeBag: disposeBag)
     }
-}
-
-extension BarButtonItemTargetActions where Self: BaseViewController {
+    
     func didTapMenuBarButtonItem() {
-        
+        print("Have to be overrided")
     }
 }
