@@ -53,7 +53,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="mit-ol-Y7m" userLabel="Numbers">
-                        <rect key="frame" x="10" y="56" width="291" height="40"/>
+                        <rect key="frame" x="10" y="60" width="291" height="40"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSi-aG-Fr6">
                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -123,6 +123,33 @@
                             </button>
                         </subviews>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 APR, 23:11:08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2B0-L3-vZF">
+                        <rect key="frame" x="16" y="120" width="80" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="m9G-tg-ume"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
+                        <color key="textColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WON 300.000 CPT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSj-RK-cHr">
+                        <rect key="frame" x="201" y="120" width="94" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="fJy-xY-zaX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME LEFT 23:23:08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTE-Sy-AOm">
+                        <rect key="frame" x="105" y="120" width="99.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="9pj-Pk-3HF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
+                        <color key="textColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balls-5x36" translatesAutoresizingMaskIntoConstraints="NO" id="3wm-FK-KWo">
                         <rect key="frame" x="227" y="5" width="68" height="50"/>
                         <constraints>
@@ -135,15 +162,24 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mit-ol-Y7m" secondAttribute="trailing" constant="10" id="2lQ-zC-vE1"/>
+                <constraint firstItem="2B0-L3-vZF" firstAttribute="leading" secondItem="rCW-ao-a5x" secondAttribute="leading" constant="16" id="FUq-gO-0Ge"/>
                 <constraint firstItem="TVK-rD-8Jm" firstAttribute="centerX" secondItem="rCW-ao-a5x" secondAttribute="centerX" id="UWN-sX-o6o"/>
-                <constraint firstItem="mit-ol-Y7m" firstAttribute="top" secondItem="TVK-rD-8Jm" secondAttribute="bottom" constant="16" id="WqK-7A-49k"/>
+                <constraint firstItem="mit-ol-Y7m" firstAttribute="top" secondItem="TVK-rD-8Jm" secondAttribute="bottom" constant="20" id="WqK-7A-49k"/>
+                <constraint firstAttribute="bottom" secondItem="gTE-Sy-AOm" secondAttribute="bottom" constant="5" id="Zdr-Aa-Mnk"/>
                 <constraint firstItem="3wm-FK-KWo" firstAttribute="top" secondItem="rCW-ao-a5x" secondAttribute="top" constant="5" id="b1j-lH-Q2t"/>
+                <constraint firstAttribute="bottom" secondItem="XSj-RK-cHr" secondAttribute="bottom" constant="5" id="gxA-DD-hwS"/>
+                <constraint firstItem="gTE-Sy-AOm" firstAttribute="centerX" secondItem="rCW-ao-a5x" secondAttribute="centerX" id="itO-lW-GHE"/>
                 <constraint firstAttribute="trailing" secondItem="3wm-FK-KWo" secondAttribute="trailing" constant="16" id="klt-aL-7qJ"/>
+                <constraint firstAttribute="bottom" secondItem="2B0-L3-vZF" secondAttribute="bottom" constant="5" id="kv4-4b-FTp"/>
+                <constraint firstAttribute="trailing" secondItem="XSj-RK-cHr" secondAttribute="trailing" constant="16" id="tCq-fV-ig6"/>
                 <constraint firstItem="mit-ol-Y7m" firstAttribute="leading" secondItem="rCW-ao-a5x" secondAttribute="leading" constant="10" id="wHZ-h0-onO"/>
                 <constraint firstItem="TVK-rD-8Jm" firstAttribute="top" secondItem="rCW-ao-a5x" secondAttribute="top" constant="10" id="wuQ-aF-2PZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="M5W-12-2Fq"/>
             <connections>
+                <outlet property="dateLabel" destination="2B0-L3-vZF" id="bSM-FC-sNL"/>
+                <outlet property="timeLeftLabel" destination="gTE-Sy-AOm" id="GSd-eT-qoD"/>
+                <outlet property="wonLabel" destination="XSj-RK-cHr" id="kcc-ho-bEq"/>
                 <outletCollection property="numbers" destination="cvX-vy-0eH" collectionClass="NSMutableArray" id="Zif-dK-RSl"/>
                 <outletCollection property="numbers" destination="Mkq-58-RR1" collectionClass="NSMutableArray" id="TGa-X0-pv7"/>
                 <outletCollection property="numbers" destination="NSi-aG-Fr6" collectionClass="NSMutableArray" id="S2n-yU-wNc"/>
