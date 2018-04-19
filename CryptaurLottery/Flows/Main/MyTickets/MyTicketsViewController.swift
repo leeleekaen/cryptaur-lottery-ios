@@ -43,7 +43,7 @@ extension MyTicketsViewController: ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter,
                      sectionControllerFor object: Any) -> ListSectionController {
         
-        let sectionController = ListSingleSectionController(nibName: LotteryCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
+        let sectionController = ListSingleSectionController(nibName: MyTicketsCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
             //            guard let cell = cell as? LotteryCardCell,
             //                let item = item as? DiffableBox<LotteryID> else {
             //                    return
@@ -51,7 +51,7 @@ extension MyTicketsViewController: ListAdapterDataSource {
             // TODO
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
-            return CGSize(width: size.width - 56, height: size.height)
+            return CGSize(width: size.width - 20, height: 160)
         }
         sectionController.inset = .zero
         return sectionController
