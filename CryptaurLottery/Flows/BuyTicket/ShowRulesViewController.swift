@@ -40,10 +40,9 @@ class ShowRulesViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        configureNavigationItem(showBalance: false)
         rulesTextView.backgroundColor = UIColor.darkTwo
-
         configureText()
     }
-
 
 }
