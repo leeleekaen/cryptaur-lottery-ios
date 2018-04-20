@@ -853,6 +853,7 @@
                             <constraint firstItem="oko-XQ-2kB" firstAttribute="top" secondItem="dqD-fX-Y5s" secondAttribute="topMargin" id="k4U-TV-PzB"/>
                             <constraint firstAttribute="bottomMargin" secondItem="oko-XQ-2kB" secondAttribute="bottom" id="sel-qH-2PL"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="7qN-xC-i1p"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="oko-XQ-2kB" id="bVl-nQ-UFp"/>
