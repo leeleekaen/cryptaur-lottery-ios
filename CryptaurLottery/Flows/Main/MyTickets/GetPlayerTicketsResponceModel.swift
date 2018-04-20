@@ -1,9 +1,22 @@
-//
-//  GetPlayerTicketsResponceModel.swift
-//  CryptaurLottery
-//
-//  Created by Mac Mini on 20/04/2018.
-//  Copyright © 2018 Nordavind. All rights reserved.
-//
-
 import Foundation
+
+struct GetPlayerTicketsResponceModel: JSONDeserializable {
+    
+    let tickets: [Ticket]
+    
+    init?(json: JSONDictionary) {
+        
+        guard let list = json["tickets"] as? [JSONDictionary] else {
+            return nil
+        }
+        
+        var tickets = [Ticket]()
+        for item in list {
+            guard let ticket = Ticket(json: item) else {
+                return nil
+            }
+            tickets.append(ticket)
+        }
+        self.tickets = tickets
+    }
+}

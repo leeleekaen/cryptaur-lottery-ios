@@ -55,7 +55,7 @@ class MyTicketsViewController: BaseViewController {
     
     // MARK: - Binding
     override func bind() {
-                
+        
         viewModel.winAmount.drive(onNext: { [weak self] in
             self?.prizePoolAmountLabel.text = $0.toString() + " CPT"
         }).disposed(by: disposeBag)
