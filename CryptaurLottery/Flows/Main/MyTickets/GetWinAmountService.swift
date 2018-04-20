@@ -31,7 +31,6 @@ fileprivate final class GetWinAmountOperation: APIOperation {
                    success: success, failure: failure)
     }
     
-    
     override func URL(with endpoint: APIEndpoint) -> URLConvertible {
         
         guard let playerAddress = parameters?["playerAddress"] as? String else {

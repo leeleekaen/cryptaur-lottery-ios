@@ -22,6 +22,7 @@
 		9A0D138C20889EA300B5A630 /* MyTicketsCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D138A20889EA300B5A630 /* MyTicketsCardCell.swift */; };
 		9A2071DC208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */; };
 		9A2071DE208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */; };
+		9A2071E0208A29DA00B5D671 /* GetPlayerTicketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */; };
 		9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */; };
 		9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */; };
 		9A9E83A72087882300D7E9BD /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */; };
@@ -111,6 +112,7 @@
 		9A0D138A20889EA300B5A630 /* MyTicketsCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTicketsCardCell.swift; sourceTree = "<group>"; };
 		9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsRequestModel.swift; sourceTree = "<group>"; };
 		9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsResponceModel.swift; sourceTree = "<group>"; };
+		9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsService.swift; sourceTree = "<group>"; };
 		9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyTicketStory.storyboard; sourceTree = "<group>"; };
 		9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketContainerViewController.swift; sourceTree = "<group>"; };
 		9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				9A0957642089DD6E0069EF28 /* Ticket.swift */,
 				9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */,
 				9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */,
+				9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */,
 			);
 			path = MyTickets;
 			sourceTree = "<group>";
@@ -788,6 +791,7 @@
 				CE60B0C92077C84600EEC363 /* UIViewController+FromStoryboard.swift in Sources */,
 				22D821ED2089C0F5007689E7 /* ShowRulesViewController.swift in Sources */,
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
+				9A2071E0208A29DA00B5D671 /* GetPlayerTicketsService.swift in Sources */,
 				9A0957672089E4720069EF28 /* GetWinAmountResponceModel.swift in Sources */,
 				CE9C06B42088DE2A00535869 /* GetCurrentLotteriesResponseModel.swift in Sources */,
 				CEDE7A1420890D8B00F3BA7F /* ApplicationCoordinator.swift in Sources */,
