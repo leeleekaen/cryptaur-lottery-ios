@@ -11,7 +11,7 @@ return:
 }
 */
 
-struct WinAmount {
+struct GetWinAmountResponceModel: JSONDeserializable {
     
     var winAmount: UInt256
     var pickUpWinGasFee: UInt256
