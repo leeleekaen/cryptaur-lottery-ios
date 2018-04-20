@@ -49,6 +49,14 @@ class MyTicketsViewController: BaseViewController {
         adapter.collectionView = collectionView
         adapter.dataSource = self
     }
+    
+    // MARK: - Binding
+    override func bind() {
+        
+        viewModel.winAmount.drive(onNext: { [weak self] in
+            print($0)
+        }).disposed(by: disposeBag)
+    }
 }
 
 // MARK: - ListAdapterDataSource

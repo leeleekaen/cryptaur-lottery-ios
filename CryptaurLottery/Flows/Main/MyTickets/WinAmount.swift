@@ -16,6 +16,11 @@ struct WinAmount {
     var winAmount: UInt256
     var pickUpWinGasFee: UInt256
     
+    init() {
+        winAmount = UInt256(integerLiteral: 0)
+        pickUpWinGasFee = UInt256(integerLiteral: 0)
+    }
+    
     init?(json: JSONDictionary) {
         
         guard let winAmountString = json["winAmount"] as? String,
