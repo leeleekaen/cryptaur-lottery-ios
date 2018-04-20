@@ -58,4 +58,20 @@ extension UInt256 {
         
         self.init(components)
     }
+    
+    var normalizedHexString: String {
+        
+        var str = self.toHexString()
+        
+        var currentChar: Character = "0"
+        while currentChar == "0" {
+            if str.isEmpty {
+                return "0x"
+            } else {
+                currentChar = str.removeFirst()
+            }
+        }
+        
+        return "0x" + String(currentChar) + str
+    }
 }
