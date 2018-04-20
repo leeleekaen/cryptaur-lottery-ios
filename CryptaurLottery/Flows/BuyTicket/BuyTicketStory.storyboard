@@ -22,7 +22,7 @@
         <!--Buy Ticket Container View Controller-->
         <scene sceneID="Oe4-Wx-hWk">
             <objects>
-                <viewController id="bMy-4R-sXO" customClass="BuyTicketContainerViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuyTicketContainerViewController" id="bMy-4R-sXO" customClass="BuyTicketContainerViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KB7-RW-baQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,19 +50,29 @@
                                     <segue destination="Gub-98-f5t" kind="embed" id="kq7-Yn-Q7Q"/>
                                 </connections>
                             </containerView>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5H-FB-EBN">
+                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
+                                <connections>
+                                    <segue destination="VyZ-L3-NOw" kind="embed" id="p5N-nE-28P"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="H5H-FB-EBN" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="0fZ-n7-pyX"/>
                             <constraint firstItem="Sc8-ur-dxP" firstAttribute="top" secondItem="oYw-iX-RHC" secondAttribute="top" id="3nl-PD-tlB"/>
                             <constraint firstItem="eq6-BS-K3B" firstAttribute="top" secondItem="ILC-uq-gBq" secondAttribute="top" id="J0h-EH-5BN"/>
                             <constraint firstItem="Sc8-ur-dxP" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" constant="10" id="Qc9-rI-FJU"/>
                             <constraint firstItem="oYw-iX-RHC" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="SyM-FZ-f0q"/>
+                            <constraint firstItem="H5H-FB-EBN" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="WuW-6B-rlC"/>
                             <constraint firstItem="oYw-iX-RHC" firstAttribute="trailing" secondItem="Sc8-ur-dxP" secondAttribute="trailing" constant="10" id="YpE-Zq-qgI"/>
                             <constraint firstItem="eq6-BS-K3B" firstAttribute="leading" secondItem="ILC-uq-gBq" secondAttribute="leading" id="gsg-KT-X8K"/>
                             <constraint firstItem="eq6-BS-K3B" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="hLj-0A-QJO"/>
                             <constraint firstItem="ILC-uq-gBq" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" id="qSo-mg-i70"/>
                             <constraint firstItem="eq6-BS-K3B" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="rYF-6j-afz"/>
+                            <constraint firstItem="H5H-FB-EBN" firstAttribute="leading" secondItem="ILC-uq-gBq" secondAttribute="leading" id="rsl-pG-bey"/>
                             <constraint firstItem="ILC-uq-gBq" firstAttribute="top" secondItem="Sc8-ur-dxP" secondAttribute="bottom" constant="10" id="slk-kp-b2g"/>
+                            <constraint firstItem="H5H-FB-EBN" firstAttribute="top" secondItem="ILC-uq-gBq" secondAttribute="top" id="uie-au-4ie"/>
                             <constraint firstItem="oYw-iX-RHC" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="wMP-rJ-Gav"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oYw-iX-RHC"/>
@@ -72,6 +82,7 @@
                         <outlet property="buyTicketSubview" destination="ILC-uq-gBq" id="JN5-g3-S7X"/>
                         <outlet property="changeSubview" destination="Sc8-ur-dxP" id="NCa-sE-yQ8"/>
                         <outlet property="drawArchiveSubview" destination="eq6-BS-K3B" id="SMl-86-AmI"/>
+                        <outlet property="showRulesSubview" destination="H5H-FB-EBN" id="DLv-Hw-Z1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eug-OZ-XQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -853,7 +864,7 @@
                             <constraint firstItem="oko-XQ-2kB" firstAttribute="top" secondItem="dqD-fX-Y5s" secondAttribute="topMargin" id="k4U-TV-PzB"/>
                             <constraint firstAttribute="bottomMargin" secondItem="oko-XQ-2kB" secondAttribute="bottom" id="sel-qH-2PL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7qN-xC-i1p"/>
+                        <viewLayoutGuide key="safeArea" id="LzC-xs-ddy"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="oko-XQ-2kB" id="bVl-nQ-UFp"/>
@@ -862,6 +873,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gw9-p6-W7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1897" y="430"/>
+        </scene>
+        <!--Show Rules View Controller-->
+        <scene sceneID="OLX-oi-r3d">
+            <objects>
+                <viewController id="VyZ-L3-NOw" customClass="ShowRulesViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4tG-Mz-aHa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="snR-R7-MnW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="snR-R7-MnW" secondAttribute="trailing" id="32Y-SX-DE7"/>
+                            <constraint firstItem="snR-R7-MnW" firstAttribute="top" secondItem="4tG-Mz-aHa" secondAttribute="top" id="Ltv-OP-KCo"/>
+                            <constraint firstItem="snR-R7-MnW" firstAttribute="leading" secondItem="4tG-Mz-aHa" secondAttribute="leading" id="OlN-PQ-mZQ"/>
+                            <constraint firstAttribute="bottom" secondItem="snR-R7-MnW" secondAttribute="bottom" id="xzu-IP-TgV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="rulesTextView" destination="snR-R7-MnW" id="iDv-LX-fKb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SEZ-d2-Lpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="1018"/>
         </scene>
     </scenes>
     <resources>

@@ -10,6 +10,7 @@
 		0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */; };
 		22C18CE12088127300DBBCD8 /* MenuStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C18CE02088127300DBBCD8 /* MenuStory.storyboard */; };
 		22C18CE320882DF200DBBCD8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C18CE220882DF200DBBCD8 /* MenuViewController.swift */; };
+		22D821ED2089C0F5007689E7 /* ShowRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D821EC2089C0F5007689E7 /* ShowRulesViewController.swift */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
 		9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0742F520872FA700283DA5 /* PinCodeViewController.swift */; };
 		9A0957632089DBF20069EF28 /* MyTicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0957622089DBF20069EF28 /* MyTicketsViewModel.swift */; };
@@ -94,6 +95,7 @@
 		11974E14894A7117C763BF3E /* Pods-CryptaurLotteryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLotteryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests.release.xcconfig"; sourceTree = "<group>"; };
 		22C18CE02088127300DBBCD8 /* MenuStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuStory.storyboard; sourceTree = "<group>"; };
 		22C18CE220882DF200DBBCD8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		22D821EC2089C0F5007689E7 /* ShowRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRulesViewController.swift; sourceTree = "<group>"; };
 		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +232,7 @@
 				9AE714732088DAF900D7F399 /* DrawArchiveCardCell.xib */,
 				9AE714702088D7AB00D7F399 /* DrawArchiveViewController.swift */,
 				9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */,
+				22D821EC2089C0F5007689E7 /* ShowRulesViewController.swift */,
 				9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */,
 				9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */,
 			);
@@ -777,6 +780,7 @@
 				CEA6951C2076B1FB002B692D /* BaseNavigationController.swift in Sources */,
 				CEDEFF8220739C2500297A99 /* ConnectTokenResponseModel.swift in Sources */,
 				CE60B0C92077C84600EEC363 /* UIViewController+FromStoryboard.swift in Sources */,
+				22D821ED2089C0F5007689E7 /* ShowRulesViewController.swift in Sources */,
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
 				9A0957672089E4720069EF28 /* GetWinAmountResponceModel.swift in Sources */,
 				CE9C06B42088DE2A00535869 /* GetCurrentLotteriesResponseModel.swift in Sources */,
