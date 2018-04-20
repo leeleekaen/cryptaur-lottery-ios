@@ -10,9 +10,17 @@ class MyTicketsViewModel: BaseViewModel {
         return winAmountSubject.asDriver(onErrorJustReturn: UInt256(integerLiteral: 0))
     }
     
+    private let service = GetWinAmountService()
+    
     override init() {
         super.init()
+    }
+    
+    func updateWinAmount(for playerAddress: UInt256) {
         
-        winAmountSubject.onNext(UInt256(hexString: "0x203040")!)
+        service.perform(input: GetWinAmountRequestModel(playerAddress: playerAddress),
+                        success: { [weak self] (responce) in
+                            self?.winAmountSubject.onNext(responce.winAmount)
+            }, failure: defaultServiceFailure)
     }
 }

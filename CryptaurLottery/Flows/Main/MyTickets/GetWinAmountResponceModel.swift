@@ -22,7 +22,7 @@ struct GetWinAmountResponceModel: JSONDeserializable {
     }
     
     init?(json: JSONDictionary) {
-        
+                
         guard let winAmountString = json["winAmount"] as? String,
                 let winAmount = UInt256(hexString: winAmountString),
                 let pickUpWinGasFeeString = json["pickUpWinGasFee"] as? String,

@@ -1,5 +1,6 @@
 import UIKit
 import IGListKit
+import UInt256
 
 class MyTicketsViewController: BaseViewController {
     
@@ -48,6 +49,8 @@ class MyTicketsViewController: BaseViewController {
         
         adapter.collectionView = collectionView
         adapter.dataSource = self
+        
+        viewModel.updateWinAmount(for: UInt256(hexString: "0x14f05a4593ee1808541525a5aa39e344381251e6")!)
     }
     
     // MARK: - Binding

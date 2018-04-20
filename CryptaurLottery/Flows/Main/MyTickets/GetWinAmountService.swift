@@ -25,7 +25,7 @@ fileprivate final class GetWinAmountOperation: APIOperation {
          success: @escaping APIOperationSuccess,
          failure: @escaping ServiceFailure) {
         
-        let parameters = ["playerAddress": "\(request.playerAddress.toHexString())"]
+        let parameters = ["playerAddress": "\(request.playerAddress.normalizedHexString)"]
         
         super.init(endpoint: .getWinAmount, parameters: parameters, headers: nil,
                    success: success, failure: failure)
