@@ -14,6 +14,7 @@
 		9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0742F520872FA700283DA5 /* PinCodeViewController.swift */; };
 		9A0957632089DBF20069EF28 /* MyTicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0957622089DBF20069EF28 /* MyTicketsViewModel.swift */; };
 		9A0957652089DD6E0069EF28 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0957642089DD6E0069EF28 /* Ticket.swift */; };
+		9A0957672089E4720069EF28 /* WinAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0957662089E4720069EF28 /* WinAmount.swift */; };
 		9A0D138B20889EA300B5A630 /* MyTicketsCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A0D138920889EA200B5A630 /* MyTicketsCardCell.xib */; };
 		9A0D138C20889EA300B5A630 /* MyTicketsCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D138A20889EA300B5A630 /* MyTicketsCardCell.swift */; };
 		9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */; };
@@ -97,6 +98,7 @@
 		9A0742F520872FA700283DA5 /* PinCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
 		9A0957622089DBF20069EF28 /* MyTicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTicketsViewModel.swift; sourceTree = "<group>"; };
 		9A0957642089DD6E0069EF28 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		9A0957662089E4720069EF28 /* WinAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinAmount.swift; sourceTree = "<group>"; };
 		9A0D138920889EA200B5A630 /* MyTicketsCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTicketsCardCell.xib; sourceTree = "<group>"; };
 		9A0D138A20889EA300B5A630 /* MyTicketsCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTicketsCardCell.swift; sourceTree = "<group>"; };
 		9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyTicketStory.storyboard; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				CE4AE98A2081D5C8000763F4 /* MyTicketsViewController.swift */,
 				9A0957622089DBF20069EF28 /* MyTicketsViewModel.swift */,
 				9A0957642089DD6E0069EF28 /* Ticket.swift */,
+				9A0957662089E4720069EF28 /* WinAmount.swift */,
 			);
 			path = MyTickets;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				CEDEFF8220739C2500297A99 /* ConnectTokenResponseModel.swift in Sources */,
 				CE60B0C92077C84600EEC363 /* UIViewController+FromStoryboard.swift in Sources */,
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
+				9A0957672089E4720069EF28 /* WinAmount.swift in Sources */,
 				CE9C06B42088DE2A00535869 /* GetCurrentLotteriesResponseModel.swift in Sources */,
 				CEDE7A1420890D8B00F3BA7F /* ApplicationCoordinator.swift in Sources */,
 				CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */,

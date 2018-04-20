@@ -27,6 +27,7 @@ class MyTicketsViewController: BaseViewController {
     }
     
     // MARK: - Private properties
+    private let viewModel = MyTicketsViewModel()
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
 
