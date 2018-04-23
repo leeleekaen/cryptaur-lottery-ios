@@ -5,6 +5,19 @@ import UInt256
 
 class MyTicketsViewModel: BaseViewModel {
     
+    var activeTickets = [Ticket]()
+    var playedTickets = [Ticket]()
+    
+//    private let activeTicketsSubject = BehaviorSubject<[Ticket]>(value: [])
+//    var activeTickets: Driver<[Ticket]> {
+//        return activeTicketsSubject.asDriver(onErrorJustReturn: [])
+//    }
+//
+//    private let playedTicketsSubject = BehaviorSubject<[Ticket]>(value: [])
+//    var playedTickets: Driver<[Ticket]> {
+//        return playedTicketsSubject.asDriver(onErrorJustReturn: [])
+//    }
+    
     private let winAmountSubject = BehaviorSubject<UInt256>(value: UInt256(integerLiteral: 0))
     var winAmount: Driver<UInt256> {
         return winAmountSubject.asDriver(onErrorJustReturn: UInt256(integerLiteral: 0))
@@ -20,7 +33,7 @@ class MyTicketsViewModel: BaseViewModel {
     func update(for playerAddress: UInt256, and lotteries: [LotteryID]) {
         
         updateWinAmount(for: playerAddress)
-        updateTickets(for: playerAddress, and: lotteries)
+        updateTickets(for: playerAddress, and: lotteries.first!)
     }
     
     private func updateWinAmount(for playerAddress: UInt256) {
@@ -31,13 +44,14 @@ class MyTicketsViewModel: BaseViewModel {
             }, failure: defaultServiceFailure)
     }
     
-    private func updateTickets(for playerAddress: UInt256, and lotteries: [LotteryID]) {
+    private func updateTickets(for playerAddress: UInt256, and lottery: LotteryID) {
         
         let requestModel = GetPlayerTicketsRequestModel(playerAddress: playerAddress,
-                                                        lotteryID: lotteries.first!)
+                                                        lotteryID: lottery)
         
         playerTicketsService.perform(input: requestModel, success: { (responce) in
             print(responce)
+            
         }, failure: defaultServiceFailure)
     }
 }

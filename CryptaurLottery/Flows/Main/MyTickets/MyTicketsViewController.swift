@@ -40,6 +40,8 @@ class MyTicketsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        state = .active
+        
         gradientBackgroundView.gradientColors = [UIColor.lightblue, UIColor.lighterPurple].map {$0.cgColor}
         gradientBackgroundView.backgroundColor = .clear
         
@@ -89,7 +91,16 @@ extension MyTicketsViewController: ListAdapterDataSource {
     }
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return lotteries.diffable()
+        switch state {
+        case .active:
+            let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
+            return lotteries.diffable()
+//            return viewModel.activeTickets.diffable()
+        case .played:
+            let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
+            return lotteries.diffable()
+//            return viewModel.playedTickets.diffable()
+        }
     }
 }
 

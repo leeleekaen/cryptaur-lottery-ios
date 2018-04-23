@@ -23,6 +23,7 @@
 		9A2071DC208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */; };
 		9A2071DE208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */; };
 		9A2071E0208A29DA00B5D671 /* GetPlayerTicketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */; };
+		9A3D5775208DD3710007A426 /* UIStackView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D5774208DD3710007A426 /* UIStackView+extension.swift */; };
 		9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */; };
 		9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */; };
 		9A9E83A72087882300D7E9BD /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */; };
@@ -113,6 +114,7 @@
 		9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsRequestModel.swift; sourceTree = "<group>"; };
 		9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsResponceModel.swift; sourceTree = "<group>"; };
 		9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsService.swift; sourceTree = "<group>"; };
+		9A3D5774208DD3710007A426 /* UIStackView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+extension.swift"; sourceTree = "<group>"; };
 		9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyTicketStory.storyboard; sourceTree = "<group>"; };
 		9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketContainerViewController.swift; sourceTree = "<group>"; };
 		9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				CE60B0C62077C7FC00EEC363 /* NSObject+ClassName.swift */,
 				CE60B0C82077C84600EEC363 /* UIViewController+FromStoryboard.swift */,
 				CE60B0CA2077C8A000EEC363 /* UIView+FromNib.swift */,
+				9A3D5774208DD3710007A426 /* UIStackView+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				9A095769208A06A20069EF28 /* GetWinAmountRequestModel.swift in Sources */,
 				CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */,
 				CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */,
+				9A3D5775208DD3710007A426 /* UIStackView+extension.swift in Sources */,
 				CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */,
 				9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */,
 				CE60B0C72077C7FC00EEC363 /* NSObject+ClassName.swift in Sources */,

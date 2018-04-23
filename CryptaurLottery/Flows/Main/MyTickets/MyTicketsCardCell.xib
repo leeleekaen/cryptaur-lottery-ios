@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSans-Regular.ttf">
-            <string>OpenSans-Regular</string>
-        </array>
         <array key="OpenSans-SemiBold.ttf">
             <string>OpenSans-SemiBold</string>
         </array>
@@ -52,76 +49,11 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="mit-ol-Y7m" userLabel="Numbers">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="mit-ol-Y7m" userLabel="Numbers">
                         <rect key="frame" x="10" y="60" width="291" height="40"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSi-aG-Fr6">
-                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="hae-BD-RUi"/>
-                                    <constraint firstAttribute="width" constant="40" id="sZ1-0r-pB0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                <state key="normal" title="1" backgroundImage="number-button-background">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkq-58-RR1">
-                                <rect key="frame" x="50" y="0.0" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="7iD-tf-sU8"/>
-                                    <constraint firstAttribute="width" constant="40" id="GTa-Ds-3sL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                <state key="normal" title="6" backgroundImage="number-button-background">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiP-fc-wyZ">
-                                <rect key="frame" x="100.5" y="0.0" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="AuH-Y1-K6L"/>
-                                    <constraint firstAttribute="width" constant="40" id="jly-oa-MF7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                <state key="normal" title="14" backgroundImage="number-button-background">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1f-GN-gM5">
-                                <rect key="frame" x="150.5" y="0.0" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="pgM-nc-otP"/>
-                                    <constraint firstAttribute="height" constant="40" id="um3-cw-VkP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                <state key="normal" title="16" backgroundImage="number-button-background">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCa-Jr-ddG">
-                                <rect key="frame" x="201" y="0.0" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="1pM-H5-CeI"/>
-                                    <constraint firstAttribute="height" constant="40" id="gno-GW-DnZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                <state key="normal" title="22" backgroundImage="number-button-background">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvX-vy-0eH">
-                                <rect key="frame" x="251" y="0.0" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Yxa-gk-NHt"/>
-                                    <constraint firstAttribute="width" constant="40" id="gI8-u8-Gzv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
-                                <state key="normal" title="28" backgroundImage="number-button-background">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="kEh-fn-6li"/>
+                        </constraints>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 APR, 23:11:08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2B0-L3-vZF">
                         <rect key="frame" x="16" y="120" width="80" height="15"/>
@@ -178,20 +110,14 @@
             <viewLayoutGuide key="safeArea" id="M5W-12-2Fq"/>
             <connections>
                 <outlet property="dateLabel" destination="2B0-L3-vZF" id="bSM-FC-sNL"/>
+                <outlet property="numbersStack" destination="mit-ol-Y7m" id="96o-Js-j3T"/>
                 <outlet property="timeLeftLabel" destination="gTE-Sy-AOm" id="GSd-eT-qoD"/>
                 <outlet property="wonLabel" destination="XSj-RK-cHr" id="kcc-ho-bEq"/>
-                <outletCollection property="numbers" destination="cvX-vy-0eH" collectionClass="NSMutableArray" id="Zif-dK-RSl"/>
-                <outletCollection property="numbers" destination="Mkq-58-RR1" collectionClass="NSMutableArray" id="TGa-X0-pv7"/>
-                <outletCollection property="numbers" destination="NSi-aG-Fr6" collectionClass="NSMutableArray" id="S2n-yU-wNc"/>
-                <outletCollection property="numbers" destination="qCa-Jr-ddG" collectionClass="NSMutableArray" id="lP4-bk-vDv"/>
-                <outletCollection property="numbers" destination="a1f-GN-gM5" collectionClass="NSMutableArray" id="rUj-ma-G7c"/>
-                <outletCollection property="numbers" destination="LiP-fc-wyZ" collectionClass="NSMutableArray" id="Ymc-hg-EJ0"/>
             </connections>
             <point key="canvasLocation" x="223" y="56"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="balls-5x36" width="170" height="135"/>
-        <image name="number-button-background" width="40" height="40"/>
     </resources>
 </document>
