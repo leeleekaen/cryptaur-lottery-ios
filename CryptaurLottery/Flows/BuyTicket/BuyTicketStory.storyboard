@@ -110,7 +110,7 @@
         <!--Buy Ticket View Controller-->
         <scene sceneID="msw-va-Wyg">
             <objects>
-                <viewController id="JMv-ca-pJJ" customClass="BuyTicketViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuyTicketViewController" id="JMv-ca-pJJ" customClass="BuyTicketViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WC9-mv-SuB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -896,6 +896,7 @@
                             <constraint firstItem="snR-R7-MnW" firstAttribute="leading" secondItem="4tG-Mz-aHa" secondAttribute="leading" id="OlN-PQ-mZQ"/>
                             <constraint firstAttribute="bottom" secondItem="snR-R7-MnW" secondAttribute="bottom" id="xzu-IP-TgV"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="NrL-bS-iQu"/>
                     </view>
                     <connections>
                         <outlet property="rulesTextView" destination="snR-R7-MnW" id="iDv-LX-fKb"/>
