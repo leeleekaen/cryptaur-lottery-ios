@@ -11,8 +11,10 @@ class BuyTicketViewModel: BaseViewModel {
     let drawIndex: Int  = 0
     let player: UInt256 = 0
     
+    
+    
     // MARK: - Dependency
-    let service = BuyTicketsService()
+    let buyTicketsService = BuyTicketsService()
     
     // MARK: - Public methods
     func buyTicket(numbers: [Int]) {
@@ -21,7 +23,7 @@ class BuyTicketViewModel: BaseViewModel {
                                             numbers: numbers, drawIndex: drawIndex,
                                             playerAddress: player)
         
-        service.perform(input: request,
+        buyTicketsService.perform(input: request,
                         success: { (responce) in
                             print(responce)
         }, failure: defaultServiceFailure)
