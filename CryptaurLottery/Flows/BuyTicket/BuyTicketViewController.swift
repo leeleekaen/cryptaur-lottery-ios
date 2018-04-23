@@ -8,6 +8,7 @@ class BuyTicketViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction func clear(_ sender: UIButton) {
+        selectedNumbers = []
         numbers.forEach {
             $0.setBackgroundImage(nil, for: .normal)
             $0.setTitleColor(.twilight, for: .normal)
@@ -15,12 +16,24 @@ class BuyTicketViewController: UIViewController {
     }
     
     @IBAction func numpadAction(_ sender: UIButton) {
+        
+        guard let title = sender.titleLabel?.text,
+            let number = Int(title),
+            let lottery = lottery else { return }
+        
         if sender.currentBackgroundImage == nil {
-            sender.setBackgroundImage(#imageLiteral(resourceName: "number-button-background"), for: .normal)
-            sender.setTitleColor(.white, for: .normal)
+            if lottery.toPick > selectedNumbers.count {
+                selectedNumbers.append(number)
+                sender.setBackgroundImage(#imageLiteral(resourceName: "number-button-background"), for: .normal)
+                sender.setTitleColor(.white, for: .normal)
+            }
+            
         } else {
-            sender.setBackgroundImage(nil, for: .normal)
-            sender.setTitleColor(.twilight, for: .normal)
+            if let index = selectedNumbers.index(of: number) {
+                sender.setBackgroundImage(nil, for: .normal)
+                sender.setTitleColor(.twilight, for: .normal)
+                selectedNumbers.remove(at: index)
+            }
         }
     }
     
@@ -30,6 +43,13 @@ class BuyTicketViewController: UIViewController {
     
     // MARK: - Dependency
     var lottery: LotteryID? = .lottery5x36
+    
+    // MARK: - Private properties
+    var selectedNumbers = [Int]() {
+        didSet {
+            print(selectedNumbers)
+        }
+    }
     
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
