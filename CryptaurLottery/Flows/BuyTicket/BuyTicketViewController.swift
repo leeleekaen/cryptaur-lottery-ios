@@ -45,11 +45,7 @@ class BuyTicketViewController: UIViewController {
     var lottery: LotteryID? = .lottery5x36
     
     // MARK: - Private properties
-    var selectedNumbers = [Int]() {
-        didSet {
-            print(selectedNumbers)
-        }
-    }
+    var selectedNumbers = [Int]()
     
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
