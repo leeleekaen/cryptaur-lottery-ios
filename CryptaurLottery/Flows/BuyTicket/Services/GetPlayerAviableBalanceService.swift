@@ -10,6 +10,7 @@ final class GetPlayerAviableBalanceService:
                                   failure: @escaping ServiceFailure) -> Operation? {
         
         return GetPlayerAviableBalanceOperation(request: input, success: { (json) in
+            print(json)
             guard let object = GetPlayerAviableBalanceResponceModel(json: json) else {
                 failure(ServiceError.deserializationFailure)
                 return
@@ -26,7 +27,10 @@ fileprivate final class GetPlayerAviableBalanceOperation: APIOperation {
          success: @escaping APIOperationSuccess,
          failure: @escaping ServiceFailure) {
         
-        let parameters = ["address": "\(request.address.toHexString())"]
+        let set = CharacterSet(charactersIn: "0")
+        let address = "0x" + request.address.toHexString().trimmingCharacters(in: set)
+        print(address)
+        let parameters = ["address": address]
         super.init(endpoint: .getPlayerAviableBalance, parameters: parameters, headers: nil,
                    success: success, failure: failure)
     }

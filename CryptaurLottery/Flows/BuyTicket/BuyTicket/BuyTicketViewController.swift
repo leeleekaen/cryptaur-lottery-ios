@@ -1,10 +1,11 @@
 import UIKit
 
-class BuyTicketViewController: UIViewController {
+class BuyTicketViewController: BaseViewController {
 
     // MARK: - IBoutlets
     @IBOutlet var numpad: [UIButton]!
     @IBOutlet weak var selectNumberLabel: UILabel!
+    @IBOutlet weak var availableLabe: UILabel!
     
     // MARK: - IBAction
     @IBAction func clear(_ sender: UIButton) {
@@ -53,6 +54,15 @@ class BuyTicketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSubviews()
+        bind()
+    }
+    
+    // MARK: - Binding
+    override func bind() {
+        
+        viewModel.balance.drive(onNext: { [weak self] in
+            self?.availableLabe.text = "Available \($0.toString()) CPT"
+        }).disposed(by: disposeBag)
     }
 }
 
