@@ -49,3 +49,22 @@ struct Ticket {
         self.numbers = numbers
     }
 }
+
+extension Ticket: Equatable {
+    static func == (lhs: Ticket, rhs: Ticket) -> Bool {
+        return
+            lhs.drawIndex == rhs.drawIndex &&
+                lhs.date == rhs.date &&
+                lhs.ticketIndex == rhs.ticketIndex &&
+                lhs.winLevel == rhs.winLevel &&
+                lhs.winAmount == rhs.winAmount &&
+                lhs.price == rhs.price &&
+                lhs.numbers == rhs.numbers
+    }
+}
+
+extension Ticket: Diffable {
+    var diffIdentifier: String {
+        return "\(ticketIndex)"
+    }
+}
