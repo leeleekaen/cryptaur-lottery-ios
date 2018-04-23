@@ -24,6 +24,7 @@
 		9AF87D91208E059C006326E5 /* BuyTicketRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF87D90208E059C006326E5 /* BuyTicketRequestModel.swift */; };
 		9AF87D93208E0666006326E5 /* BuyTicketResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF87D92208E0666006326E5 /* BuyTicketResponceModel.swift */; };
 		9AF87D96208E076E006326E5 /* BuyTicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF87D95208E076E006326E5 /* BuyTicketService.swift */; };
+		9AF87D99208E0A9A006326E5 /* BuyTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF87D98208E0A9A006326E5 /* BuyTicketViewModel.swift */; };
 		9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF8298208642310046A3F8 /* LoginViewController.swift */; };
 		9AFF829B208654B90046A3F8 /* LoginStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFF829A208654B90046A3F8 /* LoginStory.storyboard */; };
 		CE0C41A82077FF1F00190A82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41AA2077FF1F00190A82 /* Localizable.strings */; };
@@ -109,6 +110,7 @@
 		9AF87D90208E059C006326E5 /* BuyTicketRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketRequestModel.swift; sourceTree = "<group>"; };
 		9AF87D92208E0666006326E5 /* BuyTicketResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketResponceModel.swift; sourceTree = "<group>"; };
 		9AF87D95208E076E006326E5 /* BuyTicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketService.swift; sourceTree = "<group>"; };
+		9AF87D98208E0A9A006326E5 /* BuyTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewModel.swift; sourceTree = "<group>"; };
 		9AFF8298208642310046A3F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9AFF829A208654B90046A3F8 /* LoginStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStory.storyboard; sourceTree = "<group>"; };
 		CE0C41A92077FF1F00190A82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -230,7 +232,7 @@
 				9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */,
 				22D821EC2089C0F5007689E7 /* ShowRulesViewController.swift */,
 				9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */,
-				9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */,
+				9AF87D9A208E0A9E006326E5 /* BuyTicket */,
 				9AF87D97208E0771006326E5 /* Services */,
 				9AF87D94208E075D006326E5 /* Models */,
 			);
@@ -252,6 +254,15 @@
 				9AF87D95208E076E006326E5 /* BuyTicketService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		9AF87D9A208E0A9E006326E5 /* BuyTicket */ = {
+			isa = PBXGroup;
+			children = (
+				9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */,
+				9AF87D98208E0A9A006326E5 /* BuyTicketViewModel.swift */,
+			);
+			path = BuyTicket;
 			sourceTree = "<group>";
 		};
 		9AFF8297208642060046A3F8 /* Screens */ = {
@@ -798,6 +809,7 @@
 				CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */,
 				CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */,
 				9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */,
+				9AF87D99208E0A9A006326E5 /* BuyTicketViewModel.swift in Sources */,
 				CE60B0C72077C7FC00EEC363 /* NSObject+ClassName.swift in Sources */,
 				CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */,
 				9AE714742088DAF900D7F399 /* DrawArchiveCardCell.swift in Sources */,

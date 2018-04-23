@@ -3,13 +3,13 @@ import UIKit
 class BuyTicketViewController: UIViewController {
 
     // MARK: - IBoutlets
-    @IBOutlet var numbers: [UIButton]!
+    @IBOutlet var numpad: [UIButton]!
     @IBOutlet weak var selectNumberLabel: UILabel!
     
     // MARK: - IBAction
     @IBAction func clear(_ sender: UIButton) {
         selectedNumbers = []
-        numbers.forEach {
+        numpad.forEach {
             $0.setBackgroundImage(nil, for: .normal)
             $0.setTitleColor(.twilight, for: .normal)
         }
@@ -18,11 +18,10 @@ class BuyTicketViewController: UIViewController {
     @IBAction func numpadAction(_ sender: UIButton) {
         
         guard let title = sender.titleLabel?.text,
-            let number = Int(title),
-            let lottery = lottery else { return }
+            let number = Int(title) else { return }
         
         if sender.currentBackgroundImage == nil {
-            if lottery.toPick > selectedNumbers.count {
+            if viewModel.lottery.toPick > selectedNumbers.count {
                 selectedNumbers.append(number)
                 sender.setBackgroundImage(#imageLiteral(resourceName: "number-button-background"), for: .normal)
                 sender.setTitleColor(.white, for: .normal)
@@ -39,10 +38,13 @@ class BuyTicketViewController: UIViewController {
     
     @IBAction func buyAction(_ sender: UIButton) {
         print("Buy tapped")
+        if selectedNumbers.count == viewModel.lottery.toPick {
+            viewModel.buyTicket(numbers: selectedNumbers)
+        }
     }
     
     // MARK: - Dependency
-    var lottery: LotteryID? = .lottery5x36
+    let viewModel = BuyTicketViewModel()
     
     // MARK: - Private properties
     var selectedNumbers = [Int]()
@@ -58,20 +60,17 @@ class BuyTicketViewController: UIViewController {
 private extension BuyTicketViewController {
     
     func configureSubviews() {
+        
         view.backgroundColor = UIColor.paleLavender
         
-        guard let lottery = lottery else {
-            return
-        }
-        
-        numbers.forEach {
+        numpad.forEach {
             let number = Int(($0.titleLabel?.text)!)!
-            if number > lottery.total {
+            if number > viewModel.lottery.total {
                 $0.isEnabled = false
                 $0.setTitleColor(UIColor.paleLavender, for: .normal)
             }
         }
         
-        selectNumberLabel.text = "SELECT \(lottery.toPick) NUMBERS"
+        selectNumberLabel.text = "SELECT \(viewModel.lottery.toPick) NUMBERS"
     }
 }
