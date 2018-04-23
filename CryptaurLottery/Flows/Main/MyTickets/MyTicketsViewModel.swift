@@ -25,9 +25,18 @@ class MyTicketsViewModel: BaseViewModel {
     
     private let winAmountService = GetWinAmountService()
     private let playerTicketsService = GetPlayerTicketsService()
+    private let pickUpWinService  = PickUpWinService()
     
     override init() {
         super.init()
+    }
+    
+    func pickUpWin(for playerAddress: UInt256, witjKey key: String) {
+        
+        pickUpWinService.perform(input: PickUpWinRequestModel(authKey: key, playerAddress: playerAddress),
+                                 success: { (responce) in
+                                    print("Success pick up win")
+            }, failure: defaultServiceFailure)
     }
     
     func update(for playerAddress: UInt256, and lotteries: [LotteryID]) {

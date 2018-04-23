@@ -896,6 +896,7 @@
                             <constraint firstItem="snR-R7-MnW" firstAttribute="leading" secondItem="4tG-Mz-aHa" secondAttribute="leading" id="OlN-PQ-mZQ"/>
                             <constraint firstAttribute="bottom" secondItem="snR-R7-MnW" secondAttribute="bottom" id="xzu-IP-TgV"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="OhH-qY-vqP"/>
                     </view>
                     <connections>
                         <outlet property="rulesTextView" destination="snR-R7-MnW" id="iDv-LX-fKb"/>

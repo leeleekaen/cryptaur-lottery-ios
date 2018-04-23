@@ -79,4 +79,7 @@ extension APIEndpoint {
     static var getWinAmount: APIEndpoint {
         return APIEndpoint(.get, "api/getWinAmount")
     }
+    static var pickUpWin: APIEndpoint {
+        return APIEndpoint(.post, "api/pickUpWin")
+    }
 }

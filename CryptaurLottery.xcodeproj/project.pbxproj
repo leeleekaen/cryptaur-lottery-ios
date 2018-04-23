@@ -24,6 +24,9 @@
 		9A2071DE208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */; };
 		9A2071E0208A29DA00B5D671 /* GetPlayerTicketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */; };
 		9A3D5775208DD3710007A426 /* UIStackView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D5774208DD3710007A426 /* UIStackView+extension.swift */; };
+		9A3D577A208DE6230007A426 /* PickUpWinRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D5779208DE6230007A426 /* PickUpWinRequestModel.swift */; };
+		9A3D577C208DE77A0007A426 /* PickUpWinServicel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */; };
+		9A3D577E208DF0770007A426 /* PickUpWinResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D577D208DF0770007A426 /* PickUpWinResponceModel.swift */; };
 		9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */; };
 		9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */; };
 		9A9E83A72087882300D7E9BD /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */; };
@@ -115,6 +118,9 @@
 		9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsResponceModel.swift; sourceTree = "<group>"; };
 		9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsService.swift; sourceTree = "<group>"; };
 		9A3D5774208DD3710007A426 /* UIStackView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+extension.swift"; sourceTree = "<group>"; };
+		9A3D5779208DE6230007A426 /* PickUpWinRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinRequestModel.swift; sourceTree = "<group>"; };
+		9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinServicel.swift; sourceTree = "<group>"; };
+		9A3D577D208DF0770007A426 /* PickUpWinResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinResponceModel.swift; sourceTree = "<group>"; };
 		9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyTicketStory.storyboard; sourceTree = "<group>"; };
 		9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketContainerViewController.swift; sourceTree = "<group>"; };
 		9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +239,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9A3D5776208DE5F00007A426 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A0957642089DD6E0069EF28 /* Ticket.swift */,
+				9A095768208A06A20069EF28 /* GetWinAmountRequestModel.swift */,
+				9A0957662089E4720069EF28 /* GetWinAmountResponceModel.swift */,
+				9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */,
+				9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */,
+				9A3D5779208DE6230007A426 /* PickUpWinRequestModel.swift */,
+				9A3D577D208DF0770007A426 /* PickUpWinResponceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9A3D5777208DE5FB0007A426 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9A09576A208A08EC0069EF28 /* GetWinAmountService.swift */,
+				9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */,
+				9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		9A9E83A120877FC300D7E9BD /* BuyTicket */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,13 +353,8 @@
 				9A0D138920889EA200B5A630 /* MyTicketsCardCell.xib */,
 				CE4AE98A2081D5C8000763F4 /* MyTicketsViewController.swift */,
 				9A0957622089DBF20069EF28 /* MyTicketsViewModel.swift */,
-				9A095768208A06A20069EF28 /* GetWinAmountRequestModel.swift */,
-				9A0957662089E4720069EF28 /* GetWinAmountResponceModel.swift */,
-				9A09576A208A08EC0069EF28 /* GetWinAmountService.swift */,
-				9A0957642089DD6E0069EF28 /* Ticket.swift */,
-				9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */,
-				9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */,
-				9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */,
+				9A3D5776208DE5F00007A426 /* Models */,
+				9A3D5777208DE5FB0007A426 /* Services */,
 			);
 			path = MyTickets;
 			sourceTree = "<group>";
@@ -805,6 +830,7 @@
 				CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */,
 				9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */,
 				CE60B0C72077C7FC00EEC363 /* NSObject+ClassName.swift in Sources */,
+				9A3D577C208DE77A0007A426 /* PickUpWinServicel.swift in Sources */,
 				CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */,
 				9A2071DE208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift in Sources */,
 				9AE714742088DAF900D7F399 /* DrawArchiveCardCell.swift in Sources */,
@@ -813,6 +839,7 @@
 				CE60B0BB2077B29800EEC363 /* UIBarButtonItem+Menu.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
+				9A3D577E208DF0770007A426 /* PickUpWinResponceModel.swift in Sources */,
 				CE1068192074D357004CD0B4 /* UInt256+FromHexString.swift in Sources */,
 				CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */,
 				9AE714712088D7AB00D7F399 /* DrawArchiveViewController.swift in Sources */,
@@ -837,6 +864,7 @@
 				CE60B0BD2077B36B00EEC363 /* UIBarButtonItem+Badge.swift in Sources */,
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
 				CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */,
+				9A3D577A208DE6230007A426 /* PickUpWinRequestModel.swift in Sources */,
 				9A0D138C20889EA300B5A630 /* MyTicketsCardCell.swift in Sources */,
 				CE3084DB20767F71008C140C /* BalanceViewModel.swift in Sources */,
 				CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */,
