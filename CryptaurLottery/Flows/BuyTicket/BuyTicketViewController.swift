@@ -4,6 +4,7 @@ class BuyTicketViewController: UIViewController {
 
     // MARK: - IBoutlets
     @IBOutlet var numbers: [UIButton]!
+    @IBOutlet weak var selectNumberLabel: UILabel!
     
     // MARK: - IBAction
     @IBAction func clear(_ sender: UIButton) {
@@ -27,6 +28,9 @@ class BuyTicketViewController: UIViewController {
         print("Buy tapped")
     }
     
+    // MARK: - Dependency
+    var lottery: LotteryID? = .lottery5x36
+    
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,5 +43,19 @@ private extension BuyTicketViewController {
     
     func configureSubviews() {
         view.backgroundColor = UIColor.paleLavender
+        
+        guard let lottery = lottery else {
+            return
+        }
+        
+        numbers.forEach {
+            let number = Int(($0.titleLabel?.text)!)!
+            if number > lottery.total {
+                $0.isEnabled = false
+                $0.setTitleColor(UIColor.paleLavender, for: .normal)
+            }
+        }
+        
+        selectNumberLabel.text = "SELECT \(lottery.toPick) NUMBERS"
     }
 }

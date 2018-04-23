@@ -13,7 +13,7 @@ enum LotteryID: Int {
     
     static let count = 3
     
-    var pickNumber: Int {
+    var toPick: Int {
         
         switch self {
         case .lottery4x20:
@@ -25,7 +25,7 @@ enum LotteryID: Int {
         }
     }
     
-    var totalNumber: Int {
+    var total: Int {
         
         switch self {
         case .lottery4x20:

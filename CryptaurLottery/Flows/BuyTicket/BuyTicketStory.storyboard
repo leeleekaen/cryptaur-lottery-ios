@@ -115,7 +115,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT 6 NUMBERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-z2-ldK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT 0 NUMBERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-z2-ldK">
                                 <rect key="frame" x="36" y="30" width="103" height="15"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
                                 <color key="textColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
@@ -790,6 +790,7 @@
                         <viewLayoutGuide key="safeArea" id="PP5-TV-cqH"/>
                     </view>
                     <connections>
+                        <outlet property="selectNumberLabel" destination="0FR-z2-ldK" id="rE2-qT-Ee4"/>
                         <outletCollection property="numbers" destination="gCJ-Bq-xFi" collectionClass="NSMutableArray" id="3Ya-7v-X5I"/>
                         <outletCollection property="numbers" destination="JYD-hR-6ho" collectionClass="NSMutableArray" id="57s-FM-MLa"/>
                         <outletCollection property="numbers" destination="D2d-lk-yzo" collectionClass="NSMutableArray" id="LFH-qz-rer"/>
