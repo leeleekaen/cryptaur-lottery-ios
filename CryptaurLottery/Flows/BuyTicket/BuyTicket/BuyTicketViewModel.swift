@@ -49,8 +49,8 @@ private extension BuyTicketViewModel {
         
         let request = GetPlayerAviableBalanceRequestModel(address: player)
         balanceService.perform(input: request,
-                               success: { (responce) in
-                                print(responce)
+                               success: { [weak self] (responce) in
+                                self?.balanceObject.onNext(responce.balance)
         }) { (error) in
             print(error)
         }
