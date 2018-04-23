@@ -35,7 +35,7 @@ class MyTicketsViewModel: BaseViewModel {
         
         pickUpWinService.perform(input: PickUpWinRequestModel(authKey: key, playerAddress: playerAddress),
                                  success: { (responce) in
-                                    print("Success pick up win")
+                                    print("Success pick up win \(responce)")
             }, failure: defaultServiceFailure)
     }
     

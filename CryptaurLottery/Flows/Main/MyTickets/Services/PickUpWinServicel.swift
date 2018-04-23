@@ -8,7 +8,11 @@ OperationService<PickUpWinRequestModel, PickUpWinResponceModel> {
                                   failure: @escaping ServiceFailure) -> Operation? {
         
         return GetPlayerTicketsOperation(request: input, success: { (json) in
-            print("Succecc pickUpWin request")
+            guard let object = PickUpWinResponceModel(json: json) else {
+                failure(ServiceError.deserializationFailure)
+                return
+            }
+            success(object)
         }, failure: failure)
     }
 }
