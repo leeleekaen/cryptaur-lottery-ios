@@ -29,7 +29,6 @@ fileprivate final class GetPlayerAviableBalanceOperation: APIOperation {
         
         let set = CharacterSet(charactersIn: "0")
         let address = "0x" + request.address.toHexString().trimmingCharacters(in: set)
-        print(address)
         let parameters = ["address": address]
         super.init(endpoint: .getPlayerAviableBalance, parameters: parameters, headers: nil,
                    success: success, failure: failure)

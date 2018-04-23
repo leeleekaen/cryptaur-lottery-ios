@@ -791,6 +791,7 @@
                     </view>
                     <connections>
                         <outlet property="availableLabe" destination="WXd-iA-wzU" id="gvd-gb-VRt"/>
+                        <outlet property="buyTicketButton" destination="Kjz-fA-Vff" id="rX4-pS-gvm"/>
                         <outlet property="selectNumberLabel" destination="0FR-z2-ldK" id="rE2-qT-Ee4"/>
                         <outletCollection property="numpad" destination="gCJ-Bq-xFi" collectionClass="NSMutableArray" id="3Ya-7v-X5I"/>
                         <outletCollection property="numpad" destination="JYD-hR-6ho" collectionClass="NSMutableArray" id="57s-FM-MLa"/>

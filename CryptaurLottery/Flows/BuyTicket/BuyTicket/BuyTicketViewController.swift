@@ -6,6 +6,7 @@ class BuyTicketViewController: BaseViewController {
     @IBOutlet var numpad: [UIButton]!
     @IBOutlet weak var selectNumberLabel: UILabel!
     @IBOutlet weak var availableLabe: UILabel!
+    @IBOutlet weak var buyTicketButton: UIButton!
     
     // MARK: - IBAction
     @IBAction func clear(_ sender: UIButton) {
@@ -62,6 +63,10 @@ class BuyTicketViewController: BaseViewController {
         
         viewModel.balance.drive(onNext: { [weak self] in
             self?.availableLabe.text = "Available \($0.toString()) CPT"
+        }).disposed(by: disposeBag)
+        
+        viewModel.ticketPrice.drive(onNext: { [weak self] in
+            self?.buyTicketButton.setTitle("Buy for \($0.toString())", for: .normal)
         }).disposed(by: disposeBag)
     }
 }
