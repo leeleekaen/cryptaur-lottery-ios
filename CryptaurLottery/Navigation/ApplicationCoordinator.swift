@@ -17,16 +17,12 @@ final class ApplicationCoordinator {
     
     func start() {
         
-//        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
-//        let loginViewController = LoginViewController.controllerInStoryboard(loginStoryboard)
-//        loginViewController.setFlowCompletion { [weak self] in
-//            self?.startMain()
-//        }
-//        self.window?.rootViewController = loginViewController
-        
-        let buyTicketStoryboard = UIStoryboard(name: "BuyTicketStory", bundle: nil)
-        let buyTicketContainerViewController = BuyTicketContainerViewController.controllerInStoryboard(buyTicketStoryboard)
-        self.window?.rootViewController = buyTicketContainerViewController
+        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
+        let loginViewController = LoginViewController.controllerInStoryboard(loginStoryboard)
+        loginViewController.setFlowCompletion { [weak self] in
+            self?.startMain()
+        }
+       self.window?.rootViewController = loginViewController
     }
     
     private func startMain() {

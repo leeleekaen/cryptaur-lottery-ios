@@ -1,14 +1,17 @@
 import UIKit
 import IGListKit
 
-class DrawArchiveViewController: UIViewController {
+class DrawArchiveViewController: BaseViewController {
 
     // MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-    let lotteries: [Int] = [1, 2, 3, 4, 5, 6, 7]
+    
+    // MARK: - Dependency
+    let viewModel = DrawArchiveViewModel()
     
     // MARK: - Viewcontroller lidecycle
     override func viewDidLoad() {
@@ -21,6 +24,19 @@ class DrawArchiveViewController: UIViewController {
         adapter.collectionView = collectionView
         adapter.dataSource = self
     }
+    
+    override func bind() {
+        
+        viewModel.updateCompletion = {
+            DispatchQueue.main.async { [weak self] in
+                self?.adapter.reloadData()
+            }
+        }
+        
+        viewModel.isLoading.drive(onNext: { [weak self] in
+            self?.activityIndicator.isHidden = !$0
+        }).disposed(by: disposeBag)
+    }
 }
 
 // MARK: - ListAdapterDataSource
@@ -29,8 +45,17 @@ extension DrawArchiveViewController: ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter,
                      sectionControllerFor object: Any) -> ListSectionController {
         
-        let sectionController = ListSingleSectionController(nibName: DrawArchiveCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
-            // configure cell
+        let sectionController = ListSingleSectionController(nibName: DrawArchiveCardCell.nameOfClass, bundle: nil, configureBlock: { [weak self] (item, cell) in
+            
+            guard let cell = cell as? DrawArchiveCardCell,
+                let item = item as? DiffableBox<ArchiveDraw> else { return }
+            
+            cell.configure(with: item.value)
+            
+            if let lastDraw = self?.viewModel.draws.last, item.value == lastDraw {
+                self?.viewModel.getNextDraws()
+            }
+            
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
             return CGSize(width: size.width, height: 140)
@@ -44,7 +69,7 @@ extension DrawArchiveViewController: ListAdapterDataSource {
     }
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return lotteries.diffable()
+        return viewModel.draws.diffable()
     }
 }
 
