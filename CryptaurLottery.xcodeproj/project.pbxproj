@@ -18,6 +18,10 @@
 		9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */; };
 		9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */; };
 		9A9E83A72087882300D7E9BD /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */; };
+		9AD676F4208F22CE0080DE6E /* GetDrawsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD676F3208F22CE0080DE6E /* GetDrawsRequestModel.swift */; };
+		9AD676F6208F23490080DE6E /* GetDrawsResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD676F5208F23490080DE6E /* GetDrawsResponceModel.swift */; };
+		9AD676F8208F25A90080DE6E /* ArchiveDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD676F7208F25A90080DE6E /* ArchiveDraw.swift */; };
+		9AD676FA208F28A50080DE6E /* GetDrawsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD676F9208F28A50080DE6E /* GetDrawsService.swift */; };
 		9AE714712088D7AB00D7F399 /* DrawArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE714702088D7AB00D7F399 /* DrawArchiveViewController.swift */; };
 		9AE714742088DAF900D7F399 /* DrawArchiveCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE714722088DAF800D7F399 /* DrawArchiveCardCell.swift */; };
 		9AE714752088DAF900D7F399 /* DrawArchiveCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE714732088DAF900D7F399 /* DrawArchiveCardCell.xib */; };
@@ -100,6 +104,10 @@
 		9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyTicketStory.storyboard; sourceTree = "<group>"; };
 		9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketContainerViewController.swift; sourceTree = "<group>"; };
 		9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
+		9AD676F3208F22CE0080DE6E /* GetDrawsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDrawsRequestModel.swift; sourceTree = "<group>"; };
+		9AD676F5208F23490080DE6E /* GetDrawsResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDrawsResponceModel.swift; sourceTree = "<group>"; };
+		9AD676F7208F25A90080DE6E /* ArchiveDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDraw.swift; sourceTree = "<group>"; };
+		9AD676F9208F28A50080DE6E /* GetDrawsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDrawsService.swift; sourceTree = "<group>"; };
 		9AE714702088D7AB00D7F399 /* DrawArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawArchiveViewController.swift; sourceTree = "<group>"; };
 		9AE714722088DAF800D7F399 /* DrawArchiveCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawArchiveCardCell.swift; sourceTree = "<group>"; };
 		9AE714732088DAF900D7F399 /* DrawArchiveCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawArchiveCardCell.xib; sourceTree = "<group>"; };
@@ -218,15 +226,27 @@
 		9A9E83A120877FC300D7E9BD /* BuyTicket */ = {
 			isa = PBXGroup;
 			children = (
-				9AE714722088DAF800D7F399 /* DrawArchiveCardCell.swift */,
-				9AE714732088DAF900D7F399 /* DrawArchiveCardCell.xib */,
-				9AE714702088D7AB00D7F399 /* DrawArchiveViewController.swift */,
+				9AD676F2208F22AA0080DE6E /* DrawArchive */,
 				9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */,
 				22D821EC2089C0F5007689E7 /* ShowRulesViewController.swift */,
 				9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */,
 				9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */,
 			);
 			path = BuyTicket;
+			sourceTree = "<group>";
+		};
+		9AD676F2208F22AA0080DE6E /* DrawArchive */ = {
+			isa = PBXGroup;
+			children = (
+				9AE714722088DAF800D7F399 /* DrawArchiveCardCell.swift */,
+				9AE714732088DAF900D7F399 /* DrawArchiveCardCell.xib */,
+				9AE714702088D7AB00D7F399 /* DrawArchiveViewController.swift */,
+				9AD676F3208F22CE0080DE6E /* GetDrawsRequestModel.swift */,
+				9AD676F5208F23490080DE6E /* GetDrawsResponceModel.swift */,
+				9AD676F7208F25A90080DE6E /* ArchiveDraw.swift */,
+				9AD676F9208F28A50080DE6E /* GetDrawsService.swift */,
+			);
+			path = DrawArchive;
 			sourceTree = "<group>";
 		};
 		9AFF8297208642060046A3F8 /* Screens */ = {
@@ -769,6 +789,7 @@
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
 				CE9C06B42088DE2A00535869 /* GetCurrentLotteriesResponseModel.swift in Sources */,
 				CEDE7A1420890D8B00F3BA7F /* ApplicationCoordinator.swift in Sources */,
+				9AD676F6208F23490080DE6E /* GetDrawsResponceModel.swift in Sources */,
 				CE647F3F2075182500B334E3 /* GetTicketPriceRequestModel.swift in Sources */,
 				CE254CE72072A69700A12F72 /* APIOperation.swift in Sources */,
 				CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */,
@@ -790,6 +811,7 @@
 				CE60B0C12077C5AA00EEC363 /* BadgeView.swift in Sources */,
 				CE60B0B92077B24B00EEC363 /* BadgeViewModel.swift in Sources */,
 				CEDEFF7E20739B8400297A99 /* ConnectTokenRequestModel.swift in Sources */,
+				9AD676F4208F22CE0080DE6E /* GetDrawsRequestModel.swift in Sources */,
 				CE60B0CB2077C8A000EEC363 /* UIView+FromNib.swift in Sources */,
 				9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */,
 				CEDEFF7820739AB400297A99 /* ConnectTokenService.swift in Sources */,
@@ -804,11 +826,13 @@
 				9A0D138C20889EA300B5A630 /* MyTicketsCardCell.swift in Sources */,
 				CE3084DB20767F71008C140C /* BalanceViewModel.swift in Sources */,
 				CE3D2DFC2072645900C28251 /* UIColor+Palette.swift in Sources */,
+				9AD676F8208F25A90080DE6E /* ArchiveDraw.swift in Sources */,
 				22C18CE320882DF200DBBCD8 /* MenuViewController.swift in Sources */,
 				CE0C41B4207816BD00190A82 /* LotteryCardCell.swift in Sources */,
 				CE647F3D2075178800B334E3 /* GetTicketPriceService.swift in Sources */,
 				CE647F4120751C5C00B334E3 /* LotteryID.swift in Sources */,
 				CE7C8B802087E1860006C5C2 /* LoginViewModel.swift in Sources */,
+				9AD676FA208F28A50080DE6E /* GetDrawsService.swift in Sources */,
 				CE254CE5207299E400A12F72 /* APIEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
