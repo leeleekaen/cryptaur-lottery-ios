@@ -23,6 +23,7 @@
 		9AD676F8208F25A90080DE6E /* ArchiveDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD676F7208F25A90080DE6E /* ArchiveDraw.swift */; };
 		9AD676FA208F28A50080DE6E /* GetDrawsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD676F9208F28A50080DE6E /* GetDrawsService.swift */; };
 		9AD676FC208F2C000080DE6E /* DrawArchiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD676FB208F2C000080DE6E /* DrawArchiveViewModel.swift */; };
+		9AD67700208F49A50080DE6E /* Bool+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD676FF208F49A50080DE6E /* Bool+extension.swift */; };
 		9AE714712088D7AB00D7F399 /* DrawArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE714702088D7AB00D7F399 /* DrawArchiveViewController.swift */; };
 		9AE714742088DAF900D7F399 /* DrawArchiveCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE714722088DAF800D7F399 /* DrawArchiveCardCell.swift */; };
 		9AE714752088DAF900D7F399 /* DrawArchiveCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE714732088DAF900D7F399 /* DrawArchiveCardCell.xib */; };
@@ -110,6 +111,7 @@
 		9AD676F7208F25A90080DE6E /* ArchiveDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDraw.swift; sourceTree = "<group>"; };
 		9AD676F9208F28A50080DE6E /* GetDrawsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDrawsService.swift; sourceTree = "<group>"; };
 		9AD676FB208F2C000080DE6E /* DrawArchiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawArchiveViewModel.swift; sourceTree = "<group>"; };
+		9AD676FF208F49A50080DE6E /* Bool+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+extension.swift"; sourceTree = "<group>"; };
 		9AE714702088D7AB00D7F399 /* DrawArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawArchiveViewController.swift; sourceTree = "<group>"; };
 		9AE714722088DAF800D7F399 /* DrawArchiveCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawArchiveCardCell.swift; sourceTree = "<group>"; };
 		9AE714732088DAF900D7F399 /* DrawArchiveCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawArchiveCardCell.xib; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				CE60B0C62077C7FC00EEC363 /* NSObject+ClassName.swift */,
 				CE60B0C82077C84600EEC363 /* UIViewController+FromStoryboard.swift */,
 				CE60B0CA2077C8A000EEC363 /* UIView+FromNib.swift */,
+				9AD676FF208F49A50080DE6E /* Bool+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				CE647F3B2075157400B334E3 /* JSONDeserializable.swift in Sources */,
 				9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */,
 				CE60B0C12077C5AA00EEC363 /* BadgeView.swift in Sources */,
+				9AD67700208F49A50080DE6E /* Bool+extension.swift in Sources */,
 				CE60B0B92077B24B00EEC363 /* BadgeViewModel.swift in Sources */,
 				CEDEFF7E20739B8400297A99 /* ConnectTokenRequestModel.swift in Sources */,
 				9AD676F4208F22CE0080DE6E /* GetDrawsRequestModel.swift in Sources */,

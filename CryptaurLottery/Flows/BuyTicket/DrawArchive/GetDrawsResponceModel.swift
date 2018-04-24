@@ -5,7 +5,7 @@ struct GetDrawsResponceModel: JSONDeserializable {
     let draws: [ArchiveDraw]
     
     init?(json: JSONDictionary) {
-        
+                
         guard let list = json["draws"] as? [JSONDictionary] else {
             return nil
         }

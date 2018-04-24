@@ -41,12 +41,16 @@ extension DrawArchiveViewController: ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter,
                      sectionControllerFor object: Any) -> ListSectionController {
         
-        let sectionController = ListSingleSectionController(nibName: DrawArchiveCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
+        let sectionController = ListSingleSectionController(nibName: DrawArchiveCardCell.nameOfClass, bundle: nil, configureBlock: { [weak self] (item, cell) in
             
             guard let cell = cell as? DrawArchiveCardCell,
                 let item = item as? DiffableBox<ArchiveDraw> else { return }
             
             cell.configure(with: item.value)
+            
+            if let lastDraw = self?.viewModel.draws.last, item.value == lastDraw {
+                self?.viewModel.getNextDraws()
+            }
             
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
