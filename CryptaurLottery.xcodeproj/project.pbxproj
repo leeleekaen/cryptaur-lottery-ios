@@ -11,6 +11,9 @@
 		22C18CE12088127300DBBCD8 /* MenuStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C18CE02088127300DBBCD8 /* MenuStory.storyboard */; };
 		22C18CE320882DF200DBBCD8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C18CE220882DF200DBBCD8 /* MenuViewController.swift */; };
 		22D821ED2089C0F5007689E7 /* ShowRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D821EC2089C0F5007689E7 /* ShowRulesViewController.swift */; };
+		22D821EF208B8132007689E7 /* DrawDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D821EE208B8132007689E7 /* DrawDetailsViewController.swift */; };
+		22D821F1208BEFD3007689E7 /* DrawDetailsWinnerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D821F0208BEFD3007689E7 /* DrawDetailsWinnerCell.xib */; };
+		22D821F3208BF739007689E7 /* DrawDetailsWinnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D821F2208BF739007689E7 /* DrawDetailsWinnerCell.swift */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
 		9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0742F520872FA700283DA5 /* PinCodeViewController.swift */; };
 		9A0D138B20889EA300B5A630 /* MyTicketsCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A0D138920889EA200B5A630 /* MyTicketsCardCell.xib */; };
@@ -91,6 +94,9 @@
 		22C18CE02088127300DBBCD8 /* MenuStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuStory.storyboard; sourceTree = "<group>"; };
 		22C18CE220882DF200DBBCD8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		22D821EC2089C0F5007689E7 /* ShowRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRulesViewController.swift; sourceTree = "<group>"; };
+		22D821EE208B8132007689E7 /* DrawDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDetailsViewController.swift; sourceTree = "<group>"; };
+		22D821F0208BEFD3007689E7 /* DrawDetailsWinnerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawDetailsWinnerCell.xib; sourceTree = "<group>"; };
+		22D821F2208BF739007689E7 /* DrawDetailsWinnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDetailsWinnerCell.swift; sourceTree = "<group>"; };
 		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +228,9 @@
 				9AE714732088DAF900D7F399 /* DrawArchiveCardCell.xib */,
 				9AE714702088D7AB00D7F399 /* DrawArchiveViewController.swift */,
 				9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */,
+				22D821EE208B8132007689E7 /* DrawDetailsViewController.swift */,
+				22D821F0208BEFD3007689E7 /* DrawDetailsWinnerCell.xib */,
+				22D821F2208BF739007689E7 /* DrawDetailsWinnerCell.swift */,
 				22D821EC2089C0F5007689E7 /* ShowRulesViewController.swift */,
 				9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */,
 				9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */,
@@ -601,6 +610,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE60B0BF2077C33E00EEC363 /* BadgeView.xib in Resources */,
+				22D821F1208BEFD3007689E7 /* DrawDetailsWinnerCell.xib in Resources */,
 				CE0C41A82077FF1F00190A82 /* Localizable.strings in Resources */,
 				CE0C41B6207816E600190A82 /* LotteryCardCell.xib in Resources */,
 				9AE714752088DAF900D7F399 /* DrawArchiveCardCell.xib in Resources */,
@@ -781,6 +791,7 @@
 				CE60B0BB2077B29800EEC363 /* UIBarButtonItem+Menu.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
+				22D821F3208BF739007689E7 /* DrawDetailsWinnerCell.swift in Sources */,
 				CE1068192074D357004CD0B4 /* UInt256+FromHexString.swift in Sources */,
 				CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */,
 				9AE714712088D7AB00D7F399 /* DrawArchiveViewController.swift in Sources */,
@@ -808,6 +819,7 @@
 				CE0C41B4207816BD00190A82 /* LotteryCardCell.swift in Sources */,
 				CE647F3D2075178800B334E3 /* GetTicketPriceService.swift in Sources */,
 				CE647F4120751C5C00B334E3 /* LotteryID.swift in Sources */,
+				22D821EF208B8132007689E7 /* DrawDetailsViewController.swift in Sources */,
 				CE7C8B802087E1860006C5C2 /* LoginViewModel.swift in Sources */,
 				CE254CE5207299E400A12F72 /* APIEndpoint.swift in Sources */,
 			);
