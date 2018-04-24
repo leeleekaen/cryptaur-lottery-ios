@@ -167,6 +167,12 @@
                 <constraint firstItem="TVK-rD-8Jm" firstAttribute="top" secondItem="rCW-ao-a5x" secondAttribute="top" constant="10" id="wuQ-aF-2PZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="M5W-12-2Fq"/>
+            <connections>
+                <outlet property="dateLabel" destination="2B0-L3-vZF" id="p5K-kI-V4i"/>
+                <outlet property="drawNumberLabel" destination="U6X-pM-JZ4" id="fSD-Ox-hRJ"/>
+                <outlet property="jackpotLabel" destination="FEO-IH-RX9" id="znI-mt-uIj"/>
+                <outlet property="numbersStackView" destination="mit-ol-Y7m" id="qde-2q-cP8"/>
+            </connections>
             <point key="canvasLocation" x="223" y="56"/>
         </collectionViewCell>
     </objects>
