@@ -1,7 +1,7 @@
 import UIKit
 import IGListKit
 
-class DrawArchiveViewController: UIViewController {
+class DrawArchiveViewController: BaseViewController {
 
     // MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
@@ -9,6 +9,9 @@ class DrawArchiveViewController: UIViewController {
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     let lotteries: [Int] = [1, 2, 3, 4, 5, 6, 7]
+    
+    // MARK: - Dependency
+    let viewModel = DrawArchiveViewModel()
     
     // MARK: - Viewcontroller lidecycle
     override func viewDidLoad() {
