@@ -24,6 +24,15 @@ class DrawArchiveViewController: BaseViewController {
         adapter.collectionView = collectionView
         adapter.dataSource = self
     }
+    
+    override func bind() {
+        
+        viewModel.updateCompletion = {
+            DispatchQueue.main.async { [weak self] in
+                self?.adapter.reloadData()
+            }
+        }
+    }
 }
 
 // MARK: - ListAdapterDataSource
@@ -34,6 +43,7 @@ extension DrawArchiveViewController: ListAdapterDataSource {
         
         let sectionController = ListSingleSectionController(nibName: DrawArchiveCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
             // configure cell
+            print(item)
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
             return CGSize(width: size.width, height: 140)
@@ -47,7 +57,7 @@ extension DrawArchiveViewController: ListAdapterDataSource {
     }
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return lotteries.diffable()
+        return viewModel.draws.diffable()
     }
 }
 

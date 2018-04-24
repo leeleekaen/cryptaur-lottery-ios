@@ -2,7 +2,9 @@ import Foundation
 
 class DrawArchiveViewModel: BaseViewModel {
     
+    var draws = [ArchiveDraw]()
     let lottery: LotteryID = .lottery4x20
+    var updateCompletion: (() -> ())?
     
     let service = GetDrawsService()
     
@@ -21,8 +23,9 @@ class DrawArchiveViewModel: BaseViewModel {
         let request = GetDrawsRequestModel(lotteryID: lottery, offset: offset, count: count)
     
         service.perform(input: request,
-                        success: { (responce) in
-                            print(responce)
+                        success: { [weak self] (responce) in
+                            self?.draws = responce.draws
+                            self?.updateCompletion?()
         }, failure: defaultServiceFailure)
     }
 }
