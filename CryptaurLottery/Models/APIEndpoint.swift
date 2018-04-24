@@ -82,6 +82,7 @@ extension APIEndpoint {
     }
     static var pickUpWin: APIEndpoint {
         return APIEndpoint(.post, "api/pickUpWin")
+    }
     static var buyTickets: APIEndpoint {
         return APIEndpoint(.post, "api/buyTickets")
     }
