@@ -9,7 +9,7 @@ struct ArchiveDraw: JSONDeserializable, Diffable {
     
     let number: Int
     let date: Date
-    let numbers: [Int]?
+    let numbers: [Int]
     let jackpot: UInt256
     
     init?(json: JSONDictionary) {
@@ -20,13 +20,12 @@ struct ArchiveDraw: JSONDeserializable, Diffable {
             let dateString = json["date"] as? String,
             let date = dateFormatter.date(from: dateString),
             let jackpotString = json["jackpot"] as? String,
-            let jackpot = UInt256(hexString: jackpotString) else {
-                return nil
-        }
+            let jackpot = UInt256(hexString: jackpotString),
+            let numbers = json["numbers"] as? [Int] else { return nil }
         
         self.number = number
         self.date = date
         self.jackpot = jackpot
-        self.numbers = json["numbers"] as? [Int]
+        self.numbers = numbers
     }
 }

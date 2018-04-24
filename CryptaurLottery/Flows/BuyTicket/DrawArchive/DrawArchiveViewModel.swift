@@ -27,7 +27,7 @@ class DrawArchiveViewModel: BaseViewModel {
                             
                             var archiveDraws = [ArchiveDraw]()
                             responce.draws.forEach {
-                                if let numbers = $0.numbers, numbers.count > 0 {
+                                if $0.numbers.count > 0 {
                                     archiveDraws.append($0)
                                 }
                             }

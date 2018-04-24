@@ -39,7 +39,7 @@ class DrawArchiveCardCell: UICollectionViewCell {
         // Remove the views from self
         removedSubviews.forEach({ $0.removeFromSuperview() })
         
-        draw.numbers?.forEach {
+        draw.numbers.forEach {
             let button = UIButton()
             button.setTitle("\($0)", for: .normal)
             button.setBackgroundImage(#imageLiteral(resourceName: "loss_number-backgorund"), for: .normal)
