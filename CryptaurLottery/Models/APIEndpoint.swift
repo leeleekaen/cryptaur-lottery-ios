@@ -77,4 +77,10 @@ extension APIEndpoint {
     static var getCurrentLotteries: APIEndpoint {
         return APIEndpoint(.get, "api/getCurrentLotteries")
     }
+    static var buyTickets: APIEndpoint {
+        return APIEndpoint(.post, "api/buyTickets")
+    }
+    static var getPlayerAviableBalance: APIEndpoint {
+        return APIEndpoint(.get, "api/getPlayerAviableBalance")
+    }
 }
