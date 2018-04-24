@@ -42,8 +42,12 @@ extension DrawArchiveViewController: ListAdapterDataSource {
                      sectionControllerFor object: Any) -> ListSectionController {
         
         let sectionController = ListSingleSectionController(nibName: DrawArchiveCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
-            // configure cell
-            print(item)
+            
+            guard let cell = cell as? DrawArchiveCardCell,
+                let item = item as? DiffableBox<ArchiveDraw> else { return }
+            
+            cell.configure(with: item.value)
+            
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
             return CGSize(width: size.width, height: 140)
