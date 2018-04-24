@@ -961,10 +961,10 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-Eo-4gx">
-                                <rect key="frame" x="16" y="393.5" width="343" height="171.5"/>
+                                <rect key="frame" x="0.0" y="393.5" width="375" height="171.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uzT-XB-m1w">
-                                        <rect key="frame" x="10" y="0.0" width="323" height="172"/>
+                                        <rect key="frame" x="20" y="0.0" width="335" height="172"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mVb-wa-pfa">
                                             <size key="itemSize" width="50" height="50"/>
@@ -988,8 +988,8 @@
                                 <constraints>
                                     <constraint firstItem="uzT-XB-m1w" firstAttribute="top" secondItem="b3c-Eo-4gx" secondAttribute="top" id="Oq8-pF-wa6"/>
                                     <constraint firstAttribute="bottom" secondItem="uzT-XB-m1w" secondAttribute="bottom" id="gJS-vW-cLZ"/>
-                                    <constraint firstItem="uzT-XB-m1w" firstAttribute="leading" secondItem="b3c-Eo-4gx" secondAttribute="leading" constant="10" id="mga-eh-7Sz"/>
-                                    <constraint firstAttribute="trailing" secondItem="uzT-XB-m1w" secondAttribute="trailing" constant="10" id="rqw-p8-wFR"/>
+                                    <constraint firstItem="uzT-XB-m1w" firstAttribute="leading" secondItem="b3c-Eo-4gx" secondAttribute="leading" constant="20" id="mga-eh-7Sz"/>
+                                    <constraint firstAttribute="trailing" secondItem="uzT-XB-m1w" secondAttribute="trailing" constant="20" id="rqw-p8-wFR"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1002,8 +1002,8 @@
                             <constraint firstItem="1Vh-TE-xkH" firstAttribute="top" secondItem="Kvd-7u-CG0" secondAttribute="bottom" constant="10" id="YTu-3Z-Nj7"/>
                             <constraint firstItem="1Vh-TE-xkH" firstAttribute="bottom" secondItem="b3c-Eo-4gx" secondAttribute="top" id="bcb-D9-7aN"/>
                             <constraint firstItem="1Vh-TE-xkH" firstAttribute="leading" secondItem="elI-B9-C7Q" secondAttribute="leading" constant="24" id="sDU-Rb-0N8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="b3c-Eo-4gx" secondAttribute="trailing" id="taX-sm-cWd"/>
-                            <constraint firstItem="b3c-Eo-4gx" firstAttribute="leading" secondItem="elI-B9-C7Q" secondAttribute="leadingMargin" id="xVk-hB-A8s"/>
+                            <constraint firstAttribute="trailing" secondItem="b3c-Eo-4gx" secondAttribute="trailing" id="taX-sm-cWd"/>
+                            <constraint firstItem="b3c-Eo-4gx" firstAttribute="leading" secondItem="elI-B9-C7Q" secondAttribute="leading" id="xVk-hB-A8s"/>
                         </constraints>
                     </view>
                     <connections>
