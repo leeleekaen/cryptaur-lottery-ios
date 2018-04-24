@@ -1,14 +1,19 @@
 import Foundation
+import RxSwift
+import RxCocoa
 
 class DrawArchiveViewModel: BaseViewModel {
     
     // MARK: - Public properties
     var draws = [ArchiveDraw]()
     var updateCompletion: (() -> ())?
+    var isLoading: Driver<Bool> {
+        return isLoadingObject.asDriver(onErrorJustReturn: false)
+    }
     
     // MARK: - Private properties
-    let lottery: LotteryID = .lottery5x36
-    var isLoading = false
+    private let lottery: LotteryID = .lottery5x36
+    private let isLoadingObject = BehaviorSubject<Bool>(value: false)
     
     // MARK: - Dependencies
     let service = GetDrawsService()
@@ -22,9 +27,11 @@ class DrawArchiveViewModel: BaseViewModel {
     // MARK: - Public methods
     func getNextDraws() {
         
-        if !isLoading {
+        guard let isLoadingValue = try? isLoadingObject.value() else { return }
+        
+        if !isLoadingValue {
             if draws.count == 0 || draws.last!.number != 1 {
-                isLoading = true
+                isLoadingObject.onNext(true)
                 getDraws(offset: UInt(draws.count + 1), count: 50)
             }
         }
@@ -49,12 +56,12 @@ private extension DrawArchiveViewModel {
                             }
                             self?.draws += archiveDraws
                             self?.updateCompletion?()
-                            self?.isLoading = false
+                            self?.isLoadingObject.onNext(false)
                             
         }) { [weak self] (error) in
             self?.errorSubject.onNext(error)
             print(error)
-            self?.isLoading = false
+            self?.isLoadingObject.onNext(false)
         }
     }
 }

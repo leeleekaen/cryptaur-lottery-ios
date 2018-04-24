@@ -5,10 +5,10 @@ class DrawArchiveViewController: BaseViewController {
 
     // MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-    let lotteries: [Int] = [1, 2, 3, 4, 5, 6, 7]
     
     // MARK: - Dependency
     let viewModel = DrawArchiveViewModel()
@@ -32,6 +32,10 @@ class DrawArchiveViewController: BaseViewController {
                 self?.adapter.reloadData()
             }
         }
+        
+        viewModel.isLoading.drive(onNext: { [weak self] in
+            self?.activityIndicator.isHidden = !$0
+        }).disposed(by: disposeBag)
     }
 }
 
