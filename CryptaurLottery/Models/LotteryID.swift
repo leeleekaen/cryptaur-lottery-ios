@@ -12,6 +12,30 @@ enum LotteryID: Int {
     case lottery6x42
     
     static let count = 3
+    
+    var toPick: Int {
+        
+        switch self {
+        case .lottery4x20:
+            return 4
+        case .lottery5x36:
+            return 5
+        case .lottery6x42:
+            return 6
+        }
+    }
+    
+    var total: Int {
+        
+        switch self {
+        case .lottery4x20:
+            return 20
+        case .lottery5x36:
+            return 36
+        case .lottery6x42:
+            return 42
+        }
+    }
 }
 
 extension LotteryID: Diffable {

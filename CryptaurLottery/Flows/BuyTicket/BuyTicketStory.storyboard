@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,18 +57,29 @@
                                     <segue destination="VyZ-L3-NOw" kind="embed" id="p5N-nE-28P"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-9f-X6a">
+                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
+                                <connections>
+                                    <segue destination="3zV-3t-TS6" kind="embed" id="wVV-yv-dHz"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="H5H-FB-EBN" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="0fZ-n7-pyX"/>
                             <constraint firstItem="Sc8-ur-dxP" firstAttribute="top" secondItem="oYw-iX-RHC" secondAttribute="top" id="3nl-PD-tlB"/>
+                            <constraint firstItem="oYw-iX-RHC" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="BKD-XN-Q89"/>
+                            <constraint firstItem="bWE-9f-X6a" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="Hfu-Mx-I1I"/>
                             <constraint firstItem="eq6-BS-K3B" firstAttribute="top" secondItem="ILC-uq-gBq" secondAttribute="top" id="J0h-EH-5BN"/>
+                            <constraint firstItem="bWE-9f-X6a" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="MAY-ZC-HDf"/>
                             <constraint firstItem="Sc8-ur-dxP" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" constant="10" id="Qc9-rI-FJU"/>
                             <constraint firstItem="oYw-iX-RHC" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="SyM-FZ-f0q"/>
                             <constraint firstItem="H5H-FB-EBN" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="WuW-6B-rlC"/>
                             <constraint firstItem="oYw-iX-RHC" firstAttribute="trailing" secondItem="Sc8-ur-dxP" secondAttribute="trailing" constant="10" id="YpE-Zq-qgI"/>
+                            <constraint firstItem="bWE-9f-X6a" firstAttribute="top" secondItem="ILC-uq-gBq" secondAttribute="top" id="eOX-o2-k2p"/>
                             <constraint firstItem="eq6-BS-K3B" firstAttribute="leading" secondItem="ILC-uq-gBq" secondAttribute="leading" id="gsg-KT-X8K"/>
                             <constraint firstItem="eq6-BS-K3B" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="hLj-0A-QJO"/>
+                            <constraint firstItem="bWE-9f-X6a" firstAttribute="leading" secondItem="ILC-uq-gBq" secondAttribute="leading" id="oR2-Rc-es2"/>
                             <constraint firstItem="ILC-uq-gBq" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" id="qSo-mg-i70"/>
                             <constraint firstItem="eq6-BS-K3B" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="rYF-6j-afz"/>
                             <constraint firstItem="H5H-FB-EBN" firstAttribute="leading" secondItem="ILC-uq-gBq" secondAttribute="leading" id="rsl-pG-bey"/>
@@ -82,6 +94,7 @@
                         <outlet property="buyTicketSubview" destination="ILC-uq-gBq" id="JN5-g3-S7X"/>
                         <outlet property="changeSubview" destination="Sc8-ur-dxP" id="NCa-sE-yQ8"/>
                         <outlet property="drawArchiveSubview" destination="eq6-BS-K3B" id="SMl-86-AmI"/>
+                        <outlet property="drawDetailsSubview" destination="bWE-9f-X6a" id="k9s-g8-Ei3"/>
                         <outlet property="showRulesSubview" destination="H5H-FB-EBN" id="DLv-Hw-Z1f"/>
                     </connections>
                 </viewController>
@@ -110,12 +123,12 @@
         <!--Buy Ticket View Controller-->
         <scene sceneID="msw-va-Wyg">
             <objects>
-                <viewController id="JMv-ca-pJJ" customClass="BuyTicketViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuyTicketViewController" id="JMv-ca-pJJ" customClass="BuyTicketViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WC9-mv-SuB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT 6 NUMBERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-z2-ldK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT 0 NUMBERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-z2-ldK">
                                 <rect key="frame" x="36" y="30" width="103" height="15"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
                                 <color key="textColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
@@ -790,48 +803,51 @@
                         <viewLayoutGuide key="safeArea" id="PP5-TV-cqH"/>
                     </view>
                     <connections>
-                        <outletCollection property="numbers" destination="gCJ-Bq-xFi" collectionClass="NSMutableArray" id="3Ya-7v-X5I"/>
-                        <outletCollection property="numbers" destination="JYD-hR-6ho" collectionClass="NSMutableArray" id="57s-FM-MLa"/>
-                        <outletCollection property="numbers" destination="D2d-lk-yzo" collectionClass="NSMutableArray" id="LFH-qz-rer"/>
-                        <outletCollection property="numbers" destination="U46-c6-cxt" collectionClass="NSMutableArray" id="Zt1-8x-j04"/>
-                        <outletCollection property="numbers" destination="mKo-I2-iAc" collectionClass="NSMutableArray" id="SmU-mP-z7a"/>
-                        <outletCollection property="numbers" destination="enj-38-VZ8" collectionClass="NSMutableArray" id="Ts6-Sw-VVB"/>
-                        <outletCollection property="numbers" destination="8Ks-eT-dZx" collectionClass="NSMutableArray" id="dKC-ZX-9sd"/>
-                        <outletCollection property="numbers" destination="K2Y-3f-Emb" collectionClass="NSMutableArray" id="ER7-I3-jxf"/>
-                        <outletCollection property="numbers" destination="3qe-xO-bzn" collectionClass="NSMutableArray" id="gOd-Er-fwf"/>
-                        <outletCollection property="numbers" destination="vVg-rT-aCn" collectionClass="NSMutableArray" id="agc-y5-AIO"/>
-                        <outletCollection property="numbers" destination="gfe-6z-S9s" collectionClass="NSMutableArray" id="XNy-Y4-2Ea"/>
-                        <outletCollection property="numbers" destination="f2p-K4-Z1k" collectionClass="NSMutableArray" id="BtD-vx-ZtL"/>
-                        <outletCollection property="numbers" destination="DT3-dz-kAy" collectionClass="NSMutableArray" id="hoM-if-PjK"/>
-                        <outletCollection property="numbers" destination="d0R-6t-j9H" collectionClass="NSMutableArray" id="gIe-Q7-lmK"/>
-                        <outletCollection property="numbers" destination="c4S-Pu-L6t" collectionClass="NSMutableArray" id="cWR-vf-tz3"/>
-                        <outletCollection property="numbers" destination="hIP-VC-1mI" collectionClass="NSMutableArray" id="u3k-NM-ZY6"/>
-                        <outletCollection property="numbers" destination="Upb-PL-fDA" collectionClass="NSMutableArray" id="E3s-Pk-blq"/>
-                        <outletCollection property="numbers" destination="XSp-SF-Hvt" collectionClass="NSMutableArray" id="IrK-or-UcQ"/>
-                        <outletCollection property="numbers" destination="Qns-LV-EEC" collectionClass="NSMutableArray" id="Y84-fP-jbc"/>
-                        <outletCollection property="numbers" destination="XHd-42-Pc5" collectionClass="NSMutableArray" id="oHT-jC-v0p"/>
-                        <outletCollection property="numbers" destination="qOu-Nk-9KD" collectionClass="NSMutableArray" id="Axf-kt-Aov"/>
-                        <outletCollection property="numbers" destination="Usj-q5-Bog" collectionClass="NSMutableArray" id="ki0-1m-kUI"/>
-                        <outletCollection property="numbers" destination="lbf-GE-OV5" collectionClass="NSMutableArray" id="O34-mU-puv"/>
-                        <outletCollection property="numbers" destination="uI7-8j-dFQ" collectionClass="NSMutableArray" id="fAa-R7-R9q"/>
-                        <outletCollection property="numbers" destination="9YW-Kz-0lL" collectionClass="NSMutableArray" id="s64-ce-8QD"/>
-                        <outletCollection property="numbers" destination="Ub2-4j-K3W" collectionClass="NSMutableArray" id="08Q-vU-iV4"/>
-                        <outletCollection property="numbers" destination="77F-Au-OsC" collectionClass="NSMutableArray" id="A1G-Gl-KoM"/>
-                        <outletCollection property="numbers" destination="xCU-hO-7hf" collectionClass="NSMutableArray" id="4Aq-7N-3xz"/>
-                        <outletCollection property="numbers" destination="UOE-y6-90q" collectionClass="NSMutableArray" id="AAu-4R-Yc1"/>
-                        <outletCollection property="numbers" destination="rX6-rQ-90v" collectionClass="NSMutableArray" id="CEc-dy-pRC"/>
-                        <outletCollection property="numbers" destination="oy2-Jg-DoF" collectionClass="NSMutableArray" id="L6T-gC-VHN"/>
-                        <outletCollection property="numbers" destination="Vh2-Ml-n0N" collectionClass="NSMutableArray" id="9g1-ci-oag"/>
-                        <outletCollection property="numbers" destination="qhq-VV-5tb" collectionClass="NSMutableArray" id="SR4-XF-qbo"/>
-                        <outletCollection property="numbers" destination="n5d-Lk-pA1" collectionClass="NSMutableArray" id="zZx-3I-sMF"/>
-                        <outletCollection property="numbers" destination="QFt-8C-cjg" collectionClass="NSMutableArray" id="x6C-PG-1Xn"/>
-                        <outletCollection property="numbers" destination="hL6-H6-CPt" collectionClass="NSMutableArray" id="aAv-ff-XkB"/>
-                        <outletCollection property="numbers" destination="SRB-z9-3a9" collectionClass="NSMutableArray" id="Rdl-Hu-bxb"/>
-                        <outletCollection property="numbers" destination="rIX-yY-Xh2" collectionClass="NSMutableArray" id="pxl-68-BoX"/>
-                        <outletCollection property="numbers" destination="7mx-ak-c17" collectionClass="NSMutableArray" id="Xtr-xL-1ka"/>
-                        <outletCollection property="numbers" destination="k0t-FD-1H2" collectionClass="NSMutableArray" id="Mro-Ho-VnZ"/>
-                        <outletCollection property="numbers" destination="B7z-OQ-sQz" collectionClass="NSMutableArray" id="z3X-vb-VJ0"/>
-                        <outletCollection property="numbers" destination="7zb-x7-WrK" collectionClass="NSMutableArray" id="3zV-FI-CNX"/>
+                        <outlet property="availableLabe" destination="WXd-iA-wzU" id="gvd-gb-VRt"/>
+                        <outlet property="buyTicketButton" destination="Kjz-fA-Vff" id="rX4-pS-gvm"/>
+                        <outlet property="selectNumberLabel" destination="0FR-z2-ldK" id="rE2-qT-Ee4"/>
+                        <outletCollection property="numpad" destination="gCJ-Bq-xFi" collectionClass="NSMutableArray" id="3Ya-7v-X5I"/>
+                        <outletCollection property="numpad" destination="JYD-hR-6ho" collectionClass="NSMutableArray" id="57s-FM-MLa"/>
+                        <outletCollection property="numpad" destination="D2d-lk-yzo" collectionClass="NSMutableArray" id="LFH-qz-rer"/>
+                        <outletCollection property="numpad" destination="U46-c6-cxt" collectionClass="NSMutableArray" id="Zt1-8x-j04"/>
+                        <outletCollection property="numpad" destination="mKo-I2-iAc" collectionClass="NSMutableArray" id="SmU-mP-z7a"/>
+                        <outletCollection property="numpad" destination="enj-38-VZ8" collectionClass="NSMutableArray" id="Ts6-Sw-VVB"/>
+                        <outletCollection property="numpad" destination="8Ks-eT-dZx" collectionClass="NSMutableArray" id="dKC-ZX-9sd"/>
+                        <outletCollection property="numpad" destination="K2Y-3f-Emb" collectionClass="NSMutableArray" id="ER7-I3-jxf"/>
+                        <outletCollection property="numpad" destination="3qe-xO-bzn" collectionClass="NSMutableArray" id="gOd-Er-fwf"/>
+                        <outletCollection property="numpad" destination="vVg-rT-aCn" collectionClass="NSMutableArray" id="agc-y5-AIO"/>
+                        <outletCollection property="numpad" destination="gfe-6z-S9s" collectionClass="NSMutableArray" id="XNy-Y4-2Ea"/>
+                        <outletCollection property="numpad" destination="f2p-K4-Z1k" collectionClass="NSMutableArray" id="BtD-vx-ZtL"/>
+                        <outletCollection property="numpad" destination="DT3-dz-kAy" collectionClass="NSMutableArray" id="hoM-if-PjK"/>
+                        <outletCollection property="numpad" destination="d0R-6t-j9H" collectionClass="NSMutableArray" id="gIe-Q7-lmK"/>
+                        <outletCollection property="numpad" destination="c4S-Pu-L6t" collectionClass="NSMutableArray" id="cWR-vf-tz3"/>
+                        <outletCollection property="numpad" destination="hIP-VC-1mI" collectionClass="NSMutableArray" id="u3k-NM-ZY6"/>
+                        <outletCollection property="numpad" destination="Upb-PL-fDA" collectionClass="NSMutableArray" id="E3s-Pk-blq"/>
+                        <outletCollection property="numpad" destination="XSp-SF-Hvt" collectionClass="NSMutableArray" id="IrK-or-UcQ"/>
+                        <outletCollection property="numpad" destination="Qns-LV-EEC" collectionClass="NSMutableArray" id="Y84-fP-jbc"/>
+                        <outletCollection property="numpad" destination="XHd-42-Pc5" collectionClass="NSMutableArray" id="oHT-jC-v0p"/>
+                        <outletCollection property="numpad" destination="qOu-Nk-9KD" collectionClass="NSMutableArray" id="Axf-kt-Aov"/>
+                        <outletCollection property="numpad" destination="Usj-q5-Bog" collectionClass="NSMutableArray" id="ki0-1m-kUI"/>
+                        <outletCollection property="numpad" destination="lbf-GE-OV5" collectionClass="NSMutableArray" id="O34-mU-puv"/>
+                        <outletCollection property="numpad" destination="uI7-8j-dFQ" collectionClass="NSMutableArray" id="fAa-R7-R9q"/>
+                        <outletCollection property="numpad" destination="9YW-Kz-0lL" collectionClass="NSMutableArray" id="s64-ce-8QD"/>
+                        <outletCollection property="numpad" destination="Ub2-4j-K3W" collectionClass="NSMutableArray" id="08Q-vU-iV4"/>
+                        <outletCollection property="numpad" destination="77F-Au-OsC" collectionClass="NSMutableArray" id="A1G-Gl-KoM"/>
+                        <outletCollection property="numpad" destination="xCU-hO-7hf" collectionClass="NSMutableArray" id="4Aq-7N-3xz"/>
+                        <outletCollection property="numpad" destination="UOE-y6-90q" collectionClass="NSMutableArray" id="AAu-4R-Yc1"/>
+                        <outletCollection property="numpad" destination="rX6-rQ-90v" collectionClass="NSMutableArray" id="CEc-dy-pRC"/>
+                        <outletCollection property="numpad" destination="oy2-Jg-DoF" collectionClass="NSMutableArray" id="L6T-gC-VHN"/>
+                        <outletCollection property="numpad" destination="Vh2-Ml-n0N" collectionClass="NSMutableArray" id="9g1-ci-oag"/>
+                        <outletCollection property="numpad" destination="qhq-VV-5tb" collectionClass="NSMutableArray" id="SR4-XF-qbo"/>
+                        <outletCollection property="numpad" destination="n5d-Lk-pA1" collectionClass="NSMutableArray" id="zZx-3I-sMF"/>
+                        <outletCollection property="numpad" destination="QFt-8C-cjg" collectionClass="NSMutableArray" id="x6C-PG-1Xn"/>
+                        <outletCollection property="numpad" destination="hL6-H6-CPt" collectionClass="NSMutableArray" id="aAv-ff-XkB"/>
+                        <outletCollection property="numpad" destination="SRB-z9-3a9" collectionClass="NSMutableArray" id="Rdl-Hu-bxb"/>
+                        <outletCollection property="numpad" destination="rIX-yY-Xh2" collectionClass="NSMutableArray" id="pxl-68-BoX"/>
+                        <outletCollection property="numpad" destination="7mx-ak-c17" collectionClass="NSMutableArray" id="Xtr-xL-1ka"/>
+                        <outletCollection property="numpad" destination="k0t-FD-1H2" collectionClass="NSMutableArray" id="Mro-Ho-VnZ"/>
+                        <outletCollection property="numpad" destination="B7z-OQ-sQz" collectionClass="NSMutableArray" id="z3X-vb-VJ0"/>
+                        <outletCollection property="numpad" destination="7zb-x7-WrK" collectionClass="NSMutableArray" id="3zV-FI-CNX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WW3-y8-WwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -846,27 +862,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oko-XQ-2kB">
-                                <rect key="frame" x="0.0" y="20" width="375" height="545"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3py-EX-Vyh">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8zD-Ea-j70">
+                                <rect key="frame" x="0.0" y="20" width="375" height="535"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oko-XQ-2kB">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="499"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3py-EX-Vyh">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ewf-Ae-nBq">
+                                        <rect key="frame" x="0.0" y="515" width="375" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oko-XQ-2kB" firstAttribute="leading" secondItem="dqD-fX-Y5s" secondAttribute="leading" id="1Jc-df-8DS"/>
-                            <constraint firstAttribute="trailing" secondItem="oko-XQ-2kB" secondAttribute="trailing" id="7Nv-vm-BJS"/>
-                            <constraint firstItem="oko-XQ-2kB" firstAttribute="top" secondItem="dqD-fX-Y5s" secondAttribute="topMargin" id="k4U-TV-PzB"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="oko-XQ-2kB" secondAttribute="bottom" id="sel-qH-2PL"/>
+                            <constraint firstItem="8zD-Ea-j70" firstAttribute="leading" secondItem="LzC-xs-ddy" secondAttribute="leading" id="GR8-8a-au0"/>
+                            <constraint firstItem="8zD-Ea-j70" firstAttribute="trailing" secondItem="LzC-xs-ddy" secondAttribute="trailing" id="iNa-Kb-8Vv"/>
+                            <constraint firstItem="8zD-Ea-j70" firstAttribute="bottom" secondItem="LzC-xs-ddy" secondAttribute="bottom" constant="-10" id="o9n-Tk-K9T"/>
+                            <constraint firstItem="8zD-Ea-j70" firstAttribute="top" secondItem="LzC-xs-ddy" secondAttribute="top" id="tKH-8t-YHJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LzC-xs-ddy"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="ewf-Ae-nBq" id="4FL-pa-2ig"/>
                         <outlet property="collectionView" destination="oko-XQ-2kB" id="bVl-nQ-UFp"/>
                     </connections>
                 </viewController>
@@ -896,7 +921,7 @@
                             <constraint firstItem="snR-R7-MnW" firstAttribute="leading" secondItem="4tG-Mz-aHa" secondAttribute="leading" id="OlN-PQ-mZQ"/>
                             <constraint firstAttribute="bottom" secondItem="snR-R7-MnW" secondAttribute="bottom" id="xzu-IP-TgV"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="OhH-qY-vqP"/>
+                        <viewLayoutGuide key="safeArea" id="CeD-5M-Tir"/>
                     </view>
                     <connections>
                         <outlet property="rulesTextView" destination="snR-R7-MnW" id="iDv-LX-fKb"/>
@@ -905,6 +930,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEZ-d2-Lpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1065" y="1018"/>
+        </scene>
+        <!--Draw Details View Controller-->
+        <scene sceneID="vag-FK-BCl">
+            <objects>
+                <viewController id="3zV-3t-TS6" customClass="DrawDetailsViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="elI-B9-C7Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvd-7u-CG0">
+                                <rect key="frame" x="138" y="36" width="100" height="27.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1OU-jP-idM"/>
+                                    <constraint firstAttribute="height" constant="28" id="DEh-ed-rVa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="20"/>
+                                <color key="textColor" red="0.63921568630000003" green="0.56078431370000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Vh-TE-xkH">
+                                <rect key="frame" x="24" y="73.5" width="327" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="CdE-Z4-aDM"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FBu-nw-P59">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sgS-8H-HOH">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-Eo-4gx">
+                                <rect key="frame" x="0.0" y="393.5" width="375" height="171.5"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uzT-XB-m1w">
+                                        <rect key="frame" x="20" y="0.0" width="335" height="172"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mVb-wa-pfa">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iA6-FH-eqk">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uzT-XB-m1w" firstAttribute="top" secondItem="b3c-Eo-4gx" secondAttribute="top" id="Oq8-pF-wa6"/>
+                                    <constraint firstAttribute="bottom" secondItem="uzT-XB-m1w" secondAttribute="bottom" id="gJS-vW-cLZ"/>
+                                    <constraint firstItem="uzT-XB-m1w" firstAttribute="leading" secondItem="b3c-Eo-4gx" secondAttribute="leading" constant="20" id="mga-eh-7Sz"/>
+                                    <constraint firstAttribute="trailing" secondItem="uzT-XB-m1w" secondAttribute="trailing" constant="20" id="rqw-p8-wFR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kvd-7u-CG0" firstAttribute="centerX" secondItem="elI-B9-C7Q" secondAttribute="centerXWithinMargins" id="5OL-dP-QiF"/>
+                            <constraint firstAttribute="trailing" secondItem="1Vh-TE-xkH" secondAttribute="trailing" constant="24" id="Q1q-7a-fUl"/>
+                            <constraint firstItem="Kvd-7u-CG0" firstAttribute="top" secondItem="elI-B9-C7Q" secondAttribute="topMargin" constant="16" id="Rc0-1t-8lv"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="b3c-Eo-4gx" secondAttribute="bottom" id="WAe-Hi-trQ"/>
+                            <constraint firstItem="1Vh-TE-xkH" firstAttribute="top" secondItem="Kvd-7u-CG0" secondAttribute="bottom" constant="10" id="YTu-3Z-Nj7"/>
+                            <constraint firstItem="1Vh-TE-xkH" firstAttribute="bottom" secondItem="b3c-Eo-4gx" secondAttribute="top" id="bcb-D9-7aN"/>
+                            <constraint firstItem="1Vh-TE-xkH" firstAttribute="leading" secondItem="elI-B9-C7Q" secondAttribute="leading" constant="24" id="sDU-Rb-0N8"/>
+                            <constraint firstAttribute="trailing" secondItem="b3c-Eo-4gx" secondAttribute="trailing" id="taX-sm-cWd"/>
+                            <constraint firstItem="b3c-Eo-4gx" firstAttribute="leading" secondItem="elI-B9-C7Q" secondAttribute="leading" id="xVk-hB-A8s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ticketsCollectionView" destination="uzT-XB-m1w" id="VQ6-nE-Ie2"/>
+                        <outlet property="ticketsView" destination="b3c-Eo-4gx" id="1Z4-9I-4Om"/>
+                        <outlet property="winnersCollectionView" destination="1Vh-TE-xkH" id="wWP-lI-aks"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8US-q0-stl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2756" y="430"/>
         </scene>
     </scenes>
     <resources>

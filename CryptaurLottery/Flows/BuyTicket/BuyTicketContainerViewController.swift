@@ -6,6 +6,7 @@ class BuyTicketContainerViewController: BaseViewController {
     @IBOutlet weak var buyTicketSubview: UIView!
     @IBOutlet weak var drawArchiveSubview: UIView!
     @IBOutlet weak var showRulesSubview: UIView!
+    @IBOutlet weak var drawDetailsSubview: UIView!
     
     @IBOutlet weak var changeSubview: UISegmentedControl! {
         didSet {
