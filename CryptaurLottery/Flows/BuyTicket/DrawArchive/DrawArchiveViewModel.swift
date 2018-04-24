@@ -3,7 +3,7 @@ import Foundation
 class DrawArchiveViewModel: BaseViewModel {
     
     var draws = [ArchiveDraw]()
-    let lottery: LotteryID = .lottery4x20
+    let lottery: LotteryID = .lottery5x36
     var updateCompletion: (() -> ())?
     
     let service = GetDrawsService()
@@ -24,8 +24,16 @@ class DrawArchiveViewModel: BaseViewModel {
     
         service.perform(input: request,
                         success: { [weak self] (responce) in
-                            self?.draws = responce.draws
+                            
+                            var archiveDraws = [ArchiveDraw]()
+                            responce.draws.forEach {
+                                if let numbers = $0.numbers, numbers.count > 0 {
+                                    archiveDraws.append($0)
+                                }
+                            }
+                            self?.draws = archiveDraws
                             self?.updateCompletion?()
+                            
         }, failure: defaultServiceFailure)
     }
 }
