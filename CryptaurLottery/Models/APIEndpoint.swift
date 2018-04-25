@@ -14,18 +14,18 @@ struct APIEndpoint {
         case get = "GET"
         case post = "POST"
     }
-    
+
     let method: Method
     let path: String
     let baseURLString: String?
-    
+
     var baseURL: URL? {
         guard let baseURLString = baseURLString else {
             return nil
         }
         return URL(string: baseURLString)
     }
-    
+
     fileprivate init(_ method: Method, _ path: String, _ baseURLString: String? = nil) {
         self.method = method
         self.path = path
@@ -42,7 +42,7 @@ extension APIEndpoint: URLConvertible {
         static let baseUrl = URL(string: "https://lottery.cryptaur.com")
         #endif
     }
-    
+
     func asURL() throws -> URL {
         let baseURL = self.baseURL ?? BaseURLStorage.baseUrl
         guard let url = URL(string: path, relativeTo: baseURL) else {
@@ -76,6 +76,12 @@ extension APIEndpoint {
     }
     static var getCurrentLotteries: APIEndpoint {
         return APIEndpoint(.get, "api/getCurrentLotteries")
+    }
+    static var getWinAmount: APIEndpoint {
+        return APIEndpoint(.get, "api/getWinAmount")
+    }
+    static var pickUpWin: APIEndpoint {
+        return APIEndpoint(.post, "api/pickUpWin")
     }
     static var buyTickets: APIEndpoint {
         return APIEndpoint(.post, "api/buyTickets")

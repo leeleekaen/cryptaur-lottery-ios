@@ -14,9 +14,9 @@ fileprivate extension String {
         guard width > 0 && self.count > 0 && self.count <= width else {
             return nil
         }
-        
+
         var string = self
-        
+
         if string.count < width {
             for _ in 1...(width - string.count) {
                 string = "\(character)" + string
@@ -24,7 +24,7 @@ fileprivate extension String {
         }
         return string
     }
-    
+
     func removeHexPrefixIfNeeded() -> String {
         var hexString = self
         if hexString.prefix(2).uppercased() == "0X" {
@@ -39,9 +39,9 @@ extension UInt256 {
         guard let s = hexString.removeHexPrefixIfNeeded().padded(to: 64, with: "0")?.uppercased() else {
             return nil
         }
-        
+
         let startIndex = s.startIndex
-        
+
         let subStrings: [Substring] = [
             s[startIndex..<s.index(startIndex, offsetBy: 16)],
             s[s.index(startIndex, offsetBy: 16)..<s.index(startIndex, offsetBy: 32)],
@@ -49,16 +49,32 @@ extension UInt256 {
             s[s.index(startIndex, offsetBy: 48)...]
         ]
         let strings = subStrings.map { String($0) }
-        
+
         let components = strings.compactMap { UInt64($0, radix: 16) }
-        
+
         guard components.count == 4 else {
             return nil
         }
-        
+
         self.init(components)
     }
-    
+
+    var normalizedHexString: String {
+
+        var str = self.toHexString()
+
+        var currentChar: Character = "0"
+        while currentChar == "0" {
+            if str.isEmpty {
+                return "0x"
+            } else {
+                currentChar = str.removeFirst()
+            }
+        }
+
+        return "0x" + String(currentChar) + str
+    }
+
     func toString() -> String  {
         let words = self.words
         var retVal = ""
@@ -67,7 +83,7 @@ extension UInt256 {
         }
         return retVal
     }
-    
+
     func toStringWithDelimeters() -> String  {
         let s = toString()
         let endIndex = s.endIndex

@@ -10,21 +10,22 @@ import UIKit
 
 final class ApplicationCoordinator {
     private weak var window: UIWindow?
-    
+
     init(window: UIWindow) {
         self.window = window
     }
-    
+
     func start() {
-        
-        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
-        let loginViewController = LoginViewController.controllerInStoryboard(loginStoryboard)
-        loginViewController.setFlowCompletion { [weak self] in
-            self?.startMain()
-        }
-       self.window?.rootViewController = loginViewController
+
+//        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
+//        let loginViewController = LoginViewController.controllerInStoryboard(loginStoryboard)
+//        loginViewController.setFlowCompletion { [weak self] in
+//            self?.startMain()
+//        }
+//       self.window?.rootViewController = loginViewController
+        startMain()
     }
-    
+
     private func startMain() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController = BaseNavigationController()

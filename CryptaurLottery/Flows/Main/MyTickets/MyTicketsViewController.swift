@@ -1,5 +1,6 @@
 import UIKit
 import IGListKit
+import UInt256
 
 class MyTicketsViewController: BaseViewController {
     
@@ -23,12 +24,16 @@ class MyTicketsViewController: BaseViewController {
         }
     }
     
-    @IBAction func didTapGetTheWinButton(_ sender: UIButton) {
+    @IBAction func getTheWin(_ sender: UIButton) {
+        print("Get win button tapped")
+        viewModel.pickUpWin(for: 0, witjKey: "")
     }
     
     // MARK: - Private properties
+    var refresher:UIRefreshControl!
+    
+    private let viewModel = MyTicketsViewModel()
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-    let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
 
     var state: State = .active {
         didSet { adapter.reloadData() }
@@ -38,15 +43,47 @@ class MyTicketsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        state = .active
+        
         gradientBackgroundView.gradientColors = [UIColor.lightblue, UIColor.lighterPurple].map {$0.cgColor}
         gradientBackgroundView.backgroundColor = .clear
         
         configureNavigationItem(showBalance: true)
+        configurePullToRefresh()
         
         collectionView.contentInset = .zero
         
         adapter.collectionView = collectionView
         adapter.dataSource = self
+    }
+    
+    func configurePullToRefresh() {
+        collectionView.alwaysBounceVertical = true
+        refresher = UIRefreshControl()
+        refresher.tintColor = .white
+        refresher.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.addSubview(refresher)
+    }
+    
+    @objc private func refresh() {
+        viewModel.reset()
+        viewModel.getNext()
+        refresher.endRefreshing()
+    }
+    
+    // MARK: - Binding
+    override func bind() {
+        
+        viewModel.updateCompletion = { [unowned self] in
+            print("active tickets: \(self.viewModel.allActiveTickets.count), played tickets: \(self.viewModel.allPlayedTickets.count)")
+            DispatchQueue.main.async { [weak self] in
+                self?.adapter.reloadData()
+            }
+        }
+        
+        viewModel.winAmount.drive(onNext: { [weak self] in
+            self?.prizePoolAmountLabel.text = $0.toString() + " CPT"
+        }).disposed(by: disposeBag)
     }
 }
 
@@ -58,9 +95,17 @@ extension MyTicketsViewController: ListAdapterDataSource {
         
         let sectionController = ListSingleSectionController(nibName: MyTicketsCardCell.nameOfClass, bundle: nil, configureBlock: { [unowned self] (item, cell) in
             
-            guard let cell = cell as? MyTicketsCardCell else { return }
+            guard let cell = cell as? MyTicketsCardCell,
+                let item = item as? DiffableBox<Ticket> else { return }
             
-            cell.configure(for: self.state)
+            cell.configure(state: self.state, ticket: item.value)
+            
+            guard self.viewModel.loadingCount == 0, self.state == .played else { return }
+            
+            if let lastTicket = self.viewModel.allPlayedTickets.last, item.value == lastTicket {
+                print("Have to update played tickets")
+                self.viewModel.getNext()
+            }
             
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
@@ -75,7 +120,12 @@ extension MyTicketsViewController: ListAdapterDataSource {
     }
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return lotteries.diffable()
+        switch state {
+        case .active:
+            return viewModel.allActiveTickets.diffable()
+        case .played:
+            return viewModel.allPlayedTickets.diffable()
+        }
     }
 }
 
