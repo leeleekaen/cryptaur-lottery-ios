@@ -27,7 +27,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVK-rD-8Jm">
                         <rect key="frame" x="116" y="10" width="80" height="30"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRAW #10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6X-pM-JZ4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6X-pM-JZ4">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
                                 <color key="textColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,7 +73,7 @@
                         <color key="textColor" red="1" green="0.0" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME LEFT 23:23:08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTE-Sy-AOm">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME LEFT 00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTE-Sy-AOm">
                         <rect key="frame" x="105" y="120" width="100" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="9pj-Pk-3HF"/>
@@ -110,6 +110,7 @@
             <viewLayoutGuide key="safeArea" id="M5W-12-2Fq"/>
             <connections>
                 <outlet property="dateLabel" destination="2B0-L3-vZF" id="bSM-FC-sNL"/>
+                <outlet property="drawIndexLabel" destination="U6X-pM-JZ4" id="Iq9-ug-KI9"/>
                 <outlet property="numbersStack" destination="mit-ol-Y7m" id="96o-Js-j3T"/>
                 <outlet property="timeLeftLabel" destination="gTE-Sy-AOm" id="GSd-eT-qoD"/>
                 <outlet property="wonLabel" destination="XSj-RK-cHr" id="kcc-ho-bEq"/>
