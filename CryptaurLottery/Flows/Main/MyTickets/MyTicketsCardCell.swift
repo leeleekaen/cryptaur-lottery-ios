@@ -46,9 +46,9 @@ class MyTicketsCardCell: UICollectionViewCell {
             }
             
         case .played:
-            timeLeftLabel.isHidden = false
-            dateLabel.isHidden = true
-            wonLabel.isHidden = true
+            timeLeftLabel.isHidden = true
+            dateLabel.isHidden = false
+            wonLabel.isHidden = false
             
             numbersStack.removeAllArrangedSubviews()
             

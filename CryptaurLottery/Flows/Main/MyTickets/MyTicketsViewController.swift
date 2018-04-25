@@ -30,6 +30,8 @@ class MyTicketsViewController: BaseViewController {
     }
     
     // MARK: - Private properties
+    var refresher:UIRefreshControl!
+    
     private let viewModel = MyTicketsViewModel()
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
 
@@ -47,11 +49,26 @@ class MyTicketsViewController: BaseViewController {
         gradientBackgroundView.backgroundColor = .clear
         
         configureNavigationItem(showBalance: true)
+        configurePullToRefresh()
         
         collectionView.contentInset = .zero
         
         adapter.collectionView = collectionView
         adapter.dataSource = self
+    }
+    
+    func configurePullToRefresh() {
+        collectionView.alwaysBounceVertical = true
+        refresher = UIRefreshControl()
+        refresher.tintColor = .white
+        refresher.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.addSubview(refresher)
+    }
+    
+    @objc private func refresh() {
+        viewModel.reset()
+        viewModel.getNext()
+        refresher.endRefreshing()
     }
     
     // MARK: - Binding
