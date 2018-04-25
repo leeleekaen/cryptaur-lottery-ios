@@ -24,6 +24,7 @@ class MyTicketsViewModel: BaseViewModel {
     
     private var activeTickets: [LotteryID: [Ticket]] = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []]
     private var playedTickets: [LotteryID: [Ticket]] = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []]
+    private var isEndOfLottery: [LotteryID: Bool] = [.lottery4x20: false, .lottery5x36: false, .lottery6x42: false]
     
     var loadingCount = 0 {
         didSet {
@@ -56,10 +57,13 @@ class MyTicketsViewModel: BaseViewModel {
         lotteries.forEach {
             let activeTicketCount = activeTickets[$0]?.count ?? 0
             let playedTicketCount = playedTickets[$0]?.count ?? 0
+            
+            guard !isEndOfLottery[$0]! else { return }
+            
             updateTickets(playerAddress: playerAddress,
                           lottery: $0,
                           offset: UInt(activeTicketCount) + UInt(playedTicketCount),
-                          count: 5)
+                          count: 10)
         }
     }
     
@@ -86,7 +90,15 @@ private extension MyTicketsViewModel {
         
         playerTicketsService.perform(input: requestModel,
                                      success: { [weak self] (responce) in
+                                        
                                         print("succes respond for \(lottery) count: \(responce.tickets.count)")
+                                        
+                                        guard !responce.tickets.isEmpty else {
+                                            self?.isEndOfLottery[lottery] = true
+                                            self?.loadingCount -= 1
+                                            return
+                                        }
+                                        
                                         var activeTickets = [Ticket]()
                                         var playedTickets = [Ticket]()
                                         responce.tickets.forEach {
@@ -96,6 +108,7 @@ private extension MyTicketsViewModel {
                                                 playedTickets.append($0)
                                             }
                                         }
+                                        
                                         self?.activeTickets[lottery]! += activeTickets
                                         self?.playedTickets[lottery]! += playedTickets
                                         self?.updateCompletion?()
