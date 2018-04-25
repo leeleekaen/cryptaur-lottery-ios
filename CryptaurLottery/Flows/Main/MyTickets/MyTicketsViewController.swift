@@ -53,10 +53,6 @@ class MyTicketsViewController: BaseViewController {
         
         adapter.collectionView = collectionView
         adapter.dataSource = self
-        
-        let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
-        let playerAddress = UInt256(hexString: "0x14f05a4593ee1808541525a5aa39e344381251e6")!
-        viewModel.update(for: playerAddress, and: lotteries)
     }
     
     // MARK: - Binding

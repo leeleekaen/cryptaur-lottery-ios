@@ -5,7 +5,7 @@ struct GetPlayerTicketsResponceModel: JSONDeserializable {
     let tickets: [Ticket]
     
     init?(json: JSONDictionary) {
-        
+                
         guard let list = json["tickets"] as? [JSONDictionary] else {
             return nil
         }

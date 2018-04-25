@@ -48,7 +48,9 @@ fileprivate final class GetPlayerTicketsOperation: APIOperation {
         url.appendPathComponent(lotteryID)
         url.appendPathComponent(playerAddress)
         url.appendPathComponent("0")
-        url.appendPathComponent("50")
+        url.appendPathComponent("5")
+        
+        print(url.absoluteURL)
         
         return url
     }
