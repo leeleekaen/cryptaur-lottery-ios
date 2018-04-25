@@ -7,10 +7,8 @@ class MyTicketsCardCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var wonLabel: UILabel!
     
-    func configure(for state: MyTicketsViewController.State) {
+    func configure(state: MyTicketsViewController.State, ticket: Ticket) {
         
-        let mockNumbers = [1,2,-3,-19,22,36]
-                
         switch state {
         case .active:
             timeLeftLabel.isHidden = false
@@ -19,7 +17,7 @@ class MyTicketsCardCell: UICollectionViewCell {
             
             numbersStack.removeAllArrangedSubviews()
             
-            mockNumbers.forEach {
+            ticket.numbers.forEach {
                 let button = UIButton()
                 button.setTitle("\(abs($0))", for: .normal)
                 button.setBackgroundImage(#imageLiteral(resourceName: "number-button-background"), for: .normal)
@@ -33,7 +31,7 @@ class MyTicketsCardCell: UICollectionViewCell {
             
             numbersStack.removeAllArrangedSubviews()
             
-            mockNumbers.forEach {
+            ticket.numbers.forEach {
                 let button = UIButton()
                 button.setTitle("\(abs($0))", for: .normal)
                 if $0 < 0 {

@@ -78,9 +78,10 @@ extension MyTicketsViewController: ListAdapterDataSource {
         
         let sectionController = ListSingleSectionController(nibName: MyTicketsCardCell.nameOfClass, bundle: nil, configureBlock: { [unowned self] (item, cell) in
             
-            guard let cell = cell as? MyTicketsCardCell else { return }
+            guard let cell = cell as? MyTicketsCardCell,
+                let item = item as? DiffableBox<Ticket> else { return }
             
-            cell.configure(for: self.state)
+            cell.configure(state: self.state, ticket: item.value)
             
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
@@ -97,13 +98,9 @@ extension MyTicketsViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         switch state {
         case .active:
-            let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
-            return lotteries.diffable()
-//            return viewModel.activeTickets.diffable()
+            return viewModel.allActiveTickets.diffable()
         case .played:
-            let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
-            return lotteries.diffable()
-//            return viewModel.playedTickets.diffable()
+            return viewModel.allPlayedTickets.diffable()
         }
     }
 }

@@ -54,6 +54,6 @@ extension Ticket: Equatable {
 
 extension Ticket: Diffable {
     var diffIdentifier: String {
-        return "\(ticketIndex)"
+        return "\(date) \(drawIndex) \(ticketIndex)"
     }
 }
