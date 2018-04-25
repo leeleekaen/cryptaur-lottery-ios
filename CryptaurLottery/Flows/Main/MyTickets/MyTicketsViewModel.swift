@@ -50,16 +50,20 @@ class MyTicketsViewModel: BaseViewModel {
     // MARK: - Lifecycle
     override init() {
         super.init()
-        update(for: playerAddress, and: lotteries)
+        updateWinAmount(for: playerAddress)
+        getNext()
     }
     
     // MARK: - Get data from server
-    func update(for playerAddress: UInt256, and lotteries: [LotteryID]) {
-        
-        updateWinAmount(for: playerAddress)
+    func getNext() {
         
         lotteries.forEach {
-            updateTickets(playerAddress: playerAddress, lottery: $0, offset: 0, count: 5)
+            let activeTicketCount = activeTickets[$0]?.count ?? 0
+            let playedTicketCount = playedTickets[$0]?.count ?? 0
+            updateTickets(playerAddress: playerAddress,
+                          lottery: $0,
+                          offset: UInt(activeTicketCount) + UInt(playedTicketCount),
+                          count: 5)
         }
     }
     
