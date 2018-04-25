@@ -71,11 +71,13 @@ class MyTicketsViewModel: BaseViewModel {
         
         print("Start update tickets for lottery: \(lottery)")
         let requestModel = GetPlayerTicketsRequestModel(playerAddress: playerAddress,
-                                                        lotteryID: lottery)
+                                                        lotteryID: lottery,
+                                                        offset: 0,
+                                                        count: 10)
         
         playerTicketsService.perform(input: requestModel,
                                      success: { [weak self] (responce) in
-                                        print("succes respond count: \(responce.tickets.count)")
+                                        print("succes respond for \(lottery) count: \(responce.tickets.count)")
                                         self?.activeTicketsUpdaterSubject.onNext(responce.tickets)
         }) { (error) in
             print("Error: \(error)")

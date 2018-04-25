@@ -27,7 +27,9 @@ fileprivate final class GetPlayerTicketsOperation: APIOperation {
         
         let parameters = [
             "lotteryID": "\(request.lotteryID.rawValue)",
-            "playerAddress": "\(request.playerAddress.normalizedHexString)"
+            "playerAddress": "\(request.playerAddress.normalizedHexString)",
+            "offset": "\(request.offset)",
+            "count": "\(request.count)"
         ]
         
         super.init(endpoint: .getPlayerTickets, parameters: parameters, headers: nil,
@@ -37,9 +39,9 @@ fileprivate final class GetPlayerTicketsOperation: APIOperation {
     override func URL(with endpoint: APIEndpoint) -> URLConvertible {
         
         guard let lotteryID = parameters?["lotteryID"] as? String,
-                let playerAddress = parameters?["playerAddress"] as? String else {
-            return endpoint
-        }
+                let playerAddress = parameters?["playerAddress"] as? String,
+                let offset = parameters?["offset"] as? String,
+            let count = parameters?["count"] as? String else { return endpoint }
         
         guard var url = try? endpoint.asURL() else {
             return endpoint
@@ -47,11 +49,9 @@ fileprivate final class GetPlayerTicketsOperation: APIOperation {
         
         url.appendPathComponent(lotteryID)
         url.appendPathComponent(playerAddress)
-        url.appendPathComponent("0")
-        url.appendPathComponent("5")
-        
-        print(url.absoluteURL)
-        
+        url.appendPathComponent(offset)
+        url.appendPathComponent(count)
+                
         return url
     }
 }
