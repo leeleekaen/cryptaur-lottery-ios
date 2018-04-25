@@ -11,7 +11,11 @@ class MyTicketsViewModel: BaseViewModel {
             print("number of tickets \(activeTickets.count)")
         }
     }
-    var playedTickets = [Ticket]()
+    var playedTickets = [Ticket]() {
+        didSet {
+            print("number of tickets \(playedTickets.count)")
+        }
+    }
     var winAmount: Driver<UInt256> {
         return winAmountSubject.asDriver(onErrorJustReturn: UInt256(integerLiteral: 0))
     }
@@ -21,9 +25,9 @@ class MyTicketsViewModel: BaseViewModel {
     private let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
     private let playerAddress = UInt256(hexString: "0x14f05a4593ee1808541525a5aa39e344381251e6")!
     private let winAmountSubject = BehaviorSubject<UInt256>(value: UInt256(integerLiteral: 0))
-    private let activeTicketsUpdaterSubject = BehaviorSubject<[Ticket]>(value: [])
-    private var activeTicketUpdater: Driver<[Ticket]> {
-        return activeTicketsUpdaterSubject.asDriver(onErrorJustReturn: [])
+    private let ticketsUpdaterSubject = BehaviorSubject<[Ticket]>(value: [])
+    private var ticketsUpdater: Driver<[Ticket]> {
+        return ticketsUpdaterSubject.asDriver(onErrorJustReturn: [])
     }
     
     // MARK: - Dependency
@@ -35,14 +39,21 @@ class MyTicketsViewModel: BaseViewModel {
     override init() {
         super.init()
         
-        activeTicketUpdater.drive(onNext: { [weak self] (tickets) in
+        ticketsUpdater.drive(onNext: { [weak self] (tickets) in
             print("add new tickets")
             self?.activeTickets += tickets
         }).disposed(by: disposeBag)
         
-        updateTickets(for: playerAddress, and: lotteries[0])
-        updateTickets(for: playerAddress, and: lotteries[1])
-        updateTickets(for: playerAddress, and: lotteries[2])
+        update(for: playerAddress, and: lotteries)
+    }
+    
+    func update(for playerAddress: UInt256, and lotteries: [LotteryID]) {
+        
+        updateWinAmount(for: playerAddress)
+        
+        lotteries.forEach {
+            updateTickets(for: playerAddress, and: $0)
+        }
     }
     
     func pickUpWin(for playerAddress: UInt256, witjKey key: String) {
@@ -52,22 +63,12 @@ class MyTicketsViewModel: BaseViewModel {
                                     print("Success pick up win \(responce)")
             }, failure: defaultServiceFailure)
     }
+}
+
+// MARK: - Private methods
+private extension MyTicketsViewModel {
     
-    func update(for playerAddress: UInt256, and lotteries: [LotteryID]) {
-        
-        updateWinAmount(for: playerAddress)
-        updateTickets(for: playerAddress, and: lotteries.first!)
-    }
-    
-    private func updateWinAmount(for playerAddress: UInt256) {
-        
-        winAmountService.perform(input: GetWinAmountRequestModel(playerAddress: playerAddress),
-                        success: { [weak self] (responce) in
-                            self?.winAmountSubject.onNext(responce.winAmount)
-            }, failure: defaultServiceFailure)
-    }
-    
-    private func updateTickets(for playerAddress: UInt256, and lottery: LotteryID) {
+    func updateTickets(for playerAddress: UInt256, and lottery: LotteryID) {
         
         print("Start update tickets for lottery: \(lottery)")
         let requestModel = GetPlayerTicketsRequestModel(playerAddress: playerAddress,
@@ -78,13 +79,17 @@ class MyTicketsViewModel: BaseViewModel {
         playerTicketsService.perform(input: requestModel,
                                      success: { [weak self] (responce) in
                                         print("succes respond for \(lottery) count: \(responce.tickets.count)")
-                                        self?.activeTicketsUpdaterSubject.onNext(responce.tickets)
+                                        self?.ticketsUpdaterSubject.onNext(responce.tickets)
         }) { (error) in
             print("Error: \(error)")
         }
+    }
+    
+    func updateWinAmount(for playerAddress: UInt256) {
         
-//        playerTicketsService.perform(input: requestModel, success: { (responce) in
-//            print(responce)
-//        }, failure: defaultServiceFailure)
+        winAmountService.perform(input: GetWinAmountRequestModel(playerAddress: playerAddress),
+                                 success: { [weak self] (responce) in
+                                    self?.winAmountSubject.onNext(responce.winAmount)
+            }, failure: defaultServiceFailure)
     }
 }
