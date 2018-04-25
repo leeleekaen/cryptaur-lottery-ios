@@ -10,9 +10,6 @@ class MyTicketsViewModel: BaseViewModel {
     var allPlayedTickets: [Ticket] { return playedTickets.values.reduce([Ticket]()) { $0 + $1 } }
     
     var updateCompletion: (() -> ())?
-    var isLoading: Driver<Bool> {
-        return isLoadingSubject.asDriver(onErrorJustReturn: false)
-    }
     
     var winAmount: Driver<UInt256> {
         return winAmountSubject.asDriver(onErrorJustReturn: UInt256(integerLiteral: 0))
@@ -22,20 +19,11 @@ class MyTicketsViewModel: BaseViewModel {
     private let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
     private let playerAddress = UInt256(hexString: "0x14f05a4593ee1808541525a5aa39e344381251e6")!
     
-    private var activeTickets: [LotteryID: [Ticket]] = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []]
-    private var playedTickets: [LotteryID: [Ticket]] = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []]
-    private var isEndOfLottery: [LotteryID: Bool] = [.lottery4x20: false, .lottery5x36: false, .lottery6x42: false]
+    private var activeTickets: [LotteryID: [Ticket]] = [:]
+    private var playedTickets: [LotteryID: [Ticket]] = [:]
+    private var isEndOfLottery: [LotteryID: Bool] = [:]
     
-    var loadingCount = 0 {
-        didSet {
-            if loadingCount == 0 {
-                isLoadingSubject.onNext(false)
-            } else {
-                isLoadingSubject.onNext(true)
-            }
-        }
-    }
-    private let isLoadingSubject = BehaviorSubject<Bool>(value: false)
+    var loadingCount = 0
     
     private let winAmountSubject = BehaviorSubject<UInt256>(value: UInt256(integerLiteral: 0))
     
@@ -47,8 +35,17 @@ class MyTicketsViewModel: BaseViewModel {
     // MARK: - Lifecycle
     override init() {
         super.init()
+        reset()
         updateWinAmount(for: playerAddress)
         getNext()
+    }
+    
+    func reset() {
+        activeTickets = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []]
+        playedTickets = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []]
+        isEndOfLottery = [.lottery4x20: false, .lottery5x36: false, .lottery6x42: false]
+        loadingCount = 0
+        winAmountSubject.onNext(UInt256(integerLiteral: 0))
     }
     
     // MARK: - Get data from server
