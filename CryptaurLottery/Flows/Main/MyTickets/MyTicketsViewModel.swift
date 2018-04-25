@@ -25,7 +25,7 @@ class MyTicketsViewModel: BaseViewModel {
     private var activeTickets: [LotteryID: [Ticket]] = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []]
     private var playedTickets: [LotteryID: [Ticket]] = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []]
     
-    private var loadingCount = 0 {
+    var loadingCount = 0 {
         didSet {
             if loadingCount == 0 {
                 isLoadingSubject.onNext(false)

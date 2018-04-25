@@ -83,6 +83,13 @@ extension MyTicketsViewController: ListAdapterDataSource {
             
             cell.configure(state: self.state, ticket: item.value)
             
+            guard self.viewModel.loadingCount == 0, self.state == .played else { return }
+            
+            if let lastTicket = self.viewModel.allPlayedTickets.last, item.value == lastTicket {
+                print("Have to update played tickets")
+                self.viewModel.getNext()
+            }
+            
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
             return CGSize(width: size.width, height: 140)
