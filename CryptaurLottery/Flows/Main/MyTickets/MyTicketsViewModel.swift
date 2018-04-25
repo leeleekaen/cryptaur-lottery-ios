@@ -40,7 +40,7 @@ class MyTicketsViewModel: BaseViewModel {
         super.init()
         
         ticketsUpdater.drive(onNext: { [weak self] (tickets) in
-            print("add new tickets")
+            print("add new \(tickets.count) tickets")
             self?.activeTickets += tickets
         }).disposed(by: disposeBag)
         
@@ -81,7 +81,7 @@ private extension MyTicketsViewModel {
                                         print("succes respond for \(lottery) count: \(responce.tickets.count)")
                                         self?.ticketsUpdaterSubject.onNext(responce.tickets)
         }) { (error) in
-            print("Error: \(error)")
+            print("Error for lottery \(lottery): \(error)")
         }
     }
     

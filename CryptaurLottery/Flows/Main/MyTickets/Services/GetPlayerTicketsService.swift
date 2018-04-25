@@ -41,9 +41,13 @@ fileprivate final class GetPlayerTicketsOperation: APIOperation {
         guard let lotteryID = parameters?["lotteryID"] as? String,
                 let playerAddress = parameters?["playerAddress"] as? String,
                 let offset = parameters?["offset"] as? String,
-            let count = parameters?["count"] as? String else { return endpoint }
+                let count = parameters?["count"] as? String else {
+                    print("Can't get parameters")
+                    return endpoint
+        }
         
         guard var url = try? endpoint.asURL() else {
+            print("Can't create url")
             return endpoint
         }
         
