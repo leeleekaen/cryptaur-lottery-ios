@@ -23,11 +23,7 @@ class MyTicketsViewModel: BaseViewModel {
     private let playerAddress = UInt256(hexString: "0x14f05a4593ee1808541525a5aa39e344381251e6")!
     
     private var activeTickets: [LotteryID: [Ticket]] = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []]
-    private var playedTickets: [LotteryID: [Ticket]] = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []] {
-        didSet {
-            print(allPlayedTickets.count)
-        }
-    }
+    private var playedTickets: [LotteryID: [Ticket]] = [.lottery4x20: [], .lottery5x36: [], .lottery6x42: []]
     
     private var loadingCount = 0 {
         didSet {
@@ -102,6 +98,7 @@ private extension MyTicketsViewModel {
                                         }
                                         self?.activeTickets[lottery]! += activeTickets
                                         self?.playedTickets[lottery]! += playedTickets
+                                        self?.updateCompletion?()
                                         self?.loadingCount -= 1
         }) { [weak self] (error) in
             print("Error for lottery \(lottery): \(error)")

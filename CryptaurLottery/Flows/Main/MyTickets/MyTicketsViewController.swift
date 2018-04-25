@@ -24,7 +24,7 @@ class MyTicketsViewController: BaseViewController {
         }
     }
     
-    @IBAction func didTapGetTheWinButton(_ sender: UIButton) {
+    @IBAction func getTheWin(_ sender: UIButton) {
         print("Get win button tapped")
         viewModel.pickUpWin(for: 0, witjKey: "")
     }
@@ -32,7 +32,6 @@ class MyTicketsViewController: BaseViewController {
     // MARK: - Private properties
     private let viewModel = MyTicketsViewModel()
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-    let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
 
     var state: State = .active {
         didSet { adapter.reloadData() }
@@ -57,6 +56,13 @@ class MyTicketsViewController: BaseViewController {
     
     // MARK: - Binding
     override func bind() {
+        
+        viewModel.updateCompletion = { [unowned self] in
+            print("active tickets: \(self.viewModel.allActiveTickets.count), played tickets: \(self.viewModel.allPlayedTickets.count)")
+            DispatchQueue.main.async { [weak self] in
+                self?.adapter.reloadData()
+            }
+        }
         
         viewModel.winAmount.drive(onNext: { [weak self] in
             self?.prizePoolAmountLabel.text = $0.toString() + " CPT"
