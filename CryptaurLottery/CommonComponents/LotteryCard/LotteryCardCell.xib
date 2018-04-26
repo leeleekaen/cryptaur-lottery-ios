@@ -142,9 +142,10 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balls-5x36" translatesAutoresizingMaskIntoConstraints="NO" id="TWb-Sp-rF5">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balls-5x36 large" translatesAutoresizingMaskIntoConstraints="NO" id="TWb-Sp-rF5">
                         <rect key="frame" x="70" y="16" width="170" height="135"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="135" id="Ewh-5Q-wKn"/>
                             <constraint firstAttribute="width" secondItem="TWb-Sp-rF5" secondAttribute="height" multiplier="34:27" id="Qh3-bR-Jhe"/>
                         </constraints>
                     </imageView>
@@ -167,10 +168,13 @@
                 <constraint firstItem="TWb-Sp-rF5" firstAttribute="centerX" secondItem="rCW-ao-a5x" secondAttribute="centerX" id="yTf-Lk-YWZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="M5W-12-2Fq"/>
+            <connections>
+                <outlet property="ballsImage" destination="TWb-Sp-rF5" id="xBL-9M-HcQ"/>
+            </connections>
             <point key="canvasLocation" x="218.5" y="56.5"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="balls-5x36" width="170" height="135"/>
+        <image name="balls-5x36 large" width="170" height="135"/>
     </resources>
 </document>
