@@ -342,8 +342,6 @@
 			children = (
 				9AF87D90208E059C006326E5 /* BuyTicketRequestModel.swift */,
 				9AF87D92208E0666006326E5 /* BuyTicketResponceModel.swift */,
-				9AF87D9B208E1102006326E5 /* GetPlayerAviableBalanceRequestModel.swift */,
-				9AF87D9D208E112C006326E5 /* GetPlayerAviableBalanceResponceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				9AF87D95208E076E006326E5 /* BuyTicketService.swift */,
-				9AF87D9F208E11B2006326E5 /* GetPlayerAviableBalanceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -414,6 +411,9 @@
 				CE3084DA20767F71008C140C /* BalanceViewModel.swift */,
 				CE3A094B2076688500875A2C /* BalanceView.swift */,
 				CE3A094D207668A400875A2C /* BalanceView.xib */,
+				9AF87D9B208E1102006326E5 /* GetPlayerAviableBalanceRequestModel.swift */,
+				9AF87D9D208E112C006326E5 /* GetPlayerAviableBalanceResponceModel.swift */,
+				9AF87D9F208E11B2006326E5 /* GetPlayerAviableBalanceService.swift */,
 			);
 			path = Balance;
 			sourceTree = "<group>";

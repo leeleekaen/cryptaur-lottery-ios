@@ -1,13 +1,6 @@
-//
-//  BalanceViewModel.swift
-//  CryptaurLottery
-//
-//  Created by Alexander Polyakov on 05.04.2018.
-//  Copyright © 2018 Nordavind. All rights reserved.
-//
-
 import RxSwift
 import RxCocoa
+import UInt256
 
 protocol BalanceViewModelProtocol {
     var balance: Driver<String> { get }
@@ -15,25 +8,26 @@ protocol BalanceViewModelProtocol {
     func balanceAction()
 }
 
-final class MockBalanceViewModel: BalanceViewModelProtocol, BadgeViewModelProtocol {
-    var balance:  Driver<String> {
+final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeViewModelProtocol {
+    
+    // MARK: - Public properties
+    var balance: Driver<String> {
         return balanceSubject.asDriver(onErrorJustReturn: "")
     }
     
+    // MARK: - Private properties
     private let balanceSubject = BehaviorSubject<String>(value: "0.00000000 CPT")
     private let badgeSubject = BehaviorSubject<String>(value: "1")
     private var showAvailableBalance = false
+    
+    // MARK: - Dependency
+    let buyTicketsService = BuyTicketsService()
+    let balanceService = GetPlayerAviableBalanceService()
     
     func purseAction() {
     }
     
     func balanceAction() {
-        if showAvailableBalance {
-            balanceSubject.onNext("100.000 CPT (available)")
-        } else {
-            balanceSubject.onNext("100,000.000 CPT")
-        }
-        showAvailableBalance.toggle()
     }
 
     var badge: Driver<String> {
@@ -42,6 +36,31 @@ final class MockBalanceViewModel: BalanceViewModelProtocol, BadgeViewModelProtoc
     
     func badgeAction() {
         badgeSubject.onNext("12")
+    }
+    
+    // MARK: - Lifecycle
+    override init() {
+        super.init()
+        
+        getBalance(playerAddress: UInt256(hexString: "0x14f05a4593ee1808541525a5aa39e344381251e6")!)
+    }
+}
+
+// MARK: - Private methods
+private extension BalanceViewModel {
+    
+    func getBalance(playerAddress: UInt256) {
+        
+        let request = GetPlayerAviableBalanceRequestModel(address: playerAddress)
+        
+        balanceService.perform(input: request,
+                               success: { [weak self] (responce) in
+                                var balance = responce.balance.toStringWithDelimeters()
+                                if responce.balance != UInt256(integerLiteral: 0) {
+                                    balance.removeLast(5)
+                                }
+                                self?.balanceSubject.onNext(balance + " CPT")
+            }, failure: defaultServiceFailure)
     }
 }
 
