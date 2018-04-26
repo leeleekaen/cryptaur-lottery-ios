@@ -82,7 +82,7 @@ class MyTicketsViewController: BaseViewController {
         }
         
         viewModel.winAmount.drive(onNext: { [weak self] in
-            self?.prizePoolAmountLabel.text = $0.toString() + " CPT"
+            self?.prizePoolAmountLabel.text = $0.toStringWithDelimeters() + " CPT"
         }).disposed(by: disposeBag)
     }
 }

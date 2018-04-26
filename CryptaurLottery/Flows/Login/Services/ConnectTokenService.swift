@@ -27,12 +27,16 @@ fileprivate final class ConnectTokenOperation: APIOperation {
     }
     
     init(request: ConnectTokenRequestModel, success: @escaping APIOperationSuccess, failure: @escaping ServiceFailure) {
-        let parameters = ["grant_type": request.grantType,
+        var parameters = ["grant_type": request.grantType,
                           "username": request.username,
                           "password": request.password,
                           "deviceId": request.deviceID ?? "",
                           "pin": request.pin ?? "",
                           "scope": request.scope]
+        
+        if request.withPin {
+            parameters["use_pin_password"] = ""
+        }
         
         super.init(endpoint: .connect, parameters: parameters, headers: ["Authorization": "Basic cG9ydGFibGUuY2xpZW50OnNlY3JldA=="], success: success, failure: failure)
     }
