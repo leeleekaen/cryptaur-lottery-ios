@@ -33,6 +33,7 @@
 		9A3D577C208DE77A0007A426 /* PickUpWinServicel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */; };
 		9A3D577E208DF0770007A426 /* PickUpWinResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D577D208DF0770007A426 /* PickUpWinResponceModel.swift */; };
 		9A50D3D12091C44500DFA072 /* PinCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50D3D02091C44500DFA072 /* PinCodeViewModel.swift */; };
+		9A963B822092059A00812DBD /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A963B812092059A00812DBD /* Int+extension.swift */; };
 		9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */; };
 		9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */; };
 		9A9E83A72087882300D7E9BD /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */; };
@@ -146,6 +147,7 @@
 		9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinServicel.swift; sourceTree = "<group>"; };
 		9A3D577D208DF0770007A426 /* PickUpWinResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinResponceModel.swift; sourceTree = "<group>"; };
 		9A50D3D02091C44500DFA072 /* PinCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewModel.swift; sourceTree = "<group>"; };
+		9A963B812092059A00812DBD /* Int+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+extension.swift"; sourceTree = "<group>"; };
 		9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyTicketStory.storyboard; sourceTree = "<group>"; };
 		9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketContainerViewController.swift; sourceTree = "<group>"; };
 		9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
@@ -340,8 +342,6 @@
 			children = (
 				9AF87D90208E059C006326E5 /* BuyTicketRequestModel.swift */,
 				9AF87D92208E0666006326E5 /* BuyTicketResponceModel.swift */,
-				9AF87D9B208E1102006326E5 /* GetPlayerAviableBalanceRequestModel.swift */,
-				9AF87D9D208E112C006326E5 /* GetPlayerAviableBalanceResponceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				9AF87D95208E076E006326E5 /* BuyTicketService.swift */,
-				9AF87D9F208E11B2006326E5 /* GetPlayerAviableBalanceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -412,6 +411,9 @@
 				CE3084DA20767F71008C140C /* BalanceViewModel.swift */,
 				CE3A094B2076688500875A2C /* BalanceView.swift */,
 				CE3A094D207668A400875A2C /* BalanceView.xib */,
+				9AF87D9B208E1102006326E5 /* GetPlayerAviableBalanceRequestModel.swift */,
+				9AF87D9D208E112C006326E5 /* GetPlayerAviableBalanceResponceModel.swift */,
+				9AF87D9F208E11B2006326E5 /* GetPlayerAviableBalanceService.swift */,
 			);
 			path = Balance;
 			sourceTree = "<group>";
@@ -430,6 +432,7 @@
 				CE60B0CA2077C8A000EEC363 /* UIView+FromNib.swift */,
 				9A3D5774208DD3710007A426 /* UIStackView+extension.swift */,
 				9AD676FF208F49A50080DE6E /* Bool+extension.swift */,
+				9A963B812092059A00812DBD /* Int+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -982,6 +985,7 @@
 				CE7C8B802087E1860006C5C2 /* LoginViewModel.swift in Sources */,
 				9AD676FA208F28A50080DE6E /* GetDrawsService.swift in Sources */,
 				CE254CE5207299E400A12F72 /* APIEndpoint.swift in Sources */,
+				9A963B822092059A00812DBD /* Int+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

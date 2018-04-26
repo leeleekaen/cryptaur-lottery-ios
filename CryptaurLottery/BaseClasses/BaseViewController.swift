@@ -43,7 +43,7 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     
     private func createBalanceView() -> BalanceView? {
         let balanceView = BalanceView.loadFromNib()
-        balanceView.bind(viewModel: MockBalanceViewModel(), disposeBag: disposeBag)
+        balanceView.bind(viewModel: BalanceViewModel(), disposeBag: disposeBag)
         return balanceView
     }
     
@@ -56,7 +56,7 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     }
     
     private func createBadgeBarButtonItem() -> UIBarButtonItem {
-        return .badge(viewModel: MockBalanceViewModel(), disposeBag: disposeBag)
+        return .badge(viewModel: BalanceViewModel(), disposeBag: disposeBag)
     }
     
     func didTapMenuBarButtonItem() {

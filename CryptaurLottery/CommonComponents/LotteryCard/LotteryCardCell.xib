@@ -74,8 +74,8 @@
                                 <color key="textColor" red="0.38823529411764707" green="0.25882352941176467" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300,000.000 CPT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSd-FO-wqi">
-                                <rect key="frame" x="35" y="159" width="233" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300,000.000 CPT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSd-FO-wqi">
+                                <rect key="frame" x="16" y="159" width="271" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="wo5-et-EEq"/>
                                 </constraints>
@@ -83,8 +83,8 @@
                                 <color key="textColor" red="0.38823529411764707" green="0.25882352941176467" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME LEFT 23:23:08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G78-Fx-Qcz">
-                                <rect key="frame" x="102" y="260" width="99.5" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G78-Fx-Qcz">
+                                <rect key="frame" x="150" y="260" width="3.5" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="QYY-Mb-2zV"/>
                                 </constraints>
@@ -95,7 +95,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVK-rD-8Jm">
                                 <rect key="frame" x="111" y="77" width="80" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRAW #10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6X-pM-JZ4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRAW #0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6X-pM-JZ4">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
                                         <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
                                         <color key="textColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
@@ -120,6 +120,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vSd-FO-wqi" firstAttribute="leading" secondItem="09u-yJ-7jR" secondAttribute="leading" constant="16" id="3WA-kT-cnU"/>
                             <constraint firstItem="fhu-Bl-Sd9" firstAttribute="centerX" secondItem="09u-yJ-7jR" secondAttribute="centerX" id="9bI-ks-bzc"/>
                             <constraint firstAttribute="trailing" secondItem="fhu-Bl-Sd9" secondAttribute="trailing" constant="14" id="FBq-r1-hWl"/>
                             <constraint firstItem="gWo-4v-bTF" firstAttribute="top" secondItem="G78-Fx-Qcz" secondAttribute="bottom" constant="13" id="GBP-p2-dY1"/>
@@ -142,9 +143,10 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balls-5x36" translatesAutoresizingMaskIntoConstraints="NO" id="TWb-Sp-rF5">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balls-5x36 large" translatesAutoresizingMaskIntoConstraints="NO" id="TWb-Sp-rF5">
                         <rect key="frame" x="70" y="16" width="170" height="135"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="135" id="Ewh-5Q-wKn"/>
                             <constraint firstAttribute="width" secondItem="TWb-Sp-rF5" secondAttribute="height" multiplier="34:27" id="Qh3-bR-Jhe"/>
                         </constraints>
                     </imageView>
@@ -167,10 +169,17 @@
                 <constraint firstItem="TWb-Sp-rF5" firstAttribute="centerX" secondItem="rCW-ao-a5x" secondAttribute="centerX" id="yTf-Lk-YWZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="M5W-12-2Fq"/>
+            <connections>
+                <outlet property="ballsImage" destination="TWb-Sp-rF5" id="xBL-9M-HcQ"/>
+                <outlet property="buyTicketButton" destination="fhu-Bl-Sd9" id="sCE-hZ-X0L"/>
+                <outlet property="drawIndexLabel" destination="U6X-pM-JZ4" id="SLd-MV-yyR"/>
+                <outlet property="jackpotLabel" destination="vSd-FO-wqi" id="lUv-qc-QWK"/>
+                <outlet property="timeLeftLabel" destination="G78-Fx-Qcz" id="1J3-SJ-XXa"/>
+            </connections>
             <point key="canvasLocation" x="218.5" y="56.5"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="balls-5x36" width="170" height="135"/>
+        <image name="balls-5x36 large" width="170" height="135"/>
     </resources>
 </document>

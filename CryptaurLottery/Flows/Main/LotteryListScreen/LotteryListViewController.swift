@@ -1,25 +1,19 @@
-//
-//  LotteryListViewController.swift
-//  CryptaurLottery
-//
-//  Created by Alexander Polyakov on 05.04.2018.
-//  Copyright © 2018 Nordavind. All rights reserved.
-//
-
 import UIKit
+import UInt256
 import IGListKit
 
 final class LotteryListViewController: BaseViewController {
-    private let viewModel: LotteryListViewModel! = LotteryListViewModel()
     
+    // MARK: - IBOutlet
     @IBOutlet weak var gradientBackgroundView: GradientBackgroundView!
-    
     @IBOutlet weak var prizePoolAmountLabel: UILabel!
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
+
+    // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+    private let viewModel = LotteryListViewModel()
     
+    // MARK: - Viewcontroller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,20 +29,38 @@ final class LotteryListViewController: BaseViewController {
         adapter.dataSource = self
     }
     
+    override func bind() {
+        bind(viewModel)
+        
+        viewModel.updateCompletion = { [weak self] in
+            DispatchQueue.main.async { [weak self] in
+                self?.adapter.reloadData()
+            }
+        }
+        
+        viewModel.prizePoolAmount.drive(onNext: { [weak self] in
+            var amount = $0.toStringWithDelimeters()
+            if $0 != UInt256(integerLiteral: 0) { amount.removeLast(5) }
+            self?.prizePoolAmountLabel.text = amount + " CPT"
+        }).disposed(by: disposeBag)
+    }
+    
+    // MARK: - Navigation controller action
     override func didTapMenuBarButtonItem() {
         performSegue(withIdentifier: "ShowMyTickets", sender: nil)
     }
 }
 
+// MARK: - ListAdapterDataSource
 extension LotteryListViewController: ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         let sectionController = ListSingleSectionController(nibName: LotteryCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
-//            guard let cell = cell as? LotteryCardCell,
-//                let item = item as? DiffableBox<LotteryID> else {
-//                    return
-//            }
-//            print(111)
-            // TODO
+
+            guard let cell = cell as? LotteryCardCell,
+                let item = item as? DiffableBox<Draw> else { return }
+            
+            cell.configure(draw: item.value)
+            
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
             return CGSize(width: size.width - 56, height: size.height)
@@ -62,8 +74,6 @@ extension LotteryListViewController: ListAdapterDataSource {
     }
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
-        return lotteries.diffable()
-//        return viewModel.draws?.diffable() ?? [ListDiffable]()
+        return viewModel.draws.diffable()
     }
 }
