@@ -24,12 +24,9 @@ final class ApplicationCoordinator {
 //        }
 //       self.window?.rootViewController = loginViewController
         
-        let pinStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
-        let pinViewController = PinCodeViewController.controllerInStoryboard(pinStoryboard)
-        pinViewController.setFlowCompletion { [weak self] in
-            self?.startMain()
-        }
-        self.window?.rootViewController = pinViewController
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let lotteryListViewController = LotteryListViewController.controllerInStoryboard(mainStoryboard)
+        self.window?.rootViewController = lotteryListViewController
 
     }
 
