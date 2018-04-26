@@ -10,4 +10,7 @@ import UIKit
 
 class LotteryCardCell: UICollectionViewCell {
     
+    func configure(draw: Draw) {
+        print(draw)
+    }
 }
