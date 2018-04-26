@@ -9,7 +9,10 @@
 import Foundation
 
 final class LotteryListViewModel: BaseViewModel {
-    var draws: [Draw]?
+    
+    var draws = [Draw]()
+    
+    var updateCompletion: (() -> ())?
     
     private var service = GetCurrentLotteriesService()
     
@@ -18,6 +21,7 @@ final class LotteryListViewModel: BaseViewModel {
         
         service.perform(input: (), success: { [weak self] (response) in
             self?.draws = response.draws
+            self?.updateCompletion?()
         }, failure: defaultServiceFailure)
     }
 }

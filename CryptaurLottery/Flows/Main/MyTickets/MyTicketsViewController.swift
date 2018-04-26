@@ -73,9 +73,9 @@ class MyTicketsViewController: BaseViewController {
     
     // MARK: - Binding
     override func bind() {
+        bind(viewModel)
         
         viewModel.updateCompletion = { [unowned self] in
-            print("active tickets: \(self.viewModel.allActiveTickets.count), played tickets: \(self.viewModel.allPlayedTickets.count)")
             DispatchQueue.main.async { [weak self] in
                 self?.adapter.reloadData()
             }

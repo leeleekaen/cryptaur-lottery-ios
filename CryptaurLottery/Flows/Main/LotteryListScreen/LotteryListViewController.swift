@@ -18,7 +18,7 @@ final class LotteryListViewController: BaseViewController {
 
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-    private let viewModel: LotteryListViewModel! = LotteryListViewModel()
+    private let viewModel = LotteryListViewModel()
     
     // MARK: - Viewcontroller lifecycle
     override func viewDidLoad() {
@@ -34,6 +34,17 @@ final class LotteryListViewController: BaseViewController {
         
         adapter.collectionView = collectionView
         adapter.dataSource = self
+    }
+    
+    override func bind() {
+        bind(viewModel)
+        
+        viewModel.updateCompletion = { [weak self] in
+            print(self?.viewModel.draws)
+            DispatchQueue.main.async { [weak self] in
+                self?.adapter.reloadData()
+            }
+        }
     }
     
     // MARK: - Navigation controller action
