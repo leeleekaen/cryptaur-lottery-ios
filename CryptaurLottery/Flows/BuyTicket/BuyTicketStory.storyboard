@@ -105,7 +105,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Cds-ce-T6M">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="giO-rB-FoF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="giO-rB-FoF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pox-78-FGp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -950,10 +950,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Vh-TE-xkH">
-                                <rect key="frame" x="24" y="73.5" width="327" height="320"/>
+                                <rect key="frame" x="24" y="73.5" width="327" height="270"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="CdE-Z4-aDM"/>
+                                    <constraint firstAttribute="height" constant="270" id="CdE-Z4-aDM"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FBu-nw-P59">
                                     <size key="itemSize" width="50" height="50"/>
@@ -973,10 +973,10 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-Eo-4gx">
-                                <rect key="frame" x="0.0" y="393.5" width="375" height="171.5"/>
+                                <rect key="frame" x="0.0" y="343.5" width="375" height="221.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uzT-XB-m1w">
-                                        <rect key="frame" x="20" y="0.0" width="335" height="172"/>
+                                        <rect key="frame" x="20" y="0.0" width="335" height="222"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mVb-wa-pfa">
                                             <size key="itemSize" width="50" height="50"/>
@@ -1017,6 +1017,7 @@
                             <constraint firstAttribute="trailing" secondItem="b3c-Eo-4gx" secondAttribute="trailing" id="taX-sm-cWd"/>
                             <constraint firstItem="b3c-Eo-4gx" firstAttribute="leading" secondItem="elI-B9-C7Q" secondAttribute="leading" id="xVk-hB-A8s"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="le8-1Z-qcS"/>
                     </view>
                     <connections>
                         <outlet property="ticketsCollectionView" destination="uzT-XB-m1w" id="VQ6-nE-Ie2"/>
