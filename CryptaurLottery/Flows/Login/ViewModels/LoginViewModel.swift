@@ -3,6 +3,7 @@ import RxSwift
 import RxCocoa
 
 final class LoginViewModel: BaseViewModel {
+    
     let usernameRelay = BehaviorRelay<String?>(value: nil)
     let passwordRelay = BehaviorRelay<String?>(value: nil)
     var loginCompletion: (() -> ())?

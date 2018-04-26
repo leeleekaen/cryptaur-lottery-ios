@@ -2,9 +2,8 @@ import UIKit
 
 class PinCodeViewController: BaseViewController, FlowController {
     
-    private var flowCompletion: (() -> ())?
     func setFlowCompletion(_ completion: @escaping () -> ()) {
-        flowCompletion = completion
+        viewModel.loginCompletion = completion
     }
     
     // MARK: - IBOutlet
@@ -73,7 +72,8 @@ class PinCodeViewController: BaseViewController, FlowController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSubviews()
-        viewModel.submit()
+        bind(viewModel)
+        viewModel.submit(pincode: "1234")
     }
 }
 

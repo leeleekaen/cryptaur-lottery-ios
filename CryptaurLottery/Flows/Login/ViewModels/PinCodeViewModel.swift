@@ -7,16 +7,15 @@ class PinCodeViewModel: BaseViewModel {
     
     // MARK: - Private properties
     private let username = "a.rytikov@nordavind.ru"
-    private let pin = "1234"
     
     // MARK: - Dependency
     private let connectTokenService = ConnectTokenService()
     
     // MARK: - Submit pin code
-    func submit() {
+    func submit(pincode: String) {
         
-        let request = ConnectTokenRequestModel(username: username, password: pin,
-                                               pin: pin, withPin: true)
+        let request = ConnectTokenRequestModel(username: username, password: pincode,
+                                               pin: pincode, withPin: true)
         
         connectTokenService.perform(input: request,
                                     success: { [weak self] (response) in
