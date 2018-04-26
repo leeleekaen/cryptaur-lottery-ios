@@ -50,6 +50,9 @@ class PinCodeViewController: BaseViewController, FlowController {
         }
     }
     
+    // MARK: - Dependency
+    let viewModel = PinCodeViewModel()
+    
     // MARK: - Private properties
     let pinCodeCount = 4
     private var pinCodeState: PinCodeState = .notStarted {
@@ -70,6 +73,7 @@ class PinCodeViewController: BaseViewController, FlowController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSubviews()
+        viewModel.submit()
     }
 }
 

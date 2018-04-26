@@ -1,11 +1,3 @@
-//
-//  LoginViewModel.swift
-//  CryptaurLottery
-//
-//  Created by Alexander Polyakov on 19.04.2018.
-//  Copyright © 2018 Nordavind. All rights reserved.
-//
-
 import Foundation
 import RxSwift
 import RxCocoa
@@ -38,14 +30,19 @@ final class LoginViewModel: BaseViewModel {
     }
     
     func submit() {
+        
         guard let username = usernameRelay.value,
             let password = passwordRelay.value else {
             return
         }
-        connectTokenService.perform(input: ConnectTokenRequestModel(username: username, password: password, pin: "1234"), success: { [weak self] (response) in
-            DispatchQueue.main.async {
-                self?.loginCompletion?()
-            }
-        }, failure: defaultServiceFailure)
+        
+        let request = ConnectTokenRequestModel(username: username, password: password,
+                                               pin: "1234", withPin: false)
+        connectTokenService.perform(input: request,
+                                    success: { [weak self] (response) in
+                                        DispatchQueue.main.async {
+                                            self?.loginCompletion?()
+                                        }
+            }, failure: defaultServiceFailure)
     }
 }
