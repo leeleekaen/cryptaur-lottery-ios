@@ -24,9 +24,7 @@ final class ApplicationCoordinator {
 //        }
 //       self.window?.rootViewController = loginViewController
         
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let lotteryListViewController = LotteryListViewController.controllerInStoryboard(mainStoryboard)
-        self.window?.rootViewController = lotteryListViewController
+        startMain()
 
     }
 

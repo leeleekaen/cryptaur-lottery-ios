@@ -1,12 +1,5 @@
-//
-//  LotteryListViewController.swift
-//  CryptaurLottery
-//
-//  Created by Alexander Polyakov on 05.04.2018.
-//  Copyright © 2018 Nordavind. All rights reserved.
-//
-
 import UIKit
+import UInt256
 import IGListKit
 
 final class LotteryListViewController: BaseViewController {
@@ -44,6 +37,12 @@ final class LotteryListViewController: BaseViewController {
                 self?.adapter.reloadData()
             }
         }
+        
+        viewModel.prizePoolAmount.drive(onNext: { [weak self] in
+            var amount = $0.toStringWithDelimeters()
+            if $0 != UInt256(integerLiteral: 0) { amount.removeLast(5) }
+            self?.prizePoolAmountLabel.text = amount + " CPT"
+        }).disposed(by: disposeBag)
     }
     
     // MARK: - Navigation controller action
