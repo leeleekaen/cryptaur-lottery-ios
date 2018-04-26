@@ -30,6 +30,7 @@ final class ApplicationCoordinator {
             self?.startMain()
         }
         self.window?.rootViewController = pinViewController
+
     }
 
     private func startMain() {

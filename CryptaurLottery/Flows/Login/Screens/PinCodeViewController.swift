@@ -20,16 +20,11 @@ class PinCodeViewController: BaseViewController, FlowController {
     }
     
     @IBAction func numpadAction(_ sender: UIButton) {
-        switch pinCodeState {
-        case .notStarted:
-            pinCodeState = .process(0)
-        case let .process(index):
-            if index < pinCodeCount - 1 {
-                pinCodeState = .process(index + 1)
-            } else {
-                break
-            }
+        
+        guard let number = sender.titleLabel?.text else {
+            return
         }
+        pinCode += number
     }
     
     @IBAction func exitAction(_ sender: UIButton) {
@@ -37,15 +32,9 @@ class PinCodeViewController: BaseViewController, FlowController {
     }
     
     @IBAction func backspaceAction(_ sender: UIButton) {
-        switch pinCodeState {
-        case let .process(index):
-            if index == 0 {
-                pinCodeState = .notStarted
-            } else {
-                pinCodeState = .process(index - 1)
-            }
-        case .notStarted:
-            break
+        
+        if !pinCode.isEmpty {
+            pinCode.removeLast()
         }
     }
     
@@ -54,15 +43,22 @@ class PinCodeViewController: BaseViewController, FlowController {
     
     // MARK: - Private properties
     let pinCodeCount = 4
-    private var pinCodeState: PinCodeState = .notStarted {
+    var pinCode = "" {
         didSet {
-            switch pinCodeState {
-            case .notStarted:
+            switch pinCode.count {
+            case 0:
                 pinCodePageControl.currentPage = 1
                 pinCodePageControl.currentPageIndicatorTintColor = UIColor.blueGrey
-            case let .process(index):
-                pinCodePageControl.currentPage = index
+            case 1...3:
+                pinCodePageControl.currentPage = pinCode.count - 1
                 pinCodePageControl.currentPageIndicatorTintColor = UIColor.hotPink
+            case 4:
+                pinCodePageControl.currentPage = pinCode.count - 1
+                viewModel.submit(pincode: pinCode)
+            case 5:
+                pinCode.removeLast()
+            default:
+                fatalError("unespected pin code")
             }
         }
     }
@@ -73,7 +69,6 @@ class PinCodeViewController: BaseViewController, FlowController {
         super.viewDidLoad()
         configureSubviews()
         bind(viewModel)
-        viewModel.submit(pincode: "1234")
     }
 }
 
@@ -81,7 +76,7 @@ class PinCodeViewController: BaseViewController, FlowController {
 private extension PinCodeViewController {
     
     func configureSubviews() {
-        pinCodeState = .notStarted
+        pinCode = ""
     }
 }
 
@@ -94,7 +89,7 @@ private extension PinCodeViewController {
     
     enum PinCodeState {
         case notStarted
-        case process(Int)
+        case process(String)
     }
 }
 

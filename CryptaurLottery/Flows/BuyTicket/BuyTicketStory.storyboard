@@ -105,7 +105,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Cds-ce-T6M">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="giO-rB-FoF" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationController" automaticallyAdjustsScrollViewInsets="NO" id="giO-rB-FoF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pox-78-FGp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1017,6 +1017,7 @@
                             <constraint firstAttribute="trailing" secondItem="b3c-Eo-4gx" secondAttribute="trailing" id="taX-sm-cWd"/>
                             <constraint firstItem="b3c-Eo-4gx" firstAttribute="leading" secondItem="elI-B9-C7Q" secondAttribute="leading" id="xVk-hB-A8s"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="dGV-hQ-Foa"/>
                     </view>
                     <connections>
                         <outlet property="ticketsCollectionView" destination="uzT-XB-m1w" id="VQ6-nE-Ie2"/>
