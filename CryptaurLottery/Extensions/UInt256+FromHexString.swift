@@ -85,6 +85,11 @@ extension UInt256 {
     }
 
     func toStringWithDelimeters() -> String  {
+        
+        guard self != UInt256(integerLiteral: 0) else {
+            return "0"
+        }
+        
         let s = toString()
         let endIndex = s.endIndex
         var retVal = "." + s[s.index(endIndex, offsetBy: -8)...]
