@@ -32,6 +32,7 @@
 		9A3D577A208DE6230007A426 /* PickUpWinRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D5779208DE6230007A426 /* PickUpWinRequestModel.swift */; };
 		9A3D577C208DE77A0007A426 /* PickUpWinServicel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */; };
 		9A3D577E208DF0770007A426 /* PickUpWinResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D577D208DF0770007A426 /* PickUpWinResponceModel.swift */; };
+		9A50D3D12091C44500DFA072 /* PinCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50D3D02091C44500DFA072 /* PinCodeViewModel.swift */; };
 		9A9E83A320877FE100D7E9BD /* BuyTicketStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */; };
 		9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */; };
 		9A9E83A72087882300D7E9BD /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */; };
@@ -144,6 +145,7 @@
 		9A3D5779208DE6230007A426 /* PickUpWinRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinRequestModel.swift; sourceTree = "<group>"; };
 		9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinServicel.swift; sourceTree = "<group>"; };
 		9A3D577D208DF0770007A426 /* PickUpWinResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinResponceModel.swift; sourceTree = "<group>"; };
+		9A50D3D02091C44500DFA072 /* PinCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewModel.swift; sourceTree = "<group>"; };
 		9A9E83A220877FE100D7E9BD /* BuyTicketStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BuyTicketStory.storyboard; sourceTree = "<group>"; };
 		9A9E83A42087803300D7E9BD /* BuyTicketContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketContainerViewController.swift; sourceTree = "<group>"; };
 		9A9E83A62087882300D7E9BD /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7C8B7F2087E1860006C5C2 /* LoginViewModel.swift */,
+				9A50D3D02091C44500DFA072 /* PinCodeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -922,6 +925,7 @@
 				CE60B0C72077C7FC00EEC363 /* NSObject+ClassName.swift in Sources */,
 				9A3D577C208DE77A0007A426 /* PickUpWinServicel.swift in Sources */,
 				CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */,
+				9A50D3D12091C44500DFA072 /* PinCodeViewModel.swift in Sources */,
 				9A2071DE208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift in Sources */,
 				9AE714742088DAF900D7F399 /* DrawArchiveCardCell.swift in Sources */,
 				CE3A094C2076688500875A2C /* BalanceView.swift in Sources */,
