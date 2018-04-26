@@ -10,16 +10,17 @@ import UIKit
 import IGListKit
 
 final class LotteryListViewController: BaseViewController {
+    
+    // MARK: - IBOutlet
+    @IBOutlet weak var gradientBackgroundView: GradientBackgroundView!
+    @IBOutlet weak var prizePoolAmountLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    // MARK: - Private properties
+    lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     private let viewModel: LotteryListViewModel! = LotteryListViewModel()
     
-    @IBOutlet weak var gradientBackgroundView: GradientBackgroundView!
-    
-    @IBOutlet weak var prizePoolAmountLabel: UILabel!
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-    
+    // MARK: - Viewcontroller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,11 +36,13 @@ final class LotteryListViewController: BaseViewController {
         adapter.dataSource = self
     }
     
+    // MARK: - Navigation controller action
     override func didTapMenuBarButtonItem() {
         performSegue(withIdentifier: "ShowMyTickets", sender: nil)
     }
 }
 
+// MARK: - ListAdapterDataSource
 extension LotteryListViewController: ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         let sectionController = ListSingleSectionController(nibName: LotteryCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
