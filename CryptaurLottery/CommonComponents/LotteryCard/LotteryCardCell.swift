@@ -11,9 +11,11 @@ class LotteryCardCell: UICollectionViewCell {
             buyTicketButton.titleLabel?.adjustsFontSizeToFitWidth = true
         }
     }
+    @IBOutlet weak var timeLeftLabel: UILabel!
     
     func configure(draw: Draw) {
         
+        // Balls image
         guard let lottery = LotteryID(rawValue: draw.lotteryID) else { return }
         
         switch lottery {
@@ -25,18 +27,25 @@ class LotteryCardCell: UICollectionViewCell {
             ballsImage.image = #imageLiteral(resourceName: "balls 6x42 large")
         }
         
+        // Draw number
         drawIndexLabel.text = "DRAW #\(draw.number)"
         
+        // Jackpot
         var jackpot = draw.jackpot.toStringWithDelimeters()
         if draw.jackpot != UInt256(integerLiteral: 0) {
             jackpot.removeLast(5)
         }
         jackpotLabel.text = jackpot + " CPT"
         
+        // Buy ticket
         var ticketPrice = draw.ticketPrice.toStringWithDelimeters()
         if draw.ticketPrice != UInt256(integerLiteral: 0) {
             ticketPrice.removeLast(5)
         }
         buyTicketButton.setTitle("Buy ticket for \(ticketPrice) CPT", for: .normal)
+        
+        // Time left
+        let secondsLetf = Int(draw.date.timeIntervalSinceNow)
+        timeLeftLabel.text = "TIME LEFT \(secondsLetf.timeString)"
     }
 }
