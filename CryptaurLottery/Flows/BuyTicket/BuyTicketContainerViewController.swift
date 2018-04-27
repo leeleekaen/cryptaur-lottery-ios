@@ -63,6 +63,7 @@ private extension BuyTicketContainerViewController {
     
     func configureSubviews() {
         view.backgroundColor = UIColor.paleLavender
+        configureNavigationItem(showBalance: true, color: UIColor.heather)
         
         buyTicketViewController.view = buyTicketSubview
         buyTicketViewController.lottery = lottery

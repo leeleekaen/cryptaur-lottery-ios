@@ -7,7 +7,7 @@ class BuyTicketViewModel: BaseViewModel {
     
     // MARK: - Public properties
     let authKey: String = ""
-    let lottery: LotteryID = .lottery5x36
+    var lottery: LotteryID?
     let drawIndex: Int  = 0
     let player: UInt256 = UInt256(hexString: "0x172d3f8FD5b0e9e4D5aAEf352386D895047d905B")!
     
@@ -40,6 +40,8 @@ class BuyTicketViewModel: BaseViewModel {
     // MARK: - Public methods
     func buyTicket(numbers: [Int]) {
         
+        guard let lottery = lottery else { return }
+        
         let request = BuyTicketRequestModel(authKey: authKey, lottery: lottery,
                                             numbers: numbers, drawIndex: drawIndex,
                                             playerAddress: player)
@@ -65,6 +67,8 @@ private extension BuyTicketViewModel {
     }
     
     func getTicketPrice() {
+        
+        guard let lottery = lottery else { return }
         
         let request = GetTicketPriceRequestModel(lotteryID: lottery)
         getTicketPriceService.perform(input: request,

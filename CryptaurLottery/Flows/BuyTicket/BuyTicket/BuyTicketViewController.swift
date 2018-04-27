@@ -20,10 +20,11 @@ class BuyTicketViewController: BaseViewController {
     @IBAction func numpadAction(_ sender: UIButton) {
         
         guard let title = sender.titleLabel?.text,
-            let number = Int(title) else { return }
+            let number = Int(title),
+            let lottery = lottery else { return }
         
         if sender.currentBackgroundImage == nil {
-            if viewModel.lottery.toPick > selectedNumbers.count {
+            if lottery.toPick > selectedNumbers.count {
                 selectedNumbers.append(number)
                 sender.setBackgroundImage(#imageLiteral(resourceName: "number-button-background"), for: .normal)
                 sender.setTitleColor(.white, for: .normal)
@@ -39,8 +40,10 @@ class BuyTicketViewController: BaseViewController {
     }
     
     @IBAction func buyAction(_ sender: UIButton) {
-        print("Buy tapped")
-        if selectedNumbers.count == viewModel.lottery.toPick {
+        
+        guard let lottery = lottery else { return }
+        
+        if selectedNumbers.count == lottery.toPick {
             viewModel.buyTicket(numbers: selectedNumbers)
         }
     }
@@ -48,13 +51,8 @@ class BuyTicketViewController: BaseViewController {
     // MARK: - Dependency
     let viewModel = BuyTicketViewModel()
     
-    
     // MARK: - Public properties
-    var lottery: LotteryID? {
-        didSet {
-            print(lottery)
-        }
-    }
+    var lottery: LotteryID?
     
     // MARK: - Private properties
     var selectedNumbers = [Int]()
@@ -84,16 +82,18 @@ private extension BuyTicketViewController {
     
     func configureSubviews() {
         
+        guard let lottery = lottery else { return }
+        
         view.backgroundColor = UIColor.paleLavender
         
         numpad.forEach {
             let number = Int(($0.titleLabel?.text)!)!
-            if number > viewModel.lottery.total {
+            if number > lottery.total {
                 $0.isEnabled = false
                 $0.setTitleColor(UIColor.paleLavender, for: .normal)
             }
         }
         
-        selectNumberLabel.text = "SELECT \(viewModel.lottery.toPick) NUMBERS"
+        selectNumberLabel.text = "SELECT \(lottery.toPick) NUMBERS"
     }
 }
