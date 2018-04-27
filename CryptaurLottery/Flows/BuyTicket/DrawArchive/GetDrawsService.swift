@@ -10,7 +10,6 @@ OperationService<GetDrawsRequestModel, GetDrawsResponceModel> {
         
         return GetDrawsOperation(request: input,
                                  success: { (json) in
-                                    
             guard let object = GetDrawsResponceModel(json: json) else {
                 failure(ServiceError.deserializationFailure)
                 return

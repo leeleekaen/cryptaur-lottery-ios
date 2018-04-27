@@ -857,7 +857,7 @@
         <!--Draw Archive View Controller-->
         <scene sceneID="GpO-N7-RtH">
             <objects>
-                <viewController id="Gub-98-f5t" customClass="DrawArchiveViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrawArchiveViewController" id="Gub-98-f5t" customClass="DrawArchiveViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dqD-fX-Y5s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
