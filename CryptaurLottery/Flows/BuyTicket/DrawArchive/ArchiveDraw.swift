@@ -17,6 +17,7 @@ struct ArchiveDraw: JSONDeserializable, Diffable {
     let ticketsBought: UInt32
     let ticketPrice: UInt256
     let buyTicketGasFee: UInt256?
+    let payed: UInt256
     let numbers: [Int]
     
     init?(json: JSONDictionary) {
@@ -39,6 +40,8 @@ struct ArchiveDraw: JSONDeserializable, Diffable {
             let ticketsBought = json["ticketsBought"] as? UInt32,
             let ticketPriceString = json["ticketPrice"] as? String,
             let ticketPrice = UInt256(hexString: ticketPriceString),
+            let payedString = json["payed"] as? String,
+            let payed = UInt256(hexString: payedString),
             let numbers = json["numbers"] as? [Int] else { return nil }
         
         self.number = number
@@ -55,6 +58,7 @@ struct ArchiveDraw: JSONDeserializable, Diffable {
         } else {
             self.buyTicketGasFee = nil
         }
+        self.payed = payed
         self.numbers = numbers
     }
 }
