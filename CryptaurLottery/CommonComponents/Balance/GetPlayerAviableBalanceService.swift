@@ -10,7 +10,6 @@ final class GetPlayerAviableBalanceService:
                                   failure: @escaping ServiceFailure) -> Operation? {
         
         return GetPlayerAviableBalanceOperation(request: input, success: { (json) in
-            print(json)
             guard let object = GetPlayerAviableBalanceResponceModel(json: json) else {
                 failure(ServiceError.deserializationFailure)
                 return

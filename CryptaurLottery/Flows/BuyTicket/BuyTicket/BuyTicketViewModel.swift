@@ -11,9 +11,7 @@ class BuyTicketViewModel: BaseViewModel {
     let drawIndex: Int  = 0
     let player: UInt256 = UInt256(hexString: "0x172d3f8FD5b0e9e4D5aAEf352386D895047d905B")!
     
-    var balance: Driver<UInt256> {
-        return balanceObject.asDriver(onErrorJustReturn: UInt256(integerLiteral: 0))
-    }
+    var balance = UInt256(integerLiteral: 0)
     
     var ticketPrice: Driver<UInt256> {
         return ticketPriceObject.asDriver(onErrorJustReturn: UInt256(integerLiteral: 10))
@@ -21,7 +19,6 @@ class BuyTicketViewModel: BaseViewModel {
     
     
     // MARK: - Private properties
-    let balanceObject = BehaviorSubject<UInt256>(value: UInt256(integerLiteral: 0))
     let ticketPriceObject = BehaviorSubject<UInt256>(value: UInt256(integerLiteral: 10))
     
     // MARK: - Dependency
@@ -62,7 +59,7 @@ private extension BuyTicketViewModel {
         
         balanceService.perform(input: request,
                                success: { [weak self] (responce) in
-                                self?.balanceObject.onNext(responce.balance)
+                                self?.balance = responce.balance
         }, failure: defaultServiceFailure)
     }
     

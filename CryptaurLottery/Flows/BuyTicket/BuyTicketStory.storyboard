@@ -761,12 +761,6 @@
                                     <action selector="buyAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="dxl-AA-50k"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available 100,000.00000000 CPT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXd-iA-wzU">
-                                <rect key="frame" x="95.5" y="498.5" width="183.5" height="16.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="12"/>
-                                <color key="textColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -779,13 +773,10 @@
                             <constraint firstItem="MqO-so-j9l" firstAttribute="centerX" secondItem="WC9-mv-SuB" secondAttribute="centerX" id="Vo9-bH-8kG"/>
                             <constraint firstItem="0FR-z2-ldK" firstAttribute="top" secondItem="WC9-mv-SuB" secondAttribute="topMargin" constant="10" id="kkc-dN-oc0"/>
                             <constraint firstItem="Kjz-fA-Vff" firstAttribute="leading" secondItem="WC9-mv-SuB" secondAttribute="leadingMargin" constant="30" id="tVJ-W8-QaQ"/>
-                            <constraint firstItem="WXd-iA-wzU" firstAttribute="centerX" secondItem="WC9-mv-SuB" secondAttribute="centerX" id="vHx-To-fvF"/>
-                            <constraint firstItem="Kjz-fA-Vff" firstAttribute="top" secondItem="WXd-iA-wzU" secondAttribute="bottom" constant="14" id="zwH-kT-fEh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PP5-TV-cqH"/>
                     </view>
                     <connections>
-                        <outlet property="availableLabe" destination="WXd-iA-wzU" id="gvd-gb-VRt"/>
                         <outlet property="buyTicketButton" destination="Kjz-fA-Vff" id="rX4-pS-gvm"/>
                         <outlet property="selectNumberLabel" destination="0FR-z2-ldK" id="rE2-qT-Ee4"/>
                         <outletCollection property="numpad" destination="gCJ-Bq-xFi" collectionClass="NSMutableArray" id="3Ya-7v-X5I"/>
