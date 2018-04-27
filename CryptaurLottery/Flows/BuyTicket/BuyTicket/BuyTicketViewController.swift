@@ -51,7 +51,11 @@ class BuyTicketViewController: BaseViewController {
     let viewModel = BuyTicketViewModel()
     
     // MARK: - Public properties
-    var lottery: LotteryID?
+    var lottery: LotteryID? {
+        didSet {
+            configureSubviews()
+        }
+    }
     
     // MARK: - Private properties
     var selectedNumbers = [Int]()
@@ -59,7 +63,6 @@ class BuyTicketViewController: BaseViewController {
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureSubviews()
         bind()
     }
     
