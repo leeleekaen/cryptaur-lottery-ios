@@ -17,6 +17,7 @@
 		22D821F3208BF739007689E7 /* DrawDetailsWinnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D821F2208BF739007689E7 /* DrawDetailsWinnerCell.swift */; };
 		22D821F5208F3B3E007689E7 /* DrawDetailsTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D821F4208F3B3E007689E7 /* DrawDetailsTicketCell.xib */; };
 		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
+		9A01F4902093471500A00348 /* UIResponder+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01F48F2093471500A00348 /* UIResponder+extension.swift */; };
 		9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0742F520872FA700283DA5 /* PinCodeViewController.swift */; };
 		9A0957632089DBF20069EF28 /* MyTicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0957622089DBF20069EF28 /* MyTicketsViewModel.swift */; };
 		9A0957652089DD6E0069EF28 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0957642089DD6E0069EF28 /* Ticket.swift */; };
@@ -131,6 +132,7 @@
 		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A01F48F2093471500A00348 /* UIResponder+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+extension.swift"; sourceTree = "<group>"; };
 		9A0742F520872FA700283DA5 /* PinCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeViewController.swift; sourceTree = "<group>"; };
 		9A0957622089DBF20069EF28 /* MyTicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTicketsViewModel.swift; sourceTree = "<group>"; };
 		9A0957642089DD6E0069EF28 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				9A3D5774208DD3710007A426 /* UIStackView+extension.swift */,
 				9AD676FF208F49A50080DE6E /* Bool+extension.swift */,
 				9A963B812092059A00812DBD /* Int+extension.swift */,
+				9A01F48F2093471500A00348 /* UIResponder+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 				9AF87D91208E059C006326E5 /* BuyTicketRequestModel.swift in Sources */,
 				9AE714712088D7AB00D7F399 /* DrawArchiveViewController.swift in Sources */,
 				CE254CDF2072956000A12F72 /* OperationService.swift in Sources */,
+				9A01F4902093471500A00348 /* UIResponder+extension.swift in Sources */,
 				CE647F3B2075157400B334E3 /* JSONDeserializable.swift in Sources */,
 				9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */,
 				CE60B0C12077C5AA00EEC363 /* BadgeView.swift in Sources */,

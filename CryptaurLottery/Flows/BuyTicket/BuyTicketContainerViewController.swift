@@ -43,10 +43,13 @@ class BuyTicketContainerViewController: BaseViewController {
     }
     
     // MARK: - Public property
-    func setLottery(_ lottery: LotteryID) {
-        print(lottery)
-        print(buyTicketSubview)
-    }
+    var lottery: LotteryID?
+    
+    // MARK: - Embedde view controllers
+    var buyTicketViewController = BuyTicketViewController()
+    var drawArchiveViewController: DrawArchiveViewController?
+    var showRulesViewController: ShowRulesViewController?
+    var drawDetailsViewController: DrawDetailsViewController?
     
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
@@ -60,5 +63,8 @@ private extension BuyTicketContainerViewController {
     
     func configureSubviews() {
         view.backgroundColor = UIColor.paleLavender
+        
+        buyTicketViewController.view = buyTicketSubview
+        buyTicketViewController.lottery = lottery
     }
 }

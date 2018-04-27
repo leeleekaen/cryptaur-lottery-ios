@@ -48,6 +48,14 @@ class BuyTicketViewController: BaseViewController {
     // MARK: - Dependency
     let viewModel = BuyTicketViewModel()
     
+    
+    // MARK: - Public properties
+    var lottery: LotteryID? {
+        didSet {
+            print(lottery)
+        }
+    }
+    
     // MARK: - Private properties
     var selectedNumbers = [Int]()
     
