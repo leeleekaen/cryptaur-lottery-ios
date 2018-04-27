@@ -11,10 +11,17 @@ import RxCocoa
 import RxSwift
 
 final class BalanceView: UIView {
+    
     private var viewModel: BalanceViewModelProtocol!
 
     @IBOutlet private weak var balanceTextButton: UIButton!
-
+    @IBOutlet private weak var purseButton: UIButton!
+    
+    func setColor(_ color: UIColor) {
+        balanceTextButton.setTitleColor(color, for: .normal)
+        purseButton.imageView?.tintColor = color
+    }
+    
     func bind(viewModel: BalanceViewModelProtocol, disposeBag: DisposeBag) {
         self.viewModel = viewModel
         viewModel.balance.drive(onNext: { [weak self] in

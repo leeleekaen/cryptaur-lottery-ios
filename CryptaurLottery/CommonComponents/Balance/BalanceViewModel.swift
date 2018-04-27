@@ -1,6 +1,7 @@
 import RxSwift
 import RxCocoa
 import UInt256
+import KeychainSwift
 
 protocol BalanceViewModelProtocol {
     var balance: Driver<String> { get }
@@ -23,6 +24,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     // MARK: - Dependency
     let buyTicketsService = BuyTicketsService()
     let balanceService = GetPlayerAviableBalanceService()
+    let keychain = KeychainSwift()
     
     func purseAction() {
     }
@@ -42,7 +44,10 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     override init() {
         super.init()
         
-        getBalance(playerAddress: UInt256(hexString: "0x14f05a4593ee1808541525a5aa39e344381251e6")!)
+        if let hexAddress = keychain.get(PlayersKey.address),
+            let address = UInt256(hexString: hexAddress) {
+            getBalance(playerAddress: address)
+        }
     }
 }
 

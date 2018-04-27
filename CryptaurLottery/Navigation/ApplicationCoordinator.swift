@@ -9,7 +9,9 @@
 import UIKit
 
 final class ApplicationCoordinator {
+    
     private weak var window: UIWindow?
+    private let navigationController = BaseNavigationController()
 
     init(window: UIWindow) {
         self.window = window
@@ -28,10 +30,20 @@ final class ApplicationCoordinator {
 
     private func startMain() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let navigationController = BaseNavigationController()
 
         let lotteryListViewController = LotteryListViewController.controllerInStoryboard(mainStoryboard)
+        lotteryListViewController.chooseLotteryCompletion = { [weak self] in
+            self?.startBuyTicket(lottery: $0)
+        }
+        
         navigationController.viewControllers = [lotteryListViewController]
         self.window?.rootViewController = navigationController
+    }
+    
+    private func startBuyTicket(lottery: LotteryID) {
+        let buyTicketStoryboard = UIStoryboard(name: "BuyTicketStory", bundle: nil)
+        let buyTicketContainerViewController = BuyTicketContainerViewController.controllerInStoryboard(buyTicketStoryboard)
+        buyTicketContainerViewController.lottery = lottery
+        navigationController.pushViewController(buyTicketContainerViewController, animated: true)
     }
 }

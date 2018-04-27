@@ -64,6 +64,9 @@
                                 <state key="normal" title="Buy ticket for 300.000 CPT">
                                     <color key="titleColor" red="1" green="0.0" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buyTicket:" destination="rCW-ao-a5x" eventType="touchUpInside" id="oJn-uE-pSD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jackpot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEm-cg-RDz">
                                 <rect key="frame" x="131.5" y="141" width="39.5" height="15"/>

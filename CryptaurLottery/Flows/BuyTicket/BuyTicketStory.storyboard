@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="giO-rB-FoF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sc8-ur-dxP">
-                                <rect key="frame" x="10" y="64" width="355" height="29"/>
+                                <rect key="frame" x="10" y="20" width="355" height="29"/>
                                 <segments>
                                     <segment title="Ticket"/>
                                     <segment title="Draw Archive"/>
@@ -40,25 +40,25 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILC-uq-gBq" userLabel="Buy Ticket">
-                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
                                 <connections>
                                     <segue destination="JMv-ca-pJJ" kind="embed" id="c2a-fb-y7E"/>
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eq6-BS-K3B" userLabel="Draw Archive">
-                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
                                 <connections>
                                     <segue destination="Gub-98-f5t" kind="embed" id="kq7-Yn-Q7Q"/>
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5H-FB-EBN">
-                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
                                 <connections>
                                     <segue destination="VyZ-L3-NOw" kind="embed" id="p5N-nE-28P"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-9f-X6a">
-                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-9f-X6a">
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
                                 <connections>
                                     <segue destination="3zV-3t-TS6" kind="embed" id="wVV-yv-dHz"/>
                                 </connections>
@@ -102,30 +102,12 @@
             </objects>
             <point key="canvasLocation" x="1065" y="-35"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Cds-ce-T6M">
-            <objects>
-                <navigationController storyboardIdentifier="UINavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="giO-rB-FoF" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pox-78-FGp">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bMy-4R-sXO" kind="relationship" relationship="rootViewController" id="DAf-91-IPA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TD2-7r-S4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="304.80000000000001" y="-34.632683658170919"/>
-        </scene>
         <!--Buy Ticket View Controller-->
         <scene sceneID="msw-va-Wyg">
             <objects>
                 <viewController storyboardIdentifier="BuyTicketViewController" id="JMv-ca-pJJ" customClass="BuyTicketViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WC9-mv-SuB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT 0 NUMBERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-z2-ldK">
@@ -773,18 +755,12 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjz-fA-Vff">
-                                <rect key="frame" x="46" y="485" width="283" height="50"/>
+                                <rect key="frame" x="46" y="529" width="283" height="50"/>
                                 <state key="normal" title="Buy for 200 000.000 CPT" backgroundImage="buy-ticket-button-background"/>
                                 <connections>
                                     <action selector="buyAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="dxl-AA-50k"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available 100,000.00000000 CPT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXd-iA-wzU">
-                                <rect key="frame" x="95.5" y="454.5" width="183.5" height="16.5"/>
-                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="12"/>
-                                <color key="textColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -797,13 +773,10 @@
                             <constraint firstItem="MqO-so-j9l" firstAttribute="centerX" secondItem="WC9-mv-SuB" secondAttribute="centerX" id="Vo9-bH-8kG"/>
                             <constraint firstItem="0FR-z2-ldK" firstAttribute="top" secondItem="WC9-mv-SuB" secondAttribute="topMargin" constant="10" id="kkc-dN-oc0"/>
                             <constraint firstItem="Kjz-fA-Vff" firstAttribute="leading" secondItem="WC9-mv-SuB" secondAttribute="leadingMargin" constant="30" id="tVJ-W8-QaQ"/>
-                            <constraint firstItem="WXd-iA-wzU" firstAttribute="centerX" secondItem="WC9-mv-SuB" secondAttribute="centerX" id="vHx-To-fvF"/>
-                            <constraint firstItem="Kjz-fA-Vff" firstAttribute="top" secondItem="WXd-iA-wzU" secondAttribute="bottom" constant="14" id="zwH-kT-fEh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PP5-TV-cqH"/>
                     </view>
                     <connections>
-                        <outlet property="availableLabe" destination="WXd-iA-wzU" id="gvd-gb-VRt"/>
                         <outlet property="buyTicketButton" destination="Kjz-fA-Vff" id="rX4-pS-gvm"/>
                         <outlet property="selectNumberLabel" destination="0FR-z2-ldK" id="rE2-qT-Ee4"/>
                         <outletCollection property="numpad" destination="gCJ-Bq-xFi" collectionClass="NSMutableArray" id="3Ya-7v-X5I"/>
@@ -859,14 +832,14 @@
             <objects>
                 <viewController storyboardIdentifier="DrawArchiveViewController" id="Gub-98-f5t" customClass="DrawArchiveViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dqD-fX-Y5s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8zD-Ea-j70">
-                                <rect key="frame" x="0.0" y="20" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="579"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oko-XQ-2kB">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="499"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3py-EX-Vyh">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -876,7 +849,7 @@
                                         <cells/>
                                     </collectionView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ewf-Ae-nBq">
-                                        <rect key="frame" x="0.0" y="515" width="375" height="20"/>
+                                        <rect key="frame" x="0.0" y="559" width="375" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                             </stackView>
@@ -904,11 +877,11 @@
             <objects>
                 <viewController id="VyZ-L3-NOw" customClass="ShowRulesViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4tG-Mz-aHa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="snR-R7-MnW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -936,7 +909,7 @@
             <objects>
                 <viewController id="3zV-3t-TS6" customClass="DrawDetailsViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="elI-B9-C7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvd-7u-CG0">
@@ -973,10 +946,10 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-Eo-4gx">
-                                <rect key="frame" x="0.0" y="343.5" width="375" height="221.5"/>
+                                <rect key="frame" x="0.0" y="343.5" width="375" height="265.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uzT-XB-m1w">
-                                        <rect key="frame" x="20" y="0.0" width="335" height="222"/>
+                                        <rect key="frame" x="20" y="0.0" width="335" height="266"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mVb-wa-pfa">
                                             <size key="itemSize" width="50" height="50"/>

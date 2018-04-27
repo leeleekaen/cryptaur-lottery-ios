@@ -5,7 +5,6 @@ class BuyTicketViewController: BaseViewController {
     // MARK: - IBoutlets
     @IBOutlet var numpad: [UIButton]!
     @IBOutlet weak var selectNumberLabel: UILabel!
-    @IBOutlet weak var availableLabe: UILabel!
     @IBOutlet weak var buyTicketButton: UIButton!
     
     // MARK: - IBAction
@@ -20,10 +19,11 @@ class BuyTicketViewController: BaseViewController {
     @IBAction func numpadAction(_ sender: UIButton) {
         
         guard let title = sender.titleLabel?.text,
-            let number = Int(title) else { return }
+            let number = Int(title),
+            let lottery = lottery else { return }
         
         if sender.currentBackgroundImage == nil {
-            if viewModel.lottery.toPick > selectedNumbers.count {
+            if lottery.toPick > selectedNumbers.count {
                 selectedNumbers.append(number)
                 sender.setBackgroundImage(#imageLiteral(resourceName: "number-button-background"), for: .normal)
                 sender.setTitleColor(.white, for: .normal)
@@ -39,8 +39,10 @@ class BuyTicketViewController: BaseViewController {
     }
     
     @IBAction func buyAction(_ sender: UIButton) {
-        print("Buy tapped")
-        if selectedNumbers.count == viewModel.lottery.toPick {
+                
+        guard let lottery = lottery else { return }
+        
+        if selectedNumbers.count == lottery.toPick {
             viewModel.buyTicket(numbers: selectedNumbers)
         }
     }
@@ -48,22 +50,26 @@ class BuyTicketViewController: BaseViewController {
     // MARK: - Dependency
     let viewModel = BuyTicketViewModel()
     
+    // MARK: - Public properties
+    var lottery: LotteryID? {
+        didSet {
+            configureSubviews()
+            viewModel.lottery = lottery
+        }
+    }
+    
     // MARK: - Private properties
-    var selectedNumbers = [Int]()
+    private var selectedNumbers = [Int]()
     
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureSubviews()
         bind()
     }
     
     // MARK: - Binding
     override func bind() {
-        
-        viewModel.balance.drive(onNext: { [weak self] in
-            self?.availableLabe.text = "Available \($0.toString()) CPT"
-        }).disposed(by: disposeBag)
+        bind(viewModel)
         
         viewModel.ticketPrice.drive(onNext: { [weak self] in
             self?.buyTicketButton.setTitle("Buy for \($0.toString())", for: .normal)
@@ -76,16 +82,18 @@ private extension BuyTicketViewController {
     
     func configureSubviews() {
         
+        guard let lottery = lottery else { return }
+        
         view.backgroundColor = UIColor.paleLavender
         
         numpad.forEach {
             let number = Int(($0.titleLabel?.text)!)!
-            if number > viewModel.lottery.total {
+            if number > lottery.total {
                 $0.isEnabled = false
                 $0.setTitleColor(UIColor.paleLavender, for: .normal)
             }
         }
         
-        selectNumberLabel.text = "SELECT \(viewModel.lottery.toPick) NUMBERS"
+        selectNumberLabel.text = "SELECT \(lottery.toPick) NUMBERS"
     }
 }

@@ -2,18 +2,15 @@ import Foundation
 import RxSwift
 import RxCocoa
 import UInt256
+import KeychainSwift
 
 class BuyTicketViewModel: BaseViewModel {
     
     // MARK: - Public properties
-    let authKey: String = ""
-    let lottery: LotteryID = .lottery5x36
-    let drawIndex: Int  = 0
-    let player: UInt256 = UInt256(hexString: "0x172d3f8FD5b0e9e4D5aAEf352386D895047d905B")!
+    var lottery: LotteryID?
+    let drawIndex: Int  = 1
     
-    var balance: Driver<UInt256> {
-        return balanceObject.asDriver(onErrorJustReturn: UInt256(integerLiteral: 0))
-    }
+    var balance = UInt256(integerLiteral: 0)
     
     var ticketPrice: Driver<UInt256> {
         return ticketPriceObject.asDriver(onErrorJustReturn: UInt256(integerLiteral: 10))
@@ -21,13 +18,13 @@ class BuyTicketViewModel: BaseViewModel {
     
     
     // MARK: - Private properties
-    let balanceObject = BehaviorSubject<UInt256>(value: UInt256(integerLiteral: 0))
     let ticketPriceObject = BehaviorSubject<UInt256>(value: UInt256(integerLiteral: 10))
     
     // MARK: - Dependency
     let buyTicketsService = BuyTicketsService()
     let balanceService = GetPlayerAviableBalanceService()
     let getTicketPriceService = GetTicketPriceService()
+    let keychain = KeychainSwift()
     
     // MARK: - Lifecycle
     override init() {
@@ -40,13 +37,23 @@ class BuyTicketViewModel: BaseViewModel {
     // MARK: - Public methods
     func buyTicket(numbers: [Int]) {
         
+        guard let lottery = lottery,
+            let authKey = keychain.get(PlayersKey.accessToken),
+            let hexAddress = keychain.get(PlayersKey.address),
+            let address = UInt256(hexString: hexAddress) else { return }
+        
         let request = BuyTicketRequestModel(authKey: authKey, lottery: lottery,
                                             numbers: numbers, drawIndex: drawIndex,
-                                            playerAddress: player)
+                                            playerAddress: address)
+        
+        print("---------------")
+        print(request)
+        print("---------------")
         
         buyTicketsService.perform(input: request,
                         success: { (responce) in
                             print(responce)
+                            
         }, failure: defaultServiceFailure)
     }
 }
@@ -56,15 +63,20 @@ private extension BuyTicketViewModel {
     
     func getBalance() {
         
-        let request = GetPlayerAviableBalanceRequestModel(address: player)
+        guard let hexAddress = keychain.get(PlayersKey.address),
+            let address = UInt256(hexString: hexAddress) else { return }
+        
+        let request = GetPlayerAviableBalanceRequestModel(address: address)
         
         balanceService.perform(input: request,
                                success: { [weak self] (responce) in
-                                self?.balanceObject.onNext(responce.balance)
+                                self?.balance = responce.balance
         }, failure: defaultServiceFailure)
     }
     
     func getTicketPrice() {
+        
+        guard let lottery = lottery else { return }
         
         let request = GetTicketPriceRequestModel(lotteryID: lottery)
         getTicketPriceService.perform(input: request,

@@ -1,5 +1,6 @@
 import UIKit
 import UInt256
+import KeychainSwift
 import IGListKit
 
 final class LotteryListViewController: BaseViewController {
@@ -9,6 +10,9 @@ final class LotteryListViewController: BaseViewController {
     @IBOutlet weak var prizePoolAmountLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 
+    // MARK: - Public properties
+    var chooseLotteryCompletion: ((_ lottery: LotteryID) -> ())?
+    
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     private let viewModel = LotteryListViewModel()
@@ -54,12 +58,13 @@ final class LotteryListViewController: BaseViewController {
 // MARK: - ListAdapterDataSource
 extension LotteryListViewController: ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        let sectionController = ListSingleSectionController(nibName: LotteryCardCell.nameOfClass, bundle: nil, configureBlock: { (item, cell) in
+        let sectionController = ListSingleSectionController(nibName: LotteryCardCell.nameOfClass, bundle: nil, configureBlock: { [weak self] (item, cell) in
 
             guard let cell = cell as? LotteryCardCell,
                 let item = item as? DiffableBox<Draw> else { return }
             
             cell.configure(draw: item.value)
+            cell.buyTicketCompletion = self?.chooseLotteryCompletion
             
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize

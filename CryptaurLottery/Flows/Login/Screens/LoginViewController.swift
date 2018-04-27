@@ -1,13 +1,16 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import KeychainSwift
 
 protocol FlowController {
     func setFlowCompletion(_ completion: @escaping () -> ())
 }
 
 final class LoginViewController: BaseViewController, FlowController {
+    
     private let viewModel: LoginViewModel! = LoginViewModel()
+    private let keychain = KeychainSwift()
     
     func setFlowCompletion(_ completion: @escaping () -> ()) {
         viewModel.loginCompletion = completion
@@ -44,6 +47,11 @@ final class LoginViewController: BaseViewController, FlowController {
         super.viewDidLoad()
 
         configureSubviews()
+        
+        if let username = keychain.get(PlayersKey.username) {
+            loginTextField.text = username
+            loginTextField.becomeFirstResponder()
+        }
     }
     
     override func bind() {

@@ -3,6 +3,7 @@ import UInt256
 
 class LotteryCardCell: UICollectionViewCell {
     
+    // MARK: - IBOutlet
     @IBOutlet weak var ballsImage: UIImageView!
     @IBOutlet weak var drawIndexLabel: UILabel!
     @IBOutlet weak var jackpotLabel: UILabel!
@@ -13,10 +14,23 @@ class LotteryCardCell: UICollectionViewCell {
     }
     @IBOutlet weak var timeLeftLabel: UILabel!
     
+    // MARK: - IBAction
+    @IBAction func buyTicket(_ sender: UIButton) {
+        if let lottery = lottery {
+            buyTicketCompletion?(lottery)
+        }
+    }
+    var buyTicketCompletion: ((_ lottery: LotteryID) -> ())?
+    
+    // MARK: - Private property
+    var lottery: LotteryID?
+    
+    // MARK: - Configure
     func configure(draw: Draw) {
         
         // Balls image
         guard let lottery = LotteryID(rawValue: draw.lotteryID) else { return }
+        self.lottery = lottery
         
         switch lottery {
         case .lottery4x20:

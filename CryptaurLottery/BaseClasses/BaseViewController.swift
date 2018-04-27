@@ -34,15 +34,16 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
         }).disposed(by: disposeBag)
     }
     
-    final func configureNavigationItem(showBalance: Bool) {
+    final func configureNavigationItem(showBalance: Bool, color: UIColor = .white) {
         if showBalance {
-            navigationItem.titleView = createBalanceView()
+            navigationItem.titleView = createBalanceView(color: color)
         }
         navigationItem.rightBarButtonItems = [createMenuBarButtonItem(), createBadgeBarButtonItem()]
     }
     
-    private func createBalanceView() -> BalanceView? {
+    private func createBalanceView(color: UIColor) -> BalanceView? {
         let balanceView = BalanceView.loadFromNib()
+        balanceView.setColor(color)
         balanceView.bind(viewModel: BalanceViewModel(), disposeBag: disposeBag)
         return balanceView
     }
