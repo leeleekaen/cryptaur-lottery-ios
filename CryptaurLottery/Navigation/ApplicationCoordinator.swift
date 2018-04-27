@@ -43,6 +43,7 @@ final class ApplicationCoordinator {
     private func startBuyTicket(lottery: LotteryID) {
         let buyTicketStoryboard = UIStoryboard(name: "BuyTicketStory", bundle: nil)
         let buyTicketContainerViewController = BuyTicketContainerViewController.controllerInStoryboard(buyTicketStoryboard)
+        buyTicketContainerViewController.setLottery(lottery)
         navigationController.pushViewController(buyTicketContainerViewController, animated: true)
     }
 }

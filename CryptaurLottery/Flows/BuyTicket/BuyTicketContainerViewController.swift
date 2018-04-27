@@ -42,6 +42,12 @@ class BuyTicketContainerViewController: BaseViewController {
         }
     }
     
+    // MARK: - Public property
+    func setLottery(_ lottery: LotteryID) {
+        print(lottery)
+        print(buyTicketSubview)
+    }
+    
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
