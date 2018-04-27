@@ -3,6 +3,12 @@ import KeychainSwift
 import RxSwift
 import RxCocoa
 
+struct PlayersKey {
+    static let username = "username"
+    static let accessToken = "accessToken"
+    static let address = "address"
+}
+
 final class LoginViewModel: BaseViewModel {
     
     let usernameRelay = BehaviorRelay<String?>(value: nil)
@@ -43,9 +49,12 @@ final class LoginViewModel: BaseViewModel {
         connectTokenService.perform(input: request,
                                     success: { [weak self] (response) in
                                         let keychain = KeychainSwift()
-                                        keychain.set(request.username, forKey: "username")
-                                        keychain.set(response.accessToken, forKey: "accessToken")
-                                        keychain.set(response.address.normalizedHexString, forKey: "address")
+                                        keychain.set(request.username,
+                                                     forKey: PlayersKey.username)
+                                        keychain.set(response.accessToken,
+                                                     forKey: PlayersKey.accessToken)
+                                        keychain.set(response.address.normalizedHexString,
+                                                     forKey: PlayersKey.address)
                                         DispatchQueue.main.async {
                                             self?.loginCompletion?()
                                         }

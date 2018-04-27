@@ -48,7 +48,7 @@ final class LoginViewController: BaseViewController, FlowController {
 
         configureSubviews()
         
-        if let username = keychain.get("username") {
+        if let username = keychain.get(PlayersKey.username) {
             loginTextField.text = username
             loginTextField.becomeFirstResponder()
         }

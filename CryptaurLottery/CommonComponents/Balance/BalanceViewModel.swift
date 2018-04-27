@@ -44,7 +44,8 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     override init() {
         super.init()
         
-        if let hexAddress = keychain.get("address"), let address = UInt256(hexString: hexAddress) {
+        if let hexAddress = keychain.get(PlayersKey.address),
+            let address = UInt256(hexString: hexAddress) {
             getBalance(playerAddress: address)
         }
     }

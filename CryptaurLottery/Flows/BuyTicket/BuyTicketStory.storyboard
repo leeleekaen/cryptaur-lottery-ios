@@ -57,7 +57,7 @@
                                     <segue destination="VyZ-L3-NOw" kind="embed" id="p5N-nE-28P"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-9f-X6a">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-9f-X6a">
                                 <rect key="frame" x="0.0" y="102" width="375" height="565"/>
                                 <connections>
                                     <segue destination="3zV-3t-TS6" kind="embed" id="wVV-yv-dHz"/>

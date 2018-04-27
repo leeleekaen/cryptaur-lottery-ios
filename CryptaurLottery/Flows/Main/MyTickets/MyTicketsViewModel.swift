@@ -52,7 +52,7 @@ class MyTicketsViewModel: BaseViewModel {
     // MARK: - Get data from server
     func getNext() {
         
-        guard let hexPlayerAddress = keychain.get("address"),
+        guard let hexPlayerAddress = keychain.get(PlayersKey.address),
             let playerAddress = UInt256(hexString: hexPlayerAddress) else { return }
         
         lotteries.forEach {
@@ -68,9 +68,14 @@ class MyTicketsViewModel: BaseViewModel {
         }
     }
     
-    func pickUpWin(for playerAddress: UInt256, witjKey key: String) {
+    func pickUpWin() {
         
-        pickUpWinService.perform(input: PickUpWinRequestModel(authKey: key, playerAddress: playerAddress),
+        guard let hexPlayerAddress = keychain.get(PlayersKey.address),
+            let playerAddress = UInt256(hexString: hexPlayerAddress) else { return }
+        let key = "111"
+        
+        pickUpWinService.perform(input: PickUpWinRequestModel(authKey: key,
+                                                              playerAddress: playerAddress),
                                  success: { (responce) in
                                     print("Success pick up win \(responce)")
             }, failure: defaultServiceFailure)
@@ -122,7 +127,7 @@ private extension MyTicketsViewModel {
     
     func updateWinAmount() {
         
-        guard let hexPlayerAddress = keychain.get("address"),
+        guard let hexPlayerAddress = keychain.get(PlayersKey.address),
             let playerAddress = UInt256(hexString: hexPlayerAddress) else { return }
         
         winAmountService.perform(input: GetWinAmountRequestModel(playerAddress: playerAddress),

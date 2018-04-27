@@ -26,7 +26,7 @@ class MyTicketsViewController: BaseViewController {
     
     @IBAction func getTheWin(_ sender: UIButton) {
         print("Get win button tapped")
-        viewModel.pickUpWin(for: 0, witjKey: "")
+        viewModel.pickUpWin()
     }
     
     // MARK: - Private properties
