@@ -46,7 +46,7 @@ class BuyTicketContainerViewController: BaseViewController {
     var lottery: LotteryID?
     
     // MARK: - Embedde view controllers
-    var buyTicketViewController = BuyTicketViewController()
+    var buyTicketViewController: BuyTicketViewController?
     var drawArchiveViewController: DrawArchiveViewController?
     var showRulesViewController: ShowRulesViewController?
     var drawDetailsViewController: DrawDetailsViewController?
@@ -55,6 +55,12 @@ class BuyTicketContainerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSubviews()
+        
+        buyTicketViewController = buyTicketSubview.subviews
+            .first?.parentViewController as? BuyTicketViewController
+        
+        buyTicketViewController?.lottery = lottery
+        
     }
 }
 
@@ -64,8 +70,5 @@ private extension BuyTicketContainerViewController {
     func configureSubviews() {
         view.backgroundColor = UIColor.paleLavender
         configureNavigationItem(showBalance: true, color: UIColor.heather)
-        
-        buyTicketViewController.view = buyTicketSubview
-        buyTicketViewController.lottery = lottery
     }
 }

@@ -17,7 +17,7 @@ class BuyTicketViewController: BaseViewController {
     }
     
     @IBAction func numpadAction(_ sender: UIButton) {
-        
+                
         guard let title = sender.titleLabel?.text,
             let number = Int(title),
             let lottery = lottery else { return }
