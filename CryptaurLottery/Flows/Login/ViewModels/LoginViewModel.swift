@@ -1,4 +1,5 @@
 import Foundation
+import KeychainSwift
 import RxSwift
 import RxCocoa
 
@@ -41,6 +42,10 @@ final class LoginViewModel: BaseViewModel {
                                                pin: "1234", withPin: false)
         connectTokenService.perform(input: request,
                                     success: { [weak self] (response) in
+                                        let keychain = KeychainSwift()
+                                        keychain.set(request.username, forKey: "username")
+                                        keychain.set(response.accessToken, forKey: "accessToken")
+                                        keychain.set(response.address.normalizedHexString, forKey: "address")
                                         DispatchQueue.main.async {
                                             self?.loginCompletion?()
                                         }

@@ -1,5 +1,6 @@
 import UIKit
 import UInt256
+import KeychainSwift
 import IGListKit
 
 final class LotteryListViewController: BaseViewController {

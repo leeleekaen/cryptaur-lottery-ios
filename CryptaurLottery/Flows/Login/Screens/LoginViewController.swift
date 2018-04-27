@@ -7,6 +7,7 @@ protocol FlowController {
 }
 
 final class LoginViewController: BaseViewController, FlowController {
+    
     private let viewModel: LoginViewModel! = LoginViewModel()
     
     func setFlowCompletion(_ completion: @escaping () -> ()) {
