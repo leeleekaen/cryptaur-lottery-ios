@@ -2,6 +2,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import UInt256
+import KeychainSwift
 
 class MyTicketsViewModel: BaseViewModel {
     
@@ -17,7 +18,6 @@ class MyTicketsViewModel: BaseViewModel {
     
     // MARK: - Private properties
     private let lotteries: [LotteryID] = [.lottery4x20, .lottery5x36, .lottery6x42]
-    private let playerAddress = UInt256(hexString: "0x14f05a4593ee1808541525a5aa39e344381251e6")!
     
     private var activeTickets: [LotteryID: [Ticket]] = [:]
     private var playedTickets: [LotteryID: [Ticket]] = [:]
@@ -28,6 +28,7 @@ class MyTicketsViewModel: BaseViewModel {
     private let winAmountSubject = BehaviorSubject<UInt256>(value: UInt256(integerLiteral: 0))
     
     // MARK: - Dependency
+    private let keychain = KeychainSwift()
     private let winAmountService = GetWinAmountService()
     private let playerTicketsService = GetPlayerTicketsService()
     private let pickUpWinService  = PickUpWinService()
@@ -36,7 +37,7 @@ class MyTicketsViewModel: BaseViewModel {
     override init() {
         super.init()
         reset()
-        updateWinAmount(for: playerAddress)
+        updateWinAmount()
         getNext()
     }
     
@@ -50,6 +51,9 @@ class MyTicketsViewModel: BaseViewModel {
     
     // MARK: - Get data from server
     func getNext() {
+        
+        guard let hexPlayerAddress = keychain.get("address"),
+            let playerAddress = UInt256(hexString: hexPlayerAddress) else { return }
         
         lotteries.forEach {
             let activeTicketCount = activeTickets[$0]?.count ?? 0
@@ -116,7 +120,10 @@ private extension MyTicketsViewModel {
         }
     }
     
-    func updateWinAmount(for playerAddress: UInt256) {
+    func updateWinAmount() {
+        
+        guard let hexPlayerAddress = keychain.get("address"),
+            let playerAddress = UInt256(hexString: hexPlayerAddress) else { return }
         
         winAmountService.perform(input: GetWinAmountRequestModel(playerAddress: playerAddress),
                                  success: { [weak self] (responce) in
