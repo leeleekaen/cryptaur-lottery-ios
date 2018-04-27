@@ -17,7 +17,7 @@ class BuyTicketViewController: BaseViewController {
     }
     
     @IBAction func numpadAction(_ sender: UIButton) {
-                
+        
         guard let title = sender.titleLabel?.text,
             let number = Int(title),
             let lottery = lottery else { return }
@@ -39,7 +39,7 @@ class BuyTicketViewController: BaseViewController {
     }
     
     @IBAction func buyAction(_ sender: UIButton) {
-        
+                
         guard let lottery = lottery else { return }
         
         if selectedNumbers.count == lottery.toPick {
@@ -54,11 +54,12 @@ class BuyTicketViewController: BaseViewController {
     var lottery: LotteryID? {
         didSet {
             configureSubviews()
+            viewModel.lottery = lottery
         }
     }
     
     // MARK: - Private properties
-    var selectedNumbers = [Int]()
+    private var selectedNumbers = [Int]()
     
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
@@ -68,6 +69,7 @@ class BuyTicketViewController: BaseViewController {
     
     // MARK: - Binding
     override func bind() {
+        bind(viewModel)
         
         viewModel.ticketPrice.drive(onNext: { [weak self] in
             self?.buyTicketButton.setTitle("Buy for \($0.toString())", for: .normal)

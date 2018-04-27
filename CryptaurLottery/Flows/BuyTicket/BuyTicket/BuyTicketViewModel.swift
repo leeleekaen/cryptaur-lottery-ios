@@ -2,14 +2,13 @@ import Foundation
 import RxSwift
 import RxCocoa
 import UInt256
+import KeychainSwift
 
 class BuyTicketViewModel: BaseViewModel {
     
     // MARK: - Public properties
-    let authKey: String = ""
     var lottery: LotteryID?
-    let drawIndex: Int  = 0
-    let player: UInt256 = UInt256(hexString: "0x172d3f8FD5b0e9e4D5aAEf352386D895047d905B")!
+    let drawIndex: Int  = 1
     
     var balance = UInt256(integerLiteral: 0)
     
@@ -25,6 +24,7 @@ class BuyTicketViewModel: BaseViewModel {
     let buyTicketsService = BuyTicketsService()
     let balanceService = GetPlayerAviableBalanceService()
     let getTicketPriceService = GetTicketPriceService()
+    let keychain = KeychainSwift()
     
     // MARK: - Lifecycle
     override init() {
@@ -37,15 +37,23 @@ class BuyTicketViewModel: BaseViewModel {
     // MARK: - Public methods
     func buyTicket(numbers: [Int]) {
         
-        guard let lottery = lottery else { return }
+        guard let lottery = lottery,
+            let authKey = keychain.get(PlayersKey.accessToken),
+            let hexAddress = keychain.get(PlayersKey.address),
+            let address = UInt256(hexString: hexAddress) else { return }
         
         let request = BuyTicketRequestModel(authKey: authKey, lottery: lottery,
                                             numbers: numbers, drawIndex: drawIndex,
-                                            playerAddress: player)
+                                            playerAddress: address)
+        
+        print("---------------")
+        print(request)
+        print("---------------")
         
         buyTicketsService.perform(input: request,
                         success: { (responce) in
                             print(responce)
+                            
         }, failure: defaultServiceFailure)
     }
 }
@@ -55,7 +63,10 @@ private extension BuyTicketViewModel {
     
     func getBalance() {
         
-        let request = GetPlayerAviableBalanceRequestModel(address: player)
+        guard let hexAddress = keychain.get(PlayersKey.address),
+            let address = UInt256(hexString: hexAddress) else { return }
+        
+        let request = GetPlayerAviableBalanceRequestModel(address: address)
         
         balanceService.perform(input: request,
                                success: { [weak self] (responce) in
