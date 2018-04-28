@@ -55,11 +55,7 @@ class BuyTicketContainerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSubviews()
-        
-        buyTicketViewController = buyTicketSubview.subviews
-            .first?.parentViewController as? BuyTicketViewController
-        
-        buyTicketViewController?.lottery = lottery
+        configureSubViewControllers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,5 +71,16 @@ private extension BuyTicketContainerViewController {
         view.backgroundColor = UIColor.paleLavender
         configureNavigationItem(showBalance: true, color: UIColor.heather)
         navigationController?.navigationBar.tintColor = UIColor.heather
+    }
+    
+    func configureSubViewControllers() {
+        
+        buyTicketViewController = buyTicketSubview.subviews
+            .first?.parentViewController as? BuyTicketViewController
+        buyTicketViewController?.lottery = lottery
+        
+        drawArchiveViewController = drawArchiveSubview.subviews
+            .first?.parentViewController as? DrawArchiveViewController
+        drawArchiveViewController?.lottery = lottery
     }
 }

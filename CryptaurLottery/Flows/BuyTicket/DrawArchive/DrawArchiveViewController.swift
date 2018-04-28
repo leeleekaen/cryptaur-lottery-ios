@@ -7,6 +7,13 @@ class DrawArchiveViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // MARK: - Public properties
+    var lottery: LotteryID? {
+        didSet {
+            viewModel.lottery = lottery
+        }
+    }
+    
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     
