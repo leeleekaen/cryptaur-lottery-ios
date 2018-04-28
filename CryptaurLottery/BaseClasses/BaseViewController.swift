@@ -63,10 +63,12 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     }
     
     func didTapMenuBarButtonItem() {
-        print("Have to be overrided")
+        print("Base view controller")
+        menuActionCompletion?(self)
     }
     
     func didTapBadgeButton() {
-        print("Have to be overrided")
+        print("Base view controller")
+        badgeActionCompletion?()
     }
 }

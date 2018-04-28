@@ -66,15 +66,6 @@ class BuyTicketContainerViewController: BaseViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.tintColor = UIColor.heather
     }
-    
-    // MARK: - Navigation controller action
-    override func didTapBadgeButton() {
-        badgeActionCompletion?()
-    }
-    
-    override func didTapMenuBarButtonItem() {
-        menuActionCompletion?(self)
-    }
 }
 
 // MARK: - Private methods

@@ -53,15 +53,6 @@ final class LotteryListViewController: BaseViewController {
             self?.prizePoolAmountLabel.text = amount + " CPT"
         }).disposed(by: disposeBag)
     }
-    
-    // MARK: - Navigation controller action
-    override func didTapBadgeButton() {
-        badgeActionCompletion?()
-    }
-    
-    override func didTapMenuBarButtonItem() {
-        menuActionCompletion?(self)
-    }
 }
 
 // MARK: - ListAdapterDataSource

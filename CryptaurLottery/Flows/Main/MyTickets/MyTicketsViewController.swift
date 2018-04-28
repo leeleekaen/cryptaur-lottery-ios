@@ -77,10 +77,6 @@ class MyTicketsViewController: BaseViewController {
         viewModel.getNext()
         refresher.endRefreshing()
     }
-    // MARK: - Navigation controller action
-    override func didTapMenuBarButtonItem() {
-        menuActionCompletion?(self)
-    }
     
     // MARK: - Binding
     override func bind() {
