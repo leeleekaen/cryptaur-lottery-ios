@@ -10,6 +10,10 @@ protocol BarButtonItemTargetActions {
 class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceErrorAlertPresenter {
     
     final let disposeBag = DisposeBag()
+    
+    // MARK: - Navigation
+    var badgeActionCompletion: (() -> ())?
+    var menuActionCompletion: ((_ viewController: BaseViewController) -> ())?
 
     override func viewDidLoad() {
         super.viewDidLoad()

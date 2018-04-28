@@ -30,7 +30,6 @@ class MyTicketsViewController: BaseViewController {
     }
     
     // MARK: - Public properties
-    var menuActionCompletion: ((_ viewController: BaseViewController) -> ())?
     
     // MARK: - Private properties
     var refresher:UIRefreshControl!

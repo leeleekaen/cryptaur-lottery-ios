@@ -44,8 +44,6 @@ class BuyTicketContainerViewController: BaseViewController {
     
     // MARK: - Public property
     var lottery: LotteryID?
-    var badgeActionCompletion: (() -> ())?
-    var menuActionCompletion: ((_ viewController: BaseViewController) -> ())?
     
     // MARK: - Embedde view controllers
     var buyTicketViewController: BuyTicketViewController?
