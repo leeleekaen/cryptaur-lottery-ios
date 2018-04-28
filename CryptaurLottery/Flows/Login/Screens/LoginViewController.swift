@@ -12,8 +12,14 @@ final class LoginViewController: BaseViewController, FlowController {
     private let viewModel: LoginViewModel! = LoginViewModel()
     private let keychain = KeychainSwift()
     
+    var loginCompletion: (() -> ())? {
+        didSet {
+            print(loginCompletion)
+            viewModel.loginCompletion = loginCompletion
+        }
+    }
     func setFlowCompletion(_ completion: @escaping () -> ()) {
-        viewModel.loginCompletion = completion
+        loginCompletion = completion
     }
     
     // MARK: - IBOutlets
