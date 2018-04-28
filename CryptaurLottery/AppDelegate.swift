@@ -22,7 +22,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        applicationCoordinator.startLogin()
+        applicationCoordinator.start()
         
         developmentTest()
         

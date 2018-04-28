@@ -23,12 +23,8 @@ fileprivate final class GetPlayerTicketsOperation: APIOperation {
          success: @escaping APIOperationSuccess,
          failure: @escaping ServiceFailure) {
         
-        let parameters = [
-            "authKey": "\(request.authKey)",
-            "playerAddress": "\(request.playerAddress.normalizedHexString)"
-        ]
+        let parameters = ["playerAddress": "\(request.playerAddress.normalizedHexString)"]
         
-        super.init(endpoint: .pickUpWin, parameters: parameters, headers: nil,
-                   success: success, failure: failure)
+        super.init(endpoint: .connect, parameters: parameters, headers: ["Authorization": "Bearer \(request.authKey)"], success: success, failure: failure)
     }
 }

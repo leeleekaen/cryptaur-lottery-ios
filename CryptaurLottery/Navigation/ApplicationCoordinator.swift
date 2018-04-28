@@ -6,24 +6,44 @@ final class ApplicationCoordinator {
     private weak var window: UIWindow?
     private var navigationController: BaseNavigationController?
     
+    private let keychain = KeychainSwift()
+    
     private var badgeActionCompletion: (() -> ())?
     private var menuActionCompletion: ((_ viewController: BaseViewController) -> ())?
 
     init(window: UIWindow) {
         self.window = window
     }
-
-    func startLogin() {
-        
+    
+    func start() {
         configureCompetions()
+        startLogin()
+    }
 
+    private func startLogin() {
+        if keychain.get(PlayersKey.username) != nil {
+            startLoginPIN()
+        } else {
+            startLoginPassword()
+        }
+    }
+    
+    private func startLoginPassword() {
         let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
         let loginViewController = LoginViewController.controllerInStoryboard(loginStoryboard)
         loginViewController.setFlowCompletion { [weak self] in
             self?.startMain()
         }
-       self.window?.rootViewController = loginViewController
-
+        self.window?.rootViewController = loginViewController
+    }
+    
+    private func startLoginPIN() {
+        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
+        let pinViewController = PinCodeViewController.controllerInStoryboard(loginStoryboard)
+        pinViewController.setFlowCompletion { [weak self] in
+            self?.startMain()
+        }
+        self.window?.rootViewController = pinViewController
     }
 
     private func startMain() {
@@ -66,8 +86,7 @@ final class ApplicationCoordinator {
             let menuViewController = MenuViewController.controllerInStoryboard(menuStoryboard)
             
             menuViewController.logoutCompletion = { [weak self] in
-                let keychain = KeychainSwift()
-                keychain.clear()
+                self?.keychain.clear()
                 self?.startLogin()
             }
             
