@@ -64,7 +64,6 @@ class BuyTicketViewController: BaseViewController {
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind()
     }
     
     // MARK: - Binding
