@@ -11,7 +11,7 @@ import UIKit
 final class ApplicationCoordinator {
     
     private weak var window: UIWindow?
-    private let navigationController = BaseNavigationController()
+    private var navigationController: BaseNavigationController?
     
     private var badgeActionCompletion: (() -> ())?
     private var menuActionCompletion: ((_ viewController: BaseViewController) -> ())?
@@ -20,7 +20,7 @@ final class ApplicationCoordinator {
         self.window = window
     }
 
-    func start() {
+    func startLogin() {
         
         configureCompetions()
 
@@ -34,6 +34,8 @@ final class ApplicationCoordinator {
     }
 
     private func startMain() {
+        
+        navigationController = BaseNavigationController()
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
         let lotteryListViewController = LotteryListViewController.controllerInStoryboard(mainStoryboard)
@@ -44,7 +46,7 @@ final class ApplicationCoordinator {
         lotteryListViewController.badgeActionCompletion = badgeActionCompletion
         lotteryListViewController.menuActionCompletion = menuActionCompletion
         
-        navigationController.viewControllers = [lotteryListViewController]
+        navigationController?.viewControllers = [lotteryListViewController]
         self.window?.rootViewController = navigationController
     }
     
@@ -54,7 +56,7 @@ final class ApplicationCoordinator {
         buyTicketContainerViewController.lottery = lottery
         buyTicketContainerViewController.badgeActionCompletion = badgeActionCompletion
         buyTicketContainerViewController.menuActionCompletion = menuActionCompletion
-        navigationController.pushViewController(buyTicketContainerViewController, animated: true)
+        navigationController?.pushViewController(buyTicketContainerViewController, animated: true)
     }
     
     private func configureCompetions() {
@@ -63,12 +65,17 @@ final class ApplicationCoordinator {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let myTicketsViewController = MyTicketsViewController.controllerInStoryboard(mainStoryboard)
             myTicketsViewController.menuActionCompletion = self?.menuActionCompletion
-            self?.navigationController.pushViewController(myTicketsViewController, animated: true)
+            self?.navigationController?.pushViewController(myTicketsViewController, animated: true)
         }
         
         menuActionCompletion = { (viewController) in
             let menuStoryboard = UIStoryboard(name: "MenuStory", bundle: nil)
             let menuViewController = MenuViewController.controllerInStoryboard(menuStoryboard)
+            
+            menuViewController.logoutCompletion = { [weak self] in
+                self?.startLogin()
+            }
+            
             viewController.present(menuViewController, animated: true, completion: nil)
         }
     }
