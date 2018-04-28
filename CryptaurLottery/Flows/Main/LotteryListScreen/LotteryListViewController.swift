@@ -13,6 +13,7 @@ final class LotteryListViewController: BaseViewController {
     // MARK: - Public properties
     var chooseLotteryCompletion: ((_ lottery: LotteryID) -> ())?
     var badgeActionCompletion: (() -> ())?
+    var menuActionCompletion: ((_ viewController: BaseViewController) -> ())?
     
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
@@ -58,6 +59,10 @@ final class LotteryListViewController: BaseViewController {
     // MARK: - Navigation controller action
     override func didTapBadgeButton() {
         badgeActionCompletion?()
+    }
+    
+    override func didTapMenuBarButtonItem() {
+        menuActionCompletion?(self)
     }
 }
 

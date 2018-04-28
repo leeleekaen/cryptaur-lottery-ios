@@ -29,6 +29,9 @@ class MyTicketsViewController: BaseViewController {
         viewModel.pickUpWin()
     }
     
+    // MARK: - Public properties
+    var menuActionCompletion: ((_ viewController: BaseViewController) -> ())?
+    
     // MARK: - Private properties
     var refresher:UIRefreshControl!
     
@@ -74,6 +77,10 @@ class MyTicketsViewController: BaseViewController {
         viewModel.reset()
         viewModel.getNext()
         refresher.endRefreshing()
+    }
+    // MARK: - Navigation controller action
+    override func didTapMenuBarButtonItem() {
+        menuActionCompletion?(self)
     }
     
     // MARK: - Binding

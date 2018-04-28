@@ -14,6 +14,7 @@ final class ApplicationCoordinator {
     private let navigationController = BaseNavigationController()
     
     private var badgeActionCompletion: (() -> ())?
+    private var menuActionCompletion: ((_ viewController: BaseViewController) -> ())?
 
     init(window: UIWindow) {
         self.window = window
@@ -21,11 +22,7 @@ final class ApplicationCoordinator {
 
     func start() {
         
-        badgeActionCompletion = { [weak self] in
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let myTicketsViewController = MyTicketsViewController.controllerInStoryboard(mainStoryboard)
-            self?.navigationController.pushViewController(myTicketsViewController, animated: true)
-        }
+        configureCompetions()
 
         let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
         let loginViewController = LoginViewController.controllerInStoryboard(loginStoryboard)
@@ -40,10 +37,12 @@ final class ApplicationCoordinator {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
         let lotteryListViewController = LotteryListViewController.controllerInStoryboard(mainStoryboard)
+        
         lotteryListViewController.chooseLotteryCompletion = { [weak self] in
             self?.startBuyTicket(lottery: $0)
         }
         lotteryListViewController.badgeActionCompletion = badgeActionCompletion
+        lotteryListViewController.menuActionCompletion = menuActionCompletion
         
         navigationController.viewControllers = [lotteryListViewController]
         self.window?.rootViewController = navigationController
@@ -54,6 +53,23 @@ final class ApplicationCoordinator {
         let buyTicketContainerViewController = BuyTicketContainerViewController.controllerInStoryboard(buyTicketStoryboard)
         buyTicketContainerViewController.lottery = lottery
         buyTicketContainerViewController.badgeActionCompletion = badgeActionCompletion
+        buyTicketContainerViewController.menuActionCompletion = menuActionCompletion
         navigationController.pushViewController(buyTicketContainerViewController, animated: true)
+    }
+    
+    private func configureCompetions() {
+        
+        badgeActionCompletion = { [weak self] in
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let myTicketsViewController = MyTicketsViewController.controllerInStoryboard(mainStoryboard)
+            myTicketsViewController.menuActionCompletion = self?.menuActionCompletion
+            self?.navigationController.pushViewController(myTicketsViewController, animated: true)
+        }
+        
+        menuActionCompletion = { (viewController) in
+            let menuStoryboard = UIStoryboard(name: "MenuStory", bundle: nil)
+            let menuViewController = MenuViewController.controllerInStoryboard(menuStoryboard)
+            viewController.present(menuViewController, animated: true, completion: nil)
+        }
     }
 }

@@ -17,6 +17,10 @@ class MenuViewController: BaseViewController {
     
     // MARK: - IBAction
     
+    @IBAction func closeButtonAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func purseButtonAction(_ sender: Any) {
         print("Purse button tapped");
     }
