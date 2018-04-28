@@ -23,14 +23,12 @@ fileprivate final class BuyTicketOperation: APIOperation {
          success: @escaping APIOperationSuccess,
          failure: @escaping ServiceFailure) {
         
-        let parameters = ["authKey": request.authKey,
-                          "lotteryId": request.lottery.rawValue,
+        let parameters = ["lotteryId": request.lottery.rawValue,
                           "numbers": request.numbers,
                           "drawIndex": request.drawIndex,
                           "address": request.playerAddress] as [String : Any]
         
         
-        super.init(endpoint: .buyTickets, parameters: parameters, headers: nil,
-                   success: success, failure: failure)
+        super.init(endpoint: .connect, parameters: parameters, headers: ["Authorization": "Bearer \(request.authKey)"], success: success, failure: failure)
     }
 }
