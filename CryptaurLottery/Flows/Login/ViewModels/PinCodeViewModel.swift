@@ -19,7 +19,6 @@ class PinCodeViewModel: BaseViewModel {
         
         connectTokenService.perform(input: request,
                                     success: { [weak self] (response) in
-                                        print(response)
                                         DispatchQueue.main.async {
                                             self?.loginCompletion?()
                                         }
