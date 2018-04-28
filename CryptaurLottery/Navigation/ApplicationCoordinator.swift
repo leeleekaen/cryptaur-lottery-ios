@@ -12,12 +12,20 @@ final class ApplicationCoordinator {
     
     private weak var window: UIWindow?
     private let navigationController = BaseNavigationController()
+    
+    private var badgeActionCompletion: (() -> ())?
 
     init(window: UIWindow) {
         self.window = window
     }
 
     func start() {
+        
+        badgeActionCompletion = { [weak self] in
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let myTicketsViewController = MyTicketsViewController.controllerInStoryboard(mainStoryboard)
+            self?.navigationController.pushViewController(myTicketsViewController, animated: true)
+        }
 
         let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
         let loginViewController = LoginViewController.controllerInStoryboard(loginStoryboard)
@@ -35,6 +43,7 @@ final class ApplicationCoordinator {
         lotteryListViewController.chooseLotteryCompletion = { [weak self] in
             self?.startBuyTicket(lottery: $0)
         }
+        lotteryListViewController.badgeActionCompletion = badgeActionCompletion
         
         navigationController.viewControllers = [lotteryListViewController]
         self.window?.rootViewController = navigationController
@@ -44,6 +53,7 @@ final class ApplicationCoordinator {
         let buyTicketStoryboard = UIStoryboard(name: "BuyTicketStory", bundle: nil)
         let buyTicketContainerViewController = BuyTicketContainerViewController.controllerInStoryboard(buyTicketStoryboard)
         buyTicketContainerViewController.lottery = lottery
+        buyTicketContainerViewController.badgeActionCompletion = badgeActionCompletion
         navigationController.pushViewController(buyTicketContainerViewController, animated: true)
     }
 }

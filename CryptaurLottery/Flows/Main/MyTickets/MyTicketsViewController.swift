@@ -57,6 +57,11 @@ class MyTicketsViewController: BaseViewController {
         adapter.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
     func configurePullToRefresh() {
         collectionView.alwaysBounceVertical = true
         refresher = UIRefreshControl()

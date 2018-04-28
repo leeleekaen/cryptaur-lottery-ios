@@ -15,6 +15,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     var balance: Driver<String> {
         return balanceSubject.asDriver(onErrorJustReturn: "")
     }
+    var badgeActionCompletion:(() -> ())?
     
     // MARK: - Private properties
     private let balanceSubject = BehaviorSubject<String>(value: "0.00000000 CPT")
@@ -38,6 +39,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     
     func badgeAction() {
         badgeSubject.onNext("12")
+        badgeActionCompletion?()
     }
     
     // MARK: - Lifecycle

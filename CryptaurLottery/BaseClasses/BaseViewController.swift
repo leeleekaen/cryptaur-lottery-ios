@@ -1,20 +1,14 @@
-//
-//  BaseViewController.swift
-//  CryptaurLottery
-//
-//  Created by Alexander Polyakov on 02.04.2018.
-//  Copyright © 2018 Nordavind. All rights reserved.
-//
-
 import UIKit
 import RxSwift
 import RxCocoa
 
 protocol BarButtonItemTargetActions {
     func didTapMenuBarButtonItem()
+    func didTapBadgeButton()
 }
 
 class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceErrorAlertPresenter {
+    
     final let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -57,10 +51,18 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     }
     
     private func createBadgeBarButtonItem() -> UIBarButtonItem {
-        return .badge(viewModel: BalanceViewModel(), disposeBag: disposeBag)
+        let viewModel = BalanceViewModel()
+        viewModel.badgeActionCompletion = { [weak self] in
+            self?.didTapBadgeButton()
+        }
+        return .badge(viewModel: viewModel, disposeBag: disposeBag)
     }
     
     func didTapMenuBarButtonItem() {
+        print("Have to be overrided")
+    }
+    
+    func didTapBadgeButton() {
         print("Have to be overrided")
     }
 }

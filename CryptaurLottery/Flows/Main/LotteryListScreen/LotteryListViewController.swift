@@ -12,6 +12,7 @@ final class LotteryListViewController: BaseViewController {
 
     // MARK: - Public properties
     var chooseLotteryCompletion: ((_ lottery: LotteryID) -> ())?
+    var badgeActionCompletion: (() -> ())?
     
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
@@ -33,6 +34,11 @@ final class LotteryListViewController: BaseViewController {
         adapter.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
     override func bind() {
         bind(viewModel)
         
@@ -50,8 +56,8 @@ final class LotteryListViewController: BaseViewController {
     }
     
     // MARK: - Navigation controller action
-    override func didTapMenuBarButtonItem() {
-        performSegue(withIdentifier: "ShowMyTickets", sender: nil)
+    override func didTapBadgeButton() {
+        badgeActionCompletion?()
     }
 }
 

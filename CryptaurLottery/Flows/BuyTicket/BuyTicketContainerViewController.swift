@@ -44,6 +44,7 @@ class BuyTicketContainerViewController: BaseViewController {
     
     // MARK: - Public property
     var lottery: LotteryID?
+    var badgeActionCompletion: (() -> ())?
     
     // MARK: - Embedde view controllers
     var buyTicketViewController: BuyTicketViewController?
@@ -60,7 +61,15 @@ class BuyTicketContainerViewController: BaseViewController {
             .first?.parentViewController as? BuyTicketViewController
         
         buyTicketViewController?.lottery = lottery
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = UIColor.heather
+    }
+    
+    override func didTapBadgeButton() {
+        badgeActionCompletion?()
     }
 }
 
