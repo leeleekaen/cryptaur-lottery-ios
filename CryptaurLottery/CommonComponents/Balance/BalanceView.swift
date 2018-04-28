@@ -19,7 +19,11 @@ final class BalanceView: UIView {
     
     func setColor(_ color: UIColor) {
         balanceTextButton.setTitleColor(color, for: .normal)
-        purseButton.imageView?.tintColor = color
+        if color == .white {
+            purseButton.setImage(#imageLiteral(resourceName: "purse"), for: .normal)
+        } else {
+            purseButton.setImage(#imageLiteral(resourceName: "purse-dark"), for: .normal)
+        }
     }
     
     func bind(viewModel: BalanceViewModelProtocol, disposeBag: DisposeBag) {

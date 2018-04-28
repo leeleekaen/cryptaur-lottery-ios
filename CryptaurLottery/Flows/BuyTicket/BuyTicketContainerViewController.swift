@@ -70,5 +70,6 @@ private extension BuyTicketContainerViewController {
     func configureSubviews() {
         view.backgroundColor = UIColor.paleLavender
         configureNavigationItem(showBalance: true, color: UIColor.heather)
+        navigationController?.navigationBar.tintColor = UIColor.heather
     }
 }
