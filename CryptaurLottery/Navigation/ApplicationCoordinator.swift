@@ -1,12 +1,5 @@
-//
-//  ApplicationCoordinator.swift
-//  CryptaurLottery
-//
-//  Created by Alexander Polyakov on 19.04.2018.
-//  Copyright © 2018 Nordavind. All rights reserved.
-//
-
 import UIKit
+import KeychainSwift
 
 final class ApplicationCoordinator {
     
@@ -73,6 +66,8 @@ final class ApplicationCoordinator {
             let menuViewController = MenuViewController.controllerInStoryboard(menuStoryboard)
             
             menuViewController.logoutCompletion = { [weak self] in
+                let keychain = KeychainSwift()
+                keychain.clear()
                 self?.startLogin()
             }
             
