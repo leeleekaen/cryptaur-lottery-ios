@@ -12,7 +12,11 @@ class DrawArchiveViewModel: BaseViewModel {
     }
     
     // MARK: - Private properties
-    private let lottery: LotteryID = .lottery5x36
+    var lottery: LotteryID? {
+        didSet {
+            getNextDraws()
+        }
+    }
     private let isLoadingObject = BehaviorSubject<Bool>(value: false)
     
     // MARK: - Dependencies
@@ -21,7 +25,6 @@ class DrawArchiveViewModel: BaseViewModel {
     // MARK: - Lificycle
     override init() {
         super.init()
-        getNextDraws()
     }
     
     // MARK: - Public methods
@@ -41,6 +44,8 @@ class DrawArchiveViewModel: BaseViewModel {
 // MARK: - Private methods
 private extension DrawArchiveViewModel {
     func getDraws(offset: UInt, count: UInt) {
+        
+        guard let lottery = lottery else { return }
         
         let request = GetDrawsRequestModel(lotteryID: lottery, offset: offset, count: count)
         print("request: \(request)")

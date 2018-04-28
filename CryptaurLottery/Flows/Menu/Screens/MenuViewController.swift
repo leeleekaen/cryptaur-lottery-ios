@@ -9,20 +9,24 @@
 import UIKit
 
 class MenuViewController: BaseViewController {
-    // MARK: - IBOutlets
     
+    // MARK: - IBOutlets
     @IBOutlet weak var purseButton: UIButton!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var loginNameLabel: UILabel!
     
     // MARK: - IBAction
+    @IBAction func closeButtonAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func purseButtonAction(_ sender: Any) {
         print("Purse button tapped");
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
-        print("Logout button tapped");
+        print("Logout button tapped")
+        logoutCompletion?()
     }
     
     @IBAction func ticketsButtonAction(_ sender: Any) {
@@ -37,6 +41,8 @@ class MenuViewController: BaseViewController {
         print("HowToPlay button tapped");
     }
     
+    // MARK: - Public properties
+    var logoutCompletion: (() -> ())?
     
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {

@@ -35,9 +35,10 @@ struct Draw: JSONDeserializable, Diffable {
     let ticketsBought: UInt32
     let ticketPrice: UInt256
     let numbers: [Int]?
-    let buyTicketGasFee: UInt256
+    var buyTicketGasFee = UInt256(integerLiteral: 0)
     
     init?(json: JSONDictionary) {
+        
         let dateFormatter = ISO8601DateFormatter()
         
         guard let lotteryID = json["lotteryId"] as? Int,
@@ -58,12 +59,7 @@ struct Draw: JSONDeserializable, Diffable {
             let reserveAdded = UInt256(hexString: reserveAddedString),
             let ticketsBought = json["ticketsBought"] as? UInt32,
             let ticketPriceString = json["ticketPrice"] as? String,
-            let ticketPrice = UInt256(hexString: ticketPriceString),
-            let buyTicketGasFeeString = json["buyTicketGasFee"] as? String,
-            let buyTicketGasFee = UInt256(hexString: buyTicketGasFeeString)
-            else {
-                return nil
-        }
+            let ticketPrice = UInt256(hexString: ticketPriceString) else { return nil }
         
         self.lotteryID = lotteryID
         self.number = number
@@ -76,7 +72,10 @@ struct Draw: JSONDeserializable, Diffable {
         self.reserveAdded = reserveAdded
         self.ticketsBought = ticketsBought
         self.ticketPrice = ticketPrice
-        self.buyTicketGasFee = buyTicketGasFee
+        if let buyTicketGasFeeString = json["buyTicketGasFee"] as? String,
+            let buyTicketGasFee = UInt256(hexString: buyTicketGasFeeString) {
+            self.buyTicketGasFee = buyTicketGasFee
+        }
         self.numbers = json["numbers"] as? [Int]
     }
 }

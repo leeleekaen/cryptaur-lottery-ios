@@ -33,6 +33,11 @@ final class LotteryListViewController: BaseViewController {
         adapter.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
     override func bind() {
         bind(viewModel)
         
@@ -47,11 +52,6 @@ final class LotteryListViewController: BaseViewController {
             if $0 != UInt256(integerLiteral: 0) { amount.removeLast(5) }
             self?.prizePoolAmountLabel.text = amount + " CPT"
         }).disposed(by: disposeBag)
-    }
-    
-    // MARK: - Navigation controller action
-    override func didTapMenuBarButtonItem() {
-        performSegue(withIdentifier: "ShowMyTickets", sender: nil)
     }
 }
 

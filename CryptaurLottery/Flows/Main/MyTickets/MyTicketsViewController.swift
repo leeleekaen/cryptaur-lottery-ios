@@ -29,6 +29,8 @@ class MyTicketsViewController: BaseViewController {
         viewModel.pickUpWin()
     }
     
+    // MARK: - Public properties
+    
     // MARK: - Private properties
     var refresher:UIRefreshControl!
     
@@ -55,6 +57,11 @@ class MyTicketsViewController: BaseViewController {
         
         adapter.collectionView = collectionView
         adapter.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .white
     }
     
     func configurePullToRefresh() {
