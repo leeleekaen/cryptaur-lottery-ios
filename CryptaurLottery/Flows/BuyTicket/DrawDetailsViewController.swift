@@ -8,6 +8,7 @@
 
 import UIKit
 import IGListKit
+import UInt256
 
 class DrawDetailsViewController: BaseViewController {
 
@@ -21,7 +22,7 @@ class DrawDetailsViewController: BaseViewController {
                                   viewController: self,
                                   workingRangeSize: 1)
         adapter.collectionView = winnersCollectionView
-        adapter.dataSource = LoteryWinnersDataSource()
+        adapter.dataSource = lotteryWinDS
         return adapter
     }()
 
@@ -35,6 +36,11 @@ class DrawDetailsViewController: BaseViewController {
         return adapter
     }()
 
+    public var winnersTableData: ArchiveDraw? = nil
+    public var winnersTableLottery: String? = nil
+    let lotteryWinDS:LotteryWinnersDataSource = LotteryWinnersDataSource()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +53,9 @@ class DrawDetailsViewController: BaseViewController {
         winnersCollectionView.tintColor = UIColor.heather
         ticketsCollectionView.tintColor = UIColor.heather
         
+        lotteryWinDS.winnersData = self.winnersTableData
+        lotteryWinDS.winnerLottery = self.winnersTableLottery
+        
         _ = adapter
         _ = adapterTickets
     }
@@ -55,15 +64,79 @@ class DrawDetailsViewController: BaseViewController {
 
 // --- List of Winners ---
 
-class LoteryWinnersDataSource: NSObject, ListAdapterDataSource {
+class LotteryWinnersDataSource: NSObject, ListAdapterDataSource {
     
     let winners: [String] = ["LOTTERY", "DRAW", "DATE", "WIN NUMBERS", "TICKETS", "COLLECTED","PAID", "TO JACKPOT", "TO RESERVE", "JACKPOT", "RESERVE"]
     
+    public var winnersData: ArchiveDraw? = nil
+    public var winnerLottery: String? = nil
+    
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         var winnerItems: [WinnersTableItem] = [WinnersTableItem]()
-        for item in winners {
-            let tableItem = WinnersTableItem(key: item, value: "")
-            winnerItems.append(tableItem)
+        if (winnersData != nil && winnerLottery != nil) {
+            for item in winners {
+                var winValue: String = ""
+                switch item {
+                case "LOTTERY":
+                    winValue = winnerLottery!
+                case "DRAW":
+                    if let draw = winnersData?.number {
+                        winValue = "\(draw)"
+                    }
+                case "DATE":
+                    if let winDate = winnersData?.date.description {
+                        winValue = winDate
+                    }
+                case "WIN NUMBERS":
+                    winValue = ""
+                    if let nums = winnersData?.numbers {
+                        for num in nums {
+                            winValue += "\(num) "
+                        }
+                    }
+                case "TICKETS":
+                    if let tickets = winnersData?.ticketsBought {
+                        winValue = tickets.description
+                    }
+                case "COLLECTED":
+                    if let bought = winnersData?.ticketsBought {
+                        if let price = winnersData?.ticketPrice {
+                            let collected = price.unsafeMultiplied(by: UInt256(bought))
+                            winValue = collected.description
+                        }
+                    }
+                case "PAID":
+                    if let paid = winnersData?.payed {
+                        winValue = paid.description
+                    }
+                case "TO JACKPOT":
+                    if let toJackpot = winnersData?.jackpotAdded {
+                        winValue = toJackpot.description
+                    }
+                case "TO RESERVE":
+                    if let toReserve = winnersData?.reserveAdded {
+                        winValue = toReserve.description
+                    }
+                case "JACKPOT":
+                    if let jackpot = winnersData?.jackpot {
+                        winValue = jackpot.description
+                    }
+                case "RESERVE":
+                    if let reserve = winnersData?.reserve {
+                        winValue = reserve.description
+                    }
+                default:
+                    winValue = ""
+                }
+                
+                let tableItem = WinnersTableItem(key: item, value: winValue)
+                winnerItems.append(tableItem)
+            }
+        } else {
+            for item in winners {
+                let tableItem = WinnersTableItem(key: item, value: "")
+                winnerItems.append(tableItem)
+            }
         }
         
         return winnerItems
