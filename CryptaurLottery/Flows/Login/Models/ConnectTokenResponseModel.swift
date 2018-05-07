@@ -15,14 +15,7 @@ struct ConnectTokenResponseModel: JSONDeserializable {
     let tokenType: String
     let refreshToken: String
     let address: UInt256
-/*{
- "access_token": "eyJhbGciOiJSUzI1NiIsImt...",
- "expires_in": 900,
- "token_type": "Bearer",
- "refresh_token": "090f0a16e226710f403ffba5de3bfb3fc07c194d40e6f0681757b9fb78b66bac",
- "address": "0x456"
- }
- */
+
     
     init?(json: JSONDictionary) {
         guard let accessToken = json["access_token"] as? String,
@@ -33,6 +26,7 @@ struct ConnectTokenResponseModel: JSONDeserializable {
         let refreshToken = json["refresh_token"] as? String else {
                 return nil
         }
+        
         self.accessToken = accessToken
         self.expiresIn = expiresIn
         self.tokenType = tokenType

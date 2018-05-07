@@ -1,4 +1,5 @@
 import Foundation
+import KeychainSwift
 
 class PinCodeViewModel: BaseViewModel {
     
@@ -19,6 +20,14 @@ class PinCodeViewModel: BaseViewModel {
         
         connectTokenService.perform(input: request,
                                     success: { [weak self] (response) in
+                                        let keychain = KeychainSwift()
+                                        keychain.set(request.username,
+                                                     forKey: PlayersKey.username)
+                                        keychain.set(response.accessToken,
+                                                     forKey: PlayersKey.accessToken)
+                                        
+                                        keychain.set(response.address.normalizedHexString,
+                                                     forKey: PlayersKey.address)
                                         DispatchQueue.main.async {
                                             self?.loginCompletion?()
                                         }

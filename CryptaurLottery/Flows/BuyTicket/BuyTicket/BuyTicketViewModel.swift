@@ -8,7 +8,7 @@ class BuyTicketViewModel: BaseViewModel {
     
     // MARK: - Public properties
     var lottery: LotteryID?
-    let drawIndex: Int  = 1
+    let drawIndex: Int  = 2
     
     var balance = UInt256(integerLiteral: 0)
     
@@ -73,6 +73,7 @@ private extension BuyTicketViewModel {
         guard let lottery = lottery else { return }
         
         let request = GetTicketPriceRequestModel(lotteryID: lottery)
+        
         getTicketPriceService.perform(input: request,
                                success: { [weak self] (responce) in
                                 self?.ticketPriceObject.onNext(responce.price)

@@ -36,9 +36,11 @@ class APIOperation: Operation {
     }
     
     final override func main() {
+        
         let success = self.success
         let failure = self.failure
         let request = createRequest()
+        
         request.responseJSON(queue: DispatchQueue.global(qos: .utility), options: .allowFragments) { (response: DataResponse<Any>) in
             guard !APIOperation.processErrors(handler: failure, response: response) else {
                 return
@@ -50,8 +52,10 @@ class APIOperation: Operation {
     }
     
     private class func processErrors(handler: ServiceFailure, response: DataResponse<Any>) -> Bool {
+        
         if let error = response.error {
             handler(ServiceError.unknown(error))
+            print(response)
             return true
         }
         guard let json = response.value as? JSONDictionary else {
