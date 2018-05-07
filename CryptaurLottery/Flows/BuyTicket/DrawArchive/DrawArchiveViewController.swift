@@ -68,6 +68,7 @@ extension DrawArchiveViewController: ListAdapterDataSource {
             return CGSize(width: size.width, height: 140)
         }
         sectionController.inset = .zero
+        sectionController.selectionDelegate = self
         return sectionController
     }
     
@@ -77,6 +78,17 @@ extension DrawArchiveViewController: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         return viewModel.draws.diffable()
+    }
+}
+
+extension DrawArchiveViewController: ListSingleSectionControllerDelegate {
+    
+    func didSelect(_ sectionController: ListSingleSectionController, with object: Any) {
+        
+        guard let object = object as? DiffableBox<ArchiveDraw> else { return }
+        
+        let draw = object.value
+        print(draw)
     }
 }
 
