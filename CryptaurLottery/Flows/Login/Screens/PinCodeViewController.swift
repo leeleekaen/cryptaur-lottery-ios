@@ -2,8 +2,13 @@ import UIKit
 
 class PinCodeViewController: BaseViewController, FlowController {
     
+    var loginCompletion: (() -> ())? {
+        didSet {
+            viewModel.loginCompletion = loginCompletion
+        }
+    }
     func setFlowCompletion(_ completion: @escaping () -> ()) {
-        viewModel.loginCompletion = completion
+        loginCompletion = completion
     }
     
     // MARK: - IBOutlet
@@ -103,6 +108,9 @@ extension PinCodeViewController {
         switch identifier {
         case Segue.toLogin.rawValue:
             print("Go to login screen")
+            if let destination = segue.destination as? LoginViewController {
+                destination.loginCompletion = loginCompletion
+            }
         default:
             fatalError("Unexpected segue")
         }
