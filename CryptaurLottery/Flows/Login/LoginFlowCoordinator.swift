@@ -39,7 +39,8 @@ class LoginFlowCoordinator {
     
     // MARK: - Public methods
     func start() {
-        if keychain.get(PlayersKey.username) != nil {
+        if let username = keychain.get(PlayersKey.username) {
+            self.username = username
             state = .loginWithPIN
             startLoginPIN()
         } else {
@@ -54,7 +55,7 @@ class LoginFlowCoordinator {
         switch state {
         case .getLoginAndPassword:
             self.window?.rootViewController = loginViewController
-        case .loginFail(let error):
+        case .loginByPasswordFail(let error):
             DispatchQueue.main.async { [weak self] in
                 self?.pinViewController.dismiss(animated: true, completion: nil)
                 self?.loginViewController.present(error: error)
@@ -63,6 +64,12 @@ class LoginFlowCoordinator {
             DispatchQueue.main.async { [weak self] in
                 self?.pinViewController.dismiss(animated: true, completion: nil)
                 self?.loginViewController.present(message: "PIN does not match")
+            }
+        case .loginByPINFail(let error):
+            DispatchQueue.main.async { [weak self] in
+                self?.pinViewController.dismiss(animated: true, completion: nil)
+                self?.window?.rootViewController = self?.loginViewController
+                self?.loginViewController.present(error: error)
             }
         default:
             fatalError("Unexpected state of Login Flow Coordinator")
@@ -95,7 +102,7 @@ class LoginFlowCoordinator {
             pinViewController.pincodeCompletion = { [weak self] (pincode) in
                 print("second pincode: \(pincode)")
                 if let firstPINcode = self?.pincode, firstPINcode == pincode {
-                    self?.submit()
+                    self?.submitByPassword()
                 } else {
                     self?.state = .pincodeNotMatch
                     self?.startLoginPassword()
@@ -103,17 +110,23 @@ class LoginFlowCoordinator {
                 self?.pinViewController.reset()
             }
             pinViewController.present(message: "Set PIN code again")
-            
+        case .loginWithPIN:
+            pinViewController.pincodeCompletion = { [weak self] (pincode) in
+                self?.pincode = pincode
+                self?.pinViewController.reset()
+                self?.submitByPIN()
+            }
+            self.window?.rootViewController = pinViewController
         default:
             fatalError("Unexpected state of Login Flow Coordinator")
         }
     }
     
-    private func submit() {
+    private func submitByPassword() {
         
         let request = ConnectTokenRequestModel(username: username, password: password,
                                                pin: pincode, withPin: false)
-        
+        print(request)
         connectTokenService.perform(input: request,
                                     success: { [weak self] (response) in
                                         let keychain = KeychainSwift()
@@ -130,7 +143,32 @@ class LoginFlowCoordinator {
             }, failure: { [weak self] (error) in
                 print(error)
                 guard let error = error as? ServiceError else { return }
-                self?.state = .loginFail(error)
+                self?.state = .loginByPasswordFail(error)
+                self?.startLoginPassword()
+        })
+    }
+    
+    private func submitByPIN() {
+        
+        let request = ConnectTokenRequestModel(username: username, password: pincode,
+                                               pin: pincode, withPin: true)
+        print(request)
+        connectTokenService.perform(input: request,
+                                    success: { [weak self] (response) in
+                                        let keychain = KeychainSwift()
+                                        keychain.set(request.username,
+                                                     forKey: PlayersKey.username)
+                                        keychain.set(response.accessToken,
+                                                     forKey: PlayersKey.accessToken)
+                                        keychain.set(response.address.normalizedHexString,
+                                                     forKey: PlayersKey.address)
+                                        DispatchQueue.main.async {
+                                            self?.flowCompletion()
+                                        }
+            }, failure: { [weak self] (error) in
+                print(error)
+                guard let error = error as? ServiceError else { return }
+                self?.state = .loginByPINFail(error)
                 self?.startLoginPassword()
         })
     }
@@ -143,7 +181,9 @@ extension LoginFlowCoordinator {
         case getFirstPIN
         case getSecondPIN
         case loginWithPIN
-        case loginFail(ServiceError)
+        case loginByPasswordFail(ServiceError)
+        case loginByPINFail(ServiceError)
         case pincodeNotMatch
+        
     }
 }
