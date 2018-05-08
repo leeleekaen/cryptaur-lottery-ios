@@ -373,15 +373,6 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		CE0C41B22078161B00190A82 /* LotteryCard */ = {
-			isa = PBXGroup;
-			children = (
-				CE0C41B3207816BD00190A82 /* LotteryCardCell.swift */,
-				CE0C41B5207816E600190A82 /* LotteryCardCell.xib */,
-			);
-			path = LotteryCard;
-			sourceTree = "<group>";
-		};
 		CE254CE0207295FD00A12F72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,7 +454,6 @@
 		CE647F392075155400B334E3 /* CommonComponents */ = {
 			isa = PBXGroup;
 			children = (
-				CE0C41B22078161B00190A82 /* LotteryCard */,
 				CEDAC84B20764D1400E3EA36 /* GradientBackground */,
 				CE60B0B72077B22B00EEC363 /* Badge */,
 				CE3084D920767F2E008C140C /* Balance */,
@@ -491,6 +481,8 @@
 		CEDAC84E20764FF500E3EA36 /* LotteryListScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE0C41B3207816BD00190A82 /* LotteryCardCell.swift */,
+				CE0C41B5207816E600190A82 /* LotteryCardCell.xib */,
 				CEDAC8492076421600E3EA36 /* LotteryListViewController.swift */,
 				CE9C06B52088F07900535869 /* LotteryListViewModel.swift */,
 			);

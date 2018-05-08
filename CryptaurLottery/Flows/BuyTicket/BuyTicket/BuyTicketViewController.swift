@@ -57,6 +57,14 @@ class BuyTicketViewController: BaseViewController {
             viewModel.lottery = lottery
         }
     }
+    var draw: Draw? {
+        didSet {
+            viewModel.draw = draw
+            if let draw = draw {
+                lottery = LotteryID(rawValue: draw.lotteryID)
+            }
+        }
+    }
     
     // MARK: - Private properties
     private var selectedNumbers = [Int]()

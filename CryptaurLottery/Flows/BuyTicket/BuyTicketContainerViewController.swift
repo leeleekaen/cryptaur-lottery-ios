@@ -44,6 +44,13 @@ class BuyTicketContainerViewController: BaseViewController {
     
     // MARK: - Public property
     var lottery: LotteryID?
+    var draw: Draw? {
+        didSet {
+            if let draw = draw {
+                lottery = LotteryID(rawValue: draw.lotteryID)
+            }
+        }
+    }
     
     // MARK: - Embedde view controllers
     var buyTicketViewController: BuyTicketViewController?
@@ -77,7 +84,7 @@ private extension BuyTicketContainerViewController {
         
         buyTicketViewController = buyTicketSubview.subviews
             .first?.parentViewController as? BuyTicketViewController
-        buyTicketViewController?.lottery = lottery
+        buyTicketViewController?.draw = draw
         
         drawArchiveViewController = drawArchiveSubview.subviews
             .first?.parentViewController as? DrawArchiveViewController
