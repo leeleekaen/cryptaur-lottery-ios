@@ -1,4 +1,5 @@
 import Foundation
+import Alamofire
 
 final class BuyTicketsService:
 OperationService<BuyTicketRequestModel, BuyTicketResponceModel> {
@@ -8,6 +9,9 @@ OperationService<BuyTicketRequestModel, BuyTicketResponceModel> {
                                   failure: @escaping ServiceFailure) -> Operation? {
         
         return BuyTicketOperation(request: input, success: { (json) in
+            
+            print(json)
+            
             guard let object = BuyTicketResponceModel(json: json) else {
                 failure(ServiceError.deserializationFailure)
                 return
@@ -19,6 +23,15 @@ OperationService<BuyTicketRequestModel, BuyTicketResponceModel> {
 
 fileprivate final class BuyTicketOperation: APIOperation {
     
+    override func createRequest() -> DataRequest {
+        
+        return Alamofire.request(URL(with: endpoint),
+                                 method: endpoint.method.asAlamofireMethod(),
+                                 parameters: parameters,
+                                 encoding: JSONEncoding.default,
+                                 headers: headers)
+    }
+    
     init(request: BuyTicketRequestModel,
          success: @escaping APIOperationSuccess,
          failure: @escaping ServiceFailure) {
@@ -26,9 +39,16 @@ fileprivate final class BuyTicketOperation: APIOperation {
         let parameters = ["lotteryId": request.lottery.rawValue,
                           "numbers": request.numbers,
                           "drawIndex": request.drawIndex,
-                          "address": request.playerAddress] as [String : Any]
+                          "address": request.playerAddress.normalizedHexString] as [String : Any]
         
+        let headers = [
+            "Authorization": "Bearer \(request.authKey)",
+            "Content-Type": "application/json"
+        ]
         
-        super.init(endpoint: .connect, parameters: parameters, headers: ["Authorization": "Bearer \(request.authKey)"], success: success, failure: failure)
+        super.init(endpoint: .buyTickets,
+                   parameters: parameters,
+                   headers: headers,
+                   success: success, failure: failure)
     }
 }

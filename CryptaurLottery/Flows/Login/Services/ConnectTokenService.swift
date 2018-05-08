@@ -22,6 +22,7 @@ final class ConnectTokenService: OperationService<ConnectTokenRequestModel, Conn
 }
 
 fileprivate final class ConnectTokenOperation: APIOperation {
+    
     override func createRequest() -> DataRequest {
         return Alamofire.request(URL(with: endpoint), method: endpoint.method.asAlamofireMethod(), parameters: parameters, encoding: URLEncoding.httpBody, headers: headers)
     }
