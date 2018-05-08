@@ -71,4 +71,11 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
         print("Base view controller")
         badgeActionCompletion?()
     }
+    
+    func present(message: String) {
+        
+        let alertController = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
 }
