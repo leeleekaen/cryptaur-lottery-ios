@@ -1,15 +1,10 @@
 import UIKit
 
-class PinCodeViewController: BaseViewController, FlowController {
+class PinCodeViewController: BaseViewController {
     
-    var loginCompletion: (() -> ())? {
-        didSet {
-            viewModel.loginCompletion = loginCompletion
-        }
-    }
-    func setFlowCompletion(_ completion: @escaping () -> ()) {
-        loginCompletion = completion
-    }
+    // MARK: - Public properties
+    var pincodeCompletion: ((String) -> ())?
+    var enterByLoginCompletion: (() -> ())?
     
     // MARK: - IBOutlet
     @IBOutlet weak var pinCodePageControl: UIPageControl! {
@@ -18,10 +13,11 @@ class PinCodeViewController: BaseViewController, FlowController {
             pinCodePageControl.numberOfPages = pinCodeCount
         }
     }
+    @IBOutlet weak var enterByLoginButton: UIButton!
     
     // MARK: - IBAction
     @IBAction func enterByLogindAction(_ sender: UIButton) {
-        performSegue(withIdentifier: Segue.toLogin.rawValue, sender: nil)
+        enterByLoginCompletion?()
     }
     
     @IBAction func numpadAction(_ sender: UIButton) {
@@ -37,7 +33,6 @@ class PinCodeViewController: BaseViewController, FlowController {
     }
     
     @IBAction func backspaceAction(_ sender: UIButton) {
-        
         if !pinCode.isEmpty {
             pinCode.removeLast()
         }
@@ -47,8 +42,8 @@ class PinCodeViewController: BaseViewController, FlowController {
     let viewModel = PinCodeViewModel()
     
     // MARK: - Private properties
-    let pinCodeCount = 4
-    var pinCode = "" {
+    private let pinCodeCount = 4
+    private var pinCode = "" {
         didSet {
             switch pinCode.count {
             case 0:
@@ -59,11 +54,12 @@ class PinCodeViewController: BaseViewController, FlowController {
                 pinCodePageControl.currentPageIndicatorTintColor = UIColor.hotPink
             case 4:
                 pinCodePageControl.currentPage = pinCode.count - 1
-                viewModel.submit(pincode: pinCode)
+//                viewModel.submit(pincode: pinCode)
+                pincodeCompletion?(pinCode)
             case 5:
                 pinCode.removeLast()
             default:
-                fatalError("unespected pin code")
+                fatalError("unexpected pin code")
             }
         }
     }
@@ -74,6 +70,17 @@ class PinCodeViewController: BaseViewController, FlowController {
         super.viewDidLoad()
         configureSubviews()
         bind(viewModel)
+    }
+    
+    // MARK: - Public methods
+    func configureGetPIN() {
+        enterByLoginButton.isHidden = true
+    }
+    func configureLoginByPin() {
+        enterByLoginButton.isHidden = false
+    }
+    func reset() {
+        pinCode = ""
     }
 }
 
@@ -95,24 +102,5 @@ private extension PinCodeViewController {
     enum PinCodeState {
         case notStarted
         case process(String)
-    }
-}
-
-// MARK: - Segue
-extension PinCodeViewController {
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let identifier = segue.identifier else { return }
-        
-        switch identifier {
-        case Segue.toLogin.rawValue:
-            print("Go to login screen")
-            if let destination = segue.destination as? LoginViewController {
-                destination.loginCompletion = loginCompletion
-            }
-        default:
-            fatalError("Unexpected segue")
-        }
     }
 }

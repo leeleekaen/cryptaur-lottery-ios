@@ -336,6 +336,7 @@ address to login</string>
                         <viewLayoutGuide key="safeArea" id="kAq-5J-Pxy"/>
                     </view>
                     <connections>
+                        <outlet property="enterByLoginButton" destination="HBw-rg-IvN" id="qiP-A8-k27"/>
                         <outlet property="pinCodePageControl" destination="MFM-OQ-yZB" id="81b-aF-yLQ"/>
                         <segue destination="RyS-3X-VOo" kind="show" identifier="toLogin" id="iOf-Qv-Z19"/>
                     </connections>

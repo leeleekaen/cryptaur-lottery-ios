@@ -12,9 +12,10 @@ final class LoginViewController: BaseViewController, FlowController {
     private let viewModel: LoginViewModel! = LoginViewModel()
     private let keychain = KeychainSwift()
     
+    var submitCompletion: ((String, String) -> ())?
+    
     var loginCompletion: (() -> ())? {
         didSet {
-            print(loginCompletion)
             viewModel.loginCompletion = loginCompletion
         }
     }
@@ -37,7 +38,10 @@ final class LoginViewController: BaseViewController, FlowController {
 
     // MARK: - IBAction
     @IBAction func loginButtonAction(_ sender: UIButton) {
-        viewModel.submit()
+//        viewModel.submit()
+        guard let username = loginTextField.text,
+            let password = passwordTextField.text else { return }
+        submitCompletion?(username, password)
     }
 
     @IBAction func forgotPasswordAction(_ sender: UIButton) {
