@@ -16,21 +16,22 @@ class LotteryCardCell: UICollectionViewCell {
     
     // MARK: - IBAction
     @IBAction func buyTicket(_ sender: UIButton) {
-        if let lottery = lottery {
-            buyTicketCompletion?(lottery)
+        if let draw = draw {
+            buyTicketCompletion?(draw)
         }
     }
-    var buyTicketCompletion: ((_ lottery: LotteryID) -> ())?
+    var buyTicketCompletion: ((_ draw: Draw) -> ())?
     
     // MARK: - Private property
-    var lottery: LotteryID?
+    var draw: Draw?
     
     // MARK: - Configure
     func configure(draw: Draw) {
         
+        self.draw = draw
+        
         // Balls image
         guard let lottery = LotteryID(rawValue: draw.lotteryID) else { return }
-        self.lottery = lottery
         
         switch lottery {
         case .lottery4x20:

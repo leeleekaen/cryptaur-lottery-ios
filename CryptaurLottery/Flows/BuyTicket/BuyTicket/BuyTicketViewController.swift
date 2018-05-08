@@ -20,7 +20,8 @@ class BuyTicketViewController: BaseViewController {
         
         guard let title = sender.titleLabel?.text,
             let number = Int(title),
-            let lottery = lottery else { return }
+            let draw = draw,
+            let lottery = LotteryID(rawValue: draw.lotteryID) else {return }
         
         if sender.currentBackgroundImage == nil {
             if lottery.toPick > selectedNumbers.count {
@@ -40,7 +41,8 @@ class BuyTicketViewController: BaseViewController {
     
     @IBAction func buyAction(_ sender: UIButton) {
                 
-        guard let lottery = lottery else { return }
+        guard let draw = draw,
+            let lottery = LotteryID(rawValue: draw.lotteryID) else { return }
         
         if selectedNumbers.count == lottery.toPick {
             viewModel.buyTicket(numbers: selectedNumbers)
@@ -51,10 +53,10 @@ class BuyTicketViewController: BaseViewController {
     let viewModel = BuyTicketViewModel()
     
     // MARK: - Public properties
-    var lottery: LotteryID? {
+    var draw: Draw? {
         didSet {
+            viewModel.draw = draw
             configureSubviews()
-            viewModel.lottery = lottery
         }
     }
     
@@ -81,7 +83,8 @@ private extension BuyTicketViewController {
     
     func configureSubviews() {
         
-        guard let lottery = lottery else { return }
+        guard let draw = draw,
+            let lottery = LotteryID(rawValue: draw.lotteryID) else {return }
         
         view.backgroundColor = UIColor.paleLavender
         

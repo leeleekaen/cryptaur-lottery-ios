@@ -54,7 +54,7 @@ final class ApplicationCoordinator {
         let lotteryListViewController = LotteryListViewController.controllerInStoryboard(mainStoryboard)
         
         lotteryListViewController.chooseLotteryCompletion = { [weak self] in
-            self?.startBuyTicket(lottery: $0)
+            self?.startBuyTicket(draw: $0)
         }
         lotteryListViewController.badgeActionCompletion = badgeActionCompletion
         lotteryListViewController.menuActionCompletion = menuActionCompletion
@@ -63,10 +63,10 @@ final class ApplicationCoordinator {
         self.window?.rootViewController = navigationController
     }
     
-    private func startBuyTicket(lottery: LotteryID) {
+    private func startBuyTicket(draw: Draw) {
         let buyTicketStoryboard = UIStoryboard(name: "BuyTicketStory", bundle: nil)
         let buyTicketContainerViewController = BuyTicketContainerViewController.controllerInStoryboard(buyTicketStoryboard)
-        buyTicketContainerViewController.lottery = lottery
+        buyTicketContainerViewController.draw = draw
         buyTicketContainerViewController.badgeActionCompletion = badgeActionCompletion
         buyTicketContainerViewController.menuActionCompletion = menuActionCompletion
         navigationController?.pushViewController(buyTicketContainerViewController, animated: true)

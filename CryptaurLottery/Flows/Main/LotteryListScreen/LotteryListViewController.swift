@@ -11,7 +11,7 @@ final class LotteryListViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     // MARK: - Public properties
-    var chooseLotteryCompletion: ((_ lottery: LotteryID) -> ())?
+    var chooseLotteryCompletion: ((_ draw: Draw) -> ())?
     
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
