@@ -54,7 +54,6 @@ class PinCodeViewController: BaseViewController {
                 pinCodePageControl.currentPageIndicatorTintColor = UIColor.hotPink
             case 4:
                 pinCodePageControl.currentPage = pinCode.count - 1
-//                viewModel.submit(pincode: pinCode)
                 pincodeCompletion?(pinCode)
             case 5:
                 pinCode.removeLast()
@@ -63,7 +62,6 @@ class PinCodeViewController: BaseViewController {
             }
         }
     }
-    
     
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {

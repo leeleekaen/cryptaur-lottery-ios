@@ -495,7 +495,6 @@
 			isa = PBXGroup;
 			children = (
 				CEDE7A1320890D8B00F3BA7F /* ApplicationCoordinator.swift */,
-				9A2840AC20A17FAB003ECD95 /* LoginFlowCoordinator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -503,6 +502,7 @@
 		CEDEFF7420738F5C00297A99 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9A2840AC20A17FAB003ECD95 /* LoginFlowCoordinator.swift */,
 				CE7C8B7E2087E1680006C5C2 /* ViewModels */,
 				9AFF8297208642060046A3F8 /* Screens */,
 				CEDEFF7620739A8600297A99 /* Services */,
