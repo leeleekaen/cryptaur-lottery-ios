@@ -29,6 +29,7 @@
 		9A2071DC208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */; };
 		9A2071DE208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */; };
 		9A2071E0208A29DA00B5D671 /* GetPlayerTicketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */; };
+		9A2840AD20A17FAB003ECD95 /* LoginFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2840AC20A17FAB003ECD95 /* LoginFlowCoordinator.swift */; };
 		9A3D5775208DD3710007A426 /* UIStackView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D5774208DD3710007A426 /* UIStackView+extension.swift */; };
 		9A3D577A208DE6230007A426 /* PickUpWinRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D5779208DE6230007A426 /* PickUpWinRequestModel.swift */; };
 		9A3D577C208DE77A0007A426 /* PickUpWinServicel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */; };
@@ -143,6 +144,7 @@
 		9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsRequestModel.swift; sourceTree = "<group>"; };
 		9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsResponceModel.swift; sourceTree = "<group>"; };
 		9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsService.swift; sourceTree = "<group>"; };
+		9A2840AC20A17FAB003ECD95 /* LoginFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowCoordinator.swift; sourceTree = "<group>"; };
 		9A3D5774208DD3710007A426 /* UIStackView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+extension.swift"; sourceTree = "<group>"; };
 		9A3D5779208DE6230007A426 /* PickUpWinRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinRequestModel.swift; sourceTree = "<group>"; };
 		9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinServicel.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				CEDE7A1320890D8B00F3BA7F /* ApplicationCoordinator.swift */,
+				9A2840AC20A17FAB003ECD95 /* LoginFlowCoordinator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				9A3D577C208DE77A0007A426 /* PickUpWinServicel.swift in Sources */,
 				CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */,
 				9A50D3D12091C44500DFA072 /* PinCodeViewModel.swift in Sources */,
+				9A2840AD20A17FAB003ECD95 /* LoginFlowCoordinator.swift in Sources */,
 				9A2071DE208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift in Sources */,
 				9AE714742088DAF900D7F399 /* DrawArchiveCardCell.swift in Sources */,
 				CE3A094C2076688500875A2C /* BalanceView.swift in Sources */,

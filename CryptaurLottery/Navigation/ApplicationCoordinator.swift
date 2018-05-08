@@ -6,6 +6,8 @@ final class ApplicationCoordinator {
     private weak var window: UIWindow?
     private var navigationController: BaseNavigationController?
     
+    private var loginFlowCoordinator: LoginFlowCoordinator?
+    
     private let keychain = KeychainSwift()
     
     private var badgeActionCompletion: (() -> ())?
@@ -21,30 +23,36 @@ final class ApplicationCoordinator {
     }
 
     private func startLogin() {
-        if keychain.get(PlayersKey.username) != nil {
-            startLoginPIN()
-        } else {
-            startLoginPassword()
-        }
-    }
-    
-    private func startLoginPassword() {
-        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
-        let loginViewController = LoginViewController.controllerInStoryboard(loginStoryboard)
-        loginViewController.setFlowCompletion { [weak self] in
+        
+        loginFlowCoordinator = LoginFlowCoordinator(window: window) { [weak self] in
             self?.startMain()
         }
-        self.window?.rootViewController = loginViewController
+        loginFlowCoordinator?.start()
+        
+//        if keychain.get(PlayersKey.username) != nil {
+//            startLoginPIN()
+//        } else {
+//            startLoginPassword()
+//        }
     }
     
-    private func startLoginPIN() {
-        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
-        let pinViewController = PinCodeViewController.controllerInStoryboard(loginStoryboard)
-        pinViewController.setFlowCompletion { [weak self] in
-            self?.startMain()
-        }
-        self.window?.rootViewController = pinViewController
-    }
+//    private func startLoginPassword() {
+//        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
+//        let loginViewController = LoginViewController.controllerInStoryboard(loginStoryboard)
+//        loginViewController.setFlowCompletion { [weak self] in
+//            self?.startMain()
+//        }
+//        self.window?.rootViewController = loginViewController
+//    }
+//    
+//    private func startLoginPIN() {
+//        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
+//        let pinViewController = PinCodeViewController.controllerInStoryboard(loginStoryboard)
+//        pinViewController.setFlowCompletion { [weak self] in
+//            self?.startMain()
+//        }
+//        self.window?.rootViewController = pinViewController
+//    }
 
     private func startMain() {
         
