@@ -7,7 +7,6 @@ import KeychainSwift
 class BuyTicketViewModel: BaseViewModel {
     
     // MARK: - Public properties
-    var lottery: LotteryID?
     var draw: Draw?
     
     var balance = UInt256(integerLiteral: 0)
@@ -38,7 +37,7 @@ class BuyTicketViewModel: BaseViewModel {
     func buyTicket(numbers: [Int]) {
         
         guard let draw = draw,
-            let lottery = LotteryID(rawValue: draw.lotteryID) else {return }
+            let lottery = LotteryID(rawValue: draw.lotteryID) else { return }
         
         let drawIndex = Int(draw.number)
         
@@ -74,7 +73,8 @@ private extension BuyTicketViewModel {
     
     func getTicketPrice() {
         
-        guard let lottery = lottery else { return }
+        guard let draw = draw,
+            let lottery = LotteryID(rawValue: draw.lotteryID) else {return }
         
         let request = GetTicketPriceRequestModel(lotteryID: lottery)
         
