@@ -152,6 +152,8 @@ class LoginFlowCoordinator {
                                         let keychain = KeychainSwift()
                                         keychain.set(request.username,
                                                      forKey: PlayersKey.username)
+                                        keychain.set(request.password,
+                                                     forKey: PlayersKey.password)
                                         keychain.set(response.accessToken,
                                                      forKey: PlayersKey.accessToken)
                                         keychain.set(response.address.normalizedHexString,

@@ -5,6 +5,7 @@ import RxCocoa
 
 struct PlayersKey {
     static let username = "username"
+    static let password = "password"
     static let accessToken = "accessToken"
     static let address = "address"
 }
