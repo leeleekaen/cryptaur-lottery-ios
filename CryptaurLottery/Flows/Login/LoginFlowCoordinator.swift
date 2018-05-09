@@ -49,6 +49,12 @@ class LoginFlowCoordinator {
         }
     }
     
+    func changePIN() {
+        print("Change PIN flow")
+        state = .changePIN
+        startLoginPassword()
+    }
+    
     // MARK: - Private methods
     private func startLoginPassword() {
         
@@ -71,6 +77,17 @@ class LoginFlowCoordinator {
                 self?.window?.rootViewController = self?.loginViewController
                 self?.loginViewController.present(error: error)
             }
+        case .changePIN:
+            guard let username = keychain.get(PlayersKey.username),
+                let password = keychain.get(PlayersKey.password) else { break }
+            self.window?.rootViewController = loginViewController
+            
+            print("passport: \(password)")
+            
+            self.username = username
+            self.password = password
+            state = .getFirstPIN
+            startLoginPIN()
         default:
             fatalError("Unexpected state of Login Flow Coordinator")
         }
@@ -123,14 +140,17 @@ class LoginFlowCoordinator {
         
         let request = ConnectTokenRequestModel(username: username, password: password,
                                                pin: pincode, withPin: false)
+        print(request)
+        
         connectTokenService.perform(input: request,
                                     success: { [weak self] (response) in
                                         let keychain = KeychainSwift()
                                         keychain.set(request.username,
                                                      forKey: PlayersKey.username)
+                                        keychain.set(request.password,
+                                                     forKey: PlayersKey.password)
                                         keychain.set(response.accessToken,
                                                      forKey: PlayersKey.accessToken)
-                                        
                                         keychain.set(response.address.normalizedHexString,
                                                      forKey: PlayersKey.address)
                                         DispatchQueue.main.async {
@@ -152,8 +172,6 @@ class LoginFlowCoordinator {
                                         let keychain = KeychainSwift()
                                         keychain.set(request.username,
                                                      forKey: PlayersKey.username)
-                                        keychain.set(request.password,
-                                                     forKey: PlayersKey.password)
                                         keychain.set(response.accessToken,
                                                      forKey: PlayersKey.accessToken)
                                         keychain.set(response.address.normalizedHexString,
@@ -179,6 +197,7 @@ extension LoginFlowCoordinator {
         case loginByPasswordFail(ServiceError)
         case loginByPINFail(ServiceError)
         case pincodeNotMatch
+        case changePIN
         
     }
 }

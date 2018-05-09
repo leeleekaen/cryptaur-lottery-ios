@@ -15,6 +15,8 @@ class MenuViewController: BaseViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var loginNameLabel: UILabel!
     
+    var changePINCompletion: (() -> ())?
+    
     // MARK: - IBAction
     @IBAction func closeButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -33,7 +35,7 @@ class MenuViewController: BaseViewController {
     }
     
     @IBAction func changePinButtonAction(_ sender: Any) {
-        print("ChangePin button tapped");
+        changePINCompletion?()
     }
     
     @IBAction func howToPlayButtonAction(_ sender: Any) {
