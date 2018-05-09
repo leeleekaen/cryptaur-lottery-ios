@@ -88,7 +88,6 @@ extension DrawArchiveViewController: ListSingleSectionControllerDelegate {
         guard let object = object as? DiffableBox<ArchiveDraw> else { return }
         
         let draw = object.value
-        print(draw)
     }
 }
 

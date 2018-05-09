@@ -25,7 +25,6 @@ class MenuViewController: BaseViewController {
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
-        print("Logout button tapped")
         logoutCompletion?()
     }
     

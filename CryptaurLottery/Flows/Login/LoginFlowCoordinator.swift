@@ -76,7 +76,6 @@ class LoginFlowCoordinator {
         }
         
         loginViewController.submitCompletion = { [weak self] (username, password) in
-            print("username: \(username), password: \(password)")
             self?.username = username
             self?.password = password
             self?.state = .getFirstPIN
@@ -89,7 +88,6 @@ class LoginFlowCoordinator {
         switch state {
         case .getFirstPIN:
             pinViewController.pincodeCompletion = { [weak self] (pincode) in
-                print("first pincode: \(pincode)")
                 self?.pincode = pincode
                 self?.pinViewController.reset()
                 self?.state = .getSecondPIN
@@ -100,7 +98,6 @@ class LoginFlowCoordinator {
             pinViewController.present(message: "Set PIN code")
         case .getSecondPIN:
             pinViewController.pincodeCompletion = { [weak self] (pincode) in
-                print("second pincode: \(pincode)")
                 if let firstPINcode = self?.pincode, firstPINcode == pincode {
                     self?.submitByPassword()
                 } else {
@@ -126,7 +123,6 @@ class LoginFlowCoordinator {
         
         let request = ConnectTokenRequestModel(username: username, password: password,
                                                pin: pincode, withPin: false)
-        print(request)
         connectTokenService.perform(input: request,
                                     success: { [weak self] (response) in
                                         let keychain = KeychainSwift()
@@ -141,7 +137,6 @@ class LoginFlowCoordinator {
                                             self?.flowCompletion()
                                         }
             }, failure: { [weak self] (error) in
-                print(error)
                 guard let error = error as? ServiceError else { return }
                 self?.state = .loginByPasswordFail(error)
                 self?.startLoginPassword()
@@ -152,7 +147,6 @@ class LoginFlowCoordinator {
         
         let request = ConnectTokenRequestModel(username: username, password: pincode,
                                                pin: pincode, withPin: true)
-        print(request)
         connectTokenService.perform(input: request,
                                     success: { [weak self] (response) in
                                         let keychain = KeychainSwift()
@@ -166,7 +160,6 @@ class LoginFlowCoordinator {
                                             self?.flowCompletion()
                                         }
             }, failure: { [weak self] (error) in
-                print(error)
                 guard let error = error as? ServiceError else { return }
                 self?.state = .loginByPINFail(error)
                 self?.startLoginPassword()

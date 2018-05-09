@@ -9,9 +9,7 @@ OperationService<BuyTicketRequestModel, BuyTicketResponceModel> {
                                   failure: @escaping ServiceFailure) -> Operation? {
         
         return BuyTicketOperation(request: input, success: { (json) in
-            
-            print(json)
-            
+                        
             guard let object = BuyTicketResponceModel(json: json) else {
                 failure(ServiceError.deserializationFailure)
                 return
