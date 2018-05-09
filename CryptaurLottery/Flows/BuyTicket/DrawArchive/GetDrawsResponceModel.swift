@@ -12,9 +12,7 @@ struct GetDrawsResponceModel: JSONDeserializable {
         
         var draws = [ArchiveDraw]()
         for item in list {
-            guard let draw = ArchiveDraw(json: item) else {
-                print(item)
-                
+            guard let draw = ArchiveDraw(json: item) else {                
                 return nil
             }
             draws.append(draw)

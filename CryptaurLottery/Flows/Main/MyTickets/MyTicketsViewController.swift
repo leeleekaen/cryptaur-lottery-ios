@@ -110,7 +110,6 @@ extension MyTicketsViewController: ListAdapterDataSource {
             guard self.viewModel.loadingCount == 0, self.state == .played else { return }
             
             if let lastTicket = self.viewModel.allPlayedTickets.last, item.value == lastTicket {
-                print("Have to update played tickets")
                 self.viewModel.getNext()
             }
             

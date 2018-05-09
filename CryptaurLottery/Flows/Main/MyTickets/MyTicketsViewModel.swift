@@ -100,9 +100,7 @@ private extension MyTicketsViewModel {
         
         playerTicketsService.perform(input: requestModel,
                                      success: { [weak self] (responce) in
-                                        
-                                        print("succes respond for \(lottery) count: \(responce.tickets.count)")
-                                        
+                                                                                
                                         guard !responce.tickets.isEmpty else {
                                             self?.isEndOfLottery[lottery] = true
                                             self?.loadingCount -= 1

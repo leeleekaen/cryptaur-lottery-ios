@@ -28,31 +28,7 @@ final class ApplicationCoordinator {
             self?.startMain()
         }
         loginFlowCoordinator?.start()
-        
-//        if keychain.get(PlayersKey.username) != nil {
-//            startLoginPIN()
-//        } else {
-//            startLoginPassword()
-//        }
     }
-    
-//    private func startLoginPassword() {
-//        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
-//        let loginViewController = LoginViewController.controllerInStoryboard(loginStoryboard)
-//        loginViewController.setFlowCompletion { [weak self] in
-//            self?.startMain()
-//        }
-//        self.window?.rootViewController = loginViewController
-//    }
-//    
-//    private func startLoginPIN() {
-//        let loginStoryboard = UIStoryboard(name: "LoginStory", bundle: nil)
-//        let pinViewController = PinCodeViewController.controllerInStoryboard(loginStoryboard)
-//        pinViewController.setFlowCompletion { [weak self] in
-//            self?.startMain()
-//        }
-//        self.window?.rootViewController = pinViewController
-//    }
 
     private func startMain() {
         
@@ -96,6 +72,9 @@ final class ApplicationCoordinator {
             menuViewController.logoutCompletion = { [weak self] in
                 self?.keychain.clear()
                 self?.startLogin()
+            }
+            menuViewController.changePINCompletion = { [weak self] in
+                self?.loginFlowCoordinator?.changePIN()
             }
             
             viewController.present(menuViewController, animated: true, completion: nil)

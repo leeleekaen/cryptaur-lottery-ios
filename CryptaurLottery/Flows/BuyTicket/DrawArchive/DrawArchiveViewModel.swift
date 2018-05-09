@@ -48,7 +48,6 @@ private extension DrawArchiveViewModel {
         guard let lottery = lottery else { return }
         
         let request = GetDrawsRequestModel(lotteryID: lottery, offset: offset, count: count)
-        print("request: \(request)")
         
         service.perform(input: request,
                         success: { [weak self] (responce) in
@@ -65,7 +64,6 @@ private extension DrawArchiveViewModel {
                             
         }) { [weak self] (error) in
             self?.errorSubject.onNext(error)
-            print(error)
             self?.isLoadingObject.onNext(false)
         }
     }
