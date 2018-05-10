@@ -19,19 +19,16 @@ class BuyTicketContainerViewController: BaseViewController {
         
         switch sender.selectedSegmentIndex {
         case 0:
-            print("Buy ticket")
             buyTicketSubview.isHidden = false
             drawArchiveSubview.isHidden = true
             showRulesSubview.isHidden = true
             view.backgroundColor = UIColor.paleLavender
         case 1:
-            print("Draw archive")
             buyTicketSubview.isHidden = true
             showRulesSubview.isHidden = true
             drawArchiveSubview.isHidden = false
             view.backgroundColor = UIColor.darkTwo
         case 2:
-            print("Rules")
             buyTicketSubview.isHidden = true
             showRulesSubview.isHidden = false
             drawArchiveSubview.isHidden = true

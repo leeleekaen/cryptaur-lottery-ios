@@ -42,6 +42,7 @@ class APIOperation: Operation {
         let request = createRequest()
         
         request.responseJSON(queue: DispatchQueue.global(qos: .utility), options: .allowFragments) { (response: DataResponse<Any>) in
+            
             guard !APIOperation.processErrors(handler: failure, response: response) else {
                 return
             }
@@ -55,7 +56,6 @@ class APIOperation: Operation {
         
         if let error = response.error {
             handler(ServiceError.unknown(error))
-            print(response)
             return true
         }
         guard let json = response.value as? JSONDictionary else {

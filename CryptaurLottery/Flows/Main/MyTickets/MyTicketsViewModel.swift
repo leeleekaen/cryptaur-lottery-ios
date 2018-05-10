@@ -70,12 +70,16 @@ class MyTicketsViewModel: BaseViewModel {
     
     func pickUpWin() {
         
-        guard let hexPlayerAddress = keychain.get(PlayersKey.address),
-            let playerAddress = UInt256(hexString: hexPlayerAddress) else { return }
-        let key = "111"
+        guard let authKey = keychain.get(PlayersKey.accessToken),
+            let hexAddress = keychain.get(PlayersKey.address),
+            let address = UInt256(hexString: hexAddress) else { return }
         
-        pickUpWinService.perform(input: PickUpWinRequestModel(authKey: key,
-                                                              playerAddress: playerAddress),
+        let request = PickUpWinRequestModel(authKey: authKey,
+                                            playerAddress: address)
+        
+        print(request)
+        
+        pickUpWinService.perform(input: request,
                                  success: { (responce) in
                                     print("Success pick up win \(responce)")
             }, failure: defaultServiceFailure)
@@ -96,9 +100,7 @@ private extension MyTicketsViewModel {
         
         playerTicketsService.perform(input: requestModel,
                                      success: { [weak self] (responce) in
-                                        
-                                        print("succes respond for \(lottery) count: \(responce.tickets.count)")
-                                        
+                                                                                
                                         guard !responce.tickets.isEmpty else {
                                             self?.isEndOfLottery[lottery] = true
                                             self?.loadingCount -= 1

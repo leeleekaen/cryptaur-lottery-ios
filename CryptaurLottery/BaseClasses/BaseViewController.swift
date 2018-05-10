@@ -63,12 +63,10 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     }
     
     func didTapMenuBarButtonItem() {
-        print("Base view controller")
         menuActionCompletion?(self)
     }
     
     func didTapBadgeButton() {
-        print("Base view controller")
         badgeActionCompletion?()
     }
     
