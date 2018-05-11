@@ -28,9 +28,11 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     let keychain = KeychainSwift()
     
     func purseAction() {
+        getBalance()
     }
     
     func balanceAction() {
+        getBalance()
     }
 
     var badge: Driver<String> {
@@ -45,18 +47,17 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     // MARK: - Lifecycle
     override init() {
         super.init()
-        
-        if let hexAddress = keychain.get(PlayersKey.address),
-            let address = UInt256(hexString: hexAddress) {
-            getBalance(playerAddress: address)
-        }
+        getBalance()
     }
 }
 
 // MARK: - Private methods
 private extension BalanceViewModel {
     
-    func getBalance(playerAddress: UInt256) {
+    func getBalance() {
+        
+        guard let hexAddress = keychain.get(PlayersKey.address),
+            let playerAddress = UInt256(hexString: hexAddress)  else { return }
         
         let request = GetPlayerAviableBalanceRequestModel(address: playerAddress)
         
@@ -66,6 +67,7 @@ private extension BalanceViewModel {
                                 if responce.balance != UInt256(integerLiteral: 0) {
                                     balance.removeLast(5)
                                 }
+                                print(responce)
                                 self?.balanceSubject.onNext(balance + " CPT")
             }, failure: defaultServiceFailure)
     }
