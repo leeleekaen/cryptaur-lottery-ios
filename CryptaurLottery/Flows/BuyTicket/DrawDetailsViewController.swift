@@ -22,7 +22,7 @@ class DrawDetailsViewController: BaseViewController {
                                   viewController: self,
                                   workingRangeSize: 1)
         adapter.collectionView = winnersCollectionView
-        adapter.dataSource = lotteryWinDS
+        adapter.dataSource = LotteryWinnersDataSource()
         return adapter
     }()
 
@@ -36,10 +36,30 @@ class DrawDetailsViewController: BaseViewController {
         return adapter
     }()
 
-    public var winnersTableData: ArchiveDraw? = nil
-    public var winnersTableLottery: String? = nil
-    let lotteryWinDS:LotteryWinnersDataSource = LotteryWinnersDataSource()
+    public var winnersTableData: ArchiveDraw? = nil {
+        didSet {
+            if let lotteryDataSource = adapter.dataSource as? LotteryWinnersDataSource {
+                lotteryDataSource.winnersData = winnersTableData
+                print("Set Data")
+            }
+        }
+    }
+    public var winnersTableLottery: String? = nil {
+        didSet {
+        if let lotteryDataSource = adapter.dataSource as? LotteryWinnersDataSource {
+            lotteryDataSource.winnerLottery = winnersTableLottery
+            adapter.reloadData()
+        }
+        }
+    }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        adapter.reloadData(completion: { (completed) in
+            self.adapter.performUpdates(animated: false, completion: nil)
+            print("reloaded");
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +73,9 @@ class DrawDetailsViewController: BaseViewController {
         winnersCollectionView.tintColor = UIColor.heather
         ticketsCollectionView.tintColor = UIColor.heather
         
-        lotteryWinDS.winnersData = self.winnersTableData
-        lotteryWinDS.winnerLottery = self.winnersTableLottery
-        
         _ = adapter
         _ = adapterTickets
+        print("Loaded")
     }
 
 }
@@ -73,8 +91,11 @@ class LotteryWinnersDataSource: NSObject, ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         var winnerItems: [WinnersTableItem] = [WinnersTableItem]()
+        print("Start updating")
         if (winnersData != nil && winnerLottery != nil) {
+            print("Continue...")
             for item in winners {
+                print(item)
                 var winValue: String = ""
                 switch item {
                 case "LOTTERY":
@@ -133,7 +154,9 @@ class LotteryWinnersDataSource: NSObject, ListAdapterDataSource {
                 winnerItems.append(tableItem)
             }
         } else {
+            print("Empty list")
             for item in winners {
+                print(item)
                 let tableItem = WinnersTableItem(key: item, value: "")
                 winnerItems.append(tableItem)
             }

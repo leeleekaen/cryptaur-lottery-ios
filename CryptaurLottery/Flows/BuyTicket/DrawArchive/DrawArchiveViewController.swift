@@ -17,6 +17,8 @@ class DrawArchiveViewController: BaseViewController {
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     
+    private var currentArchiveDraw: ArchiveDraw? = nil
+    
     // MARK: - Dependency
     let viewModel = DrawArchiveViewModel()
     
@@ -50,6 +52,8 @@ class DrawArchiveViewController: BaseViewController {
         guard segue.identifier == "toDrawDetails",
             let destination = segue.destination as? DrawDetailsViewController  else { return }
         
+        destination.winnersTableData = currentArchiveDraw;
+        destination.winnersTableLottery = lottery?.total.description
         print("success")
     }
 }
@@ -96,7 +100,7 @@ extension DrawArchiveViewController: ListSingleSectionControllerDelegate {
         guard let object = object as? DiffableBox<ArchiveDraw> else { return }
         
         let draw = object.value
-        
+        currentArchiveDraw = draw;
         performSegue(withIdentifier: "toDrawDetails", sender: draw)
     }
 }
