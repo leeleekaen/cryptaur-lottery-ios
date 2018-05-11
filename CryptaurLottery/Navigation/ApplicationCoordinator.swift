@@ -77,6 +77,13 @@ final class ApplicationCoordinator {
                 self?.loginFlowCoordinator?.changePIN()
             }
             
+            menuViewController.myTicketsCompletion = { [weak self] in
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let myTicketsViewController = MyTicketsViewController.controllerInStoryboard(mainStoryboard)
+                myTicketsViewController.menuActionCompletion = self?.menuActionCompletion
+                self?.navigationController?.pushViewController(myTicketsViewController, animated: true)
+            }
+            
             viewController.present(menuViewController, animated: true, completion: nil)
         }
     }

@@ -15,8 +15,6 @@ class MenuViewController: BaseViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var loginNameLabel: UILabel!
     
-    var changePINCompletion: (() -> ())?
-    
     // MARK: - IBAction
     @IBAction func closeButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -31,7 +29,9 @@ class MenuViewController: BaseViewController {
     }
     
     @IBAction func ticketsButtonAction(_ sender: Any) {
-        print("Tickets button tapped");
+        print("Tickets button tapped")
+        dismiss(animated: true, completion: nil)
+        myTicketsCompletion?()
     }
     
     @IBAction func changePinButtonAction(_ sender: Any) {
@@ -44,6 +44,8 @@ class MenuViewController: BaseViewController {
     
     // MARK: - Public properties
     var logoutCompletion: (() -> ())?
+    var changePINCompletion: (() -> ())?
+    var myTicketsCompletion: (() -> ())?
     
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {

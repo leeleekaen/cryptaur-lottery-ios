@@ -9,6 +9,7 @@ class MyTicketsCardCell: UICollectionViewCell {
     @IBOutlet weak var timeLeftLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var wonLabel: UILabel!
+    @IBOutlet weak var lotteryBalls: UIImageView!
     
     // MARK: - Private properties
     let dateFormatter = DateFormatter()
@@ -21,6 +22,17 @@ class MyTicketsCardCell: UICollectionViewCell {
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
         dateLabel.text = dateFormatter.string(from: ticket.date)
+        
+        switch ticket.numbers.count {
+        case 4:
+            lotteryBalls.image = #imageLiteral(resourceName: "balls 4x20 large")
+        case 5:
+            lotteryBalls.image = #imageLiteral(resourceName: "balls-5x36 large")
+        case 6:
+            lotteryBalls.image = #imageLiteral(resourceName: "balls 6x42 large")
+        default:
+            fatalError("unexpected count of numbers in ticket")
+        }
         
         if ticket.winAmount == UInt256(integerLiteral: 0) {
             wonLabel.text = "0 CPT"
