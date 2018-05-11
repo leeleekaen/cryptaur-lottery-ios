@@ -49,7 +49,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     override init() {
         super.init()
         getBalance()
-        updateTickets(lottery: .lottery4x20)
+        updateTickets()
     }
 }
 
@@ -73,23 +73,23 @@ private extension BalanceViewModel {
             }, failure: defaultServiceFailure)
     }
     
-    func updateTickets(lottery: LotteryID) {
+    func updateTickets() {
         
         guard let hexAddress = keychain.get(PlayersKey.address),
             let playerAddress = UInt256(hexString: hexAddress)  else { return }
         
-        let success: (GetPlayerTicketsResponceModel) -> () = { [weak self] (responce) in
-            print("Success get \(responce.tickets.count) recent ticket")
-        }
-        
-        let failure: ServiceFailure = { [weak self] (error) in
-            print("Error for lottery \(lottery): \(error)")
-        }
-        
-        LotteryID.allValues.forEach {
+        LotteryID.allValues.forEach { [weak self] lottery in
+            
+            let success: (GetPlayerTicketsResponceModel) -> () = { [weak self] (responce) in
+                print("Success get \(responce.tickets.count) recent ticket")
+            }
+            
+            let failure: ServiceFailure = { [weak self] (error) in
+                print("Error for lottery \(lottery): \(error)")
+            }
             
             let requestModel = GetPlayerTicketsRequestModel(playerAddress: playerAddress,
-                                                            lotteryID: $0,
+                                                            lotteryID: lottery,
                                                             offset: 0,
                                                             count: 2)
             
