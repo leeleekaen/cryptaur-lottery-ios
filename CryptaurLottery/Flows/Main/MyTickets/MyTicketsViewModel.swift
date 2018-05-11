@@ -76,9 +76,7 @@ class MyTicketsViewModel: BaseViewModel {
         
         let request = PickUpWinRequestModel(authKey: authKey,
                                             playerAddress: address)
-        
-        print(request)
-        
+                
         pickUpWinService.perform(input: request,
                                  success: { (responce) in
                                     print("Success pick up win \(responce)")
