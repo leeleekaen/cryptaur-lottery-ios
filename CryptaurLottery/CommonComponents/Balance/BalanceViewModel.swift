@@ -22,10 +22,17 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     private let badgeSubject = BehaviorSubject<String>(value: "1")
     private var showAvailableBalance = false
     
+    private var lastPlayedDraws = [LotteryID: Int]() {
+        didSet {
+            print(lastPlayedDraws)
+        }
+    }
+    
     // MARK: - Dependency
     private let buyTicketsService = BuyTicketsService()
     private let balanceService = GetPlayerAviableBalanceService()
     private let playerTicketsService = GetPlayerTicketsService()
+    private let getDrawService = GetDrawsService()
     let keychain = KeychainSwift()
     
     func purseAction() {
@@ -41,7 +48,6 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     }
     
     func badgeAction() {
-        badgeSubject.onNext("12")
         badgeActionCompletion?()
     }
     
@@ -49,7 +55,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     override init() {
         super.init()
         getBalance()
-        updateTickets()
+        getDraws()
     }
 }
 
@@ -71,6 +77,36 @@ private extension BalanceViewModel {
                                 }
                                 self?.balanceSubject.onNext(balance + " CPT")
             }, failure: defaultServiceFailure)
+    }
+    
+    func getDraws() {
+        
+        LotteryID.allValues.forEach { [weak self] lottery in
+            
+            let request = GetDrawsRequestModel(lotteryID: lottery, offset: 0, count: 2)
+            
+            let success: (GetDrawsResponceModel) -> () = { [weak self] responce in
+                
+                print("Success get draws for lottery \(lottery) with count \(responce.draws.count)")
+                
+                if let draw = responce.draws.first, draw.drawState == .played {
+                    self?.lastPlayedDraws[lottery] = draw.number
+                    return
+                }
+                
+                if let draw = responce.draws.last, draw.drawState == .played {
+                    self?.lastPlayedDraws[lottery] = draw.number
+                    return
+                }
+                
+            }
+            
+            getDrawService.perform(input: request,
+                                   success: success,
+                                   failure: { [weak self] (error) in
+                    print("Error for lottery \(lottery): \(error)")
+            })
+        }
     }
     
     func updateTickets() {
