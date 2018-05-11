@@ -82,7 +82,7 @@
                         <color key="textColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balls-5x36" translatesAutoresizingMaskIntoConstraints="NO" id="3wm-FK-KWo">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balls 4x20" translatesAutoresizingMaskIntoConstraints="NO" id="3wm-FK-KWo">
                         <rect key="frame" x="227" y="5" width="68" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="Mv1-PQ-15X"/>
@@ -111,6 +111,7 @@
             <connections>
                 <outlet property="dateLabel" destination="2B0-L3-vZF" id="bSM-FC-sNL"/>
                 <outlet property="drawIndexLabel" destination="U6X-pM-JZ4" id="Iq9-ug-KI9"/>
+                <outlet property="lotteryBalls" destination="3wm-FK-KWo" id="5Wp-HB-iSi"/>
                 <outlet property="numbersStack" destination="mit-ol-Y7m" id="96o-Js-j3T"/>
                 <outlet property="timeLeftLabel" destination="gTE-Sy-AOm" id="GSd-eT-qoD"/>
                 <outlet property="wonLabel" destination="XSj-RK-cHr" id="kcc-ho-bEq"/>
@@ -119,6 +120,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="balls-5x36" width="170" height="135"/>
+        <image name="balls 4x20" width="680" height="500"/>
     </resources>
 </document>
