@@ -49,6 +49,8 @@ class BuyTicketViewModel: BaseViewModel {
                                             numbers: numbers, drawIndex: drawIndex,
                                             playerAddress: address)
         
+        print("Buy ticket request: \(request)")
+        
         buyTicketsService.perform(input: request,
                                   success: { print($0) },
                                   failure: defaultServiceFailure)
