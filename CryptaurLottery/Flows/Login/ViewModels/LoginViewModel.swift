@@ -5,6 +5,7 @@ import RxCocoa
 
 struct PlayersKey {
     static let username = "username"
+    static let password = "password"
     static let accessToken = "accessToken"
     static let address = "address"
 }
@@ -53,8 +54,6 @@ final class LoginViewModel: BaseViewModel {
                                                      forKey: PlayersKey.username)
                                         keychain.set(response.accessToken,
                                                      forKey: PlayersKey.accessToken)
-                                        
-                                        print("accessToken from keychain: \(keychain.get(PlayersKey.accessToken))")
                                         
                                         keychain.set(response.address.normalizedHexString,
                                                      forKey: PlayersKey.address)
