@@ -17,6 +17,7 @@ final class BadgeView: UIView {
     
     func bind(viewModel: BadgeViewModelProtocol, disposeBag: DisposeBag) {
         self.viewModel = viewModel
+        
         viewModel.badge.drive(onNext: { [weak self] in
             self?.badgeLabel.text = $0
         }).disposed(by: disposeBag)
