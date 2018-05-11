@@ -44,6 +44,14 @@ class DrawArchiveViewController: BaseViewController {
             self?.activityIndicator.isHidden = !$0
         }).disposed(by: disposeBag)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard segue.identifier == "toDrawDetails",
+            let destination = segue.destination as? DrawDetailsViewController  else { return }
+        
+        print("success")
+    }
 }
 
 // MARK: - ListAdapterDataSource
@@ -88,6 +96,8 @@ extension DrawArchiveViewController: ListSingleSectionControllerDelegate {
         guard let object = object as? DiffableBox<ArchiveDraw> else { return }
         
         let draw = object.value
+        
+        performSegue(withIdentifier: "toDrawDetails", sender: draw)
     }
 }
 
