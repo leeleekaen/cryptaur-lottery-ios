@@ -15,6 +15,8 @@ class BuyTicketViewModel: BaseViewModel {
         return ticketPriceObject.asDriver(onErrorJustReturn: UInt256(integerLiteral: 10))
     }
     
+    var sendBuyTicketCompletion: (() -> ())?
+    var buyTicketCompletion: ((String) -> ())?
     
     // MARK: - Private properties
     let ticketPriceObject = BehaviorSubject<UInt256>(value: UInt256(integerLiteral: 10))
@@ -49,11 +51,13 @@ class BuyTicketViewModel: BaseViewModel {
                                             numbers: numbers, drawIndex: drawIndex,
                                             playerAddress: address)
         
-        print("Buy ticket request: \(request)")
+        sendBuyTicketCompletion?()
         
         buyTicketsService.perform(input: request,
-                                  success: { print($0) },
-                                  failure: defaultServiceFailure)
+                                  success: { [weak self] in
+                                    self?.buyTicketCompletion?($0.trxHash)
+                                    
+            }, failure: defaultServiceFailure)
     }
 }
 

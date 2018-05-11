@@ -75,6 +75,14 @@ class BuyTicketViewController: BaseViewController {
         viewModel.ticketPrice.drive(onNext: { [weak self] in
             self?.buyTicketButton.setTitle("Buy for \($0.toString())", for: .normal)
         }).disposed(by: disposeBag)
+        
+        viewModel.sendBuyTicketCompletion = { [weak self] in
+            self?.present(message: "Send request to buy ticket")
+        }
+        
+        viewModel.buyTicketCompletion = { [weak self] trx in
+            self?.present(message: "Success buy ticket. Check transaction \(trx)")
+        }
     }
 }
 
