@@ -23,8 +23,9 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     private var showAvailableBalance = false
     
     // MARK: - Dependency
-    let buyTicketsService = BuyTicketsService()
-    let balanceService = GetPlayerAviableBalanceService()
+    private let buyTicketsService = BuyTicketsService()
+    private let balanceService = GetPlayerAviableBalanceService()
+    private let playerTicketsService = GetPlayerTicketsService()
     let keychain = KeychainSwift()
     
     func purseAction() {
@@ -48,6 +49,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     override init() {
         super.init()
         getBalance()
+        updateTickets(lottery: .lottery4x20)
     }
 }
 
@@ -67,9 +69,34 @@ private extension BalanceViewModel {
                                 if responce.balance != UInt256(integerLiteral: 0) {
                                     balance.removeLast(5)
                                 }
-                                print(responce)
                                 self?.balanceSubject.onNext(balance + " CPT")
             }, failure: defaultServiceFailure)
+    }
+    
+    func updateTickets(lottery: LotteryID) {
+        
+        guard let hexAddress = keychain.get(PlayersKey.address),
+            let playerAddress = UInt256(hexString: hexAddress)  else { return }
+        
+        let success: (GetPlayerTicketsResponceModel) -> () = { [weak self] (responce) in
+            print("Success get \(responce.tickets.count) recent ticket")
+        }
+        
+        let failure: ServiceFailure = { [weak self] (error) in
+            print("Error for lottery \(lottery): \(error)")
+        }
+        
+        LotteryID.allValues.forEach {
+            
+            let requestModel = GetPlayerTicketsRequestModel(playerAddress: playerAddress,
+                                                            lotteryID: $0,
+                                                            offset: 0,
+                                                            count: 2)
+            
+            playerTicketsService.perform(input: requestModel,
+                                         success: success,
+                                         failure: failure)
+        }
     }
 }
 

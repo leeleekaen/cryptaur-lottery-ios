@@ -7,6 +7,7 @@
 //
 
 enum LotteryID: Int {
+    
     case lottery4x20 = 1
     case lottery5x36
     case lottery6x42
@@ -35,6 +36,10 @@ enum LotteryID: Int {
         case .lottery6x42:
             return 42
         }
+    }
+    
+    static var allValues: [LotteryID] {
+        return  [.lottery4x20, .lottery5x36, .lottery6x42]
     }
 }
 
