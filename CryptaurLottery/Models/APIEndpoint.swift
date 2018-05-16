@@ -68,6 +68,9 @@ extension APIEndpoint {
     static var getPlayerTickets: APIEndpoint {
         return APIEndpoint(.get, "api/getPlayerTickets")
     }
+    static var getWinTickets: APIEndpoint {
+        return APIEndpoint(.get, "api/getWinTickets")
+    }
     static var refresh: APIEndpoint {
         return APIEndpoint(.get, "api/refresh")
     }
