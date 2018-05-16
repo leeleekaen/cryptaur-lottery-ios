@@ -3,15 +3,14 @@ import UInt256
 
 struct WinTicket: JSONDeserializable {
     
-    let playerAddress: UInt256
+    let playerAddress: String
     let index: Int32
     let winLevel: Int32
     let winAmount: UInt256
     
     init?(json: JSONDictionary) {
         
-        guard let playerAddressString = json["playerAddress"] as? String,
-            let playerAddress = UInt256(hexString: playerAddressString),
+        guard let playerAddress = json["playerAddres"] as? String,
             let index = json["index"] as? Int32,
             let winLevel = json["winLevel"] as? Int32,
             let winAmountString = json["winAmount"] as? String,

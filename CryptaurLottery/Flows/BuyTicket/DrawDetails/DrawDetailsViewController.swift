@@ -9,6 +9,7 @@
 import UIKit
 import IGListKit
 import UInt256
+import KeychainSwift
 
 class DrawDetailsViewController: BaseViewController {
 
@@ -35,9 +36,37 @@ class DrawDetailsViewController: BaseViewController {
         adapter.dataSource = LoteryTicketsDataSource()
         return adapter
     }()
+    
+    private let getWinTicketsService = GetWinTicketsService()
+    private let keychain = KeychainSwift()
 
     public var winnersTableData: ArchiveDraw? = nil
     public var winnersTableLottery: String? = nil
+    public var winnersTicketsLottery: LotteryID? = nil {
+        didSet {
+            getWinTickets()
+        }
+    }
+    
+    private func getWinTickets() {
+        
+        guard let draw = winnersTableData,
+            let lottery = winnersTicketsLottery else {
+                print("Some of input data not valid")
+                return
+        }
+        
+        let request = GetWinTicketsRequestModel(lotteryID: lottery,
+                                                drawIndex: UInt(draw.number),
+                                                offset: 0, count: 50)
+        getWinTicketsService.perform(input: request,
+                                     success: { (responce) in
+                                        print("GetWinTickets responce: \(responce)")
+        }) { (error) in
+            print("GetWinTickets error: \(error)")
+        }
+    }
+    
     
     let winners: [String] = ["LOTTERY", "DRAW", "DATE", "WIN NUMBERS", "TICKETS", "COLLECTED","PAID", "TO JACKPOT", "TO RESERVE", "JACKPOT", "RESERVE"]
     

@@ -54,6 +54,7 @@ class DrawArchiveViewController: BaseViewController {
         
         destination.winnersTableData = currentArchiveDraw;
         destination.winnersTableLottery = lottery?.total.description
+        destination.winnersTicketsLottery = lottery
         print("success")
     }
 }
