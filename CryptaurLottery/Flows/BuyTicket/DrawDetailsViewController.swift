@@ -22,7 +22,7 @@ class DrawDetailsViewController: BaseViewController {
                                   viewController: self,
                                   workingRangeSize: 1)
         adapter.collectionView = winnersCollectionView
-        adapter.dataSource = LotteryWinnersDataSource()
+        adapter.dataSource = self
         return adapter
     }()
 
@@ -36,30 +36,10 @@ class DrawDetailsViewController: BaseViewController {
         return adapter
     }()
 
-    public var winnersTableData: ArchiveDraw? = nil {
-        didSet {
-            if let lotteryDataSource = adapter.dataSource as? LotteryWinnersDataSource {
-                lotteryDataSource.winnersData = winnersTableData
-                print("Set Data")
-            }
-        }
-    }
-    public var winnersTableLottery: String? = nil {
-        didSet {
-        if let lotteryDataSource = adapter.dataSource as? LotteryWinnersDataSource {
-            lotteryDataSource.winnerLottery = winnersTableLottery
-            adapter.reloadData()
-        }
-        }
-    }
+    public var winnersTableData: ArchiveDraw? = nil
+    public var winnersTableLottery: String? = nil
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        adapter.reloadData(completion: { (completed) in
-            self.adapter.performUpdates(animated: false, completion: nil)
-            print("reloaded");
-        })
-    }
+    let winners: [String] = ["LOTTERY", "DRAW", "DATE", "WIN NUMBERS", "TICKETS", "COLLECTED","PAID", "TO JACKPOT", "TO RESERVE", "JACKPOT", "RESERVE"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,75 +55,66 @@ class DrawDetailsViewController: BaseViewController {
         
         _ = adapter
         _ = adapterTickets
-        print("Loaded")
     }
 
 }
 
 // --- List of Winners ---
 
-class LotteryWinnersDataSource: NSObject, ListAdapterDataSource {
-    
-    let winners: [String] = ["LOTTERY", "DRAW", "DATE", "WIN NUMBERS", "TICKETS", "COLLECTED","PAID", "TO JACKPOT", "TO RESERVE", "JACKPOT", "RESERVE"]
-    
-    public var winnersData: ArchiveDraw? = nil
-    public var winnerLottery: String? = nil
+extension DrawDetailsViewController: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         var winnerItems: [WinnersTableItem] = [WinnersTableItem]()
-        print("Start updating")
-        if (winnersData != nil && winnerLottery != nil) {
-            print("Continue...")
+        if (winnersTableData != nil && winnersTableLottery != nil) {
             for item in winners {
-                print(item)
                 var winValue: String = ""
                 switch item {
                 case "LOTTERY":
-                    winValue = winnerLottery!
+                    winValue = winnersTableLottery!
                 case "DRAW":
-                    if let draw = winnersData?.number {
+                    if let draw = winnersTableData?.number {
                         winValue = "\(draw)"
                     }
                 case "DATE":
-                    if let winDate = winnersData?.date.description {
+                    if let winDate = winnersTableData?.date.description {
                         winValue = winDate
                     }
                 case "WIN NUMBERS":
                     winValue = ""
-                    if let nums = winnersData?.numbers {
+                    if let nums = winnersTableData?.numbers {
                         for num in nums {
                             winValue += "\(num) "
                         }
                     }
                 case "TICKETS":
-                    if let tickets = winnersData?.ticketsBought {
+                    if let tickets = winnersTableData?.ticketsBought {
                         winValue = tickets.description
                     }
                 case "COLLECTED":
-                    if let bought = winnersData?.ticketsBought {
-                        if let price = winnersData?.ticketPrice {
+                    if let bought = winnersTableData?.ticketsBought {
+                        if let price = winnersTableData?.ticketPrice {
                             let collected = price.unsafeMultiplied(by: UInt256(bought))
                             winValue = collected.description
                         }
                     }
                 case "PAID":
-                    if let paid = winnersData?.payed {
+                    if let paid = winnersTableData?.payed {
                         winValue = paid.description
                     }
                 case "TO JACKPOT":
-                    if let toJackpot = winnersData?.jackpotAdded {
+                    if let toJackpot = winnersTableData?.jackpotAdded {
                         winValue = toJackpot.description
                     }
                 case "TO RESERVE":
-                    if let toReserve = winnersData?.reserveAdded {
+                    if let toReserve = winnersTableData?.reserveAdded {
                         winValue = toReserve.description
                     }
                 case "JACKPOT":
-                    if let jackpot = winnersData?.jackpot {
+                    if let jackpot = winnersTableData?.jackpot {
                         winValue = jackpot.description
                     }
                 case "RESERVE":
-                    if let reserve = winnersData?.reserve {
+                    if let reserve = winnersTableData?.reserve {
                         winValue = reserve.description
                     }
                 default:
@@ -154,7 +125,6 @@ class LotteryWinnersDataSource: NSObject, ListAdapterDataSource {
                 winnerItems.append(tableItem)
             }
         } else {
-            print("Empty list")
             for item in winners {
                 print(item)
                 let tableItem = WinnersTableItem(key: item, value: "")
