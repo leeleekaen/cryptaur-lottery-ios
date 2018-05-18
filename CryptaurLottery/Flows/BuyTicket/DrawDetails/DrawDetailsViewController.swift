@@ -33,7 +33,7 @@ class DrawDetailsViewController: BaseViewController {
                                   viewController: self,
                                   workingRangeSize: 1)
         adapter.collectionView = ticketsCollectionView
-        adapter.dataSource = LoteryTicketsDataSource()
+        adapter.dataSource = LotteryTicketsDataSource()
         return adapter
     }()
     
@@ -61,6 +61,7 @@ class DrawDetailsViewController: BaseViewController {
                                                 offset: 0, count: 50)
         getWinTicketsService.perform(input: request,
                                      success: { (responce) in
+                                        self.fillTicketsList(tickets: responce.tickets)
                                         print("GetWinTickets responce: \(responce)")
         }) { (error) in
             print("GetWinTickets error: \(error)")
@@ -69,6 +70,14 @@ class DrawDetailsViewController: BaseViewController {
     
     
     let winners: [String] = ["LOTTERY", "DRAW", "DATE", "WIN NUMBERS", "TICKETS", "COLLECTED","PAID", "TO JACKPOT", "TO RESERVE", "JACKPOT", "RESERVE"]
+    
+    func fillTicketsList(tickets: [WinTicket]) {
+        if let ticketDataSource = adapterTickets.dataSource as? LotteryTicketsDataSource {
+            print("Start update tickets...")
+            ticketDataSource.winnerTickets = tickets
+            adapterTickets.reloadData(completion: nil)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -241,14 +250,31 @@ class WinnersTableItem: ListDiffable {
 
 //--- List of Tickets ---
 
-class LoteryTicketsDataSource: NSObject, ListAdapterDataSource {
+class LotteryTicketsDataSource: NSObject, ListAdapterDataSource {
     
-    let winners: [String] = ["Test 1", "Test 2"]
+    public var winnerTickets: [WinTicket]? = nil
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        
+        guard let winners = winnerTickets else {
+            print("Winners is empty")
+            return []
+        }
+        
+        var winCount = 0;
+        if winners.count > 3 {
+            winCount = 3
+        } else {
+            winCount = winners.count
+        }
+        
         var ticketItems: [TicketsTableItem] = [TicketsTableItem]()
-        for item in winners {
-            let tableItem = TicketsTableItem(key: item, guess: "1", value: "test CPT")
+        for item in winners.prefix(winCount) {
+            var val: String = "0"
+            if item.winAmount > 0 {
+                val = item.winAmount.toStringWithDelimeters()
+            }
+            let tableItem = TicketsTableItem(key: item.playerAddress, guess: item.winLevel.description, value: val)
             ticketItems.append(tableItem)
         }
         
