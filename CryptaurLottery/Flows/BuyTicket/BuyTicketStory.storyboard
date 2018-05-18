@@ -59,9 +59,6 @@
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-9f-X6a">
                                 <rect key="frame" x="0.0" y="58" width="375" height="609"/>
-                                <connections>
-                                    <segue destination="3zV-3t-TS6" kind="embed" id="wVV-yv-dHz"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -866,6 +863,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="ewf-Ae-nBq" id="4FL-pa-2ig"/>
                         <outlet property="collectionView" destination="oko-XQ-2kB" id="bVl-nQ-UFp"/>
+                        <segue destination="3zV-3t-TS6" kind="show" identifier="toDrawDetails" id="U7C-pA-0vg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gw9-p6-W7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
