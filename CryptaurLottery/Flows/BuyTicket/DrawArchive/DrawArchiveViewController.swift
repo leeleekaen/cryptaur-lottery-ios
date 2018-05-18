@@ -52,8 +52,7 @@ class DrawArchiveViewController: BaseViewController {
         guard segue.identifier == "toDrawDetails",
             let destination = segue.destination as? DrawDetailsViewController  else { return }
         
-        destination.winnersTableData = currentArchiveDraw;
-        destination.winnersTableLottery = lottery?.total.description
+        destination.winnersTableData = currentArchiveDraw
         destination.winnersTicketsLottery = lottery
         print("success")
     }

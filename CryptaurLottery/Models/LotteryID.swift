@@ -38,6 +38,17 @@ enum LotteryID: Int {
         }
     }
     
+    var toString: String {
+        switch self {
+        case .lottery4x20:
+            return "4x20"
+        case .lottery5x36:
+            return "5x36"
+        case .lottery6x42:
+            return "6x42"
+        }
+    }
+    
     static var allValues: [LotteryID] {
         return  [.lottery4x20, .lottery5x36, .lottery6x42]
     }
