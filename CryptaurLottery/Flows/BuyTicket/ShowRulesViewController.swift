@@ -11,6 +11,14 @@ import UIKit
 class ShowRulesViewController: BaseViewController {
 
     @IBOutlet weak var rulesTextView: UITextView!
+    
+    var lottery: LotteryID? {
+        didSet {
+            if let lottery = lottery {
+                print("[ShowRulesViewController] set lottery: \(lottery)")
+            }
+        }
+    }
 
     func configureText() {
 

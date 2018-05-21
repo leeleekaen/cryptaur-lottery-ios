@@ -82,5 +82,8 @@ private extension BuyTicketContainerViewController {
         drawArchiveViewController = drawArchiveSubview.subviews
             .first?.parentViewController as? DrawArchiveViewController
         drawArchiveViewController?.lottery = lottery
+        
+        showRulesViewController = showRulesSubview.subviews.first?.parentViewController as? ShowRulesViewController
+        showRulesViewController?.lottery = lottery
     }
 }
