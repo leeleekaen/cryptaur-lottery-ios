@@ -56,6 +56,21 @@ class LoginFlowCoordinator {
     }
     
     // MARK: - Private methods
+    
+    private func changePinCode(secondChange: Bool) {
+        pinViewController.pincodeCompletion = { [weak self] (pincode) in
+            self?.pincode = pincode
+            self?.pinViewController.reset()
+            self?.state = .getSecondPIN
+            self?.startLoginPIN()
+        }
+        if (!secondChange) {
+            loginViewController.present(pinViewController, animated: true, completion: nil)
+        }
+        pinViewController.configureGetPIN()
+        pinViewController.present(message: "Set PIN code")
+    }
+    
     private func startLoginPassword() {
         
         switch state {
@@ -84,15 +99,8 @@ class LoginFlowCoordinator {
             self.window?.rootViewController = pinViewController
             self.username = username
             self.password = password
-            //self.state = .getSecondPIN
-            pinViewController.pincodeCompletion = { [weak self] (pincode) in
-                self?.pincode = pincode
-                self?.pinViewController.reset()
-                self?.state = .getSecondPIN
-                self?.startLoginPIN()
-            }
-            pinViewController.configureGetPIN()
-            pinViewController.present(message: "Set PIN code")
+            
+            self.changePinCode(secondChange: true)
             
             print("passport: \(password)")
             
@@ -115,14 +123,7 @@ class LoginFlowCoordinator {
         
         switch state {
         case .getFirstPIN:
-            pinViewController.pincodeCompletion = { [weak self] (pincode) in
-                self?.pincode = pincode
-                self?.pinViewController.reset()
-                self?.startLoginPIN()
-            }
-            loginViewController.present(pinViewController, animated: true, completion: nil)
-            pinViewController.configureGetPIN()
-            pinViewController.present(message: "Set PIN code")
+            self.changePinCode(secondChange: false)
         case .getSecondPIN:
             pinViewController.pincodeCompletion = { [weak self] (pincode) in
                 if let firstPINcode = self?.pincode, firstPINcode == pincode {
