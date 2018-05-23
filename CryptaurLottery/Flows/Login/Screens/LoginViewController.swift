@@ -19,6 +19,7 @@ final class LoginViewController: BaseViewController, FlowController {
             viewModel.loginCompletion = loginCompletion
         }
     }
+    
     func setFlowCompletion(_ completion: @escaping () -> ()) {
         loginCompletion = completion
     }
@@ -38,7 +39,7 @@ final class LoginViewController: BaseViewController, FlowController {
 
     // MARK: - IBAction
     @IBAction func loginButtonAction(_ sender: UIButton) {
-//        viewModel.submit()
+        //viewModel.submit()
         guard let username = loginTextField.text,
             let password = passwordTextField.text else { return }
         submitCompletion?(username, password)

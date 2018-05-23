@@ -78,16 +78,27 @@ class LoginFlowCoordinator {
                 self?.loginViewController.present(error: error)
             }
         case .changePIN:
+            
             guard let username = keychain.get(PlayersKey.username),
                 let password = keychain.get(PlayersKey.password) else { break }
-            self.window?.rootViewController = loginViewController
+            self.window?.rootViewController = pinViewController
+            self.username = username
+            self.password = password
+            //self.state = .getSecondPIN
+            pinViewController.pincodeCompletion = { [weak self] (pincode) in
+                self?.pincode = pincode
+                self?.pinViewController.reset()
+                self?.state = .getSecondPIN
+                self?.startLoginPIN()
+            }
+            pinViewController.configureGetPIN()
+            pinViewController.present(message: "Set PIN code")
             
             print("passport: \(password)")
             
-            self.username = username
-            self.password = password
-            state = .getFirstPIN
-            startLoginPIN()
+            
+//            state = .getFirstPIN
+//            startLoginPIN()
         default:
             fatalError("Unexpected state of Login Flow Coordinator")
         }
@@ -107,7 +118,6 @@ class LoginFlowCoordinator {
             pinViewController.pincodeCompletion = { [weak self] (pincode) in
                 self?.pincode = pincode
                 self?.pinViewController.reset()
-                self?.state = .getSecondPIN
                 self?.startLoginPIN()
             }
             loginViewController.present(pinViewController, animated: true, completion: nil)

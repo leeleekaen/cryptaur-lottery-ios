@@ -27,6 +27,8 @@ final class ApplicationCoordinator {
         loginFlowCoordinator = LoginFlowCoordinator(window: window) { [weak self] in
             self?.startMain()
         }
+        //TASK: Without Registering
+        //self.startMain()
         loginFlowCoordinator?.start()
     }
 
