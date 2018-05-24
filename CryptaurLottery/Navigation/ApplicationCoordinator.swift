@@ -49,6 +49,7 @@ final class ApplicationCoordinator {
         self.window?.rootViewController = navigationController
     }
     
+    
     private func startBuyTicket(draw: Draw) {
         let buyTicketStoryboard = UIStoryboard(name: "BuyTicketStory", bundle: nil)
         let buyTicketContainerViewController = BuyTicketContainerViewController.controllerInStoryboard(buyTicketStoryboard)
