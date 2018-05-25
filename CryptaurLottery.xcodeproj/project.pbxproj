@@ -670,7 +670,6 @@
 				CEF6AD4D20722892004BA072 /* Frameworks */,
 				CEF6AD4E20722892004BA072 /* Resources */,
 				F341519D4FD736ACA1A0798E /* [CP] Embed Pods Frameworks */,
-				3463AEFB6925DD83E73C0BA5 /* [CP] Copy Pods Resources */,
 				CE0FFFA220753DA800FDF56A /* [Fabric] Run */,
 			);
 			buildRules = (
@@ -690,8 +689,6 @@
 				CEF6AD6020722897004BA072 /* Sources */,
 				CEF6AD6120722897004BA072 /* Frameworks */,
 				CEF6AD6220722897004BA072 /* Resources */,
-				7BA09CA430787A28E5459030 /* [CP] Embed Pods Frameworks */,
-				C2FFEB7459ECF7A79DC0309D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -789,21 +786,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3463AEFB6925DD83E73C0BA5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		47CA1841836AE18AD9B38763 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -820,36 +802,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7BA09CA430787A28E5459030 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C2FFEB7459ECF7A79DC0309D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CE0FFFA220753DA800FDF56A /* [Fabric] Run */ = {
@@ -1170,7 +1122,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8CCN58UW97;
+				DEVELOPMENT_TEAM = BR8KK6ASRA;
 				INFOPLIST_FILE = CryptaurLottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1193,7 +1145,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8CCN58UW97;
+				DEVELOPMENT_TEAM = BR8KK6ASRA;
 				INFOPLIST_FILE = CryptaurLottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

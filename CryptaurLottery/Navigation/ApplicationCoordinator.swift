@@ -27,6 +27,8 @@ final class ApplicationCoordinator {
         loginFlowCoordinator = LoginFlowCoordinator(window: window) { [weak self] in
             self?.startMain()
         }
+        //TASK: Without Registering
+        //self.startMain()
         loginFlowCoordinator?.start()
     }
 
@@ -46,6 +48,7 @@ final class ApplicationCoordinator {
         navigationController?.viewControllers = [lotteryListViewController]
         self.window?.rootViewController = navigationController
     }
+    
     
     private func startBuyTicket(draw: Draw) {
         let buyTicketStoryboard = UIStoryboard(name: "BuyTicketStory", bundle: nil)

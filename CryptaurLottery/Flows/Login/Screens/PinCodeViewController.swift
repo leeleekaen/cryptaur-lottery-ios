@@ -5,6 +5,7 @@ class PinCodeViewController: BaseViewController {
     // MARK: - Public properties
     var pincodeCompletion: ((String) -> ())?
     var enterByLoginCompletion: (() -> ())?
+    var exitButtonCompletion: (() -> ())?
     
     // MARK: - IBOutlet
     @IBOutlet weak var pinCodePageControl: UIPageControl! {
@@ -14,6 +15,9 @@ class PinCodeViewController: BaseViewController {
         }
     }
     @IBOutlet weak var enterByLoginButton: UIButton!
+    
+    // MARK: - Dependency
+    let viewModel = PinCodeViewModel()
     
     // MARK: - IBAction
     @IBAction func enterByLogindAction(_ sender: UIButton) {
@@ -29,7 +33,8 @@ class PinCodeViewController: BaseViewController {
     }
     
     @IBAction func exitAction(_ sender: UIButton) {
-        print("Exit button tapped")
+        exitButtonCompletion?()
+        print("EXit button pressed")
     }
     
     @IBAction func backspaceAction(_ sender: UIButton) {
@@ -37,9 +42,6 @@ class PinCodeViewController: BaseViewController {
             pinCode.removeLast()
         }
     }
-    
-    // MARK: - Dependency
-    let viewModel = PinCodeViewModel()
     
     // MARK: - Private properties
     private let pinCodeCount = 4
