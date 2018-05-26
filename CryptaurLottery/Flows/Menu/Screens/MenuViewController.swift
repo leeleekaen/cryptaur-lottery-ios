@@ -30,8 +30,13 @@ class MenuViewController: BaseViewController {
     
     @IBAction func ticketsButtonAction(_ sender: Any) {
         print("Tickets button tapped")
-        dismiss(animated: true, completion: nil)
-        myTicketsCompletion?()
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let myTicketsViewController = MyTicketsViewController.controllerInStoryboard(mainStoryboard)
+        //self.addVcNavigationController(vc: myTicketsViewController)
+        //myTicketsViewController.menuActionCompletion = self?.menuActionCompletion
+//        dismiss(animated: true, completion: nil)
+        self.transition(type: TransistionType.present(controller: BaseNavigationController.createNavBar(viewController: myTicketsViewController)))
+        //myTicketsCompletion?()
     }
     
     @IBAction func changePinButtonAction(_ sender: Any) {

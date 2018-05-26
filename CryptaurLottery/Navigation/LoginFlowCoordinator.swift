@@ -209,18 +209,3 @@ class LoginFlowCoordinator {
         })
     }
 }
-
-// MARK: - Embedded type
-extension LoginFlowCoordinator {
-    enum State {
-        case getLoginAndPassword
-        case getFirstPIN
-        case getSecondPIN
-        case loginWithPIN
-        case loginByPasswordFail(ServiceError)
-        case loginByPINFail(ServiceError)
-        case pincodeNotMatch
-        case changePIN
-        
-    }
-}

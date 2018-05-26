@@ -9,6 +9,11 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
+    
+    static func createNavBar(viewController: UIViewController) -> BaseNavigationController {
+        return BaseNavigationController(rootViewController: viewController)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,4 +28,6 @@ fileprivate extension UINavigationBar {
         shadowImage = UIImage()
         isTranslucent = true
     }
+    
+    
 }

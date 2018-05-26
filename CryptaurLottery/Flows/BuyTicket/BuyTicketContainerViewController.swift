@@ -37,6 +37,7 @@ class BuyTicketContainerViewController: BaseViewController {
         default:
             fatalError("Unknown segment")
         }
+        
     }
     
     // MARK: - Public property

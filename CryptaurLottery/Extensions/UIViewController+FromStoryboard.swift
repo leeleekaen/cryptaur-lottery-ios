@@ -24,4 +24,5 @@ extension UIViewController {
     class func controllerFromStoryboard(_ storyboard: String) -> Self {
         return controllerInStoryboard(UIStoryboard(name: storyboard, bundle: nil), identifier: nameOfClass)
     }
+    
 }

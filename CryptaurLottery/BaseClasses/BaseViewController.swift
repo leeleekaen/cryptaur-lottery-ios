@@ -7,8 +7,41 @@ protocol BarButtonItemTargetActions {
     func didTapBadgeButton()
 }
 
+protocol CoordinatorDelegate: class {
+    func transition(class: BaseViewController, type: TransistionType)
+}
+
 class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceErrorAlertPresenter {
     
+    weak var delegate: CoordinatorDelegate?
+    
+//    func transitionValue(transistionType: TransistionType) {
+//        delegate?.transition(class: self, type: transistionType)
+//    }
+    
+    //MARK: Transition
+    var navigation: BaseNavigationController?
+    
+    func addVcNavigationController(vc: UIViewController) {
+        navigation = BaseNavigationController()
+        navigation?.viewControllers = [vc]
+    }
+    
+    func transition(type: TransistionType) {
+        switch type {
+        case .push(let controller):
+            self.navigationController?.pushViewController(controller, animated: true)
+        case .present(let controller):
+            self.present(controller, animated: true, completion: nil)
+        case .setRootWindow(let controller):
+            UIApplication.shared.keyWindow?.rootViewController = controller
+        case .pop:
+            self.navigationController?.popViewController(animated: true)
+        case .dismiss:
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+
     final let disposeBag = DisposeBag()
     
     // MARK: - Navigation
@@ -63,7 +96,11 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     }
     
     func didTapMenuBarButtonItem() {
-        menuActionCompletion?(self)
+        //menuActionCompletion?(self)
+        //TAsk menuStoryboard
+        let menuStoryboard = UIStoryboard(name: "MenuStory", bundle: nil)
+        let menuViewController = MenuViewController.controllerInStoryboard(menuStoryboard)
+        self.transition(type: TransistionType.push(controller: menuViewController))
     }
     
     func didTapBadgeButton() {

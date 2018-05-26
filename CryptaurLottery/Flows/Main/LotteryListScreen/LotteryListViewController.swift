@@ -40,7 +40,6 @@ final class LotteryListViewController: BaseViewController {
     
     override func bind() {
         bind(viewModel)
-        
         viewModel.updateCompletion = { [weak self] in
             DispatchQueue.main.async { [weak self] in
                 self?.adapter.reloadData()
