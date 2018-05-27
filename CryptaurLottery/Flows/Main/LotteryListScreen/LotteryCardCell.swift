@@ -1,7 +1,15 @@
 import UIKit
 import UInt256
 
+protocol LotteryCardCellDelegate: class {
+    
+    func lotteryCardCellAction(cell: LotteryCardCell, buttonPressed: UIButton)
+}
+
 class LotteryCardCell: UICollectionViewCell {
+    
+    
+    weak var delegate: LotteryCardCellDelegate?
     
     // MARK: - IBOutlet
     @IBOutlet weak var ballsImage: UIImageView!
@@ -19,6 +27,7 @@ class LotteryCardCell: UICollectionViewCell {
         if let draw = draw {
             buyTicketCompletion?(draw)
         }
+        delegate?.lotteryCardCellAction(cell: self, buttonPressed: sender)
     }
     var buyTicketCompletion: ((_ draw: Draw) -> ())?
     

@@ -2,10 +2,14 @@ import UIKit
 
 class PinCodeViewController: BaseViewController {
     
+    enum Flow {
+        case setPin
+        case confirmPin(previous: String)
+        case askPin
+    }
+    
     // MARK: - Public properties
     var pincodeCompletion: ((String) -> ())?
-    var enterByLoginCompletion: (() -> ())?
-    var exitButtonCompletion: (() -> ())?
     
     // MARK: - IBOutlet
     @IBOutlet weak var pinCodePageControl: UIPageControl! {
@@ -18,10 +22,11 @@ class PinCodeViewController: BaseViewController {
     
     // MARK: - Dependency
     let viewModel = PinCodeViewModel()
+    var flow: Flow = .askPin
     
     // MARK: - IBAction
     @IBAction func enterByLogindAction(_ sender: UIButton) {
-        enterByLoginCompletion?()
+        UIApplication.sharedCoordinator.showUnauth()
     }
     
     @IBAction func numpadAction(_ sender: UIButton) {
@@ -33,8 +38,7 @@ class PinCodeViewController: BaseViewController {
     }
     
     @IBAction func exitAction(_ sender: UIButton) {
-        exitButtonCompletion?()
-        print("EXit button pressed")
+        UIApplication.sharedCoordinator.showUnauth()
     }
     
     @IBAction func backspaceAction(_ sender: UIButton) {
@@ -56,7 +60,7 @@ class PinCodeViewController: BaseViewController {
                 pinCodePageControl.currentPageIndicatorTintColor = UIColor.hotPink
             case 4:
                 pinCodePageControl.currentPage = pinCode.count - 1
-                pincodeCompletion?(pinCode)
+                showNext()
             case 5:
                 pinCode.removeLast()
             default:
@@ -68,7 +72,6 @@ class PinCodeViewController: BaseViewController {
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureSubviews()
         bind(viewModel)
     }
     
@@ -76,31 +79,32 @@ class PinCodeViewController: BaseViewController {
     func configureGetPIN() {
         enterByLoginButton.isHidden = true
     }
+    
     func configureLoginByPin() {
         enterByLoginButton.isHidden = false
     }
+    
+    func showNext() {
+        switch flow {
+        case .askPin:
+            viewModel.submit(pincode: pinCode)
+        case .setPin:
+            let confirm = PinCodeViewController.controllerFromStoryboard(StoryboardType.login.name)
+            confirm.flow = .confirmPin(previous: pinCode)
+            UIApplication.sharedCoordinator.transition(type: .present(controller: confirm, completion: nil))
+        case .confirmPin(let previous):
+            guard previous == pinCode else {
+                present(message: "Pin codes are not equals")
+                return
+            }
+            UIApplication.sharedCoordinator.showAuth()
+        }
+    }
+    
     func reset() {
+        if pinCode.count == 4 {
+            viewModel.submit(pincode: pinCode)
+        }
         pinCode = ""
-    }
-}
-
-// MARK: - Private methods
-private extension PinCodeViewController {
-    
-    func configureSubviews() {
-        pinCode = ""
-    }
-}
-
-// MARK: - Embedded
-private extension PinCodeViewController {
-    
-    enum Segue: String {
-        case toLogin
-    }
-    
-    enum PinCodeState {
-        case notStarted
-        case process(String)
     }
 }

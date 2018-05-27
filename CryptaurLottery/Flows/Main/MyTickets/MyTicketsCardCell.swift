@@ -18,7 +18,6 @@ class MyTicketsCardCell: UICollectionViewCell {
     func configure(state: MyTicketsViewController.State, ticket: Ticket) {
         
         drawIndexLabel.text = "DRAW #\(ticket.drawIndex)"
-        
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
         dateLabel.text = dateFormatter.string(from: ticket.date)

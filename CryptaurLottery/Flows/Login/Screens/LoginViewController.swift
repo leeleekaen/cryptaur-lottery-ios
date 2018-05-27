@@ -7,22 +7,10 @@ protocol FlowController {
     func setFlowCompletion(_ completion: @escaping () -> ())
 }
 
-final class LoginViewController: BaseViewController, FlowController {
+final class LoginViewController: BaseViewController {
     
     private let viewModel: LoginViewModel! = LoginViewModel()
     private let keychain = KeychainSwift()
-    
-    var submitCompletion: ((String, String) -> ())?
-    
-    var loginCompletion: (() -> ())? {
-        didSet {
-            viewModel.loginCompletion = loginCompletion
-        }
-    }
-    
-    func setFlowCompletion(_ completion: @escaping () -> ()) {
-        loginCompletion = completion
-    }
     
     // MARK: - IBOutlets
     @IBOutlet weak var loginTextField: UITextField!
@@ -39,10 +27,11 @@ final class LoginViewController: BaseViewController, FlowController {
 
     // MARK: - IBAction
     @IBAction func loginButtonAction(_ sender: UIButton) {
-        //viewModel.submit()
         guard let username = loginTextField.text,
-            let password = passwordTextField.text else { return }
-        submitCompletion?(username, password)
+            let password = passwordTextField.text else {
+                return
+        }
+        viewModel.submit()
     }
 
     @IBAction func forgotPasswordAction(_ sender: UIButton) {
@@ -58,6 +47,7 @@ final class LoginViewController: BaseViewController, FlowController {
         super.viewDidLoad()
 
         configureSubviews()
+        viewModel.delegate = self
         
         if let username = keychain.get(PlayersKey.username) {
             loginTextField.text = username
@@ -79,6 +69,13 @@ final class LoginViewController: BaseViewController, FlowController {
         viewModel.canSubmit.drive(onNext: { [weak self] in
             self?.submitButton.isEnabled = $0
         }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: LoginViewModelDelegate
+extension LoginViewController: LoginViewModelDelegate {
+    func showAlertWith(message: String) {
+        present(message: message)
     }
 }
 

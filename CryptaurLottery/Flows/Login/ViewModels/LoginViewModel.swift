@@ -10,11 +10,16 @@ struct PlayersKey {
     static let address = "address"
 }
 
+protocol LoginViewModelDelegate: class {
+    func showAlertWith(message: String)
+}
+
 final class LoginViewModel: BaseViewModel {
+    
+    weak var delegate: LoginViewModelDelegate?
     
     let usernameRelay = BehaviorRelay<String?>(value: nil)
     let passwordRelay = BehaviorRelay<String?>(value: nil)
-    var loginCompletion: (() -> ())?
     
     private let canSubmitSubject = BehaviorSubject<Bool>(value: false)
     var canSubmit: Driver<Bool> {
@@ -48,7 +53,7 @@ final class LoginViewModel: BaseViewModel {
         let request = ConnectTokenRequestModel(username: username, password: password,
                                                pin: "1234", withPin: false)
         connectTokenService.perform(input: request,
-                                    success: { [weak self] (response) in
+                                    success: { response in
                                         let keychain = KeychainSwift()
                                         keychain.set(request.username,
                                                      forKey: PlayersKey.username)
@@ -58,7 +63,7 @@ final class LoginViewModel: BaseViewModel {
                                         keychain.set(response.address.normalizedHexString,
                                                      forKey: PlayersKey.address)
                                         DispatchQueue.main.async {
-                                            self?.loginCompletion?()
+                                            UIApplication.sharedCoordinator.showPin(flow: .setPin)
                                         }
             }, failure: defaultServiceFailure)
     }

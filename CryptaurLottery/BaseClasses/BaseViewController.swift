@@ -7,46 +7,9 @@ protocol BarButtonItemTargetActions {
     func didTapBadgeButton()
 }
 
-protocol CoordinatorDelegate: class {
-    func transition(class: BaseViewController, type: TransistionType)
-}
-
 class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceErrorAlertPresenter {
     
-    weak var delegate: CoordinatorDelegate?
-    
-//    func transitionValue(transistionType: TransistionType) {
-//        delegate?.transition(class: self, type: transistionType)
-//    }
-    
-    //MARK: Transition
-    var navigation: BaseNavigationController?
-    
-    func addVcNavigationController(vc: UIViewController) {
-        navigation = BaseNavigationController()
-        navigation?.viewControllers = [vc]
-    }
-    
-    func transition(type: TransistionType) {
-        switch type {
-        case .push(let controller):
-            self.navigationController?.pushViewController(controller, animated: true)
-        case .present(let controller):
-            self.present(controller, animated: true, completion: nil)
-        case .setRootWindow(let controller):
-            UIApplication.shared.keyWindow?.rootViewController = controller
-        case .pop:
-            self.navigationController?.popViewController(animated: true)
-        case .dismiss:
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-
     final let disposeBag = DisposeBag()
-    
-    // MARK: - Navigation
-    var badgeActionCompletion: (() -> ())?
-    var menuActionCompletion: ((_ viewController: BaseViewController) -> ())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +28,15 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
         }).disposed(by: disposeBag)
     }
     
+    
     final func configureNavigationItem(showBalance: Bool, color: UIColor = .white) {
         if showBalance {
             navigationItem.titleView = createBalanceView(color: color)
         }
         navigationItem.rightBarButtonItems = [createMenuBarButtonItem(), createBadgeBarButtonItem()]
     }
+    
+    
     
     private func createBalanceView(color: UIColor) -> BalanceView? {
         let balanceView = BalanceView.loadFromNib()
@@ -90,21 +56,20 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     private func createBadgeBarButtonItem() -> UIBarButtonItem {
         let viewModel = BalanceViewModel()
         viewModel.badgeActionCompletion = { [weak self] in
-            self?.didTapBadgeButton()
+            let controller = MyTicketsViewController.controllerFromStoryboard(StoryboardType.main.name)
+            UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
         }
         return .badge(viewModel: viewModel, disposeBag: disposeBag)
     }
     
     func didTapMenuBarButtonItem() {
-        //menuActionCompletion?(self)
-        //TAsk menuStoryboard
-        let menuStoryboard = UIStoryboard(name: "MenuStory", bundle: nil)
-        let menuViewController = MenuViewController.controllerInStoryboard(menuStoryboard)
-        self.transition(type: TransistionType.push(controller: menuViewController))
+        let controller = MenuViewController.controllerFromStoryboard(StoryboardType.menuStory.name)
+        UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
     }
     
     func didTapBadgeButton() {
-        badgeActionCompletion?()
+        let controller = MyTicketsViewController.controllerFromStoryboard(StoryboardType.main.name)
+        UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
     }
     
     func present(message: String) {

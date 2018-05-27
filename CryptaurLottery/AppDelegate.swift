@@ -20,3 +20,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// MARK: App Coordinator
+extension UIApplication {
+    static var sharedCoordinator: ApplicationCoordinator {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.applicationCoordinator
+    }
+}
+

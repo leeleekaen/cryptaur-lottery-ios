@@ -4,7 +4,6 @@ import KeychainSwift
 class PinCodeViewModel: BaseViewModel {
     
     // MARK: - Public properties
-    var loginCompletion: (() -> ())?
     
     // MARK: - Private properties
     private let username = "a.rytikov@nordavind.ru"
@@ -19,7 +18,7 @@ class PinCodeViewModel: BaseViewModel {
                                                pin: pincode, withPin: true)
         
         connectTokenService.perform(input: request,
-                                    success: { [weak self] (response) in
+                                    success: { response in
                                         let keychain = KeychainSwift()
                                         keychain.set(request.username,
                                                      forKey: PlayersKey.username)
@@ -29,7 +28,7 @@ class PinCodeViewModel: BaseViewModel {
                                         keychain.set(response.address.normalizedHexString,
                                                      forKey: PlayersKey.address)
                                         DispatchQueue.main.async {
-                                            self?.loginCompletion?()
+                                            UIApplication.sharedCoordinator.showAuth()
                                         }
             }, failure: defaultServiceFailure)
     }

@@ -45,8 +45,6 @@ class MyTicketsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        state = .active
-        
         gradientBackgroundView.gradientColors = [UIColor.lightblue, UIColor.lighterPurple].map {$0.cgColor}
         gradientBackgroundView.backgroundColor = .clear
         

@@ -66,7 +66,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     }
     
     func badgeAction() {
-        badgeActionCompletion?()
+//        badgeActionCompletion?()
     }
     
     // MARK: - Lifecycle

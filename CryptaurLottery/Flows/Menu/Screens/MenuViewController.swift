@@ -25,18 +25,27 @@ class MenuViewController: BaseViewController {
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
+        //Logout Main meny
+        dismiss(animated: true, completion: nil)
+        
         logoutCompletion?()
     }
     
     @IBAction func ticketsButtonAction(_ sender: Any) {
         print("Tickets button tapped")
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let myTicketsViewController = MyTicketsViewController.controllerInStoryboard(mainStoryboard)
-        //self.addVcNavigationController(vc: myTicketsViewController)
-        //myTicketsViewController.menuActionCompletion = self?.menuActionCompletion
-//        dismiss(animated: true, completion: nil)
-        self.transition(type: TransistionType.present(controller: BaseNavigationController.createNavBar(viewController: myTicketsViewController)))
+        //Dismiss Meny View
+        dismiss(animated: true) {
+            let controller = MyTicketsViewController.controllerFromStoryboard(StoryboardType.main.name)
+            UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
+        }
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let myTicketsViewController = MyTicketsViewController.controllerInStoryboard(mainStoryboard)
+//        self.addVcNavigationController(vc: myTicketsViewController)
+//        myTicketsViewController.menuActionCompletion = self?.menuActionCompletion
+        
+        
         //myTicketsCompletion?()
+        
     }
     
     @IBAction func changePinButtonAction(_ sender: Any) {

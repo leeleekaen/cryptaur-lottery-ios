@@ -62,6 +62,7 @@ extension LotteryListViewController: ListAdapterDataSource {
             guard let cell = cell as? LotteryCardCell,
                 let item = item as? DiffableBox<Draw> else { return }
             
+            cell.delegate = self
             cell.configure(draw: item.value)
             cell.buyTicketCompletion = self?.chooseLotteryCompletion
             
@@ -81,3 +82,12 @@ extension LotteryListViewController: ListAdapterDataSource {
         return viewModel.draws.diffable()
     }
 }
+
+//MARK: LotteryCardCellDelegate
+extension LotteryListViewController: LotteryCardCellDelegate {
+    func lotteryCardCellAction(cell: LotteryCardCell, buttonPressed: UIButton) {
+        let controller = BuyTicketContainerViewController.controllerFromStoryboard(StoryboardType.buyTicketStory.name)
+        UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
+    }
+}
+

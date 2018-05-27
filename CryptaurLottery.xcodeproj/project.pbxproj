@@ -33,7 +33,6 @@
 		9A2071DC208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */; };
 		9A2071DE208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */; };
 		9A2071E0208A29DA00B5D671 /* GetPlayerTicketsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */; };
-		9A2840AD20A17FAB003ECD95 /* LoginFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2840AC20A17FAB003ECD95 /* LoginFlowCoordinator.swift */; };
 		9A3D5775208DD3710007A426 /* UIStackView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D5774208DD3710007A426 /* UIStackView+extension.swift */; };
 		9A3D577A208DE6230007A426 /* PickUpWinRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D5779208DE6230007A426 /* PickUpWinRequestModel.swift */; };
 		9A3D577C208DE77A0007A426 /* PickUpWinServicel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */; };
@@ -63,7 +62,10 @@
 		9AF87DA0208E11B2006326E5 /* GetPlayerAviableBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF87D9F208E11B2006326E5 /* GetPlayerAviableBalanceService.swift */; };
 		9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF8298208642310046A3F8 /* LoginViewController.swift */; };
 		9AFF829B208654B90046A3F8 /* LoginStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFF829A208654B90046A3F8 /* LoginStory.storyboard */; };
-		AC928B5220B8E89B00F49B5A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5120B8E89B00F49B5A /* Coordinator.swift */; };
+		AC928B5420B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5320B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift */; };
+		AC928B5620B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5520B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift */; };
+		AC928B5820B95EE600F49B5A /* SetPinFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5720B95EE600F49B5A /* SetPinFlowCoordinator.swift */; };
+		AC928B5B20B9602A00F49B5A /* ChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5A20B9602A00F49B5A /* ChildCoordinator.swift */; };
 		CE0C41A82077FF1F00190A82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41AA2077FF1F00190A82 /* Localizable.strings */; };
 		CE0C41B4207816BD00190A82 /* LotteryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C41B3207816BD00190A82 /* LotteryCardCell.swift */; };
 		CE0C41B6207816E600190A82 /* LotteryCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41B5207816E600190A82 /* LotteryCardCell.xib */; };
@@ -153,7 +155,6 @@
 		9A2071DB208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsRequestModel.swift; sourceTree = "<group>"; };
 		9A2071DD208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsResponceModel.swift; sourceTree = "<group>"; };
 		9A2071DF208A29DA00B5D671 /* GetPlayerTicketsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerTicketsService.swift; sourceTree = "<group>"; };
-		9A2840AC20A17FAB003ECD95 /* LoginFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowCoordinator.swift; sourceTree = "<group>"; };
 		9A3D5774208DD3710007A426 /* UIStackView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+extension.swift"; sourceTree = "<group>"; };
 		9A3D5779208DE6230007A426 /* PickUpWinRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinRequestModel.swift; sourceTree = "<group>"; };
 		9A3D577B208DE77A0007A426 /* PickUpWinServicel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpWinServicel.swift; sourceTree = "<group>"; };
@@ -183,7 +184,10 @@
 		9AF87D9F208E11B2006326E5 /* GetPlayerAviableBalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerAviableBalanceService.swift; sourceTree = "<group>"; };
 		9AFF8298208642310046A3F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9AFF829A208654B90046A3F8 /* LoginStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStory.storyboard; sourceTree = "<group>"; };
-		AC928B5120B8E89B00F49B5A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		AC928B5320B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedFlowCoordinator.swift; sourceTree = "<group>"; };
+		AC928B5520B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthorizedFlowCoordinator.swift; sourceTree = "<group>"; };
+		AC928B5720B95EE600F49B5A /* SetPinFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPinFlowCoordinator.swift; sourceTree = "<group>"; };
+		AC928B5A20B9602A00F49B5A /* ChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinator.swift; sourceTree = "<group>"; };
 		CE0C41A92077FF1F00190A82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0C41AB2077FF2100190A82 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0C41AC2077FF2300190A82 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -397,6 +401,14 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		AC928B5920B9601A00F49B5A /* ChildCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AC928B5A20B9602A00F49B5A /* ChildCoordinator.swift */,
+			);
+			path = ChildCoordinator;
+			sourceTree = "<group>";
+		};
 		CE254CE0207295FD00A12F72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,9 +528,11 @@
 		CEDE7A0E2089088C00F3BA7F /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				AC928B5920B9601A00F49B5A /* ChildCoordinator */,
 				CEDE7A1320890D8B00F3BA7F /* ApplicationCoordinator.swift */,
-				AC928B5120B8E89B00F49B5A /* Coordinator.swift */,
-				9A2840AC20A17FAB003ECD95 /* LoginFlowCoordinator.swift */,
+				AC928B5320B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift */,
+				AC928B5520B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift */,
+				AC928B5720B95EE600F49B5A /* SetPinFlowCoordinator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -886,6 +900,7 @@
 				CEF6AD5620722892004BA072 /* BaseViewController.swift in Sources */,
 				9A2071E0208A29DA00B5D671 /* GetPlayerTicketsService.swift in Sources */,
 				9A0957672089E4720069EF28 /* GetWinAmountResponceModel.swift in Sources */,
+				AC928B5420B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift in Sources */,
 				CE9C06B42088DE2A00535869 /* GetCurrentLotteriesResponseModel.swift in Sources */,
 				CEDE7A1420890D8B00F3BA7F /* ApplicationCoordinator.swift in Sources */,
 				9A095769208A06A20069EF28 /* GetWinAmountRequestModel.swift in Sources */,
@@ -895,13 +910,12 @@
 				227C98D8208F3E1F000A5A7F /* DrawDetailsTicketCell.swift in Sources */,
 				CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */,
 				9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */,
+				AC928B5620B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift in Sources */,
 				9AF87D99208E0A9A006326E5 /* BuyTicketViewModel.swift in Sources */,
 				CE60B0C72077C7FC00EEC363 /* NSObject+ClassName.swift in Sources */,
 				9A3D577C208DE77A0007A426 /* PickUpWinServicel.swift in Sources */,
-				AC928B5220B8E89B00F49B5A /* Coordinator.swift in Sources */,
 				CEDAC84A2076421600E3EA36 /* LotteryListViewController.swift in Sources */,
 				9A50D3D12091C44500DFA072 /* PinCodeViewModel.swift in Sources */,
-				9A2840AD20A17FAB003ECD95 /* LoginFlowCoordinator.swift in Sources */,
 				9A2071DE208A281C00B5D671 /* GetPlayerTicketsResponceModel.swift in Sources */,
 				9AE714742088DAF900D7F399 /* DrawArchiveCardCell.swift in Sources */,
 				CE3A094C2076688500875A2C /* BalanceView.swift in Sources */,
@@ -911,6 +925,7 @@
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
 				9A3D577E208DF0770007A426 /* PickUpWinResponceModel.swift in Sources */,
 				22D821F3208BF739007689E7 /* DrawDetailsWinnerCell.swift in Sources */,
+				AC928B5B20B9602A00F49B5A /* ChildCoordinator.swift in Sources */,
 				CE1068192074D357004CD0B4 /* UInt256+FromHexString.swift in Sources */,
 				CE254CDD2072940E00A12F72 /* ServiceError.swift in Sources */,
 				9AF87D9E208E112C006326E5 /* GetPlayerAviableBalanceResponceModel.swift in Sources */,
@@ -921,6 +936,7 @@
 				9A01E5CF20AC1AF600A35DD3 /* WinTicket.swift in Sources */,
 				CE647F3B2075157400B334E3 /* JSONDeserializable.swift in Sources */,
 				9A9E83A52087803300D7E9BD /* BuyTicketContainerViewController.swift in Sources */,
+				AC928B5820B95EE600F49B5A /* SetPinFlowCoordinator.swift in Sources */,
 				CE60B0C12077C5AA00EEC363 /* BadgeView.swift in Sources */,
 				9AD67700208F49A50080DE6E /* Bool+extension.swift in Sources */,
 				CE60B0B92077B24B00EEC363 /* BadgeViewModel.swift in Sources */,
