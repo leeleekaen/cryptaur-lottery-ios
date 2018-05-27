@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class MenuViewController: BaseViewController {
     
@@ -26,9 +27,12 @@ class MenuViewController: BaseViewController {
     
     @IBAction func logoutButtonAction(_ sender: Any) {
         //Logout Main meny
-        dismiss(animated: true, completion: nil)
-        
-        logoutCompletion?()
+        print("Logout button")
+        let keychain = KeychainSwift()
+        keychain.clear()
+        dismiss(animated: true) {
+            UIApplication.sharedCoordinator.showUnauth()
+        }
     }
     
     @IBAction func ticketsButtonAction(_ sender: Any) {
@@ -38,18 +42,13 @@ class MenuViewController: BaseViewController {
             let controller = MyTicketsViewController.controllerFromStoryboard(StoryboardType.main.name)
             UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
         }
-//        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let myTicketsViewController = MyTicketsViewController.controllerInStoryboard(mainStoryboard)
-//        self.addVcNavigationController(vc: myTicketsViewController)
-//        myTicketsViewController.menuActionCompletion = self?.menuActionCompletion
-        
-        
-        //myTicketsCompletion?()
-        
     }
     
     @IBAction func changePinButtonAction(_ sender: Any) {
-        changePINCompletion?()
+        print("Change PIN button")
+        dismiss(animated: true) {
+             UIApplication.sharedCoordinator.showPin(flow: .setPin)
+        }
     }
     
     @IBAction func howToPlayButtonAction(_ sender: Any) {

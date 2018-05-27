@@ -72,7 +72,20 @@ class PinCodeViewController: BaseViewController {
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        showAlertMessage()
         bind(viewModel)
+    }
+    
+    //MARK: loadView
+    func showAlertMessage() {
+        switch flow {
+        case .setPin:
+            self.presentAlert(message: "Set PIN code")
+        case .confirmPin( _):
+            self.presentAlert(message: "Set PIN code again")
+        default:
+            break
+        }
     }
     
     // MARK: - Public methods
@@ -91,10 +104,12 @@ class PinCodeViewController: BaseViewController {
         case .setPin:
             let confirm = PinCodeViewController.controllerFromStoryboard(StoryboardType.login.name)
             confirm.flow = .confirmPin(previous: pinCode)
+            reset()
             UIApplication.sharedCoordinator.transition(type: .present(controller: confirm, completion: nil))
         case .confirmPin(let previous):
             guard previous == pinCode else {
-                present(message: "Pin codes are not equals")
+                presentAlert(message: "Pin codes are not equals")
+                reset()
                 return
             }
             UIApplication.sharedCoordinator.showAuth()
@@ -102,9 +117,6 @@ class PinCodeViewController: BaseViewController {
     }
     
     func reset() {
-        if pinCode.count == 4 {
-            viewModel.submit(pincode: pinCode)
-        }
         pinCode = ""
     }
 }

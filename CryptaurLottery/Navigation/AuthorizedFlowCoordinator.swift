@@ -18,6 +18,7 @@ class AuthorizedFlowCoordinator: ChildCoordinator {
     
     func start() {
         let controller = LotteryListViewController.controllerFromStoryboard(StoryboardType.main.name)
-        self.rootCoordinator.transition(type: .setRootWindow(controller: controller))
+        UIApplication.sharedCoordinator.navigationController.viewControllers = [controller]
+        self.rootCoordinator.transition(type: .setRootWindow(controller:  UIApplication.sharedCoordinator.navigationController))
     }
 }

@@ -64,11 +64,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     var badge: Driver<String> {
         return badgeSubject.asDriver(onErrorJustReturn: "")
     }
-    
-    func badgeAction() {
-//        badgeActionCompletion?()
-    }
-    
+
     // MARK: - Lifecycle
     override init() {
         super.init()

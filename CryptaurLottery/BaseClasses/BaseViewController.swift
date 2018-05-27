@@ -64,7 +64,7 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     
     func didTapMenuBarButtonItem() {
         let controller = MenuViewController.controllerFromStoryboard(StoryboardType.menuStory.name)
-        UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
+        UIApplication.sharedCoordinator.transition(type: .present(controller: controller, completion: nil))
     }
     
     func didTapBadgeButton() {
@@ -72,10 +72,12 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
         UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
     }
     
-    func present(message: String) {
+    func presentAlert(message: String) {
         
         let alertController = UIAlertController(title: message, message: nil, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alertController, animated: true, completion: nil)
+        }
     }
 }

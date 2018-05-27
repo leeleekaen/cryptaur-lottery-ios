@@ -66,6 +66,8 @@
 		AC928B5620B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5520B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift */; };
 		AC928B5820B95EE600F49B5A /* SetPinFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5720B95EE600F49B5A /* SetPinFlowCoordinator.swift */; };
 		AC928B5B20B9602A00F49B5A /* ChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5A20B9602A00F49B5A /* ChildCoordinator.swift */; };
+		AC928B5D20BA753B00F49B5A /* UIWindow+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5C20BA753B00F49B5A /* UIWindow+Animate.swift */; };
+		AC928B6020BA76CD00F49B5A /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5F20BA76CD00F49B5A /* CoordinatorType.swift */; };
 		CE0C41A82077FF1F00190A82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41AA2077FF1F00190A82 /* Localizable.strings */; };
 		CE0C41B4207816BD00190A82 /* LotteryCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C41B3207816BD00190A82 /* LotteryCardCell.swift */; };
 		CE0C41B6207816E600190A82 /* LotteryCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0C41B5207816E600190A82 /* LotteryCardCell.xib */; };
@@ -188,6 +190,8 @@
 		AC928B5520B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthorizedFlowCoordinator.swift; sourceTree = "<group>"; };
 		AC928B5720B95EE600F49B5A /* SetPinFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPinFlowCoordinator.swift; sourceTree = "<group>"; };
 		AC928B5A20B9602A00F49B5A /* ChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinator.swift; sourceTree = "<group>"; };
+		AC928B5C20BA753B00F49B5A /* UIWindow+Animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Animate.swift"; sourceTree = "<group>"; };
+		AC928B5F20BA76CD00F49B5A /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		CE0C41A92077FF1F00190A82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0C41AB2077FF2100190A82 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE0C41AC2077FF2300190A82 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -409,6 +413,14 @@
 			path = ChildCoordinator;
 			sourceTree = "<group>";
 		};
+		AC928B5E20BA76B400F49B5A /* CoordinatorType */ = {
+			isa = PBXGroup;
+			children = (
+				AC928B5F20BA76CD00F49B5A /* CoordinatorType.swift */,
+			);
+			path = CoordinatorType;
+			sourceTree = "<group>";
+		};
 		CE254CE0207295FD00A12F72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +472,7 @@
 				9AD676FF208F49A50080DE6E /* Bool+extension.swift */,
 				9A963B812092059A00812DBD /* Int+extension.swift */,
 				9A01F48F2093471500A00348 /* UIResponder+extension.swift */,
+				AC928B5C20BA753B00F49B5A /* UIWindow+Animate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +541,7 @@
 		CEDE7A0E2089088C00F3BA7F /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				AC928B5E20BA76B400F49B5A /* CoordinatorType */,
 				AC928B5920B9601A00F49B5A /* ChildCoordinator */,
 				CEDE7A1320890D8B00F3BA7F /* ApplicationCoordinator.swift */,
 				AC928B5320B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift */,
@@ -922,6 +936,7 @@
 				9A9E83A72087882300D7E9BD /* BuyTicketViewController.swift in Sources */,
 				CEF6AD5420722892004BA072 /* AppDelegate.swift in Sources */,
 				9A01E5CD20AC1ACB00A35DD3 /* GetWinTicketsResponceModel.swift in Sources */,
+				AC928B5D20BA753B00F49B5A /* UIWindow+Animate.swift in Sources */,
 				CE3D2DFE207264BB00C28251 /* UIFont+FontBook.swift in Sources */,
 				9A3D577E208DF0770007A426 /* PickUpWinResponceModel.swift in Sources */,
 				22D821F3208BF739007689E7 /* DrawDetailsWinnerCell.swift in Sources */,
@@ -953,6 +968,7 @@
 				9A0957652089DD6E0069EF28 /* Ticket.swift in Sources */,
 				CE0C41B82078244B00190A82 /* Diffable.swift in Sources */,
 				CE9C06B22088DDEC00535869 /* GetCurrentLotteriesService.swift in Sources */,
+				AC928B6020BA76CD00F49B5A /* CoordinatorType.swift in Sources */,
 				9A2071DC208A27CF00B5D671 /* GetPlayerTicketsRequestModel.swift in Sources */,
 				CE4AE98B2081D5C9000763F4 /* MyTicketsViewController.swift in Sources */,
 				9A09576B208A08EC0069EF28 /* GetWinAmountService.swift in Sources */,

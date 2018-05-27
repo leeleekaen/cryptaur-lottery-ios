@@ -11,7 +11,7 @@ final class LotteryListViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
 
     // MARK: - Public properties
-    var chooseLotteryCompletion: ((_ draw: Draw) -> ())?
+    var draw: Draw?
     
     // MARK: - Private properties
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
@@ -64,7 +64,7 @@ extension LotteryListViewController: ListAdapterDataSource {
             
             cell.delegate = self
             cell.configure(draw: item.value)
-            cell.buyTicketCompletion = self?.chooseLotteryCompletion
+            self?.draw = item.value
             
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
@@ -87,6 +87,7 @@ extension LotteryListViewController: ListAdapterDataSource {
 extension LotteryListViewController: LotteryCardCellDelegate {
     func lotteryCardCellAction(cell: LotteryCardCell, buttonPressed: UIButton) {
         let controller = BuyTicketContainerViewController.controllerFromStoryboard(StoryboardType.buyTicketStory.name)
+        controller.draw = draw
         UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
     }
 }

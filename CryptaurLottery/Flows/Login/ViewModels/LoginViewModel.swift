@@ -51,15 +51,16 @@ final class LoginViewModel: BaseViewModel {
         }
         
         let request = ConnectTokenRequestModel(username: username, password: password,
-                                               pin: "1234", withPin: false)
+                                               pin: "", withPin: false)
         connectTokenService.perform(input: request,
                                     success: { response in
-                                        let keychain = KeychainSwift()
+                                        let keychain = UIApplication.sharedCoordinator.keychain
                                         keychain.set(request.username,
                                                      forKey: PlayersKey.username)
+                                        keychain.set(request.password,
+                                                     forKey: PlayersKey.password)
                                         keychain.set(response.accessToken,
                                                      forKey: PlayersKey.accessToken)
-                                        
                                         keychain.set(response.address.normalizedHexString,
                                                      forKey: PlayersKey.address)
                                         DispatchQueue.main.async {

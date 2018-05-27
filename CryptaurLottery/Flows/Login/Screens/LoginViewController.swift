@@ -75,7 +75,7 @@ final class LoginViewController: BaseViewController {
 // MARK: LoginViewModelDelegate
 extension LoginViewController: LoginViewModelDelegate {
     func showAlertWith(message: String) {
-        present(message: message)
+        presentAlert(message: message)
     }
 }
 

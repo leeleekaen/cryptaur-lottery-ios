@@ -1,72 +1,9 @@
 import UIKit
 import KeychainSwift
 
-//enum TransistionType {
-//    case push(controller: UIViewController)
-//    case present(controller: UIViewController)
-//    case setRootWindow(controller: UIViewController)
-//    case dismiss
-//    case pop
-//   // case addNavigation(controller: UIViewController)
-//}
-
-enum TransistionType {
-    case push(controller: UIViewController)
-    case present(controller: UIViewController, completion: (() -> Void)?)
-    case setRootWindow(controller: UIViewController)
-    case dismiss(completion: (() -> Void)?)
-    case pop
-}
-
-
-enum TransistionVC {
-    case lotteryListViewController
-    case buyTicketContainerViewController
-    case menuViewController
-    case myTicketsViewController
-    
-    var value: String {
-        switch self {
-        case .lotteryListViewController:
-            return "LotteryListViewController"
-        case .buyTicketContainerViewController:
-            return "BuyTicketContainerViewController"
-        case .menuViewController:
-            return "MenuViewController"
-        case .myTicketsViewController:
-            return "MyTicketsViewController"
-        }
-    }
-}
-
-enum StoryboardType {
-    case main
-    case buyTicketStory
-    case menuStory
-    case login
-    
-    var name: String {
-        switch self {
-        case .main:
-            return "Main"
-        case .buyTicketStory:
-            return "BuyTicketStory"
-        case .menuStory:
-            return "MenuStory"
-        case .login:
-            return "LoginStory"
-        }
-    }
-}
-
 final class ApplicationCoordinator {
     
-    var navigationController: BaseNavigationController?
-    
-    func addVcNavigationController(vc: UIViewController) {
-        navigationController = BaseNavigationController()
-        navigationController?.viewControllers = [vc]
-    }
+    var navigationController = BaseNavigationController()
     
     private weak var window: UIWindow?
     private var childCoordinator: ChildCoordinator? {
@@ -75,7 +12,7 @@ final class ApplicationCoordinator {
         }
     }
     
-    private let keychain = KeychainSwift()
+    let keychain = KeychainSwift()
 
     init(window: UIWindow) {
         self.window = window
@@ -104,10 +41,9 @@ final class ApplicationCoordinator {
         childCoordinator = AuthorizedFlowCoordinator(rootCoordinator: self)
     }
     
-    
     func transition(type: TransistionType) {
         func isNeedShow(controller: UIViewController) -> Bool {
-            if let currentController = navigationController?.topViewController,
+            if let currentController = navigationController.topViewController,
                 object_getClassName(currentController) == object_getClassName(controller) {
                 return false
             }
@@ -117,16 +53,16 @@ final class ApplicationCoordinator {
         switch type {
         case .push(let controller):
             if isNeedShow(controller: controller) {
-                self.navigationController?.pushViewController(controller, animated: true)
+                self.navigationController.pushViewController(controller, animated: true)
             }
         case .present(let controller, let completion):
             if isNeedShow(controller: controller) {
                 self.window?.rootViewController?.present(controller, animated: true, completion: completion)
             }
         case .setRootWindow(let controller):
-            UIApplication.shared.keyWindow?.rootViewController = controller
+            UIApplication.shared.keyWindow?.setRootViewController(controller, options: UIWindow.TransitionOptions(direction: UIWindow.TransitionOptions.Direction.toTop, style: UIWindow.TransitionOptions.Curve.linear))
         case .pop:
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController.popViewController(animated: true)
         case .dismiss(let completion):
             self.window?.rootViewController?.dismiss(animated: true, completion: completion)
         }

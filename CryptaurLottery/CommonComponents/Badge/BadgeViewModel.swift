@@ -11,5 +11,4 @@ import RxCocoa
 
 protocol BadgeViewModelProtocol {
     var badge: Driver<String> { get }
-    func badgeAction()
 }

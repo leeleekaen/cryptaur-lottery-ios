@@ -77,11 +77,11 @@ class BuyTicketViewController: BaseViewController {
         }).disposed(by: disposeBag)
         
         viewModel.sendBuyTicketCompletion = { [weak self] in
-            self?.present(message: "Send request to buy ticket")
+            self?.presentAlert(message: "Send request to buy ticket")
         }
         
         viewModel.buyTicketCompletion = { [weak self] trx in
-            self?.present(message: "Success buy ticket. Check transaction \(trx)")
+            self?.presentAlert(message: "Success buy ticket. Check transaction \(trx)")
         }
     }
 }

@@ -24,6 +24,7 @@ final class BadgeView: UIView {
     }
     
     @IBAction private func didTapBadgeButton(_ sender: UIButton) {
-        viewModel.badgeAction()
+        let controller = MyTicketsViewController.controllerFromStoryboard(StoryboardType.main.name)
+        UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
     }
 }
