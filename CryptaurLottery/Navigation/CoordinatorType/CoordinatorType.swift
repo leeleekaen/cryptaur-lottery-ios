@@ -17,7 +17,6 @@ enum TransistionType {
     case pop
 }
 
-
 enum TransistionVC {
     case lotteryListViewController
     case buyTicketContainerViewController

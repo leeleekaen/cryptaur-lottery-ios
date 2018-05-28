@@ -47,7 +47,7 @@ class MenuViewController: BaseViewController {
     @IBAction func changePinButtonAction(_ sender: Any) {
         print("Change PIN button")
         dismiss(animated: true) {
-             UIApplication.sharedCoordinator.showPin(flow: .setPin)
+            UIApplication.sharedCoordinator.showPin(flow: .setPin, exitType: .changePin)
         }
     }
     

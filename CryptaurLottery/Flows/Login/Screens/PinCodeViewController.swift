@@ -8,8 +8,10 @@ class PinCodeViewController: BaseViewController {
         case askPin
     }
     
-    // MARK: - Public properties
-    var pincodeCompletion: ((String) -> ())?
+    enum ExitType {
+        case changePin
+        case defaultPin
+    }
     
     // MARK: - IBOutlet
     @IBOutlet weak var pinCodePageControl: UIPageControl! {
@@ -23,6 +25,7 @@ class PinCodeViewController: BaseViewController {
     // MARK: - Dependency
     let viewModel = PinCodeViewModel()
     var flow: Flow = .askPin
+    var exitTypeValue: ExitType = .defaultPin
     
     // MARK: - IBAction
     @IBAction func enterByLogindAction(_ sender: UIButton) {
@@ -38,7 +41,12 @@ class PinCodeViewController: BaseViewController {
     }
     
     @IBAction func exitAction(_ sender: UIButton) {
-        UIApplication.sharedCoordinator.showUnauth()
+        switch exitTypeValue {
+        case .changePin:
+            UIApplication.sharedCoordinator.showAuth()
+        case .defaultPin:
+            UIApplication.sharedCoordinator.showUnauth()
+        }
     }
     
     @IBAction func backspaceAction(_ sender: UIButton) {
@@ -97,15 +105,23 @@ class PinCodeViewController: BaseViewController {
         enterByLoginButton.isHidden = false
     }
     
-    func showNext() {
+    // MARK: - Private methods
+   private func configureConfirmPin() {
+        let confirm = PinCodeViewController.controllerFromStoryboard(StoryboardType.login.name)
+        confirm.flow = .confirmPin(previous: pinCode)
+        if exitTypeValue == ExitType.changePin {
+            confirm.exitTypeValue = .changePin
+        }
+        reset()
+        UIApplication.sharedCoordinator.transition(type: .present(controller: confirm, completion: nil))
+    }
+    
+    private func showNext() {
         switch flow {
         case .askPin:
             viewModel.submit(pincode: pinCode)
         case .setPin:
-            let confirm = PinCodeViewController.controllerFromStoryboard(StoryboardType.login.name)
-            confirm.flow = .confirmPin(previous: pinCode)
-            reset()
-            UIApplication.sharedCoordinator.transition(type: .present(controller: confirm, completion: nil))
+            configureConfirmPin()
         case .confirmPin(let previous):
             guard previous == pinCode else {
                 presentAlert(message: "Pin codes are not equals")

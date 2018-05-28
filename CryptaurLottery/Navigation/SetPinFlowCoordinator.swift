@@ -9,8 +9,11 @@
 import Foundation
 
 class SetPinFlowCoordinator: ChildCoordinator {
+    
     var rootCoordinator: ApplicationCoordinator
+    
     var pinControllerFlow: PinCodeViewController.Flow = .askPin
+    var exitTypeValue: PinCodeViewController.ExitType = .defaultPin
     
     // MARK: Private properties
     
@@ -21,6 +24,7 @@ class SetPinFlowCoordinator: ChildCoordinator {
     func start() {
         let controller = PinCodeViewController.controllerFromStoryboard(StoryboardType.login.name)
         controller.flow = pinControllerFlow
+        controller.exitTypeValue = exitTypeValue
         rootCoordinator.transition(type: .setRootWindow(controller: controller))
     }
 }

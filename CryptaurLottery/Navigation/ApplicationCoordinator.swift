@@ -20,23 +20,24 @@ final class ApplicationCoordinator {
     
     func start() {
         if keychain.get(PlayersKey.username) != nil {
-            showPin(flow: .askPin)
+            showPin(flow: .askPin, exitType: .defaultPin)
         } else {
             showUnauth()
         }
     }
     
-    //LoginPassword
+    //Login and Password
     func showUnauth() {
         childCoordinator = UnathorizedFlowCoordinator(rootCoordinator: self)
     }
     //Show Pin
-    func showPin(flow: PinCodeViewController.Flow) {
+    func showPin(flow: PinCodeViewController.Flow, exitType: PinCodeViewController.ExitType) {
         let child = SetPinFlowCoordinator(rootCoordinator: self)
         child.pinControllerFlow = flow
+        child.exitTypeValue = exitType
         childCoordinator = child
     }
-    //Main meny List
+    //Meny List
     func showAuth() {
         childCoordinator = AuthorizedFlowCoordinator(rootCoordinator: self)
     }

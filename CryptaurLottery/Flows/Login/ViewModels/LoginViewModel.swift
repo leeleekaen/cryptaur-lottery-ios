@@ -64,7 +64,7 @@ final class LoginViewModel: BaseViewModel {
                                         keychain.set(response.address.normalizedHexString,
                                                      forKey: PlayersKey.address)
                                         DispatchQueue.main.async {
-                                            UIApplication.sharedCoordinator.showPin(flow: .setPin)
+                                            UIApplication.sharedCoordinator.showPin(flow: .setPin, exitType: .defaultPin)
                                         }
             }, failure: defaultServiceFailure)
     }
