@@ -19,12 +19,11 @@ final class ApplicationCoordinator {
     }
     
     func start() {
-       showAuth()
-//        if keychain.get(PlayersKey.username) != nil {
-//            showPin(flow: .askPin, exitType: .defaultPin)
-//        } else {
-//            showUnauth()
-//        }
+        if keychain.get(PlayersKey.username) != nil {
+            showPin(flow: .askPin, exitType: .defaultPin)
+        } else {
+            showUnauth()
+        }
     }
     
     //Login and Password

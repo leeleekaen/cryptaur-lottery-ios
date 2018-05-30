@@ -15,6 +15,11 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     var balance: Driver<String> {
         return balanceSubject.asDriver(onErrorJustReturn: "")
     }
+    
+    var badge: Driver<String> {
+        return badgeSubject.asDriver(onErrorJustReturn: "")
+    }
+
     var badgeActionCompletion:(() -> ())?
     var updateCompletion: (() -> ())?
     
@@ -61,10 +66,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
         getBalance()
     }
 
-    var badge: Driver<String> {
-        return badgeSubject.asDriver(onErrorJustReturn: "")
-    }
-
+    
     // MARK: - Lifecycle
     override init() {
         super.init()
@@ -91,7 +93,6 @@ private extension BalanceViewModel {
                                 if responce.balance != UInt256(integerLiteral: 0) {
                                     balance.removeLast(5)
                                 }
-                                print("Balance - \(balance)")
                                 sself.balanceSubject.onNext(balance + " CPT")
             }, failure: defaultServiceFailure)
     }
