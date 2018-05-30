@@ -9,7 +9,7 @@ final class LotteryListViewController: BaseViewController {
     @IBOutlet weak var gradientBackgroundView: GradientBackgroundView!
     @IBOutlet weak var prizePoolAmountLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     // MARK: - Public properties
     var draw: Draw?
     
@@ -20,22 +20,16 @@ final class LotteryListViewController: BaseViewController {
     // MARK: - Viewcontroller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = " "
-        gradientBackgroundView.gradientColors = [UIColor.lightblue, UIColor.lighterPurple].map {$0.cgColor}
-        gradientBackgroundView.backgroundColor = .clear
-
-        configureNavigationItem(showBalance: true)
-
-        collectionView.contentInset = .zero
-        
-        adapter.collectionView = collectionView
-        adapter.dataSource = self
+        setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.tintColor = .white
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     override func bind() {
@@ -51,6 +45,34 @@ final class LotteryListViewController: BaseViewController {
             if $0 != UInt256(integerLiteral: 0) { amount.removeLast(5) }
             self?.prizePoolAmountLabel.text = amount + " CPT"
         }).disposed(by: disposeBag)
+    }
+}
+
+//MARK: Setup View
+extension LotteryListViewController {
+    func setupView() {
+        title = " "
+        gradientBackgroundView.gradientColors = [UIColor.lightblue, UIColor.lighterPurple].map {$0.cgColor}
+        gradientBackgroundView.backgroundColor = .clear
+        
+        configureNavigationItem(showBalance: true)
+        
+        collectionView.contentInset = .zero
+        
+        adapter.collectionView = collectionView
+        adapter.dataSource = self
+        safeAreaConstraints()
+    }
+    
+    func safeAreaConstraints () {
+        if #available(iOS 11, *) {
+            // safe area constraints already set
+        } else {
+            guard let navigation = self.navigationController else {
+                return
+            }
+            topConstraint.constant += navigation.navigationBar.frame.height
+        }
     }
 }
 

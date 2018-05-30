@@ -10,33 +10,14 @@ class MyTicketsViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var getTheWinButton: UIButton!
-    
-    // MARK: - IBACtion
-    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        
-        switch sender.selectedSegmentIndex {
-        case 0:
-            state = .active
-        case 1:
-            state = .played
-        default:
-            fatalError("Unknown state")
-        }
-    }
-    
-    @IBAction func getTheWin(_ sender: UIButton) {
-        print("Get win button tapped")
-        viewModel.pickUpWin()
-    }
-    
-    // MARK: - Public properties
+    @IBOutlet weak var topConstraintSegmentedControl: NSLayoutConstraint!
     
     // MARK: - Private properties
     var refresher:UIRefreshControl!
     
     private let viewModel = MyTicketsViewModel()
     lazy private var adapter: ListAdapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self)
-
+    
     var state: State = .active {
         didSet { adapter.reloadData() }
     }
@@ -44,23 +25,19 @@ class MyTicketsViewController: BaseViewController {
     // MARK: - Viewcontroller lidecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         
-        gradientBackgroundView.gradientColors = [UIColor.lightblue, UIColor.lighterPurple].map {$0.cgColor}
-        gradientBackgroundView.backgroundColor = .clear
-        
-        configureNavigationItem(showBalance: true)
-        configurePullToRefresh()
-        
-        collectionView.contentInset = .zero
-        
-        adapter.collectionView = collectionView
-        adapter.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.tintColor = .white
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
     
     func configurePullToRefresh() {
         collectionView.alwaysBounceVertical = true
@@ -89,6 +66,34 @@ class MyTicketsViewController: BaseViewController {
         viewModel.winAmount.drive(onNext: { [weak self] in
             self?.prizePoolAmountLabel.text = $0.toStringWithDelimeters() + " CPT"
         }).disposed(by: disposeBag)
+    }
+}
+
+//MARk: Setup View
+extension MyTicketsViewController {
+    func setupView() {
+        gradientBackgroundView.gradientColors = [UIColor.lightblue, UIColor.lighterPurple].map {$0.cgColor}
+        gradientBackgroundView.backgroundColor = .clear
+        
+        configureNavigationItem(showBalance: true)
+        configurePullToRefresh()
+        
+        collectionView.contentInset = .zero
+        
+        adapter.collectionView = collectionView
+        adapter.dataSource = self
+        safeAreaConstraints()
+    }
+    
+    func safeAreaConstraints () {
+        if #available(iOS 11, *) {
+            // safe area constraints already set
+        } else {
+            guard let navigation = self.navigationController else {
+                return
+            }
+            topConstraintSegmentedControl.constant += navigation.navigationBar.frame.height*1.5
+        }
     }
 }
 
@@ -130,6 +135,27 @@ extension MyTicketsViewController: ListAdapterDataSource {
         case .played:
             return viewModel.allPlayedTickets.diffable()
         }
+    }
+}
+
+//MARK: - IBACtion
+extension MyTicketsViewController {
+    // MARK:
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            state = .active
+        case 1:
+            state = .played
+        default:
+            fatalError("Unknown state")
+        }
+    }
+    
+    @IBAction func getTheWin(_ sender: UIButton) {
+        print("Get win button tapped")
+        viewModel.pickUpWin()
     }
 }
 
