@@ -55,12 +55,11 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     }
     
     private func createBadgeBarButtonItem() -> UIBarButtonItem {
-        let viewModel = BalanceViewModel()
-        viewModel.badgeActionCompletion = { [weak self] in
+        balanceViewModel.badgeActionCompletion = { [weak self] in
             let controller = MyTicketsViewController.controllerFromStoryboard(StoryboardType.main.name)
             UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
         }
-        return .badge(viewModel: viewModel, disposeBag: disposeBag)
+        return .badge(viewModel: balanceViewModel, disposeBag: disposeBag)
     }
     
     func didTapMenuBarButtonItem() {

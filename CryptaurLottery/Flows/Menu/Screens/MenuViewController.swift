@@ -13,8 +13,9 @@ import UInt256
 import KeychainSwift
 
 class MenuViewController: BaseViewController {
-    
-    private var viewModel: BalanceViewModelProtocol!
+
+    private var viewModelBalance: BalanceViewModel!
+    private var viewModelBadge: BadgeViewModelProtocol!
     
      // MARK: - IBOutlets
     @IBOutlet weak var winTicketsButton: UIButton!
@@ -22,14 +23,34 @@ class MenuViewController: BaseViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var playerAddressLabel: UILabel!
     
-    // MARK: - IBAction
+    // MARK: - ViewController lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+    
+    //MARK: bind
+    func bind(viewModel: BalanceViewModel, disposeBag: DisposeBag) {
+        self.viewModelBalance = viewModel
+        viewModelBalance.balance.drive(onNext: { [weak self] in
+            self?.purseButton.setTitle($0, for: .normal)
+        }).disposed(by: disposeBag)
+        
+        viewModelBalance.badge.drive(onNext: { [weak self] in
+            self?.winTicketsButton.setTitle($0, for: .normal)
+        }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: - IBAction
+extension MenuViewController {
     @IBAction func closeButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func purseButtonAction(_ sender: Any) {
         print("Purse button tapped")
-        viewModel.balanceAction()
+        viewModelBalance.balanceAction()
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
@@ -60,20 +81,6 @@ class MenuViewController: BaseViewController {
     
     @IBAction func howToPlayButtonAction(_ sender: Any) {
         print("HowToPlay button tapped");
-    }
-    
-    // MARK: - ViewController lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-    }
-    
-    //MARK: bind
-    func bind(viewModel: BalanceViewModelProtocol, disposeBag: DisposeBag) {
-        self.viewModel = viewModel
-        viewModel.balance.drive(onNext: { [weak self] in
-            self?.purseButton.setTitle($0, for: .normal)
-        }).disposed(by: disposeBag)
     }
 }
 

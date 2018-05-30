@@ -275,6 +275,7 @@ class LotteryTicketsDataSource: NSObject, ListAdapterDataSource {
     
     public var winnerTickets: [WinTicket]? = nil
     
+    
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         
         guard let winners = winnerTickets else {

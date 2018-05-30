@@ -34,24 +34,6 @@ class MyTicketsViewController: BaseViewController {
         navigationController?.navigationBar.tintColor = .white
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
-    
-    func configurePullToRefresh() {
-        collectionView.alwaysBounceVertical = true
-        refresher = UIRefreshControl()
-        refresher.tintColor = .white
-        refresher.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        collectionView.addSubview(refresher)
-    }
-    
-    @objc private func refresh() {
-        viewModel.reset()
-        viewModel.getNext()
-        refresher.endRefreshing()
-    }
     
     // MARK: - Binding
     override func bind() {
@@ -94,6 +76,14 @@ extension MyTicketsViewController {
             }
             topConstraintSegmentedControl.constant += navigation.navigationBar.frame.height*1.5
         }
+    }
+    
+    func configurePullToRefresh() {
+        collectionView.alwaysBounceVertical = true
+        refresher = UIRefreshControl()
+        refresher.tintColor = .white
+        refresher.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.addSubview(refresher)
     }
 }
 
@@ -140,7 +130,13 @@ extension MyTicketsViewController: ListAdapterDataSource {
 
 //MARK: - IBACtion
 extension MyTicketsViewController {
-    // MARK:
+    
+    @objc private func refresh() {
+        viewModel.reset()
+        viewModel.getNext()
+        refresher.endRefreshing()
+    }
+    
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {

@@ -62,6 +62,7 @@
 		9AF87DA0208E11B2006326E5 /* GetPlayerAviableBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF87D9F208E11B2006326E5 /* GetPlayerAviableBalanceService.swift */; };
 		9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF8298208642310046A3F8 /* LoginViewController.swift */; };
 		9AFF829B208654B90046A3F8 /* LoginStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFF829A208654B90046A3F8 /* LoginStory.storyboard */; };
+		AC8B22B220BF018D0080B444 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B22B120BF018D0080B444 /* MenuViewModel.swift */; };
 		AC928B5420B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5320B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift */; };
 		AC928B5620B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5520B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift */; };
 		AC928B5820B95EE600F49B5A /* SetPinFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5720B95EE600F49B5A /* SetPinFlowCoordinator.swift */; };
@@ -186,6 +187,7 @@
 		9AF87D9F208E11B2006326E5 /* GetPlayerAviableBalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerAviableBalanceService.swift; sourceTree = "<group>"; };
 		9AFF8298208642310046A3F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9AFF829A208654B90046A3F8 /* LoginStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStory.storyboard; sourceTree = "<group>"; };
+		AC8B22B120BF018D0080B444 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		AC928B5320B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedFlowCoordinator.swift; sourceTree = "<group>"; };
 		AC928B5520B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthorizedFlowCoordinator.swift; sourceTree = "<group>"; };
 		AC928B5720B95EE600F49B5A /* SetPinFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPinFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				22C18CE02088127300DBBCD8 /* MenuStory.storyboard */,
 				22C18CE220882DF200DBBCD8 /* MenuViewController.swift */,
+				AC8B22B120BF018D0080B444 /* MenuViewModel.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -976,6 +979,7 @@
 				9AF87D9C208E1102006326E5 /* GetPlayerAviableBalanceRequestModel.swift in Sources */,
 				CE60B0BD2077B36B00EEC363 /* UIBarButtonItem+Extension.swift in Sources */,
 				CEF6AD882072413E004BA072 /* BaseViewModel.swift in Sources */,
+				AC8B22B220BF018D0080B444 /* MenuViewModel.swift in Sources */,
 				CE57D6E72073E47F00BA1161 /* GetTicketPriceResponseModel.swift in Sources */,
 				9A3D577A208DE6230007A426 /* PickUpWinRequestModel.swift in Sources */,
 				9A0D138C20889EA300B5A630 /* MyTicketsCardCell.swift in Sources */,
