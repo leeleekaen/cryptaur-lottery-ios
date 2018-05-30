@@ -19,7 +19,7 @@ final class ApplicationCoordinator {
     }
     
     func start() {
-        showAuth()
+       showAuth()
 //        if keychain.get(PlayersKey.username) != nil {
 //            showPin(flow: .askPin, exitType: .defaultPin)
 //        } else {

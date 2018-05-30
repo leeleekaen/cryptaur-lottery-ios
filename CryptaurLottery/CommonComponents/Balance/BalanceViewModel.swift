@@ -80,16 +80,19 @@ private extension BalanceViewModel {
         
         guard let hexAddress = keychain.get(PlayersKey.address),
             let playerAddress = UInt256(hexString: hexAddress)  else { return }
-        
         let request = GetPlayerAviableBalanceRequestModel(address: playerAddress)
         
         balanceService.perform(input: request,
                                success: { [weak self] (responce) in
+                                guard let sself = self else {
+                                    return
+                                }
                                 var balance = responce.balance.toStringWithDelimeters()
                                 if responce.balance != UInt256(integerLiteral: 0) {
                                     balance.removeLast(5)
                                 }
-                                self?.balanceSubject.onNext(balance + " CPT")
+                                print("Balance - \(balance)")
+                                sself.balanceSubject.onNext(balance + " CPT")
             }, failure: defaultServiceFailure)
     }
     

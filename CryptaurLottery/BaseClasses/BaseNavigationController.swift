@@ -27,6 +27,4 @@ fileprivate extension UINavigationBar {
         shadowImage = UIImage()
         isTranslucent = true
     }
-    
-    
 }

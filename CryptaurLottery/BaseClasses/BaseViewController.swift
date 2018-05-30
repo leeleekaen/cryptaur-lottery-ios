@@ -10,6 +10,7 @@ protocol BarButtonItemTargetActions {
 class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceErrorAlertPresenter {
     
     final let disposeBag = DisposeBag()
+    let balanceViewModel = BalanceViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     private func createBalanceView(color: UIColor) -> BalanceView? {
         let balanceView = BalanceView.loadFromNib()
         balanceView.setColor(color)
-        balanceView.bind(viewModel: BalanceViewModel(), disposeBag: disposeBag)
+        balanceView.bind(viewModel: balanceViewModel, disposeBag: disposeBag)
         return balanceView
     }
     
@@ -65,6 +66,7 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
     func didTapMenuBarButtonItem() {
         let controller = MenuViewController.controllerFromStoryboard(StoryboardType.menuStory.name)
         UIApplication.sharedCoordinator.transition(type: .present(controller: controller, completion: nil))
+        controller.bind(viewModel: balanceViewModel, disposeBag: disposeBag)
     }
     
     func didTapBadgeButton() {

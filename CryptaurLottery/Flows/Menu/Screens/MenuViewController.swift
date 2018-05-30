@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import UInt256
 import KeychainSwift
 
 class MenuViewController: BaseViewController {
     
-    // MARK: - IBOutlets
+    private var viewModel: BalanceViewModelProtocol!
+    
+     // MARK: - IBOutlets
+    @IBOutlet weak var winTicketsButton: UIButton!
     @IBOutlet weak var purseButton: UIButton!
     @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var loginNameLabel: UILabel!
+    @IBOutlet weak var playerAddressLabel: UILabel!
     
     // MARK: - IBAction
     @IBAction func closeButtonAction(_ sender: UIButton) {
@@ -22,7 +28,8 @@ class MenuViewController: BaseViewController {
     }
     
     @IBAction func purseButtonAction(_ sender: Any) {
-        print("Purse button tapped");
+        print("Purse button tapped")
+        viewModel.balanceAction()
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
@@ -55,15 +62,28 @@ class MenuViewController: BaseViewController {
         print("HowToPlay button tapped");
     }
     
-    // MARK: - Public properties
-    var logoutCompletion: (() -> ())?
-    var changePINCompletion: (() -> ())?
-    var myTicketsCompletion: (() -> ())?
-    
     // MARK: - ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupView()
     }
     
+    //MARK: bind
+    func bind(viewModel: BalanceViewModelProtocol, disposeBag: DisposeBag) {
+        self.viewModel = viewModel
+        viewModel.balance.drive(onNext: { [weak self] in
+            self?.purseButton.setTitle($0, for: .normal)
+        }).disposed(by: disposeBag)
+    }
+}
+
+//MARK: Setup View
+extension MenuViewController {
+    func setupView() {
+        let keychain = KeychainSwift()
+        guard let hexAddress = keychain.get(PlayersKey.address),
+            let playerAddress = UInt256(hexString: hexAddress)  else { return }
+        print("playerAddress - \(playerAddress.toString())")
+        playerAddressLabel.text = playerAddress.toString()
+    }
 }
