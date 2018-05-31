@@ -9,6 +9,10 @@ extension UIBarButtonItem {
     }
     
     class func menu(target: Any, action: Selector) -> UIBarButtonItem {
-        return UIBarButtonItem(image: #imageLiteral(resourceName: "menu"), style: .plain, target: target, action: action)
+        let menuBtn = UIButton(type: .custom)
+        menuBtn.frame = CGRect(x: 0.0, y: 0.0, width: 40, height: 40)
+        menuBtn.setImage(#imageLiteral(resourceName: "menu"), for: .normal)
+        menuBtn.addTarget(target, action: action, for: .touchUpInside)
+        return UIBarButtonItem(customView: menuBtn)
     }
 }

@@ -31,10 +31,10 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMu-4H-Vi5">
-                                <rect key="frame" x="359" y="26" width="45" height="40"/>
+                                <rect key="frame" x="354" y="21" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="nhO-Qb-c7G"/>
-                                    <constraint firstAttribute="width" constant="45" id="yo1-qN-TOg"/>
+                                    <constraint firstAttribute="height" constant="50" id="nhO-Qb-c7G"/>
+                                    <constraint firstAttribute="width" constant="50" id="yo1-qN-TOg"/>
                                 </constraints>
                                 <state key="normal" image="menu-close"/>
                                 <connections>
@@ -49,7 +49,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-qh-1Qj">
-                                <rect key="frame" x="64.666666666666657" y="157" width="286.33333333333337" height="22"/>
+                                <rect key="frame" x="69.666666666666657" y="157" width="276.33333333333337" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="spW-0W-s28"/>
                                 </constraints>
@@ -124,7 +124,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1c-cC-WMc">
-                                <rect key="frame" x="64.666666666666657" y="35" width="286.33333333333337" height="22"/>
+                                <rect key="frame" x="69.666666666666657" y="35" width="276.33333333333337" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Zre-jr-nA4"/>
                                 </constraints>
