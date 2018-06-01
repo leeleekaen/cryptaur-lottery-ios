@@ -58,33 +58,113 @@ class ShowRulesViewController: BaseViewController {
         attributedString.append(distrHead)
         attributedString.append(distrBody)
         attributedString.append(separator)
-        
-        let tableHead = "Numbers\nMatched \t Prize pool distribution"
 
-        var tableText = ""
+        var table = NSAttributedString()
+        var tableBody = NSAttributedString()
+        
         if lottery?.toPick == 4 {
-            tableText = " ⓸ \t Jackpot \n\n ⓷ \t 15% of the prize pool of the draw/ number of people who guessed 3 numbers \n\n ⓶ \t 25% of the prize pool of the draw/ number of people who guessed 2 numbers \n"
-            
+            let html = """
+                        <html>
+                            <body>
+                            <table style="width:100%; color:white; font-family:OpenSans-Regular;font-size:16px">
+                                <tr>
+                                    <th style="color:#a38fbb; width:30%">Numbers<br/>Matched</th>
+                                    <th style="color:#a38fbb">Prize pool distribution</th>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9315;</td>
+                                    <td>Jackpot</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9314;</td>
+                                    <td>15% of the prize pool of the draw/ number of people who guessed 3 numbers<td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9313;</td>
+                                    <td>25% of the prize pool of the draw/ number of people who guessed 2 numbers</td>
+                                </tr>
+                            </table>
+                            </body>
+                        </html>
+            """
+            let data = Data(html.utf8)
+            if let tmpString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+                tableBody = tmpString
+            }
+
         }
         if lottery?.toPick == 5 {
-            tableText = " ⓹ \t Jackpot \n\n ⓸ \t 10% of the prize pool of the draw/ number of people who guessed 4 numbers \n\n  ⓷ \t 10% of the prize pool of the draw/ number of people who guessed 3 numbers \n\n  ⓶ \t 20% of the prize pool of the draw/ number of people who guessed 2 numbers \n"
+            let html = """
+                        <html>
+                            <body>
+                            <table style="width:100%; color:white; font-family:OpenSans-Regular;font-size:16px">
+                                <tr>
+                                    <th style="color:#a38fbb; width:30%">Numbers<br/>Matched</th>
+                                    <th style="color:#a38fbb">Prize pool distribution</th>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9316;</td>
+                                    <td>Jackpot</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9315;</td>
+                                    <td>10% of the prize pool of the draw/ number of people who guessed 4 numbers<td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9314;</td>
+                                    <td>10% of the prize pool of the draw/ number of people who guessed 3 numbers</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9313;</td>
+                                    <td>20% of the prize pool of the draw/ number of people who guessed 2 numbers</td>
+                                </tr>
+                            </table>
+                            </body>
+                        </html>
+            """
+            let data = Data(html.utf8)
+            if let tmpString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+                tableBody = tmpString
+            }
         }
         if lottery?.toPick == 6 {
-            tableText = " ⓺ \t Jackpot \n\n ⓹ \t 5% of the prize pool of the draw/ number of people who guessed 5 numbers \n\n ⓸ \t 5% of the prize pool of the draw/ number of people who guessed 4 numbers \n\n  ⓷ \t 10% of the prize pool of the draw/ number of people who guessed 3 numbers \n\n  ⓶ \t 20% of the prize pool of the draw/ number of people who guessed 2 numbers \n"
+            let html = """
+                        <html>
+                            <body>
+                            <table style="width:100%; color:white; font-family:OpenSans-Regular;font-size:16px">
+                                <tr>
+                                    <th style="color:#a38fbb; width:30%">Numbers<br/>Matched</th>
+                                    <th style="color:#a38fbb">Prize pool distribution</th>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9317;</td>
+                                    <td>Jackpot</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9316;</td>
+                                    <td>5% of the prize pool of the draw/ number of people who guessed 5 numbers</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9315;</td>
+                                    <td>5% of the prize pool of the draw/ number of people who guessed 4 numbers<td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9314;</td>
+                                    <td>10% of the prize pool of the draw/ number of people who guessed 3 numbers</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle"; style="font-size:26px; text-align:center">&#9313;</td>
+                                    <td>20% of the prize pool of the draw/ number of people who guessed 2 numbers</td>
+                                </tr>
+                            </table>
+                            </body>
+                        </html>
+            """
+            let data = Data(html.utf8)
+            if let tmpString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+                tableBody = tmpString
+            }
         }
-        
-        let parStyle = NSMutableParagraphStyle()
-        parStyle.tabStops = [NSTextTab(textAlignment: NSTextAlignment.left, location: 90, options: [:])]
-        parStyle.headIndent = 90
-        
-        let table = NSAttributedString(string: tableHead, attributes: [NSAttributedStringKey.paragraphStyle: parStyle,
-                                                                       .font: UIFont(name: "OpenSans-Regular", size: 16.0)!,
-                                                                       .foregroundColor: UIColor(red: 163.0 / 255.0, green: 143.0 / 255.0, blue: 187.0 / 255.0, alpha: 1.0)])
-
-        let tableBody = NSAttributedString(string: tableText, attributes: [NSAttributedStringKey.paragraphStyle: parStyle,
-                                                                       .font: UIFont(name: "OpenSans-Regular", size: 16.0)!,
-                                                                       .foregroundColor: UIColor(white: 1.0, alpha: 1.0)])
-
         
         attributedString.append(table)
         attributedString.append(separator)
@@ -108,8 +188,6 @@ class ShowRulesViewController: BaseViewController {
 
         attributedString.append(drawHead)
         attributedString.append(drawBody)
-        
-
         
         let payoutHead = NSAttributedString(string: "Payout \n\n", attributes: [.font: UIFont(name: "OpenSans-Regular", size: 16.0)!,
                                                                             .foregroundColor: UIColor(red: 163.0 / 255.0, green: 143.0 / 255.0, blue: 187.0 / 255.0, alpha: 1.0)])
@@ -143,7 +221,6 @@ class ShowRulesViewController: BaseViewController {
 
         rulesTextView.attributedText = attributedString;
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
