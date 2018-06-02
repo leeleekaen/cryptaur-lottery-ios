@@ -28,6 +28,18 @@ DEPENDENCIES:
   - SwiftyUserDefaults
   - UInt256 (from `https://github.com/hyu2018/UInt256.git`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Crashlytics
+    - Fabric
+    - IGListKit
+    - KeychainSwift
+    - PMNibLinkableView
+    - RxCocoa
+    - RxSwift
+    - SwiftyUserDefaults
+
 EXTERNAL SOURCES:
   UInt256:
     :git: https://github.com/hyu2018/UInt256.git
@@ -51,4 +63,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5d0ef383046868791b5cd7fd451af43a3ffb1246
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
