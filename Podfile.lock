@@ -1,25 +1,66 @@
 PODS:
   - Alamofire (4.7.0)
+  - Crashlytics (3.10.1):
+    - Fabric (~> 1.7.5)
+  - Fabric (1.7.6)
+  - IGListKit (3.2.0):
+    - IGListKit/Default (= 3.2.0)
+  - IGListKit/Default (3.2.0):
+    - IGListKit/Diffing
+  - IGListKit/Diffing (3.2.0)
   - KeychainSwift (10.0.0)
+  - PMNibLinkableView (0.3.0)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SwiftyUserDefaults (3.0.1)
+  - UInt256 (0.1.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Crashlytics
+  - Fabric
+  - IGListKit
   - KeychainSwift
+  - PMNibLinkableView
   - RxCocoa
   - RxSwift
   - SwiftyUserDefaults
+  - UInt256 (from `https://github.com/hyu2018/UInt256.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Crashlytics
+    - Fabric
+    - IGListKit
+    - KeychainSwift
+    - PMNibLinkableView
+    - RxCocoa
+    - RxSwift
+    - SwiftyUserDefaults
+
+EXTERNAL SOURCES:
+  UInt256:
+    :git: https://github.com/hyu2018/UInt256.git
+
+CHECKOUT OPTIONS:
+  UInt256:
+    :commit: 5dacc0a68e04db0641e437976581c4d650d01d5e
+    :git: https://github.com/hyu2018/UInt256.git
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
+  Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
+  IGListKit: ffe6f98a728ab0250aceea22e7957aa5477c5048
   KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
+  PMNibLinkableView: 06ebf6128feb70c3ba589d6be232748c1b7b1767
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+  UInt256: fd430c044d00d966fa05ae8e89451a4766075772
 
-PODFILE CHECKSUM: 3ee0fdfaba8a1bfab2b2383d7006e5f6e9b0697e
+PODFILE CHECKSUM: 5d0ef383046868791b5cd7fd451af43a3ffb1246
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.2

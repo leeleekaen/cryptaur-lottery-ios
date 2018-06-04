@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0oJ-PJ-ksv" customClass="DrawDetailsTicketCell" customModule="CryptaurLottery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="508" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="508" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCN-zS-K1C">
+                        <rect key="frame" x="0.0" y="0.0" width="508" height="52"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                        <color key="textColor" red="0.51764705882352935" green="0.25490196078431371" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICW-Ei-FdF">
+                        <rect key="frame" x="0.0" y="52" width="254" height="52"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="11"/>
+                        <color key="textColor" red="0.63921568630000003" green="0.56078431370000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeT-0a-Axb">
+                        <rect key="frame" x="254" y="52" width="254" height="52"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="11"/>
+                        <color key="textColor" red="0.63921568630000003" green="0.56078431370000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="DeT-0a-Axb" firstAttribute="top" secondItem="KCN-zS-K1C" secondAttribute="bottom" id="0in-qJ-YdQ"/>
+                <constraint firstAttribute="trailing" secondItem="DeT-0a-Axb" secondAttribute="trailing" id="1NF-N4-7zm"/>
+                <constraint firstAttribute="bottom" secondItem="ICW-Ei-FdF" secondAttribute="bottom" id="2w0-On-RZJ"/>
+                <constraint firstItem="ICW-Ei-FdF" firstAttribute="leading" secondItem="0oJ-PJ-ksv" secondAttribute="leading" id="9dc-1Y-Cc3"/>
+                <constraint firstAttribute="bottom" secondItem="DeT-0a-Axb" secondAttribute="bottom" id="ArX-Dw-2a1"/>
+                <constraint firstAttribute="trailing" secondItem="KCN-zS-K1C" secondAttribute="trailing" id="CFU-VN-O5o"/>
+                <constraint firstItem="KCN-zS-K1C" firstAttribute="bottom" secondItem="0oJ-PJ-ksv" secondAttribute="centerY" id="IM6-2J-zKA"/>
+                <constraint firstItem="KCN-zS-K1C" firstAttribute="leading" secondItem="0oJ-PJ-ksv" secondAttribute="leading" id="XIB-Yl-7Nv"/>
+                <constraint firstItem="KCN-zS-K1C" firstAttribute="top" secondItem="0oJ-PJ-ksv" secondAttribute="top" id="gye-XC-C9z"/>
+                <constraint firstItem="ICW-Ei-FdF" firstAttribute="trailing" secondItem="0oJ-PJ-ksv" secondAttribute="centerX" id="hsU-Zt-mJ5"/>
+                <constraint firstItem="ICW-Ei-FdF" firstAttribute="top" secondItem="KCN-zS-K1C" secondAttribute="bottom" id="kuA-wo-eTt"/>
+                <constraint firstItem="DeT-0a-Axb" firstAttribute="leading" secondItem="ICW-Ei-FdF" secondAttribute="trailing" id="ydL-An-SA9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="gTy-E2-i5f"/>
+            <size key="customSize" width="508" height="104"/>
+            <connections>
+                <outlet property="ticketGuessedLabel" destination="ICW-Ei-FdF" id="rXK-bD-DkL"/>
+                <outlet property="ticketNameLabel" destination="KCN-zS-K1C" id="UEa-BS-z1U"/>
+                <outlet property="ticketValueLabel" destination="DeT-0a-Axb" id="b0a-fQ-xuM"/>
+            </connections>
+            <point key="canvasLocation" x="66" y="-8"/>
+        </collectionViewCell>
+    </objects>
+</document>

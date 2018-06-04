@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PeZ-gu-0Cx" customClass="DrawDetailsWinnerCell" customModule="CryptaurLottery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="406" height="22"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="406" height="22"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWD-l4-A5l">
+                        <rect key="frame" x="0.0" y="0.0" width="158" height="22"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
+                        <color key="textColor" red="0.63921568630000003" green="0.56078431370000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="my4-Lj-tFj">
+                        <rect key="frame" x="163" y="0.0" width="243" height="22"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
+                        <color key="textColor" red="0.63921568630000003" green="0.56078431370000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="MWD-l4-A5l" firstAttribute="leading" secondItem="PeZ-gu-0Cx" secondAttribute="leading" id="2Aj-tP-Lhq"/>
+                <constraint firstItem="MWD-l4-A5l" firstAttribute="top" secondItem="PeZ-gu-0Cx" secondAttribute="top" id="7CK-nP-3QL"/>
+                <constraint firstAttribute="trailing" secondItem="my4-Lj-tFj" secondAttribute="trailing" id="Bsh-H8-wjY"/>
+                <constraint firstItem="my4-Lj-tFj" firstAttribute="top" secondItem="PeZ-gu-0Cx" secondAttribute="top" id="Itf-SJ-fmr"/>
+                <constraint firstAttribute="bottom" secondItem="my4-Lj-tFj" secondAttribute="bottom" id="R0V-k3-0Ph"/>
+                <constraint firstAttribute="bottom" secondItem="MWD-l4-A5l" secondAttribute="bottom" id="mPf-Lt-ziF"/>
+                <constraint firstItem="MWD-l4-A5l" firstAttribute="trailing" secondItem="my4-Lj-tFj" secondAttribute="leading" constant="-5" id="oxM-Lk-Elc"/>
+                <constraint firstItem="my4-Lj-tFj" firstAttribute="leading" secondItem="PeZ-gu-0Cx" secondAttribute="centerX" constant="-40" id="p9f-94-AQX"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="J1V-M8-iU0"/>
+            <size key="customSize" width="406" height="72"/>
+            <connections>
+                <outlet property="WinnerKeyLabel" destination="MWD-l4-A5l" id="Wvc-S7-yIU"/>
+                <outlet property="WinnerValueLabel" destination="my4-Lj-tFj" id="peO-wG-Mxg"/>
+            </connections>
+            <point key="canvasLocation" x="-42" y="-335"/>
+        </collectionViewCell>
+    </objects>
+</document>

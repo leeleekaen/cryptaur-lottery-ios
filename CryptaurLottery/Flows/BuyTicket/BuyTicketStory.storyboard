@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Buy Ticket Container View Controller-->
+        <scene sceneID="Oe4-Wx-hWk">
+            <objects>
+                <viewController storyboardIdentifier="BuyTicketContainerViewController" id="bMy-4R-sXO" customClass="BuyTicketContainerViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KB7-RW-baQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sc8-ur-dxP">
+                                <rect key="frame" x="10" y="20" width="355" height="29"/>
+                                <segments>
+                                    <segment title="Ticket"/>
+                                    <segment title="Draw Archive"/>
+                                    <segment title="Rules"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeSubviewAction:" destination="bMy-4R-sXO" eventType="valueChanged" id="tDS-rN-rz6"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILC-uq-gBq" userLabel="Buy Ticket">
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                                <connections>
+                                    <segue destination="JMv-ca-pJJ" kind="embed" id="c2a-fb-y7E"/>
+                                </connections>
+                            </containerView>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eq6-BS-K3B" userLabel="Draw Archive">
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                                <connections>
+                                    <segue destination="Gub-98-f5t" kind="embed" id="kq7-Yn-Q7Q"/>
+                                </connections>
+                            </containerView>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5H-FB-EBN">
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                                <connections>
+                                    <segue destination="VyZ-L3-NOw" kind="embed" id="p5N-nE-28P"/>
+                                </connections>
+                            </containerView>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-9f-X6a">
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H5H-FB-EBN" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="0fZ-n7-pyX"/>
+                            <constraint firstItem="Sc8-ur-dxP" firstAttribute="top" secondItem="oYw-iX-RHC" secondAttribute="top" id="3nl-PD-tlB"/>
+                            <constraint firstItem="oYw-iX-RHC" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="BKD-XN-Q89"/>
+                            <constraint firstItem="bWE-9f-X6a" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="Hfu-Mx-I1I"/>
+                            <constraint firstItem="eq6-BS-K3B" firstAttribute="top" secondItem="ILC-uq-gBq" secondAttribute="top" id="J0h-EH-5BN"/>
+                            <constraint firstItem="bWE-9f-X6a" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="MAY-ZC-HDf"/>
+                            <constraint firstItem="Sc8-ur-dxP" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" constant="10" id="Qc9-rI-FJU"/>
+                            <constraint firstItem="oYw-iX-RHC" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="SyM-FZ-f0q"/>
+                            <constraint firstItem="H5H-FB-EBN" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="WuW-6B-rlC"/>
+                            <constraint firstItem="oYw-iX-RHC" firstAttribute="trailing" secondItem="Sc8-ur-dxP" secondAttribute="trailing" constant="10" id="YpE-Zq-qgI"/>
+                            <constraint firstItem="bWE-9f-X6a" firstAttribute="top" secondItem="ILC-uq-gBq" secondAttribute="top" id="eOX-o2-k2p"/>
+                            <constraint firstItem="eq6-BS-K3B" firstAttribute="leading" secondItem="ILC-uq-gBq" secondAttribute="leading" id="gsg-KT-X8K"/>
+                            <constraint firstItem="eq6-BS-K3B" firstAttribute="bottom" secondItem="ILC-uq-gBq" secondAttribute="bottom" id="hLj-0A-QJO"/>
+                            <constraint firstItem="bWE-9f-X6a" firstAttribute="leading" secondItem="ILC-uq-gBq" secondAttribute="leading" id="oR2-Rc-es2"/>
+                            <constraint firstItem="ILC-uq-gBq" firstAttribute="leading" secondItem="oYw-iX-RHC" secondAttribute="leading" id="qSo-mg-i70"/>
+                            <constraint firstItem="eq6-BS-K3B" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="rYF-6j-afz"/>
+                            <constraint firstItem="H5H-FB-EBN" firstAttribute="leading" secondItem="ILC-uq-gBq" secondAttribute="leading" id="rsl-pG-bey"/>
+                            <constraint firstItem="ILC-uq-gBq" firstAttribute="top" secondItem="Sc8-ur-dxP" secondAttribute="bottom" constant="10" id="slk-kp-b2g"/>
+                            <constraint firstItem="H5H-FB-EBN" firstAttribute="top" secondItem="ILC-uq-gBq" secondAttribute="top" id="uie-au-4ie"/>
+                            <constraint firstItem="oYw-iX-RHC" firstAttribute="trailing" secondItem="ILC-uq-gBq" secondAttribute="trailing" id="wMP-rJ-Gav"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oYw-iX-RHC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IAX-gb-zDW"/>
+                    <connections>
+                        <outlet property="buyTicketSubview" destination="ILC-uq-gBq" id="JN5-g3-S7X"/>
+                        <outlet property="changeSubview" destination="Sc8-ur-dxP" id="NCa-sE-yQ8"/>
+                        <outlet property="drawArchiveSubview" destination="eq6-BS-K3B" id="SMl-86-AmI"/>
+                        <outlet property="drawDetailsSubview" destination="bWE-9f-X6a" id="k9s-g8-Ei3"/>
+                        <outlet property="showRulesSubview" destination="H5H-FB-EBN" id="DLv-Hw-Z1f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eug-OZ-XQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="-35"/>
+        </scene>
+        <!--Buy Ticket View Controller-->
+        <scene sceneID="msw-va-Wyg">
+            <objects>
+                <viewController storyboardIdentifier="BuyTicketViewController" id="JMv-ca-pJJ" customClass="BuyTicketViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WC9-mv-SuB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT 0 NUMBERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FR-z2-ldK">
+                                <rect key="frame" x="36" y="30" width="103" height="15"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
+                                <color key="textColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aH2-Sm-1er">
+                                <rect key="frame" x="305" y="24" width="34" height="27"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
+                                <state key="normal" title="CLEAR">
+                                    <color key="titleColor" red="0.63921568627450975" green="0.5607843137254902" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clear:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="OYY-Ql-nQu"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MqO-so-j9l" userLabel="numpad">
+                                <rect key="frame" x="55" y="55" width="265" height="310"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="M8h-vY-Za4" userLabel="1-6">
+                                        <rect key="frame" x="0.0" y="0.0" width="265" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCJ-Bq-xFi">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="rsm-Xz-qHN"/>
+                                                    <constraint firstAttribute="width" constant="40" id="xOe-zN-hA3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" red="0.38823529411764707" green="0.25882352941176467" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="rDz-f4-yfJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYD-hR-6ho">
+                                                <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="eYj-dc-hKf"/>
+                                                    <constraint firstAttribute="height" constant="40" id="gNN-bJ-ulf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="yJ5-dx-3og"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2d-lk-yzo">
+                                                <rect key="frame" x="90" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="6MH-fz-gF6"/>
+                                                    <constraint firstAttribute="height" constant="40" id="FZw-fS-kPG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="Tus-i9-uKk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVg-rT-aCn">
+                                                <rect key="frame" x="135" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="bng-j0-ngZ"/>
+                                                    <constraint firstAttribute="width" constant="40" id="tdX-KB-LIf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="bYf-F1-liZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfe-6z-S9s">
+                                                <rect key="frame" x="180" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="11z-90-6Ve"/>
+                                                    <constraint firstAttribute="width" constant="40" id="iVM-wu-cSf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="2QD-zf-xnf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2p-K4-Z1k">
+                                                <rect key="frame" x="225" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="6BQ-hg-XNk"/>
+                                                    <constraint firstAttribute="height" constant="40" id="sKj-gG-i0l"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="GtC-Bz-87E"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qBf-Zj-VCj" userLabel="7-12">
+                                        <rect key="frame" x="0.0" y="45" width="265" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U46-c6-cxt">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="0X8-cw-mT8"/>
+                                                    <constraint firstAttribute="height" constant="40" id="juf-iA-QCJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="DC2-sk-dCf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DT3-dz-kAy">
+                                                <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Zxu-IM-y58"/>
+                                                    <constraint firstAttribute="height" constant="40" id="usV-M4-5hj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="QQy-yt-a0h"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0R-6t-j9H">
+                                                <rect key="frame" x="90" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Jat-hf-Y7r"/>
+                                                    <constraint firstAttribute="width" constant="40" id="b6l-Gt-yOs"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="nEL-LK-Z2n"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4S-Pu-L6t">
+                                                <rect key="frame" x="135" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="1Tn-K2-jz9"/>
+                                                    <constraint firstAttribute="height" constant="40" id="lN5-GY-D4a"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="10">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="jy6-4m-kUm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-VC-1mI">
+                                                <rect key="frame" x="180" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="LSk-Ph-dx7"/>
+                                                    <constraint firstAttribute="height" constant="40" id="VYa-EP-dW4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="11">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="F06-yR-DXz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upb-PL-fDA">
+                                                <rect key="frame" x="225" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Xah-rJ-d8k"/>
+                                                    <constraint firstAttribute="height" constant="40" id="oYY-5G-ogX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="12">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="dkh-pu-19C"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2sO-vX-lh2" userLabel="13-18">
+                                        <rect key="frame" x="0.0" y="90" width="265" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKo-I2-iAc">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="00r-3O-RIT"/>
+                                                    <constraint firstAttribute="width" constant="40" id="aqU-Cz-GSP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="13">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="yw5-j0-cJM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSp-SF-Hvt">
+                                                <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="QH8-gd-pB2"/>
+                                                    <constraint firstAttribute="height" constant="40" id="VRp-Iu-6Um"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="14">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="kCy-Js-mbN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qns-LV-EEC">
+                                                <rect key="frame" x="90" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Z4w-Gb-qhh"/>
+                                                    <constraint firstAttribute="height" constant="40" id="hWA-8A-LeI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="15">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="n3D-3f-sea"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-42-Pc5">
+                                                <rect key="frame" x="135" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="d5T-lL-Jvq"/>
+                                                    <constraint firstAttribute="width" constant="40" id="dbp-gW-w60"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="16">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="xwF-AP-Fk2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOu-Nk-9KD">
+                                                <rect key="frame" x="180" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="XJd-ME-hh5"/>
+                                                    <constraint firstAttribute="width" constant="40" id="apz-lr-iGS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="17">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="CXl-p4-5M1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usj-q5-Bog">
+                                                <rect key="frame" x="225" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="iT9-xS-70d"/>
+                                                    <constraint firstAttribute="width" constant="40" id="uCD-Q1-3V0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="18">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="CYi-TW-UyM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="E2f-YD-Nso" userLabel="19-24">
+                                        <rect key="frame" x="0.0" y="135" width="265" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enj-38-VZ8">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="J5t-hw-TNy"/>
+                                                    <constraint firstAttribute="height" constant="40" id="fIv-Jl-NrY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="19">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="1Cy-Jp-kc7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbf-GE-OV5">
+                                                <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="LVF-KP-Le8"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Nvo-k5-d7h"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="20">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="FMb-oK-MTU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uI7-8j-dFQ">
+                                                <rect key="frame" x="90" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Atq-7E-YmV"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Upn-C5-hke"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="21">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="vKA-JX-7fn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YW-Kz-0lL">
+                                                <rect key="frame" x="135" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="2bL-jN-Xao"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Z8G-WD-fx1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="22">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="icD-mH-njt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ub2-4j-K3W">
+                                                <rect key="frame" x="180" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="4cn-p7-3KX"/>
+                                                    <constraint firstAttribute="height" constant="40" id="avn-2k-Dc1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="23">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="Y2v-1N-Wod"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77F-Au-OsC">
+                                                <rect key="frame" x="225" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Tpd-ac-sgK"/>
+                                                    <constraint firstAttribute="height" constant="40" id="viH-qu-hC6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="24">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="lCT-8N-fAv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CGG-mb-nL5" userLabel="25-30">
+                                        <rect key="frame" x="0.0" y="180" width="265" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ks-eT-dZx">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="V9Q-5c-v5i"/>
+                                                    <constraint firstAttribute="width" constant="40" id="pXl-kp-8PF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="25">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="d7N-pH-JMK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCU-hO-7hf">
+                                                <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="DLR-Sf-azq"/>
+                                                    <constraint firstAttribute="width" constant="40" id="bZ2-ez-pXv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="26">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="DhO-I6-yCc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOE-y6-90q">
+                                                <rect key="frame" x="90" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="36f-t6-haz"/>
+                                                    <constraint firstAttribute="height" constant="40" id="lBx-b9-sQN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="27">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="b2Z-sq-7tU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rX6-rQ-90v">
+                                                <rect key="frame" x="135" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="QU1-eW-0Gl"/>
+                                                    <constraint firstAttribute="height" constant="40" id="jpB-ca-JAz"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="28">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="bMx-l0-WAP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oy2-Jg-DoF">
+                                                <rect key="frame" x="180" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="rrA-U7-EV9"/>
+                                                    <constraint firstAttribute="width" constant="40" id="x4Q-Ph-IiO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="29">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="3bB-rG-M7l"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vh2-Ml-n0N">
+                                                <rect key="frame" x="225" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="0Zg-XH-Knb"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Mij-ru-JZO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="30">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="FWW-cz-IMh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0ee-Ia-1WR" userLabel="31-36">
+                                        <rect key="frame" x="0.0" y="225" width="265" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2Y-3f-Emb">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="puv-9f-mjA"/>
+                                                    <constraint firstAttribute="width" constant="40" id="qcN-Ul-IBW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="31">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="Y3e-LI-cWN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhq-VV-5tb">
+                                                <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="4yY-p3-0yJ"/>
+                                                    <constraint firstAttribute="height" constant="40" id="VWa-0t-4Qq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="32">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="IL9-jt-u5p"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5d-Lk-pA1">
+                                                <rect key="frame" x="90" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="cFE-KC-HVE"/>
+                                                    <constraint firstAttribute="width" constant="40" id="rzP-LL-Qxy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="33">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="EwK-dI-ZbZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFt-8C-cjg">
+                                                <rect key="frame" x="135" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="EUi-tV-r1F"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Qyj-LN-Jyy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="34">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="Zd0-VN-beg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL6-H6-CPt">
+                                                <rect key="frame" x="180" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="RjP-Z1-Thz"/>
+                                                    <constraint firstAttribute="width" constant="40" id="w6r-GU-zvB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="35">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="j3A-nl-mRu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRB-z9-3a9">
+                                                <rect key="frame" x="225" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Job-wH-Kl4"/>
+                                                    <constraint firstAttribute="width" constant="40" id="cPr-eY-8IP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="36">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="Mt3-Gv-ueB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qPr-iT-y2V" userLabel="37-42">
+                                        <rect key="frame" x="0.0" y="270" width="265" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qe-xO-bzn">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="1Kk-WY-83d"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Ymj-E4-c2S"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="37">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="0nz-vB-R4g"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIX-yY-Xh2">
+                                                <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="2cE-BB-rvL"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Pl8-30-kZL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="38">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="j8k-Rr-Rnz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mx-ak-c17">
+                                                <rect key="frame" x="90" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="adC-xb-A4q"/>
+                                                    <constraint firstAttribute="width" constant="40" id="dQm-3q-t0I"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="39">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="44P-2U-bLw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0t-FD-1H2">
+                                                <rect key="frame" x="135" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="TkL-2r-ce4"/>
+                                                    <constraint firstAttribute="width" constant="40" id="X4V-5c-Euc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="40">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="QpF-h2-hG4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7z-OQ-sQz">
+                                                <rect key="frame" x="180" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="CAW-Z1-cSh"/>
+                                                    <constraint firstAttribute="width" constant="40" id="dgf-Oq-GG5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="41">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="Z5x-cr-XKv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zb-x7-WrK">
+                                                <rect key="frame" x="225" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="DSO-3f-j5E"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Xf9-eE-iQT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="42">
+                                                    <color key="titleColor" red="0.38823529410000002" green="0.25882352939999997" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="numpadAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="UX7-Rm-7EZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjz-fA-Vff">
+                                <rect key="frame" x="46" y="529" width="283" height="50"/>
+                                <state key="normal" title="Buy for 200 000.000 CPT" backgroundImage="buy-ticket-button-background"/>
+                                <connections>
+                                    <action selector="buyAction:" destination="JMv-ca-pJJ" eventType="touchUpInside" id="dxl-AA-50k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0FR-z2-ldK" firstAttribute="leading" secondItem="WC9-mv-SuB" secondAttribute="leadingMargin" constant="20" id="24J-0T-okV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kjz-fA-Vff" secondAttribute="trailing" constant="30" id="3gu-4L-fHs"/>
+                            <constraint firstItem="MqO-so-j9l" firstAttribute="top" secondItem="0FR-z2-ldK" secondAttribute="bottom" constant="10" id="54Z-hO-fOk"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Kjz-fA-Vff" secondAttribute="bottom" constant="30" id="EXR-gt-IUv"/>
+                            <constraint firstItem="aH2-Sm-1er" firstAttribute="centerY" secondItem="0FR-z2-ldK" secondAttribute="centerY" id="IUx-9P-u3F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aH2-Sm-1er" secondAttribute="trailing" constant="20" id="Ntu-cF-iQG"/>
+                            <constraint firstItem="MqO-so-j9l" firstAttribute="centerX" secondItem="WC9-mv-SuB" secondAttribute="centerX" id="Vo9-bH-8kG"/>
+                            <constraint firstItem="0FR-z2-ldK" firstAttribute="top" secondItem="WC9-mv-SuB" secondAttribute="topMargin" constant="10" id="kkc-dN-oc0"/>
+                            <constraint firstItem="Kjz-fA-Vff" firstAttribute="leading" secondItem="WC9-mv-SuB" secondAttribute="leadingMargin" constant="30" id="tVJ-W8-QaQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PP5-TV-cqH"/>
+                    </view>
+                    <connections>
+                        <outlet property="buyTicketButton" destination="Kjz-fA-Vff" id="rX4-pS-gvm"/>
+                        <outlet property="selectNumberLabel" destination="0FR-z2-ldK" id="rE2-qT-Ee4"/>
+                        <outletCollection property="numpad" destination="gCJ-Bq-xFi" collectionClass="NSMutableArray" id="3Ya-7v-X5I"/>
+                        <outletCollection property="numpad" destination="JYD-hR-6ho" collectionClass="NSMutableArray" id="57s-FM-MLa"/>
+                        <outletCollection property="numpad" destination="D2d-lk-yzo" collectionClass="NSMutableArray" id="LFH-qz-rer"/>
+                        <outletCollection property="numpad" destination="U46-c6-cxt" collectionClass="NSMutableArray" id="Zt1-8x-j04"/>
+                        <outletCollection property="numpad" destination="mKo-I2-iAc" collectionClass="NSMutableArray" id="SmU-mP-z7a"/>
+                        <outletCollection property="numpad" destination="enj-38-VZ8" collectionClass="NSMutableArray" id="Ts6-Sw-VVB"/>
+                        <outletCollection property="numpad" destination="8Ks-eT-dZx" collectionClass="NSMutableArray" id="dKC-ZX-9sd"/>
+                        <outletCollection property="numpad" destination="K2Y-3f-Emb" collectionClass="NSMutableArray" id="ER7-I3-jxf"/>
+                        <outletCollection property="numpad" destination="3qe-xO-bzn" collectionClass="NSMutableArray" id="gOd-Er-fwf"/>
+                        <outletCollection property="numpad" destination="vVg-rT-aCn" collectionClass="NSMutableArray" id="agc-y5-AIO"/>
+                        <outletCollection property="numpad" destination="gfe-6z-S9s" collectionClass="NSMutableArray" id="XNy-Y4-2Ea"/>
+                        <outletCollection property="numpad" destination="f2p-K4-Z1k" collectionClass="NSMutableArray" id="BtD-vx-ZtL"/>
+                        <outletCollection property="numpad" destination="DT3-dz-kAy" collectionClass="NSMutableArray" id="hoM-if-PjK"/>
+                        <outletCollection property="numpad" destination="d0R-6t-j9H" collectionClass="NSMutableArray" id="gIe-Q7-lmK"/>
+                        <outletCollection property="numpad" destination="c4S-Pu-L6t" collectionClass="NSMutableArray" id="cWR-vf-tz3"/>
+                        <outletCollection property="numpad" destination="hIP-VC-1mI" collectionClass="NSMutableArray" id="u3k-NM-ZY6"/>
+                        <outletCollection property="numpad" destination="Upb-PL-fDA" collectionClass="NSMutableArray" id="E3s-Pk-blq"/>
+                        <outletCollection property="numpad" destination="XSp-SF-Hvt" collectionClass="NSMutableArray" id="IrK-or-UcQ"/>
+                        <outletCollection property="numpad" destination="Qns-LV-EEC" collectionClass="NSMutableArray" id="Y84-fP-jbc"/>
+                        <outletCollection property="numpad" destination="XHd-42-Pc5" collectionClass="NSMutableArray" id="oHT-jC-v0p"/>
+                        <outletCollection property="numpad" destination="qOu-Nk-9KD" collectionClass="NSMutableArray" id="Axf-kt-Aov"/>
+                        <outletCollection property="numpad" destination="Usj-q5-Bog" collectionClass="NSMutableArray" id="ki0-1m-kUI"/>
+                        <outletCollection property="numpad" destination="lbf-GE-OV5" collectionClass="NSMutableArray" id="O34-mU-puv"/>
+                        <outletCollection property="numpad" destination="uI7-8j-dFQ" collectionClass="NSMutableArray" id="fAa-R7-R9q"/>
+                        <outletCollection property="numpad" destination="9YW-Kz-0lL" collectionClass="NSMutableArray" id="s64-ce-8QD"/>
+                        <outletCollection property="numpad" destination="Ub2-4j-K3W" collectionClass="NSMutableArray" id="08Q-vU-iV4"/>
+                        <outletCollection property="numpad" destination="77F-Au-OsC" collectionClass="NSMutableArray" id="A1G-Gl-KoM"/>
+                        <outletCollection property="numpad" destination="xCU-hO-7hf" collectionClass="NSMutableArray" id="4Aq-7N-3xz"/>
+                        <outletCollection property="numpad" destination="UOE-y6-90q" collectionClass="NSMutableArray" id="AAu-4R-Yc1"/>
+                        <outletCollection property="numpad" destination="rX6-rQ-90v" collectionClass="NSMutableArray" id="CEc-dy-pRC"/>
+                        <outletCollection property="numpad" destination="oy2-Jg-DoF" collectionClass="NSMutableArray" id="L6T-gC-VHN"/>
+                        <outletCollection property="numpad" destination="Vh2-Ml-n0N" collectionClass="NSMutableArray" id="9g1-ci-oag"/>
+                        <outletCollection property="numpad" destination="qhq-VV-5tb" collectionClass="NSMutableArray" id="SR4-XF-qbo"/>
+                        <outletCollection property="numpad" destination="n5d-Lk-pA1" collectionClass="NSMutableArray" id="zZx-3I-sMF"/>
+                        <outletCollection property="numpad" destination="QFt-8C-cjg" collectionClass="NSMutableArray" id="x6C-PG-1Xn"/>
+                        <outletCollection property="numpad" destination="hL6-H6-CPt" collectionClass="NSMutableArray" id="aAv-ff-XkB"/>
+                        <outletCollection property="numpad" destination="SRB-z9-3a9" collectionClass="NSMutableArray" id="Rdl-Hu-bxb"/>
+                        <outletCollection property="numpad" destination="rIX-yY-Xh2" collectionClass="NSMutableArray" id="pxl-68-BoX"/>
+                        <outletCollection property="numpad" destination="7mx-ak-c17" collectionClass="NSMutableArray" id="Xtr-xL-1ka"/>
+                        <outletCollection property="numpad" destination="k0t-FD-1H2" collectionClass="NSMutableArray" id="Mro-Ho-VnZ"/>
+                        <outletCollection property="numpad" destination="B7z-OQ-sQz" collectionClass="NSMutableArray" id="z3X-vb-VJ0"/>
+                        <outletCollection property="numpad" destination="7zb-x7-WrK" collectionClass="NSMutableArray" id="3zV-FI-CNX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WW3-y8-WwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="-184"/>
+        </scene>
+        <!--Draw Archive View Controller-->
+        <scene sceneID="GpO-N7-RtH">
+            <objects>
+                <viewController storyboardIdentifier="DrawArchiveViewController" id="Gub-98-f5t" customClass="DrawArchiveViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dqD-fX-Y5s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8zD-Ea-j70">
+                                <rect key="frame" x="0.0" y="20" width="375" height="579"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oko-XQ-2kB">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3py-EX-Vyh">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ewf-Ae-nBq">
+                                        <rect key="frame" x="0.0" y="559" width="375" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8zD-Ea-j70" firstAttribute="leading" secondItem="LzC-xs-ddy" secondAttribute="leading" id="GR8-8a-au0"/>
+                            <constraint firstItem="8zD-Ea-j70" firstAttribute="trailing" secondItem="LzC-xs-ddy" secondAttribute="trailing" id="iNa-Kb-8Vv"/>
+                            <constraint firstItem="8zD-Ea-j70" firstAttribute="bottom" secondItem="LzC-xs-ddy" secondAttribute="bottom" constant="-10" id="o9n-Tk-K9T"/>
+                            <constraint firstItem="8zD-Ea-j70" firstAttribute="top" secondItem="LzC-xs-ddy" secondAttribute="top" id="tKH-8t-YHJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LzC-xs-ddy"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ewf-Ae-nBq" id="4FL-pa-2ig"/>
+                        <outlet property="collectionView" destination="oko-XQ-2kB" id="bVl-nQ-UFp"/>
+                        <segue destination="3zV-3t-TS6" kind="show" identifier="toDrawDetails" id="U7C-pA-0vg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gw9-p6-W7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="430"/>
+        </scene>
+        <!--Show Rules View Controller-->
+        <scene sceneID="OLX-oi-r3d">
+            <objects>
+                <viewController id="VyZ-L3-NOw" customClass="ShowRulesViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4tG-Mz-aHa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="snR-R7-MnW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="snR-R7-MnW" secondAttribute="trailing" id="32Y-SX-DE7"/>
+                            <constraint firstItem="snR-R7-MnW" firstAttribute="top" secondItem="4tG-Mz-aHa" secondAttribute="top" id="Ltv-OP-KCo"/>
+                            <constraint firstItem="snR-R7-MnW" firstAttribute="leading" secondItem="4tG-Mz-aHa" secondAttribute="leading" id="OlN-PQ-mZQ"/>
+                            <constraint firstAttribute="bottom" secondItem="snR-R7-MnW" secondAttribute="bottom" id="xzu-IP-TgV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CeD-5M-Tir"/>
+                    </view>
+                    <connections>
+                        <outlet property="rulesTextView" destination="snR-R7-MnW" id="iDv-LX-fKb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SEZ-d2-Lpq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="1018"/>
+        </scene>
+        <!--Draw Details View Controller-->
+        <scene sceneID="vag-FK-BCl">
+            <objects>
+                <viewController id="3zV-3t-TS6" customClass="DrawDetailsViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="elI-B9-C7Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kvd-7u-CG0">
+                                <rect key="frame" x="138" y="36" width="100" height="27.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1OU-jP-idM"/>
+                                    <constraint firstAttribute="height" constant="28" id="DEh-ed-rVa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="20"/>
+                                <color key="textColor" red="0.63921568630000003" green="0.56078431370000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Vh-TE-xkH">
+                                <rect key="frame" x="24" y="73.5" width="327" height="270"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="CdE-Z4-aDM"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FBu-nw-P59">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sgS-8H-HOH">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-Eo-4gx">
+                                <rect key="frame" x="0.0" y="343.5" width="375" height="265.5"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uzT-XB-m1w">
+                                        <rect key="frame" x="20" y="0.0" width="335" height="266"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mVb-wa-pfa">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iA6-FH-eqk">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uzT-XB-m1w" firstAttribute="top" secondItem="b3c-Eo-4gx" secondAttribute="top" id="Oq8-pF-wa6"/>
+                                    <constraint firstAttribute="bottom" secondItem="uzT-XB-m1w" secondAttribute="bottom" id="gJS-vW-cLZ"/>
+                                    <constraint firstItem="uzT-XB-m1w" firstAttribute="leading" secondItem="b3c-Eo-4gx" secondAttribute="leading" constant="20" id="mga-eh-7Sz"/>
+                                    <constraint firstAttribute="trailing" secondItem="uzT-XB-m1w" secondAttribute="trailing" constant="20" id="rqw-p8-wFR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kvd-7u-CG0" firstAttribute="centerX" secondItem="elI-B9-C7Q" secondAttribute="centerXWithinMargins" id="5OL-dP-QiF"/>
+                            <constraint firstAttribute="trailing" secondItem="1Vh-TE-xkH" secondAttribute="trailing" constant="24" id="Q1q-7a-fUl"/>
+                            <constraint firstItem="Kvd-7u-CG0" firstAttribute="top" secondItem="elI-B9-C7Q" secondAttribute="topMargin" constant="16" id="Rc0-1t-8lv"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="b3c-Eo-4gx" secondAttribute="bottom" id="WAe-Hi-trQ"/>
+                            <constraint firstItem="1Vh-TE-xkH" firstAttribute="top" secondItem="Kvd-7u-CG0" secondAttribute="bottom" constant="10" id="YTu-3Z-Nj7"/>
+                            <constraint firstItem="1Vh-TE-xkH" firstAttribute="bottom" secondItem="b3c-Eo-4gx" secondAttribute="top" id="bcb-D9-7aN"/>
+                            <constraint firstItem="1Vh-TE-xkH" firstAttribute="leading" secondItem="elI-B9-C7Q" secondAttribute="leading" constant="24" id="sDU-Rb-0N8"/>
+                            <constraint firstAttribute="trailing" secondItem="b3c-Eo-4gx" secondAttribute="trailing" id="taX-sm-cWd"/>
+                            <constraint firstItem="b3c-Eo-4gx" firstAttribute="leading" secondItem="elI-B9-C7Q" secondAttribute="leading" id="xVk-hB-A8s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="le8-1Z-qcS"/>
+                    </view>
+                    <connections>
+                        <outlet property="ticketsCollectionView" destination="uzT-XB-m1w" id="VQ6-nE-Ie2"/>
+                        <outlet property="ticketsView" destination="b3c-Eo-4gx" id="1Z4-9I-4Om"/>
+                        <outlet property="winnersCollectionView" destination="1Vh-TE-xkH" id="wWP-lI-aks"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8US-q0-stl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2756" y="430"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buy-ticket-button-background" width="50" height="50"/>
+    </resources>
+</document>
