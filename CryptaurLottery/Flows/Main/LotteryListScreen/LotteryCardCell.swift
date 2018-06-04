@@ -32,7 +32,7 @@ class LotteryCardCell: UICollectionViewCell {
     var buyTicketCompletion: ((_ draw: Draw) -> ())?
     
     // MARK: - Private property
-    var draw: Draw?
+    public private(set) var draw: Draw?
     
     // MARK: - Configure
     func configure(draw: Draw) {
