@@ -1,4 +1,5 @@
 import UIKit
+import SVProgressHUD
 
 class BuyTicketViewController: BaseViewController {
 
@@ -15,6 +16,50 @@ class BuyTicketViewController: BaseViewController {
             $0.setTitleColor(.twilight, for: .normal)
         }
     }
+    
+    // MARK: - Dependency
+    let viewModel = BuyTicketViewModel()
+    
+    // MARK: - Public properties
+    var draw: Draw? {
+        didSet {
+            viewModel.draw = draw
+            configureSubviews()
+        }
+    }
+    
+    // MARK: - Private properties
+    private var selectedNumbers = [Int]()
+    
+    // MARK: - ViewController lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+    
+    // MARK: - Binding
+    override func bind() {
+        bind(viewModel)
+        
+        viewModel.ticketPrice.drive(onNext: { [weak self] in
+            SVProgressHUD.dismiss()
+            self?.buyTicketButton.setTitle("Buy for \($0.toString())", for: .normal)
+        }).disposed(by: disposeBag)
+        
+        viewModel.sendErrorCompletion = { [weak self] error in
+            SVProgressHUD.dismiss()
+            self?.presentAlert(message: error)
+        }
+        
+        viewModel.buyTicketCompletion = { [weak self] trx in
+            SVProgressHUD.dismiss()
+            self?.presentAlert(message: "Success buy ticket. Check transaction \(trx)")
+        }
+    }
+}
+
+//MARK - Action
+private extension BuyTicketViewController {
     
     @IBAction func numpadAction(_ sender: UIButton) {
         
@@ -40,54 +85,27 @@ class BuyTicketViewController: BaseViewController {
     }
     
     @IBAction func buyAction(_ sender: UIButton) {
-                
+        
         guard let draw = draw,
             let lottery = LotteryID(rawValue: draw.lotteryID) else { return }
         
         if selectedNumbers.count == lottery.toPick {
+            SVProgressHUD.show()
             viewModel.buyTicket(numbers: selectedNumbers)
+        }else{
+            self.presentAlert(message: "No numbers selected")
         }
     }
     
-    // MARK: - Dependency
-    let viewModel = BuyTicketViewModel()
-    
-    // MARK: - Public properties
-    var draw: Draw? {
-        didSet {
-            viewModel.draw = draw
-            configureSubviews()
-        }
-    }
-    
-    // MARK: - Private properties
-    private var selectedNumbers = [Int]()
-    
-    // MARK: - ViewController lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    // MARK: - Binding
-    override func bind() {
-        bind(viewModel)
-        
-        viewModel.ticketPrice.drive(onNext: { [weak self] in
-            self?.buyTicketButton.setTitle("Buy for \($0.toString())", for: .normal)
-        }).disposed(by: disposeBag)
-        
-        viewModel.sendBuyTicketCompletion = { [weak self] in
-            self?.presentAlert(message: "Send request to buy ticket")
-        }
-        
-        viewModel.buyTicketCompletion = { [weak self] trx in
-            self?.presentAlert(message: "Success buy ticket. Check transaction \(trx)")
-        }
-    }
 }
 
 // MARK: - Private methods
 private extension BuyTicketViewController {
+    
+    func setupView() {
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.light)
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.gradient)
+    }
     
     func configureSubviews() {
         

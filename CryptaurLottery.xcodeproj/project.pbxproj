@@ -708,7 +708,6 @@
 				CEF6AD4E20722892004BA072 /* Resources */,
 				F341519D4FD736ACA1A0798E /* [CP] Embed Pods Frameworks */,
 				CE0FFFA220753DA800FDF56A /* [Fabric] Run */,
-				4044167F5D6825D7C48169E7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -727,8 +726,6 @@
 				CEF6AD6020722897004BA072 /* Sources */,
 				CEF6AD6120722897004BA072 /* Frameworks */,
 				CEF6AD6220722897004BA072 /* Resources */,
-				E117C63D92579ADA9745C8ED /* [CP] Embed Pods Frameworks */,
-				B6D5AE5EA5A1D204F0872E75 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -826,21 +823,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4044167F5D6825D7C48169E7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		47CA1841836AE18AD9B38763 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -859,21 +841,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6D5AE5EA5A1D204F0872E75 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CE0FFFA220753DA800FDF56A /* [Fabric] Run */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -888,21 +855,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 619b8a670a2a9e25eee8316ef7889e0112f6fa37 6fa8b94b35d41e4b2fe1ad5656af1cb16f83d65266ca985594b6cfc018f26c7a";
 		};
-		E117C63D92579ADA9745C8ED /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F341519D4FD736ACA1A0798E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -916,6 +868,7 @@
 				"${BUILT_PRODUCTS_DIR}/PMNibLinkableView/PMNibLinkableView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/UInt256/UInt256.framework",
 			);
@@ -927,6 +880,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PMNibLinkableView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UInt256.framework",
 			);

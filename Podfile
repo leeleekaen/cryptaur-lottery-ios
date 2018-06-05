@@ -13,6 +13,7 @@ target 'CryptaurLottery' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'PMNibLinkableView'
+  pod 'SVProgressHUD'
   
   target 'CryptaurLotteryTests' do
     inherit! :search_paths
