@@ -13,6 +13,7 @@ PODS:
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
+  - SVProgressHUD (2.2.5)
   - SwiftyUserDefaults (3.0.1)
   - UInt256 (0.1.0)
 
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - PMNibLinkableView
   - RxCocoa
   - RxSwift
+  - SVProgressHUD
   - SwiftyUserDefaults
   - UInt256 (from `https://github.com/hyu2018/UInt256.git`)
 
@@ -38,6 +40,7 @@ SPEC REPOS:
     - PMNibLinkableView
     - RxCocoa
     - RxSwift
+    - SVProgressHUD
     - SwiftyUserDefaults
 
 EXTERNAL SOURCES:
@@ -58,9 +61,10 @@ SPEC CHECKSUMS:
   PMNibLinkableView: 06ebf6128feb70c3ba589d6be232748c1b7b1767
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   UInt256: fd430c044d00d966fa05ae8e89451a4766075772
 
-PODFILE CHECKSUM: 5d0ef383046868791b5cd7fd451af43a3ffb1246
+PODFILE CHECKSUM: d669872c8939cb26be9d5fe08bd5ca1c33fe781e
 
 COCOAPODS: 1.5.2

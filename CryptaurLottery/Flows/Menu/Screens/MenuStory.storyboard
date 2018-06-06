@@ -121,6 +121,7 @@
                                 </state>
                                 <connections>
                                     <action selector="howToPlayButtonAction:" destination="2JP-mP-0Mi" eventType="touchUpInside" id="I6h-Ah-9FQ"/>
+                                    <segue destination="YMu-k8-4JW" kind="show" id="msO-xq-31a"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1c-cC-WMc">
@@ -201,6 +202,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMi-DF-4ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-90.400000000000006" y="-182.15892053973016"/>
+        </scene>
+        <!--How To Play View Controller-->
+        <scene sceneID="8gh-dA-h5J">
+            <objects>
+                <viewController id="YMu-k8-4JW" customClass="HowToPlayViewController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qsD-X8-weM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubbles" translatesAutoresizingMaskIntoConstraints="NO" id="qyz-cX-F7X">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z7r-sK-dPI">
+                                <rect key="frame" x="0.0" y="90" width="414" height="646"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4f6-FE-WtF">
+                                <rect key="frame" x="354" y="30" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KfW-9B-0mH"/>
+                                    <constraint firstAttribute="width" constant="50" id="MEm-cZ-opa"/>
+                                </constraints>
+                                <state key="normal" image="menu-close"/>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="2JP-mP-0Mi" eventType="touchUpInside" id="aVM-wV-P47"/>
+                                    <action selector="closeClicked:" destination="YMu-k8-4JW" eventType="touchUpInside" id="7Xx-Dp-K3Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qyz-cX-F7X" firstAttribute="leading" secondItem="8kl-Jb-C06" secondAttribute="leading" id="3j1-kT-jsE"/>
+                            <constraint firstItem="8kl-Jb-C06" firstAttribute="trailing" secondItem="z7r-sK-dPI" secondAttribute="trailing" id="4Q9-OX-gQ2"/>
+                            <constraint firstItem="qyz-cX-F7X" firstAttribute="top" secondItem="8kl-Jb-C06" secondAttribute="top" id="7fo-uW-QOa"/>
+                            <constraint firstItem="8kl-Jb-C06" firstAttribute="trailing" secondItem="4f6-FE-WtF" secondAttribute="trailing" constant="10" id="8n8-cr-CNE"/>
+                            <constraint firstItem="z7r-sK-dPI" firstAttribute="leading" secondItem="8kl-Jb-C06" secondAttribute="leading" id="cZq-J0-beG"/>
+                            <constraint firstItem="8kl-Jb-C06" firstAttribute="trailing" secondItem="qyz-cX-F7X" secondAttribute="trailing" id="d0H-e0-mbZ"/>
+                            <constraint firstItem="8kl-Jb-C06" firstAttribute="bottom" secondItem="qyz-cX-F7X" secondAttribute="bottom" id="d0R-Ac-MDs"/>
+                            <constraint firstItem="z7r-sK-dPI" firstAttribute="top" secondItem="4f6-FE-WtF" secondAttribute="bottom" constant="10" id="dYL-Is-Bcz"/>
+                            <constraint firstItem="z7r-sK-dPI" firstAttribute="top" secondItem="qsD-X8-weM" secondAttribute="top" constant="90" id="ftJ-t0-jpY"/>
+                            <constraint firstItem="8kl-Jb-C06" firstAttribute="bottom" secondItem="z7r-sK-dPI" secondAttribute="bottom" id="uZT-j2-9hz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8kl-Jb-C06"/>
+                    </view>
+                    <connections>
+                        <outlet property="howToPlayTextView" destination="z7r-sK-dPI" id="NO0-JW-5BS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="86B-VJ-KPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="-182"/>
         </scene>
     </scenes>
     <resources>

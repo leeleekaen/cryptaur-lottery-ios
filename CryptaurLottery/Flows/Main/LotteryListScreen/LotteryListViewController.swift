@@ -109,7 +109,8 @@ extension LotteryListViewController: ListAdapterDataSource {
 extension LotteryListViewController: LotteryCardCellDelegate {
     func lotteryCardCellAction(cell: LotteryCardCell, buttonPressed: UIButton) {
         let controller = BuyTicketContainerViewController.controllerFromStoryboard(StoryboardType.buyTicketStory.name)
-        controller.draw = draw
+        
+        controller.draw = cell.draw
         UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
     }
 }
