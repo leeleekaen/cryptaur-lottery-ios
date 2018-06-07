@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */; };
 		2210013F20C045FA003EA6A0 /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210013E20C045FA003EA6A0 /* HowToPlayViewController.swift */; };
 		227C98D8208F3E1F000A5A7F /* DrawDetailsTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C98D7208F3E1F000A5A7F /* DrawDetailsTicketCell.swift */; };
 		22C18CE12088127300DBBCD8 /* MenuStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C18CE02088127300DBBCD8 /* MenuStory.storyboard */; };
@@ -17,7 +16,8 @@
 		22D821F1208BEFD3007689E7 /* DrawDetailsWinnerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D821F0208BEFD3007689E7 /* DrawDetailsWinnerCell.xib */; };
 		22D821F3208BF739007689E7 /* DrawDetailsWinnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D821F2208BF739007689E7 /* DrawDetailsWinnerCell.swift */; };
 		22D821F5208F3B3E007689E7 /* DrawDetailsTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D821F4208F3B3E007689E7 /* DrawDetailsTicketCell.xib */; };
-		714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */; };
+		50EBD22097714A0456E85AB9 /* Pods_CryptaurLotteryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02AAA3E2F771834E8886117D /* Pods_CryptaurLotteryTests.framework */; };
+		54004CE3BB47D149D1DCD863 /* Pods_CryptaurLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38327474DE9FB46B16F972F2 /* Pods_CryptaurLottery.framework */; };
 		9A01E5CB20AC1A6300A35DD3 /* GetWinTicketsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01E5CA20AC1A6300A35DD3 /* GetWinTicketsRequestModel.swift */; };
 		9A01E5CD20AC1ACB00A35DD3 /* GetWinTicketsResponceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01E5CC20AC1ACB00A35DD3 /* GetWinTicketsResponceModel.swift */; };
 		9A01E5CF20AC1AF600A35DD3 /* WinTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A01E5CE20AC1AF600A35DD3 /* WinTicket.swift */; };
@@ -130,8 +130,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10E0CED1536ED0E395E5D09D /* Pods-CryptaurLotteryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLotteryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests.debug.xcconfig"; sourceTree = "<group>"; };
-		11974E14894A7117C763BF3E /* Pods-CryptaurLotteryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLotteryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests.release.xcconfig"; sourceTree = "<group>"; };
+		02AAA3E2F771834E8886117D /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2210013E20C045FA003EA6A0 /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
 		227C98D7208F3E1F000A5A7F /* DrawDetailsTicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDetailsTicketCell.swift; sourceTree = "<group>"; };
 		22C18CE02088127300DBBCD8 /* MenuStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuStory.storyboard; sourceTree = "<group>"; };
@@ -141,9 +140,8 @@
 		22D821F0208BEFD3007689E7 /* DrawDetailsWinnerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawDetailsWinnerCell.xib; sourceTree = "<group>"; };
 		22D821F2208BF739007689E7 /* DrawDetailsWinnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDetailsWinnerCell.swift; sourceTree = "<group>"; };
 		22D821F4208F3B3E007689E7 /* DrawDetailsTicketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawDetailsTicketCell.xib; sourceTree = "<group>"; };
-		4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
-		5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLotteryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38327474DE9FB46B16F972F2 /* Pods_CryptaurLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptaurLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		512945299563AB3854EF9B26 /* Pods-CryptaurLotteryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLotteryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A01E5CA20AC1A6300A35DD3 /* GetWinTicketsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWinTicketsRequestModel.swift; sourceTree = "<group>"; };
 		9A01E5CC20AC1ACB00A35DD3 /* GetWinTicketsResponceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWinTicketsResponceModel.swift; sourceTree = "<group>"; };
 		9A01E5CE20AC1AF600A35DD3 /* WinTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTicket.swift; sourceTree = "<group>"; };
@@ -189,6 +187,8 @@
 		9AF87D9F208E11B2006326E5 /* GetPlayerAviableBalanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerAviableBalanceService.swift; sourceTree = "<group>"; };
 		9AFF8298208642310046A3F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9AFF829A208654B90046A3F8 /* LoginStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStory.storyboard; sourceTree = "<group>"; };
+		A6E8F76BF46950D3F4566710 /* Pods-CryptaurLottery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.release.xcconfig"; sourceTree = "<group>"; };
+		AA194779E6C9E65F9192C1B3 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
 		AC8B22B120BF018D0080B444 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		AC928B5320B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedFlowCoordinator.swift; sourceTree = "<group>"; };
 		AC928B5520B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthorizedFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 		CEF6AD6820722897004BA072 /* CryptaurLotteryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptaurLotteryTests.swift; sourceTree = "<group>"; };
 		CEF6AD6A20722897004BA072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF6AD872072413E004BA072 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		F885CFA2FD24C5ABA0F7695F /* Pods-CryptaurLottery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.release.xcconfig"; sourceTree = "<group>"; };
+		D25793BCB871DD188DEB46B7 /* Pods-CryptaurLotteryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLotteryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLotteryTests/Pods-CryptaurLotteryTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +260,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				714694029CDA5A22A0A08D2A /* Pods_CryptaurLottery.framework in Frameworks */,
+				54004CE3BB47D149D1DCD863 /* Pods_CryptaurLottery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F3665C8421600964989E7DB /* Pods_CryptaurLotteryTests.framework in Frameworks */,
+				50EBD22097714A0456E85AB9 /* Pods_CryptaurLotteryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,15 +294,24 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		8552E93E983754969E3C8C19 /* Pods */ = {
+		4CF386B315A89C9A7B6BB1C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */,
-				F885CFA2FD24C5ABA0F7695F /* Pods-CryptaurLottery.release.xcconfig */,
-				10E0CED1536ED0E395E5D09D /* Pods-CryptaurLotteryTests.debug.xcconfig */,
-				11974E14894A7117C763BF3E /* Pods-CryptaurLotteryTests.release.xcconfig */,
+				AA194779E6C9E65F9192C1B3 /* Pods-CryptaurLottery.debug.xcconfig */,
+				A6E8F76BF46950D3F4566710 /* Pods-CryptaurLottery.release.xcconfig */,
+				D25793BCB871DD188DEB46B7 /* Pods-CryptaurLotteryTests.debug.xcconfig */,
+				512945299563AB3854EF9B26 /* Pods-CryptaurLotteryTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		65E03DA0579F7B4662AE1C20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38327474DE9FB46B16F972F2 /* Pods_CryptaurLottery.framework */,
+				02AAA3E2F771834E8886117D /* Pods_CryptaurLotteryTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9A01E5C920AC1A3C00A35DD3 /* DrawDetails */ = {
@@ -591,8 +600,8 @@
 				CEF6AD5220722892004BA072 /* CryptaurLottery */,
 				CEF6AD6720722897004BA072 /* CryptaurLotteryTests */,
 				CEF6AD5120722892004BA072 /* Products */,
-				8552E93E983754969E3C8C19 /* Pods */,
-				F6E5AFEA56550247D38486C6 /* Frameworks */,
+				4CF386B315A89C9A7B6BB1C8 /* Pods */,
+				65E03DA0579F7B4662AE1C20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -686,15 +695,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F6E5AFEA56550247D38486C6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5884D304C5EE4EBA1805C33C /* Pods_CryptaurLottery.framework */,
-				7F54A440B4154B387C85B702 /* Pods_CryptaurLotteryTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -702,12 +702,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF6AD6D20722897004BA072 /* Build configuration list for PBXNativeTarget "CryptaurLottery" */;
 			buildPhases = (
-				47CA1841836AE18AD9B38763 /* [CP] Check Pods Manifest.lock */,
+				B3ABFADB93F0A89B8D287C3F /* [CP] Check Pods Manifest.lock */,
 				CEF6AD4C20722892004BA072 /* Sources */,
 				CEF6AD4D20722892004BA072 /* Frameworks */,
 				CEF6AD4E20722892004BA072 /* Resources */,
-				F341519D4FD736ACA1A0798E /* [CP] Embed Pods Frameworks */,
 				CE0FFFA220753DA800FDF56A /* [Fabric] Run */,
+				66B5D5BF68937610E96D740D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -722,7 +722,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF6AD7020722897004BA072 /* Build configuration list for PBXNativeTarget "CryptaurLotteryTests" */;
 			buildPhases = (
-				F8F2923F13620EAEDDB9FC65 /* [CP] Check Pods Manifest.lock */,
+				41086DFC36C2D3A080119AEC /* [CP] Check Pods Manifest.lock */,
 				CEF6AD6020722897004BA072 /* Sources */,
 				CEF6AD6120722897004BA072 /* Frameworks */,
 				CEF6AD6220722897004BA072 /* Resources */,
@@ -823,7 +823,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		47CA1841836AE18AD9B38763 /* [CP] Check Pods Manifest.lock */ = {
+		41086DFC36C2D3A080119AEC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -834,28 +834,14 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CryptaurLottery-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CryptaurLotteryTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CE0FFFA220753DA800FDF56A /* [Fabric] Run */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[Fabric] Run";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 619b8a670a2a9e25eee8316ef7889e0112f6fa37 6fa8b94b35d41e4b2fe1ad5656af1cb16f83d65266ca985594b6cfc018f26c7a";
-		};
-		F341519D4FD736ACA1A0798E /* [CP] Embed Pods Frameworks */ = {
+		66B5D5BF68937610E96D740D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -889,7 +875,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F8F2923F13620EAEDDB9FC65 /* [CP] Check Pods Manifest.lock */ = {
+		B3ABFADB93F0A89B8D287C3F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -900,12 +886,26 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CryptaurLotteryTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CryptaurLottery-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CE0FFFA220753DA800FDF56A /* [Fabric] Run */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[Fabric] Run";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 619b8a670a2a9e25eee8316ef7889e0112f6fa37 6fa8b94b35d41e4b2fe1ad5656af1cb16f83d65266ca985594b6cfc018f26c7a";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1161,7 +1161,7 @@
 		};
 		CEF6AD6E20722897004BA072 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A8271A644F0F08DCC5873A5 /* Pods-CryptaurLottery.debug.xcconfig */;
+			baseConfigurationReference = AA194779E6C9E65F9192C1B3 /* Pods-CryptaurLottery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1184,7 +1184,7 @@
 		};
 		CEF6AD6F20722897004BA072 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F885CFA2FD24C5ABA0F7695F /* Pods-CryptaurLottery.release.xcconfig */;
+			baseConfigurationReference = A6E8F76BF46950D3F4566710 /* Pods-CryptaurLottery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1206,7 +1206,7 @@
 		};
 		CEF6AD7120722897004BA072 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10E0CED1536ED0E395E5D09D /* Pods-CryptaurLotteryTests.debug.xcconfig */;
+			baseConfigurationReference = D25793BCB871DD188DEB46B7 /* Pods-CryptaurLotteryTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1223,7 +1223,7 @@
 		};
 		CEF6AD7220722897004BA072 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11974E14894A7117C763BF3E /* Pods-CryptaurLotteryTests.release.xcconfig */;
+			baseConfigurationReference = 512945299563AB3854EF9B26 /* Pods-CryptaurLotteryTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

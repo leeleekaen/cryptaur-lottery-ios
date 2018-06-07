@@ -46,6 +46,7 @@ class APIOperation: Operation {
             guard !APIOperation.processErrors(handler: failure, response: response) else {
                 return
             }
+            
             // force cast because conditional cast already checked in `processErrors()`
             let responseValue = response.value as! JSONDictionary
             success(responseValue)
@@ -59,6 +60,7 @@ class APIOperation: Operation {
             return true
         }
         guard let json = response.value as? JSONDictionary else {
+            
             handler(ServiceError.invalidResponseFormat)
             return true
         }

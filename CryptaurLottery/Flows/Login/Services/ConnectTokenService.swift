@@ -4,6 +4,7 @@ import Alamofire
 final class ConnectTokenService: OperationService<ConnectTokenRequestModel, ConnectTokenResponseModel> {
     override func createOperation(input: ConnectTokenRequestModel, success: @escaping ServiceSuccess, failure: @escaping ServiceFailure) -> Operation? {
         return ConnectTokenOperation(request: input, success: { (json) in
+            
             guard let object = ConnectTokenResponseModel(json: json) else {
                 failure(ServiceError.deserializationFailure)
                 return
@@ -20,6 +21,7 @@ fileprivate final class ConnectTokenOperation: APIOperation {
     }
     
     init(request: ConnectTokenRequestModel, success: @escaping APIOperationSuccess, failure: @escaping ServiceFailure) {
+        
         var parameters = ["grant_type": request.grantType,
                           "username": request.username,
                           "password": request.password,
@@ -30,6 +32,16 @@ fileprivate final class ConnectTokenOperation: APIOperation {
         if request.withPin {
             parameters["use_pin_password"] = ""
         }
+        print(parameters)
+        
+//        body:
+//        grant_type      : password
+//        username        : <your username>
+//        password        : <device pin>
+//        scope           : lottery_main offline_access
+//        deviceId        : <your unique device id>
+//        use_pin_password: <any value> //НОВОЕ
+//        return(JSON):
         
         super.init(endpoint: .connect, parameters: parameters, headers: ["Authorization": "Basic cG9ydGFibGUuY2xpZW50OnNlY3JldA=="], success: success, failure: failure)
     }

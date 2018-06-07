@@ -128,7 +128,7 @@ class PinCodeViewController: BaseViewController {
                 reset()
                 return
             }
-            UIApplication.sharedCoordinator.showAuth()
+            viewModel.registerPin(pincode: pinCode)
         }
     }
     
