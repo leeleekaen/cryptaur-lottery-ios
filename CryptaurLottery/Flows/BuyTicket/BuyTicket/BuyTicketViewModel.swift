@@ -51,6 +51,7 @@ class BuyTicketViewModel: BaseViewModel {
         let request = BuyTicketRequestModel(authKey: authKey, lottery: lottery,
                                             numbers: numbers, drawIndex: drawIndex,
                                             playerAddress: address)
+       
         
         buyTicketsService.perform(input: request,
                                   success: { [weak self] in

@@ -9,6 +9,7 @@ OperationService<BuyTicketRequestModel, BuyTicketResponceModel> {
                                   failure: @escaping ServiceFailure) -> Operation? {
         
         return BuyTicketOperation(request: input, success: { (json) in
+            print("\(json)")
             guard let object = BuyTicketResponceModel(json: json) else {
                 failure(ServiceError.deserializationFailure)
                 return
@@ -37,6 +38,8 @@ fileprivate final class BuyTicketOperation: APIOperation {
                           "numbers": request.numbers,
                           "drawIndex": request.drawIndex,
                           "address": request.playerAddress.normalizedHexString] as [String : Any]
+        
+         print("\(parameters)")
         
         let headers = [
             "Authorization": "Bearer \(request.authKey)",

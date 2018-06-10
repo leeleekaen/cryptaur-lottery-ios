@@ -26,12 +26,11 @@ final class LotteryListViewModel: BaseViewModel {
     private var service = GetCurrentLotteriesService()
     
     fileprivate var timer: Timer?
-    fileprivate var isLoading: Bool = false
+    var isLoading: Bool = false
     
     override init() {
         super.init()
         getInfoAllLotteries()
-       
     }
 }
 
@@ -49,7 +48,6 @@ private extension LotteryListViewModel {
         guard !isLoading else {
             return
         }
-        isLoading = true
         getInfoAllLotteries()
     }
 }
@@ -58,6 +56,7 @@ private extension LotteryListViewModel {
 private extension LotteryListViewModel {
     func getInfoAllLotteries() {
         service.perform(input: (), success: { [weak self] (response) in
+            print("api/getCurrentLotteries")
             self?.draws = response.draws
             self?.updateCompletion?()
             }, failure: defaultServiceFailure)

@@ -77,6 +77,8 @@ struct Draw: JSONDeserializable, Diffable {
             self.buyTicketGasFee = buyTicketGasFee
         }
         self.numbers = json["numbers"] as? [Int]
+        
+        print("\(String(describing: json["drawState"]))")
     }
 }
 

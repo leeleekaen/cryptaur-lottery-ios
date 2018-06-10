@@ -27,6 +27,13 @@ final class LotteryListViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.tintColor = .white
+        viewModel.isLoading = false
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel.isLoading = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -87,6 +94,7 @@ extension LotteryListViewController: ListAdapterDataSource {
             cell.delegate = self
             cell.configure(draw: item.value)
             self?.draw = item.value
+            print("drawState = \(item.value.drawState.rawValue)")
             
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize
