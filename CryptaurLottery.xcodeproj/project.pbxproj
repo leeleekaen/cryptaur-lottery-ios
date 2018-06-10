@@ -63,6 +63,7 @@
 		9AF87DA0208E11B2006326E5 /* GetPlayerAviableBalanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF87D9F208E11B2006326E5 /* GetPlayerAviableBalanceService.swift */; };
 		9AFF8299208642310046A3F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFF8298208642310046A3F8 /* LoginViewController.swift */; };
 		9AFF829B208654B90046A3F8 /* LoginStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFF829A208654B90046A3F8 /* LoginStory.storyboard */; };
+		AC18537D20CC33680008B8B2 /* BalanceUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18537C20CC33680008B8B2 /* BalanceUpdater.swift */; };
 		AC8B22B220BF018D0080B444 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8B22B120BF018D0080B444 /* MenuViewModel.swift */; };
 		AC928B5420B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5320B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift */; };
 		AC928B5620B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC928B5520B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift */; };
@@ -189,6 +190,8 @@
 		9AFF829A208654B90046A3F8 /* LoginStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStory.storyboard; sourceTree = "<group>"; };
 		A6E8F76BF46950D3F4566710 /* Pods-CryptaurLottery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.release.xcconfig"; sourceTree = "<group>"; };
 		AA194779E6C9E65F9192C1B3 /* Pods-CryptaurLottery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptaurLottery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptaurLottery/Pods-CryptaurLottery.debug.xcconfig"; sourceTree = "<group>"; };
+		AC18537820CBB3920008B8B2 /* CryptaurLottery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptaurLottery.entitlements; sourceTree = "<group>"; };
+		AC18537C20CC33680008B8B2 /* BalanceUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceUpdater.swift; sourceTree = "<group>"; };
 		AC8B22B120BF018D0080B444 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		AC928B5320B95E0F00F49B5A /* AuthorizedFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedFlowCoordinator.swift; sourceTree = "<group>"; };
 		AC928B5520B95E9C00F49B5A /* UnauthorizedFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthorizedFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -420,6 +423,14 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		AC18537920CC33440008B8B2 /* BalanceUpdater */ = {
+			isa = PBXGroup;
+			children = (
+				AC18537C20CC33680008B8B2 /* BalanceUpdater.swift */,
+			);
+			path = BalanceUpdater;
+			sourceTree = "<group>";
+		};
 		AC928B5920B9601A00F49B5A /* ChildCoordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,7 +628,9 @@
 		CEF6AD5220722892004BA072 /* CryptaurLottery */ = {
 			isa = PBXGroup;
 			children = (
+				AC18537820CBB3920008B8B2 /* CryptaurLottery.entitlements */,
 				CEF6AD5320722892004BA072 /* AppDelegate.swift */,
+				AC18537920CC33440008B8B2 /* BalanceUpdater */,
 				CEDE7A0E2089088C00F3BA7F /* Navigation */,
 				CEF6AD85207240A5004BA072 /* BaseClasses */,
 				CE3084D020767851008C140C /* Fonts */,
@@ -754,6 +767,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
@@ -929,6 +945,7 @@
 				9A3D5775208DD3710007A426 /* UIStackView+extension.swift in Sources */,
 				9AD676F6208F23490080DE6E /* GetDrawsResponceModel.swift in Sources */,
 				9ABBBE84208F742A001B6A7D /* APIOperation.swift in Sources */,
+				AC18537D20CC33680008B8B2 /* BalanceUpdater.swift in Sources */,
 				227C98D8208F3E1F000A5A7F /* DrawDetailsTicketCell.swift in Sources */,
 				CEDAC84D20764D3F00E3EA36 /* GradientBackgroundView.swift in Sources */,
 				9A0742F620872FA700283DA5 /* PinCodeViewController.swift in Sources */,
@@ -1166,16 +1183,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = CryptaurLottery/CryptaurLottery.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yuliya Golunova (92S6262VKG)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XT9Q7MY2MR;
+				DEVELOPMENT_TEAM = 8CCN58UW97;
 				INFOPLIST_FILE = CryptaurLottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.nordavind.CryptaurLottery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cryptaur.lottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2432c926-a5a1-4e82-ad45-da5ba7584faf";
-				PROVISIONING_PROFILE_SPECIFIER = WildcardProfile;
+				PROVISIONING_PROFILE = "ad1746d9-50d0-438d-b16a-ebafe5741e5b";
+				PROVISIONING_PROFILE_SPECIFIER = CryptaurLotteryDev;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1189,16 +1207,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_ENTITLEMENTS = CryptaurLottery/CryptaurLottery.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yuliya Golunova (92S6262VKG)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XT9Q7MY2MR;
+				DEVELOPMENT_TEAM = 8CCN58UW97;
 				INFOPLIST_FILE = CryptaurLottery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.nordavind.CryptaurLottery;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cryptaur.lottery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eea408d9-e076-4de5-af7a-42ce1d756800";
-				PROVISIONING_PROFILE_SPECIFIER = WilcardAdHoc;
+				PROVISIONING_PROFILE = "ad1746d9-50d0-438d-b16a-ebafe5741e5b";
+				PROVISIONING_PROFILE_SPECIFIER = CryptaurLotteryDev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

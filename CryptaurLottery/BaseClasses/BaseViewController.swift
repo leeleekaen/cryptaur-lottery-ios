@@ -10,7 +10,7 @@ protocol BarButtonItemTargetActions {
 class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceErrorAlertPresenter {
     
     final let disposeBag = DisposeBag()
-    let balanceViewModel = BalanceViewModel()
+    let balanceViewModel = BalanceViewModel.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +29,12 @@ class BaseViewController: UIViewController, BarButtonItemTargetActions, ServiceE
         }).disposed(by: disposeBag)
     }
     
-    
     final func configureNavigationItem(showBalance: Bool, color: UIColor = .white) {
         if showBalance {
-            navigationItem.titleView = createBalanceView(color: color)
+            self.navigationItem.titleView = createBalanceView(color: color)
         }
-        navigationItem.rightBarButtonItems = [createMenuBarButtonItem(), createBadgeBarButtonItem()]
+        self.navigationItem.rightBarButtonItems = [createMenuBarButtonItem(), createBadgeBarButtonItem()]
     }
-    
-    
     
     private func createBalanceView(color: UIColor) -> BalanceView? {
         let balanceView = BalanceView.loadFromNib()

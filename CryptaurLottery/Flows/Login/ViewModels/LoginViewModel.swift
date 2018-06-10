@@ -59,10 +59,10 @@ final class LoginViewModel: BaseViewModel {
                                                      forKey: PlayersKey.username)
                                         keychain.set(request.password,
                                                      forKey: PlayersKey.password)
-                                        keychain.set(response.accessToken,
-                                                     forKey: PlayersKey.accessToken)
-                                        keychain.set(response.address.normalizedHexString,
-                                                     forKey: PlayersKey.address)
+//                                        keychain.set(response.accessToken,
+//                                                     forKey: PlayersKey.accessToken)
+//                                        keychain.set(response.address.normalizedHexString,
+//                                                     forKey: PlayersKey.address)
                                         DispatchQueue.main.async {
                                             UIApplication.sharedCoordinator.showPin(flow: .setPin, exitType: .defaultPin)
                                         }

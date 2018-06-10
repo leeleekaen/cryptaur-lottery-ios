@@ -46,9 +46,8 @@ class BuyTicketViewController: BaseViewController {
             self?.buyTicketButton.setTitle("Buy for \($0.toString())", for: .normal)
         }).disposed(by: disposeBag)
         
-        viewModel.sendErrorCompletion = { [weak self] error in
+        viewModel.sendErrorCompletion = { [weak self] in
             SVProgressHUD.dismiss()
-            self?.presentAlert(message: error)
         }
         
         viewModel.buyTicketCompletion = { [weak self] trx in

@@ -34,15 +34,6 @@ fileprivate final class ConnectTokenOperation: APIOperation {
         }
         print(parameters)
         
-//        body:
-//        grant_type      : password
-//        username        : <your username>
-//        password        : <device pin>
-//        scope           : lottery_main offline_access
-//        deviceId        : <your unique device id>
-//        use_pin_password: <any value> //НОВОЕ
-//        return(JSON):
-        
         super.init(endpoint: .connect, parameters: parameters, headers: ["Authorization": "Basic cG9ydGFibGUuY2xpZW50OnNlY3JldA=="], success: success, failure: failure)
     }
 }

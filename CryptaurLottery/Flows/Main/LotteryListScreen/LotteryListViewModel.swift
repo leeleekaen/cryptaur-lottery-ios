@@ -25,12 +25,41 @@ final class LotteryListViewModel: BaseViewModel {
     
     private var service = GetCurrentLotteriesService()
     
+    fileprivate var timer: Timer?
+    fileprivate var isLoading: Bool = false
+    
     override init() {
         super.init()
-        
+        getInfoAllLotteries()
+       
+    }
+}
+
+// MARK: Events
+extension LotteryListViewModel {
+    func startUpdating() {
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerFire(_:)),
+                                     userInfo: nil, repeats: true)
+    }
+}
+
+// MARK: Supporting methods
+private extension LotteryListViewModel {
+    @objc func timerFire(_ sender: Timer) {
+        guard !isLoading else {
+            return
+        }
+        isLoading = true
+        getInfoAllLotteries()
+    }
+}
+
+// MARK: Networking
+private extension LotteryListViewModel {
+    func getInfoAllLotteries() {
         service.perform(input: (), success: { [weak self] (response) in
             self?.draws = response.draws
             self?.updateCompletion?()
-        }, failure: defaultServiceFailure)
+            }, failure: defaultServiceFailure)
     }
 }

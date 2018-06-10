@@ -11,13 +11,13 @@ import RxCocoa
 import RxSwift
 
 final class BadgeView: UIView {
+    
     private var viewModel: BadgeViewModelProtocol!
     
     @IBOutlet private weak var badgeLabel: UILabel!
     
     func bind(viewModel: BadgeViewModelProtocol, disposeBag: DisposeBag) {
         self.viewModel = viewModel
-        
         viewModel.badge.drive(onNext: { [weak self] in
             self?.badgeLabel.text = $0
         }).disposed(by: disposeBag)
@@ -28,3 +28,5 @@ final class BadgeView: UIView {
         UIApplication.sharedCoordinator.transition(type: .push(controller: controller))
     }
 }
+
+

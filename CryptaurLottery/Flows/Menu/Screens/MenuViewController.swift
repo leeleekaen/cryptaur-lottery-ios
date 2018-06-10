@@ -36,8 +36,10 @@ class MenuViewController: BaseViewController {
             self?.purseButton.setTitle($0, for: .normal)
         }).disposed(by: disposeBag)
         
-        viewModelBalance.badge.drive(onNext: { [weak self] in
-            self?.winTicketsButton.setTitle($0, for: .normal)
+        viewModelBalance.badge.drive(onNext: { [weak self] value in
+            DispatchQueue.main.async {
+                self?.winTicketsButton.setTitle(value, for: .normal)
+            }
         }).disposed(by: disposeBag)
     }
 }

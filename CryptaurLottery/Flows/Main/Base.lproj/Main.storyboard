@@ -124,7 +124,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wBP-Ab-7ee"/>
                     </view>
-                    <navigationItem key="navigationItem" id="83K-5O-4ce"/>
+                    <navigationItem key="navigationItem" id="83K-5O-4ce">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="xjk-dR-ItR">
+                            <rect key="frame" x="187.5" y="22" width="0.0" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="xbW-dq-EOz" id="TU4-3K-fQC"/>
                         <outlet property="gradientBackgroundView" destination="f1v-g0-Lqp" id="z9S-IG-Glf"/>
@@ -267,6 +274,7 @@
         <!--Base Navigation Controller-->
         <scene sceneID="xOM-9L-2kg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bI6-EK-PHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="BaseNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="wQn-qG-Std" customClass="BaseNavigationController" customModule="CryptaurLottery" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lVb-Jx-kGY">
@@ -278,7 +286,6 @@
                         <segue destination="Adr-L7-DFR" kind="relationship" relationship="rootViewController" id="pCi-jz-THA"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bI6-EK-PHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-363" y="-144"/>
         </scene>

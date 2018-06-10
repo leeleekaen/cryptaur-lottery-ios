@@ -21,6 +21,7 @@ final class LotteryListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        viewModel.startUpdating()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +36,7 @@ final class LotteryListViewController: BaseViewController {
     override func bind() {
         bind(viewModel)
         viewModel.updateCompletion = { [weak self] in
-            DispatchQueue.main.async { [weak self] in
+            DispatchQueue.main.async {
                 self?.adapter.reloadData()
             }
         }
@@ -54,7 +55,6 @@ extension LotteryListViewController {
         title = " "
         gradientBackgroundView.gradientColors = [UIColor.lightblue, UIColor.lighterPurple].map {$0.cgColor}
         gradientBackgroundView.backgroundColor = .clear
-        
         configureNavigationItem(showBalance: true)
         
         collectionView.contentInset = .zero
@@ -80,7 +80,7 @@ extension LotteryListViewController {
 extension LotteryListViewController: ListAdapterDataSource {
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         let sectionController = ListSingleSectionController(nibName: LotteryCardCell.nameOfClass, bundle: nil, configureBlock: { [weak self] (item, cell) in
-
+            
             guard let cell = cell as? LotteryCardCell,
                 let item = item as? DiffableBox<Draw> else { return }
             

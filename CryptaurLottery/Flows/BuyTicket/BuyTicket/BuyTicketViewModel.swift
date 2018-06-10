@@ -16,7 +16,7 @@ class BuyTicketViewModel: BaseViewModel {
     }
     
     var buyTicketCompletion: ((String) -> ())?
-    var sendErrorCompletion: ((String) -> ())?
+    var sendErrorCompletion: (() -> ())?
 
     
     // MARK: - Private properties
@@ -57,7 +57,8 @@ class BuyTicketViewModel: BaseViewModel {
                                     self?.buyTicketCompletion?($0.trxHash)
                                     
             }, failure: { [weak self] error in
-                self?.sendErrorCompletion?(error.localizedDescription)
+                self?.errorSubject.onNext(error)
+                self?.sendErrorCompletion?()
         })
     }
 }

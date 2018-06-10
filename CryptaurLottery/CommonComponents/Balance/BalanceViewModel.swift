@@ -11,6 +11,16 @@ protocol BalanceViewModelProtocol {
 
 final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeViewModelProtocol {
     
+    static let sharedInstance = BalanceViewModel()
+    
+    // MARK: - Lifecycle
+    override init() {
+        super.init()
+        getBalance()
+        getDraws()
+    }
+    
+    
     // MARK: - Public properties
     var balance: Driver<String> {
         return balanceSubject.asDriver(onErrorJustReturn: "")
@@ -43,7 +53,8 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
         ] {
         didSet {
             let sum = loadedTickets[.lottery4x20]!.count + loadedTickets[.lottery5x36]!.count + loadedTickets[.lottery6x42]!.count
-            badgeSubject.onNext("\(sum)")
+            //badgeSubject.onNext("\(sum)")
+            badgeSubject.onNext("\(4)")
         }
     }
     
@@ -64,14 +75,6 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     
     func balanceAction() {
         getBalance()
-    }
-
-    
-    // MARK: - Lifecycle
-    override init() {
-        super.init()
-        getBalance()
-        getDraws()
     }
 }
 

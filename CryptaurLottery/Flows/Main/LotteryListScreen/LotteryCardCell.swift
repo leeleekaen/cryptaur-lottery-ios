@@ -8,7 +8,6 @@ protocol LotteryCardCellDelegate: class {
 
 class LotteryCardCell: UICollectionViewCell {
     
-    
     weak var delegate: LotteryCardCellDelegate?
     
     // MARK: - IBOutlet
@@ -22,23 +21,17 @@ class LotteryCardCell: UICollectionViewCell {
     }
     @IBOutlet weak var timeLeftLabel: UILabel!
     
-    // MARK: - IBAction
-    @IBAction func buyTicket(_ sender: UIButton) {
-        if let draw = draw {
-            buyTicketCompletion?(draw)
-        }
-        delegate?.lotteryCardCellAction(cell: self, buttonPressed: sender)
+    //Life cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
-    var buyTicketCompletion: ((_ draw: Draw) -> ())?
     
     // MARK: - Private property
     public private(set) var draw: Draw?
     
     // MARK: - Configure
     func configure(draw: Draw) {
-        
         self.draw = draw
-        
         // Balls image
         guard let lottery = LotteryID(rawValue: draw.lotteryID) else { return }
         
@@ -61,15 +54,40 @@ class LotteryCardCell: UICollectionViewCell {
         }
         jackpotLabel.text = jackpot + " CPT"
         
+        setupButton(draw: draw)
+        
+        // Time left
+        let secondsLetf = Int(draw.date.timeIntervalSinceNow)
+        timeLeftLabel.text = "TIME LEFT \(secondsLetf.timeString)"
+    }
+}
+
+//MARK: Setup View
+fileprivate extension LotteryCardCell {
+    func setupButton(draw: Draw) {
         // Buy ticket
         var ticketPrice = draw.ticketPrice.toStringWithDelimeters()
         if draw.ticketPrice != UInt256(integerLiteral: 0) {
             ticketPrice.removeLast(5)
         }
-        buyTicketButton.setTitle("Buy ticket for \(ticketPrice) CPT", for: .normal)
+        if draw.drawState == .played {
+            buyTicketButton.setTitle("Playing", for: .normal)
+        }else {
+            buyTicketButton.setTitle("Buy ticket for \(ticketPrice) CPT", for: .normal)
+        }
+    }
+}
+
+// MARK: - IBAction
+extension LotteryCardCell {
+    @IBAction func buyTicket(_ sender: UIButton) {
+        guard let drawValue = draw else {
+            return
+        }
+        if drawValue.drawState == .played {
+            return
+        }
         
-        // Time left
-        let secondsLetf = Int(draw.date.timeIntervalSinceNow)
-        timeLeftLabel.text = "TIME LEFT \(secondsLetf.timeString)"
+        delegate?.lotteryCardCellAction(cell: self, buttonPressed: sender)
     }
 }
