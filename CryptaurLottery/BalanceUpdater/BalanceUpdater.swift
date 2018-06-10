@@ -6,23 +6,58 @@
 ////  Copyright © 2018 Nordavind. All rights reserved.
 ////
 //
-//import Foundation
-//
-//class BalanceUpdater {
-//    
-//    // MARK: Singletone
-//    let sharedInstance: BalanceUpdater = BalanceUpdater()
-//    
-//    // MARK: Internal properties
-//    var tickets: [Ticket] = []
-//    
-//    // MARK: Private properties
-//    private let playerTicketsService = GetPlayerTicketsService()
-//
-//    private init() {
-//        
-//    }
-//}
+import Foundation
+import Alamofire
+
+class BalanceUpdater {
+    
+    let sharedInstance: BalanceUpdater = BalanceUpdater()
+    
+    // MARK: Internal properties
+    var tickets: [Ticket] = []
+    
+    
+    // MARK: Singletone
+    static let instance = BalanceUpdater()
+    
+    var alamofireManager: SessionManager?
+    
+    private init() {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 10
+        alamofireManager = SessionManager(configuration: configuration)
+    }
+    
+    
+    
+    func loadAllCityBusStop(lotteriId: String, success: @escaping (([Stop]) -> Void),
+                            failed: @escaping ((String) -> Void)) {
+        
+        Alamofire.request( "http://192.168.4.199:24892/api/getDeadLineTimeInterval/{lotteriId}", method: .get, parameters: ["lotteriId": lotteriId]).validate().responseJSON { response in
+            
+            switch response.result {
+                
+            case .success(let value):
+                
+                let json = JSON(value)
+                print(json)
+                
+                var busStop: [Stop] = []
+                
+                for json in json.arrayValue {
+                    
+                    let busStopModel = Stop(json: json)
+                    busStop.append(busStopModel)
+                }
+                
+                success(busStop)
+                
+            case .failure(let error):
+                failed(error.localizedDescription)
+            }
+        }
+        
+}
 //
 //extension BalanceUpdater {
 //    func update() {

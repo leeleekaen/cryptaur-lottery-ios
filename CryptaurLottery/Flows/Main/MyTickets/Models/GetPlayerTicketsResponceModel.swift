@@ -11,7 +11,8 @@ struct GetPlayerTicketsResponceModel: JSONDeserializable {
         }
         
         var tickets = [Ticket]()
-        print("count list = \(list.count)")
+        //TODO: Count list Test
+        //print("count list = \(list.count)")
         for item in list {
             //print("\(item)")
             guard let ticket = Ticket(json: item) else {

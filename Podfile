@@ -14,6 +14,7 @@ target 'CryptaurLottery' do
   pod 'Crashlytics'
   pod 'PMNibLinkableView'
   pod 'SVProgressHUD'
+  pod 'SwiftyJSON'
   
   target 'CryptaurLotteryTests' do
     inherit! :search_paths

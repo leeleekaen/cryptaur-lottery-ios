@@ -61,6 +61,10 @@ struct Draw: JSONDeserializable, Diffable {
             let ticketPriceString = json["ticketPrice"] as? String,
             let ticketPrice = UInt256(hexString: ticketPriceString) else { return nil }
         
+        print("date = \(date)")
+        print("drawStateString = \(drawStateString)")
+        print("stateString = \(stateString)")
+        
         self.lotteryID = lotteryID
         self.number = number
         self.date = date
@@ -78,7 +82,6 @@ struct Draw: JSONDeserializable, Diffable {
         }
         self.numbers = json["numbers"] as? [Int]
         
-        print("\(String(describing: json["drawState"]))")
     }
 }
 

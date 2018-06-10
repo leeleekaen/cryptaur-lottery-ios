@@ -38,7 +38,6 @@ class MyTicketsViewController: BaseViewController {
     // MARK: - Binding
     override func bind() {
         bind(viewModel)
-        
         viewModel.updateCompletion = { [unowned self] in
             DispatchQueue.main.async { [weak self] in
                 self?.adapter.reloadData()

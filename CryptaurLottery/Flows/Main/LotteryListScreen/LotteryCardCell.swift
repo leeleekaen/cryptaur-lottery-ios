@@ -70,7 +70,7 @@ fileprivate extension LotteryCardCell {
         if draw.ticketPrice != UInt256(integerLiteral: 0) {
             ticketPrice.removeLast(5)
         }
-        if draw.drawState == .played {
+        if draw.state == .freeze {
             buyTicketButton.setTitle("Playing", for: .normal)
         }else {
             buyTicketButton.setTitle("Buy ticket for \(ticketPrice) CPT", for: .normal)
@@ -84,7 +84,7 @@ extension LotteryCardCell {
         guard let drawValue = draw else {
             return
         }
-        if drawValue.drawState == .played {
+        if drawValue.state == .freeze {
             return
         }
         

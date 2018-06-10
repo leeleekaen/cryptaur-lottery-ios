@@ -9,8 +9,6 @@ class BuyTicketViewModel: BaseViewModel {
     // MARK: - Public properties
     var draw: Draw?
     
-    var balance = UInt256(integerLiteral: 0)
-    
     var ticketPrice: Driver<UInt256> {
         return ticketPriceObject.asDriver(onErrorJustReturn: UInt256(integerLiteral: 10))
     }
@@ -18,21 +16,17 @@ class BuyTicketViewModel: BaseViewModel {
     var buyTicketCompletion: ((String) -> ())?
     var sendErrorCompletion: (() -> ())?
 
-    
     // MARK: - Private properties
     let ticketPriceObject = BehaviorSubject<UInt256>(value: UInt256(integerLiteral: 10))
     
     // MARK: - Dependency
     let buyTicketsService = BuyTicketsService()
-    let balanceService = GetPlayerAviableBalanceService()
     let getTicketPriceService = GetTicketPriceService()
     let keychain = KeychainSwift()
     
     // MARK: - Lifecycle
     override init() {
         super.init()
-        
-        getBalance()
         getTicketPrice()
     }
     
@@ -66,20 +60,6 @@ class BuyTicketViewModel: BaseViewModel {
 
 // MARK: - Private methods
 private extension BuyTicketViewModel {
-    
-    func getBalance() {
-        
-        guard let hexAddress = keychain.get(PlayersKey.address),
-            let address = UInt256(hexString: hexAddress) else { return }
-        
-        let request = GetPlayerAviableBalanceRequestModel(address: address)
-        
-        balanceService.perform(input: request,
-                               success: { [weak self] (responce) in
-                                self?.balance = responce.balance
-        }, failure: defaultServiceFailure)
-    }
-    
     func getTicketPrice() {
         
         guard let draw = draw,

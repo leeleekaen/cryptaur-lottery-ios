@@ -53,7 +53,7 @@ private extension LotteryListViewModel {
 }
 
 // MARK: Networking
-private extension LotteryListViewModel {
+extension LotteryListViewModel {
     func getInfoAllLotteries() {
         service.perform(input: (), success: { [weak self] (response) in
             print("api/getCurrentLotteries")

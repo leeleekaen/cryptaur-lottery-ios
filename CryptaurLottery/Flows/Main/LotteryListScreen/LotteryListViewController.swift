@@ -94,7 +94,7 @@ extension LotteryListViewController: ListAdapterDataSource {
             cell.delegate = self
             cell.configure(draw: item.value)
             self?.draw = item.value
-            print("drawState = \(item.value.drawState.rawValue)")
+            //print("state = \(item.value.state.rawValue)")
             
         }) { (item, collectionContext) -> CGSize in
             let size = collectionContext!.insetContainerSize

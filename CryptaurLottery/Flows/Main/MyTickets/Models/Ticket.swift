@@ -40,7 +40,6 @@ struct Ticket {
         }
         
         
-        
         self.drawIndex = drawIndex
         self.date = date
         self.ticketIndex = ticketIndex

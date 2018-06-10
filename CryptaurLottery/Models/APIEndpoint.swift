@@ -54,6 +54,9 @@ extension APIEndpoint: URLConvertible {
 }
 
 extension APIEndpoint {
+    static var getDeadLineTimeInterval: APIEndpoint {
+        return APIEndpoint(.get, "api/getDeadLineTimeInterval")
+    }
     static var getTicketPrice: APIEndpoint {
         return APIEndpoint(.get, "api/getTicketPrice")
     }

@@ -16,8 +16,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     // MARK: - Lifecycle
     override init() {
         super.init()
-        getBalance()
-        getDraws()
+        self.startUpdatingBalanceAndDraws()
     }
     
     
@@ -37,8 +36,10 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     private let balanceSubject = BehaviorSubject<String>(value: "0.00000000 CPT")
     private let badgeSubject = BehaviorSubject<String>(value: "0")
     private var showAvailableBalance = false
-    
+    fileprivate var timer: Timer?
     private var lastPlayedDraws = [LotteryID: Int]()
+    //TODO: Test update badge
+    private var propertyValue = 0
     
     private var loadingDrawsCount = 0 {
         didSet {
@@ -53,6 +54,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
         ] {
         didSet {
             let sum = loadedTickets[.lottery4x20]!.count + loadedTickets[.lottery5x36]!.count + loadedTickets[.lottery6x42]!.count
+//            propertyValue += 1
             badgeSubject.onNext("\(sum)")
         }
     }
@@ -77,8 +79,20 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     }
 }
 
+// MARK: Events
+extension BalanceViewModel {
+    func startUpdatingBalanceAndDraws() {
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerFire(_:)),
+                                     userInfo: nil, repeats: true)
+    }
+}
+
 // MARK: - Private methods
-private extension BalanceViewModel {
+extension BalanceViewModel {
+    @objc func timerFire(_ sender: Timer) {
+        getBalance()
+        getDraws()
+    }
     
     func getBalance() {
         
@@ -124,7 +138,7 @@ private extension BalanceViewModel {
                 self?.loadingDrawsCount -= 1
             }
             
-            let failure: ServiceFailure = { [weak self] (error) in
+            let failure: ServiceFailure = { (error) in
                 print("Error for lottery \(lottery): \(error)")
             }
             

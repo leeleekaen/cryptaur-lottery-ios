@@ -51,7 +51,6 @@ class MyTicketsViewModel: BaseViewModel {
     
     // MARK: - Get data from server
     func getNext() {
-        
         guard let hexPlayerAddress = keychain.get(PlayersKey.address),
             let playerAddress = UInt256(hexString: hexPlayerAddress) else { return }
         
