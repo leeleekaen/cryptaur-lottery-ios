@@ -14,6 +14,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SVProgressHUD (2.2.5)
+  - SwiftyJSON (4.1.0)
   - SwiftyUserDefaults (3.0.1)
   - UInt256 (0.1.0)
 
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SVProgressHUD
+  - SwiftyJSON
   - SwiftyUserDefaults
   - UInt256 (from `https://github.com/hyu2018/UInt256.git`)
 
@@ -41,6 +43,7 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SVProgressHUD
+    - SwiftyJSON
     - SwiftyUserDefaults
 
 EXTERNAL SOURCES:
@@ -62,9 +65,10 @@ SPEC CHECKSUMS:
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
   UInt256: fd430c044d00d966fa05ae8e89451a4766075772
 
-PODFILE CHECKSUM: d669872c8939cb26be9d5fe08bd5ca1c33fe781e
+PODFILE CHECKSUM: 613f607e0192182e22f088d59490f563de91b370
 
 COCOAPODS: 1.5.2

@@ -22,13 +22,12 @@ final class LotteryListViewController: BaseViewController {
         super.viewDidLoad()
         setupView()
         viewModel.startUpdating()
+        
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.tintColor = .white
         viewModel.isLoading = false
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

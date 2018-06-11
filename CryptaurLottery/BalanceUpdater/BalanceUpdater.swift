@@ -8,56 +8,44 @@
 //
 import Foundation
 import Alamofire
+import SwiftyJSON
 
-class BalanceUpdater {
-    
-    let sharedInstance: BalanceUpdater = BalanceUpdater()
-    
-    // MARK: Internal properties
-    var tickets: [Ticket] = []
-    
-    
-    // MARK: Singletone
-    static let instance = BalanceUpdater()
-    
-    var alamofireManager: SessionManager?
-    
-    private init() {
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 10
-        alamofireManager = SessionManager(configuration: configuration)
-    }
-    
-    
-    
-    func loadAllCityBusStop(lotteriId: String, success: @escaping (([Stop]) -> Void),
-                            failed: @escaping ((String) -> Void)) {
-        
-        Alamofire.request( "http://192.168.4.199:24892/api/getDeadLineTimeInterval/{lotteriId}", method: .get, parameters: ["lotteriId": lotteriId]).validate().responseJSON { response in
-            
-            switch response.result {
-                
-            case .success(let value):
-                
-                let json = JSON(value)
-                print(json)
-                
-                var busStop: [Stop] = []
-                
-                for json in json.arrayValue {
-                    
-                    let busStopModel = Stop(json: json)
-                    busStop.append(busStopModel)
-                }
-                
-                success(busStop)
-                
-            case .failure(let error):
-                failed(error.localizedDescription)
-            }
-        }
-        
-}
+//class BalanceUpdater {
+//    
+//    // MARK: Internal properties
+//    var tickets: [Ticket] = []
+//    
+//    // MARK: Singletone
+//    static let sharedInstance: BalanceUpdater = BalanceUpdater()
+//    
+//    var alamofireManager: SessionManager?
+//    
+//    private init() {
+//        let configuration = URLSessionConfiguration.default
+//        configuration.timeoutIntervalForRequest = 10
+//        alamofireManager = SessionManager(configuration: configuration)
+//    }
+//    
+//    func deadLineTimeInterval(lotteriId: String, success: @escaping (() -> Void),
+//                            failed: @escaping ((String) -> Void)) {
+//        
+//        Alamofire.request( "https://lottery-1.cryptaur.com/api/getDeadLineTimeInterval/", method: .get, parameters: ["lotteriId": lotteriId]).validate().responseJSON { response in
+//            
+//            switch response.result {
+//                
+//            case .success(let value):
+//                
+//                let json = JSON(value)
+//                print(json)
+//            
+//                success()
+//                
+//            case .failure(let error):
+//                failed(error.localizedDescription)
+//            }
+//        }
+//    }
+//}
 //
 //extension BalanceUpdater {
 //    func update() {

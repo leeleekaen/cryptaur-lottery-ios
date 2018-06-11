@@ -70,23 +70,27 @@ fileprivate extension LotteryCardCell {
         if draw.ticketPrice != UInt256(integerLiteral: 0) {
             ticketPrice.removeLast(5)
         }
-        if draw.state == .freeze {
-            buyTicketButton.setTitle("Playing", for: .normal)
-        }else {
-            buyTicketButton.setTitle("Buy ticket for \(ticketPrice) CPT", for: .normal)
-        }
+       
+        buyTicketButton.setTitle("Buy ticket for \(ticketPrice) CPT", for: .normal)
+        //TODO: Playing
+//        if Int(draw.date.timeIntervalSinceNow).timeString == "0" {
+//            buyTicketButton.setTitle("Playing", for: .normal)
+//        }else {
+//            buyTicketButton.setTitle("Buy ticket for \(ticketPrice) CPT", for: .normal)
+//        }
     }
 }
 
 // MARK: - IBAction
 extension LotteryCardCell {
     @IBAction func buyTicket(_ sender: UIButton) {
-        guard let drawValue = draw else {
-            return
-        }
-        if drawValue.state == .freeze {
-            return
-        }
+//        guard let drawValue = draw else {
+//            return
+//        }
+        //TODO: Playing
+//        if Int(drawValue.date.timeIntervalSinceNow).timeString == "0" {
+//            return
+//        }
         
         delegate?.lotteryCardCellAction(cell: self, buttonPressed: sender)
     }

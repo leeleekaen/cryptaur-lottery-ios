@@ -28,7 +28,9 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     var badge: Driver<String> {
         return badgeSubject.asDriver(onErrorJustReturn: "")
     }
-
+    
+    var draw:Draw?
+    
     var badgeActionCompletion:(() -> ())?
     var updateCompletion: (() -> ())?
     
@@ -38,8 +40,8 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     private var showAvailableBalance = false
     fileprivate var timer: Timer?
     private var lastPlayedDraws = [LotteryID: Int]()
-    //TODO: Test update badge
     private var propertyValue = 0
+    
     
     private var loadingDrawsCount = 0 {
         didSet {
@@ -54,7 +56,7 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
         ] {
         didSet {
             let sum = loadedTickets[.lottery4x20]!.count + loadedTickets[.lottery5x36]!.count + loadedTickets[.lottery6x42]!.count
-//            propertyValue += 1
+            //propertyValue += 1
             badgeSubject.onNext("\(sum)")
         }
     }
@@ -68,6 +70,9 @@ final class BalanceViewModel: BaseViewModel, BalanceViewModelProtocol, BadgeView
     private let balanceService = GetPlayerAviableBalanceService()
     private let playerTicketsService = GetPlayerTicketsService()
     private let getDrawService = GetDrawsService()
+    private var service = GetCurrentLotteriesService()
+    
+    
     let keychain = KeychainSwift()
     
     func purseAction() {
@@ -92,7 +97,37 @@ extension BalanceViewModel {
     @objc func timerFire(_ sender: Timer) {
         getBalance()
         getDraws()
+        //getInfoAllLotteries()
     }
+    
+//    func getInfoAllLotteries() {
+//        service.perform(input: (), success: { [weak self] (response) in
+//            
+//            for drawValue in response.draws {
+//                self?.draw = drawValue
+//                
+//                self?.loadingDrawsCount += 1
+//                guard let lottery = LotteryID.init(rawValue: drawValue.lotteryID) else {
+//                    return
+//                }
+//                
+//                if let draw = response.draws.first, draw.drawState == .played {
+//                    self?.lastPlayedDraws[lottery] = Int(draw.number)
+//                    self?.loadingDrawsCount -= 1
+//                    return
+//                }
+//                
+//                if let draw = response.draws.last, draw.drawState == .played {
+//                    self?.lastPlayedDraws[lottery] = Int(draw.number)
+//                    self?.loadingDrawsCount += 1
+//                    return
+//                }
+//                self?.loadingDrawsCount -= 1
+//            }
+//            
+//            
+//        }, failure: defaultServiceFailure)
+//    }
     
     func getBalance() {
         
@@ -121,8 +156,10 @@ extension BalanceViewModel {
             
             let request = GetDrawsRequestModel(lotteryID: lottery, offset: 0, count: 2)
             
+            
             let success: (GetDrawsResponceModel) -> () = { [weak self] responce in
                 
+            
                 if let draw = responce.draws.first, draw.drawState == .played {
                     self?.lastPlayedDraws[lottery] = draw.number
                     self?.loadingDrawsCount -= 1
@@ -195,7 +232,7 @@ extension BalanceViewModel {
 
                                         self?.loadedTickets[lottery]! += loadedTickets
                                         self?.updateCompletion?()
-        }) { [weak self] (error) in
+        }) { (error) in
             print("Error for lottery \(lottery): \(error)")
         }
     }

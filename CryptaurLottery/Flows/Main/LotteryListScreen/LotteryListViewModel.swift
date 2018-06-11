@@ -48,6 +48,7 @@ private extension LotteryListViewModel {
         guard !isLoading else {
             return
         }
+        //updateCompletion?()
         getInfoAllLotteries()
     }
 }
