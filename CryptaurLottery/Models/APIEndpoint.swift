@@ -36,7 +36,7 @@ struct APIEndpoint {
 extension APIEndpoint: URLConvertible {
     private struct BaseURLStorage {
         //#if DEBUG
-        static let baseUrl = URL(string: "http://lottery.nordavind.ru:24892")
+        static let baseUrl = URL(string: "http://lottery.nordavind.ru")
         //#else
         //static let baseUrl = URL(string: "https://lottery-3.cryptaur.com")
         //#endif
